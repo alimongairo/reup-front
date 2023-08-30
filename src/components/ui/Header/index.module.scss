@@ -2,7 +2,7 @@
 @import '../../../styles/vars.scss';
 
 
-// TODO: состояния (наведение и клик)
+// TODO: состояния (active tool - fill svg)
 // Мобилка (перемещается в тулбар - отдельный компонент)
 
 .header{
@@ -38,8 +38,12 @@
     li{
         line-height: 1;
         padding: 0 3%;
+        .active{
+            color: $color-primary;
+        }
     }
 }
+
 
 .search{
     margin-left: 4%;

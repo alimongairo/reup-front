@@ -9,10 +9,14 @@ import { ReactComponent as MarketIcon } from "../../../../static/images/icons/ma
 import cx from './index.module.scss';
 import cls from 'classnames';
 import { confReturner } from "./constants";
+import { NavLink } from "react-router-dom";
+import { strokeColorReturner } from "../../../helpers";
 
 interface IProps {
   type: number,
 }
+
+// TODO: create HOC for navlink pass isActive for stroke and fill
 
 export default function Header({type}: IProps ) {
 
@@ -23,7 +27,9 @@ export default function Header({type}: IProps ) {
       <div className={cx.container}>
         <LogoIcon className={cx.logo} />
         <div className={cx.main}>
-        <ul className={cx.linksList}>{config?.list.map((item) => <li>{item.name}</li>)}</ul>
+        <ul className={cx.linksList}>{config?.list.map((item) => <li><NavLink to={item.link} className={(isActive) =>cls({
+          [cx.active]: isActive }
+        )}>{item.name}</NavLink></li>)}</ul>
         {
           config?.isSearch && <SearchIcon className={cls(cx.icon, cx.search)}/>
         }
@@ -31,15 +37,19 @@ export default function Header({type}: IProps ) {
         {
           config?.isActions && (<ul className={cx.actions}>
             <li><HeartIcon className={cx.icon} /></li>
-            <li><UserIcon className={cx.icon} /></li>
+            <li><UserIcon className={cx.icon}/></li>
             <li><BasketIcon className={cx.icon} /></li>
           </ul>)
         }
-        {
-          config?.typeBtn && config?.typeBtn === "CRM" 
-            ? <div className={cx.typeBtn}><CRMIcon className={cx.icon} /></div>
-            : <div className={cx.typeBtn}><MarketIcon className={cx.icon} /></div>
-        }
+
+        <NavLink to="/crm" className={cx.typeBtn}>
+          {({ isActive }) => (
+            config?.typeBtn && config?.typeBtn === "CRM" 
+              ? <CRMIcon className={cx.icon} stroke={strokeColorReturner(isActive)} fill={strokeColorReturner(isActive)}/>
+              : <MarketIcon className={cx.icon} stroke={strokeColorReturner(isActive)} fill={strokeColorReturner(isActive)}/>
+          )}
+      </NavLink>
+
       </div>
     </div>
   )

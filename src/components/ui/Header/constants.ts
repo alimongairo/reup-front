@@ -3,24 +3,24 @@
   1 - хедер владельца бренда в маркетплейсе
   2 - хедер покупателя
   */
-  const types = [0, 1, 2]
-
+ 
+//   TODO: add correct links
   const CRMLinks = [
     {
       name: "страница бренда",
-      link: "/",
+      link: "/crm",
     },
     {
       name: "склад",
-      link: "/",
+      link: "/crm",
     },
     {
       name: "заказы",
-      link: "/",
+      link: "/crm",
     },
     {
       name: "финансы",
-      link: "/",
+      link: "/crm",
     },
 ];
 
@@ -73,8 +73,6 @@ const type2Conf = {
 };
 
 function confReturner(type: number) {
-    console.log('--------- confReturner ----------');
-
     switch (type) {
         case 0:
             return type0Conf;
