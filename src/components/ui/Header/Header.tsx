@@ -42,7 +42,7 @@ export default function Header({ type }: IProps) {
       <div className={cx.container}>
         <LogoIcon className={cx.logo} />
         <div className={cx.main}>
-          <ul className={cx.linksList}>{config?.list.map((item) => <li key={uid(item.name)}><NavLink to={item.link} className={(isActive) => cls({
+          <ul className={cls("as-desktop", cx.linksList)}>{config?.list.map((item) => <li key={uid(item.name)}><NavLink to={item.link} className={(isActive) => cls({
             [cx.active]: isActive
           }
           )}>{item.name}</NavLink></li>)}</ul>
@@ -51,7 +51,8 @@ export default function Header({ type }: IProps) {
           }
         </div>
         {
-          config?.isActions && (<ul className={cx.actions}>
+          config?.isActions && (
+          <ul className={cls("as-desktop", cx.actions)}>
             <li><NavLinkIcon to="/" isFill={false}><HeartIcon className={cx.icon} /></NavLinkIcon></li>
             <li><NavLinkIcon to="/" isFill={false}><UserIcon className={cx.icon} /></NavLinkIcon></li>
             <li><NavLinkIcon to="/" isFill={false}><BasketIcon className={cx.icon} /></NavLinkIcon></li>
@@ -59,8 +60,8 @@ export default function Header({ type }: IProps) {
         }
         {
           config?.typeBtn && config?.typeBtn === "CRM"
-            ? <NavLinkIcon to="/crm" className={cx.typeBtn}><CRMIcon className={cx.icon} /></NavLinkIcon>
-            : config?.typeBtn === 'market' ? <NavLinkIcon to="/" className={cx.typeBtn}><MarketIcon className={cx.icon} /></NavLinkIcon>
+            ? <NavLinkIcon to="/crm" className={cls("as-desktop", cx.typeBtn)}><CRMIcon className={cx.icon} /></NavLinkIcon>
+            : config?.typeBtn === 'market' ? <NavLinkIcon to="/" className={cls("as-desktop", cx.typeBtn)}><MarketIcon className={cx.icon} /></NavLinkIcon>
             : null
         }
       </div>

@@ -5,6 +5,14 @@
     flex-direction: column;
 }
 
-.container{
-    @include container-width();
+@media(min-width: $media-desktop){
+    .container{
+        @include container-width();
+    }
+}
+
+@media(max-width: $media-mobile){
+    .container{
+        width: 100%;
+    }
 }

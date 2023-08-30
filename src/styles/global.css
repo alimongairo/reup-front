@@ -267,3 +267,17 @@ body {
   font-weight: 100;
   font-style: italic;
 }
+
+
+/* as */
+@media all and (max-width: 758px) {
+	.as-desktop{
+		display:none !important;
+	}
+}
+
+@media all and (min-width: 759px) {
+	.as-mobile{
+		display:none !important;
+	}
+}
