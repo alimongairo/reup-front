@@ -35,6 +35,8 @@ export default function Header({ type }: IProps) {
 
   const config = confReturner(type || 0);
 
+  console.log(config);
+
   return (
     <div className={cx.header}>
       <div className={cx.container}>
@@ -58,7 +60,8 @@ export default function Header({ type }: IProps) {
         {
           config?.typeBtn && config?.typeBtn === "CRM"
             ? <NavLinkIcon to="/crm" className={cx.typeBtn}><CRMIcon className={cx.icon} /></NavLinkIcon>
-            : <NavLinkIcon to="/" className={cx.typeBtn}><MarketIcon className={cx.icon} /></NavLinkIcon>
+            : config?.typeBtn === 'market' ? <NavLinkIcon to="/" className={cx.typeBtn}><MarketIcon className={cx.icon} /></NavLinkIcon>
+            : null
         }
       </div>
     </div>

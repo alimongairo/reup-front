@@ -76,13 +76,10 @@ function confReturner(type: number) {
     switch (type) {
         case 0:
             return type0Conf;
-            break;
         case 1: 
             return type1Conf;
-            break;
         case 2:
             return type2Conf;
-            break;
         default:
             break;
     }
