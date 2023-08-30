@@ -8,5 +8,20 @@
     @include container-width();
     display: flex;
     align-items: center;
-    
+    padding: 20px 50px;    
+}
+
+.logo{
+    height: 54px;
+    width: auto;
+}
+
+.linksList{
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+
+    li:not(:last-child){
+        margin-right: 50px;
+    }
 }
