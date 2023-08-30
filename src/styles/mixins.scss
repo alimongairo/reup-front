@@ -1,0 +1,8 @@
+@import './vars.scss';
+
+@mixin container-width{
+    min-width: $containerWidth-min;
+    max-width: $containerWidth-max;
+    width: 100%;
+    margin: 0 auto;
+}

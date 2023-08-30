@@ -1,3 +1,12 @@
+@import '../../../styles/mixins.scss';
+
 .header{
     background: red;
+}
+
+.container{
+    @include container-width();
+    display: flex;
+    align-items: center;
+    
 }

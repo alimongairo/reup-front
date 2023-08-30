@@ -5,6 +5,7 @@ type Props = {}
 
 export default function Header({}: Props) {
   return (
-    <div className={cx.header}>Header</div>
+    <div className={cx.header}>
+      <div className={cx.container}>Header</div></div>
   )
 }
