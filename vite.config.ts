@@ -7,6 +7,9 @@ export default defineConfig({
   plugins: [react(
     eslint({ cache: true, fix: true, failOnError: false }),
   )],
+  server: {
+    port: 3000,
+  }
   // server: {
   //   proxy: {
   //     '/api': {
