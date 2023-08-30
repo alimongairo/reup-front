@@ -17,7 +17,7 @@ interface IProps {
   type: number,
 }
 
-// component for color icons in actibe NavLink
+// component for color icons in active NavLink
 const NavLinkIcon = ({ to, isFill = true, children, ...props }: any) => {
   return (
     <NavLink to={to} {...props}>
@@ -55,13 +55,11 @@ export default function Header({ type }: IProps) {
             <li><NavLinkIcon to="/" isFill={false}><BasketIcon className={cx.icon} /></NavLinkIcon></li>
           </ul>)
         }
-
         {
           config?.typeBtn && config?.typeBtn === "CRM"
             ? <NavLinkIcon to="/crm" className={cx.typeBtn}><CRMIcon className={cx.icon} /></NavLinkIcon>
             : <NavLinkIcon to="/" className={cx.typeBtn}><MarketIcon className={cx.icon} /></NavLinkIcon>
         }
-
       </div>
     </div>
   )
