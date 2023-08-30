@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as LogoIcon } from "../../../../static/images/icons/logo.svg";
 import { ReactComponent as SearchIcon } from "../../../../static/images/icons/loype.svg";
-import {ReactComponent as HeartIcon} from "../../../../static/images/icons/heart.svg";
+import { ReactComponent as HeartIcon } from "../../../../static/images/icons/heart.svg";
 import { ReactComponent as UserIcon } from "../../../../static/images/icons/user.svg";
 import { ReactComponent as BasketIcon } from "../../../../static/images/icons/basket.svg";
 import { ReactComponent as CRMIcon } from "../../../../static/images/icons/crm.svg";
@@ -11,14 +11,27 @@ import cls from 'classnames';
 import { confReturner } from "./constants";
 import { NavLink } from "react-router-dom";
 import { strokeColorReturner } from "../../../helpers";
+import { uid } from 'react-uid';
 
 interface IProps {
   type: number,
 }
 
-// TODO: create HOC for navlink pass isActive for stroke and fill
+// component for color icons in actibe NavLink
+const NavLinkIcon = ({ to, isFill = true, children, ...props }: any) => {
+  return (
+    <NavLink to={to} {...props}>
+      {({ isActive }) => (
+        React.cloneElement(children, {
+          fill: isFill ? strokeColorReturner(isActive) : "none",
+          stroke: strokeColorReturner(isActive),
+        })
+      )}
+    </NavLink>
+  )
+}
 
-export default function Header({type}: IProps ) {
+export default function Header({ type }: IProps) {
 
   const config = confReturner(type || 0);
 
@@ -27,28 +40,27 @@ export default function Header({type}: IProps ) {
       <div className={cx.container}>
         <LogoIcon className={cx.logo} />
         <div className={cx.main}>
-        <ul className={cx.linksList}>{config?.list.map((item) => <li><NavLink to={item.link} className={(isActive) =>cls({
-          [cx.active]: isActive }
-        )}>{item.name}</NavLink></li>)}</ul>
-        {
-          config?.isSearch && <SearchIcon className={cls(cx.icon, cx.search)}/>
-        }
+          <ul className={cx.linksList}>{config?.list.map((item) => <li key={uid(item.name)}><NavLink to={item.link} className={(isActive) => cls({
+            [cx.active]: isActive
+          }
+          )}>{item.name}</NavLink></li>)}</ul>
+          {
+            config?.isSearch && <SearchIcon className={cls(cx.icon, cx.search)} />
+          }
         </div>
         {
           config?.isActions && (<ul className={cx.actions}>
-            <li><HeartIcon className={cx.icon} /></li>
-            <li><UserIcon className={cx.icon}/></li>
-            <li><BasketIcon className={cx.icon} /></li>
+            <li><NavLinkIcon to="/" isFill={false}><HeartIcon className={cx.icon} /></NavLinkIcon></li>
+            <li><NavLinkIcon to="/" isFill={false}><UserIcon className={cx.icon} /></NavLinkIcon></li>
+            <li><NavLinkIcon to="/" isFill={false}><BasketIcon className={cx.icon} /></NavLinkIcon></li>
           </ul>)
         }
 
-        <NavLink to="/crm" className={cx.typeBtn}>
-          {({ isActive }) => (
-            config?.typeBtn && config?.typeBtn === "CRM" 
-              ? <CRMIcon className={cx.icon} stroke={strokeColorReturner(isActive)} fill={strokeColorReturner(isActive)}/>
-              : <MarketIcon className={cx.icon} stroke={strokeColorReturner(isActive)} fill={strokeColorReturner(isActive)}/>
-          )}
-      </NavLink>
+        {
+          config?.typeBtn && config?.typeBtn === "CRM"
+            ? <NavLinkIcon to="/crm" className={cx.typeBtn}><CRMIcon className={cx.icon} /></NavLinkIcon>
+            : <NavLinkIcon to="/" className={cx.typeBtn}><MarketIcon className={cx.icon} /></NavLinkIcon>
+        }
 
       </div>
     </div>
