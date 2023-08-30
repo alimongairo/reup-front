@@ -1,6 +1,10 @@
 @import '../../../styles/mixins.scss';
 @import '../../../styles/vars.scss';
 
+
+// TODO: состояния (наведение и клик)
+// Мобилка (перемещается в тулбар - отдельный компонент)
+
 .header{
     background: $color-snow;
     border-bottom: 1px solid $color-black
