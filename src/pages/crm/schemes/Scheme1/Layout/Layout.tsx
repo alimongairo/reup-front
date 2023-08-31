@@ -4,14 +4,16 @@ import { Image, Typography } from "../../../../../components/ui";
 
 export default function Layout() {
   return (
-    <div className={cx.wrapper}>
+    <div >
       <div className={cx.top}>
         <div className={cx.title}>
           <Typography variant="h2">Balenciaga</Typography>
           <p>Текст описание от бренда</p>
         </div>
-        <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image}/>
-
+        <div className={cx.pic}>
+          <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image} />
+          <div className={cx.links}><p>text</p></div>
+        </div>
       </div>
     </div>
 
