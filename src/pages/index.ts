@@ -1,6 +1,6 @@
 import MainPage from "./MainPage";
 import ErrorPage from "./ErrorPage";
-import CRMPage from './crm/CRMPage.tsx';
-import CRMbrandPage from "./crm/CRMbrandPage.tsx";
+import EditPage from './crm/EditPage.tsx';
+import BrandPage from "./crm/BrandPage.tsx";
 
-export {ErrorPage, MainPage, CRMPage, CRMbrandPage};
+export {ErrorPage, MainPage, EditPage, BrandPage};
