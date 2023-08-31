@@ -41,8 +41,6 @@ export default function Header({ type }: IProps) {
 
   const config = confReturner(type || 0);
 
-  console.log(config);
-
   return (
     <div className={cx.header}>
       <div className={cx.container}>

@@ -14,6 +14,10 @@
         border: 1px solid $color-black;
         color: $color-snow;
         text-shadow: 0 0 .65px $color-snow, 0 0 .65px $color-snow;
+
+        svg {
+            fill: $color-snow;
+        }
     }
 
     &:hover {
@@ -24,36 +28,44 @@
         background: $color-primary;
     }
 
-    &.Mui-disabled{
+    &.Mui-disabled {
         background: $color-gray-6;
     }
 
-    &.MuiButton-sizeMedium{
+    &.MuiButton-sizeMedium {
         height: 50px;
         box-sizing: border-box;
         padding: 16px 24px;
         font-size: 16px;
-        &.icon{
-            padding: 12px;
+
+        &.icon {
+            padding: 14px;
         }
-        svg{
+
+        svg {
             height: 20px;
             width: auto;
         }
     }
 
-    &.MuiButton-sizeSmall{
+    &.MuiButton-sizeSmall {
         padding: 8px 24px;
         font-size: 16px;
-        &.icon{
+
+        &.icon {
             padding: 4px;
         }
-        svg{
+
+        svg {
             height: 15px;
             width: auto;
         }
     }
-    
 
-   
+
+    svg {
+        fill: $color-black;
+    }
+
+
 }
