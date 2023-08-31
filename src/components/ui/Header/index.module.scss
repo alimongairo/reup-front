@@ -1,0 +1,112 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/vars.scss';
+
+
+// TODO: состояния (active tool - fill svg)
+// Мобилка (перемещается в тулбар - отдельный компонент)
+
+.header{
+    background: $color-snow;
+
+}
+
+.container{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.main{
+    display: flex;
+}
+
+@media(max-width: $media-tablet){
+    .main{
+        width: 45%;
+        li{
+            padding: 0 2%;
+        }
+    }
+}
+
+@media(max-width: $media-mobile){
+    .container{
+        width: 100%;
+        padding: 8px 16px;
+    }
+
+    .logo{
+        height: auto;
+        width: 89px;
+    }
+
+    .main{
+        justify-content: flex-end;
+    }
+}
+
+@media(min-width: $media-desktop){
+    .header{
+        border-bottom: 1px solid $color-black
+    }
+
+    .container{
+        @include container-width();
+        padding-left: 2%;    
+        min-height: 95px;
+        height: fit-content;
+    }
+    
+    .logo{
+        height: auto;
+        width: 10%;
+        padding: 20px 0;
+        box-sizing: content-box;
+        align-self: center;
+        flex-shrink: 0;
+    }
+    
+    .linksList{
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        li{
+            line-height: 1;
+            padding: 0 3%;
+            .active{
+                color: $color-primary;
+            }
+        }
+    }
+    
+    .search{
+        margin-left: 4%;
+    }
+    
+    .main{
+        width: 83%;
+        padding: 0 2%;
+    }
+    
+    .icon{
+        height: 20px;
+        width: auto;
+        align-self: center;
+        flex-shrink: 0;
+    }
+    
+    .actions, .typeBtn{
+        border-left: 1px solid $color-black;
+        display: flex;
+        align-items: center;
+        padding: 0 2%;
+    }
+    
+    .actions{
+        li:not(:last-child){
+            margin-right: 40px;
+        }
+    }
+}
