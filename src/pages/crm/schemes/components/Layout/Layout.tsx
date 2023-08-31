@@ -12,9 +12,6 @@ export default function Layout({ isEditable, component }: IProps) {
 
     return (
         <>
-            {isEditable &&
-                (<div>head bricks component</div>)
-            }
             <Head isEditable={isEditable} isEditing={isEditing} setIsEditing={setIsEditing}/>
 
             {/* TODO: add container*/}

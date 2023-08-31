@@ -1,10 +1,10 @@
 import React from 'react'
 import {Typography, TypographyProps} from '@mui/material';
-import cx from './index.module.scss';
+import './index.scss';
 
 const MyTypography = function ({children, ...props}: TypographyProps) {
   return (
-    <Typography {...props} className={cx.typography}>{children}</Typography>
+    <Typography {...props}>{children}</Typography>
   )
 }
 

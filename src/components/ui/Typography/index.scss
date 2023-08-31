@@ -1,19 +1,19 @@
 @import '../../../styles/vars.scss';
 
-h1.typography,
-h2.typography {
+h1.MuiTypography-root,
+h2.MuiTypography-root {
     font-family: "Dela Gothic One", sans-serif;
     font-weight: bold;
     line-height: 110%;
 }
 
-h1.typography {
+h1.MuiTypography-root {
     font-size: 64px;
     margin-bottom: $margin-h1;
     letter-spacing: 2.56px;
 }
 
-h2.typography {
+h2.MuiTypography-root {
     font-size: 32px;
     margin-bottom: $margin-h2;
     letter-spacing: 1.28px;
