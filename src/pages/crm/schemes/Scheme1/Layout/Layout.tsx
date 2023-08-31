@@ -10,7 +10,7 @@ export default function Layout() {
           <Typography variant="h2">Balenciaga</Typography>
           <p>Текст описание от бренда</p>
         </div>
-        <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} width={100} height={100} alt="placeholder" />
+        <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image}/>
 
       </div>
     </div>
