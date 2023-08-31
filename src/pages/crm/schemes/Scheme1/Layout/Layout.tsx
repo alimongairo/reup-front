@@ -8,7 +8,7 @@ export default function Layout() {
       <div className={cx.top}>
         <div className={cx.title}>
           <Typography variant="h2">Balenciaga</Typography>
-          <div>Текст описание от бренда</div>
+          <p>Текст описание от бренда</p>
         </div>
 
       </div>
