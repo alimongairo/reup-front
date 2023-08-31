@@ -1,4 +1,5 @@
 import Header from "./Header/Header";
-import Typography from "./Typography/Typography.tsx";
+import Typography from "./Typography/Typography";
+import Button from "./Button/Button";
 
-export {Header, Typography};
+export {Header, Typography, Button};
