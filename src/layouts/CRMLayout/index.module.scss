@@ -8,6 +8,7 @@
 @media(min-width: $media-desktop){
     .container{
         @include container-width();
+        padding: $containerPadding-desktop;
     }
 }
 

@@ -52,7 +52,7 @@
 
     .container{
         @include container-width();
-        padding-left: 2%;    
+        padding-left: $containerPadding-desktop;    
         min-height: 95px;
         height: fit-content;
     }
