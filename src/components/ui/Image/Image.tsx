@@ -1,18 +1,18 @@
 import React from 'react';
-import { LazyLoadComponentProps, LazyLoadImage } from 'react-lazy-load-image-component';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import cx from './index.module.scss';
 
-interface IProps extends LazyLoadComponentProps {
+interface IProps  {
     alt: string,
     height: number,
     width: number,
-    src: string,
+    src: string | undefined,
 }
 
-// TODO: create trackWindowScroll in Gallery 
+// TODO: we can create trackWindowScroll in Gallery (visible on load)
 export default function Image(props: IProps) {
-    const { alt, height, width, src } = props;
+    const { alt, height, width, src="" } = props;
 
     return (
         <LazyLoadImage
