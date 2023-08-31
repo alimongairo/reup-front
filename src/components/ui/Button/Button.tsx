@@ -2,11 +2,15 @@ import React from 'react'
 import { Button, ButtonProps } from '@mui/material';
 import './index.scss';
 
-const MyButton = ({children, ...props}: ButtonProps) => {
-  const {variant = "outlined", size="medium"} = props;
+interface IProps extends ButtonProps {
+  viewType?: "default" | "iconBtn",
+}
+
+const MyButton = ({ children, viewType = "default", ...props }: IProps) => {
+  const { variant = "outlined", size = "medium" } = props;
 
   return (
-    <Button {...props} className="button" variant={variant} size={size} >
+    <Button {...props} className={`button ${viewType === "iconBtn" && "icon"}`} variant={variant} size={size} >
       {children}
     </Button>
   )

@@ -1,22 +1,18 @@
 @import '../../../styles/vars.scss';
 
-.MuiButton-root {}
-
-.MuiButton-text {}
-
-
 .button.MuiButton-root {
     font-family: "Gilroy", "sans-serif";
     border-radius: 0;
     text-transform: lowercase;
     color: $color-black;
     border: 1px solid $color-black;
+    line-height: 1;
+    min-width: fit-content;
 
     &:hover,
     &:active {
         border: 1px solid $color-black;
         color: $color-snow;
-
         text-shadow: 0 0 .65px $color-snow, 0 0 .65px $color-snow;
     }
 
@@ -33,12 +29,31 @@
     }
 
     &.MuiButton-sizeMedium{
+        height: 50px;
+        box-sizing: border-box;
         padding: 16px 24px;
         font-size: 16px;
+        &.icon{
+            padding: 12px;
+        }
+        svg{
+            height: 20px;
+            width: auto;
+        }
     }
 
     &.MuiButton-sizeSmall{
         padding: 8px 24px;
         font-size: 16px;
+        &.icon{
+            padding: 4px;
+        }
+        svg{
+            height: 15px;
+            width: auto;
+        }
     }
+    
+
+   
 }

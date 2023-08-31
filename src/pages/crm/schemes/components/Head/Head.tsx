@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { ReactComponent as EditIcon } from "../../../../../../static/images/icons/edit.svg";
 import { Typography, Button } from "../../../../../components/ui";
 import cls from 'classnames';
 import cx from './index.module.scss';
@@ -18,10 +19,9 @@ export default function Head({isEditable, schemeId}: IProps) {
     {
         isEditable && (
             <div className={cx.btnsList}>
+                <Button viewType="iconBtn"><EditIcon /></Button>
                 {/* TODO: релогин */}
                 <Button>выход</Button>
-
-                {/* ссылка на отредактированный шаблон */}
                 <NavLink to={`/crm/brand/${schemeId}/?isEditable=false`}><Button>превью</Button></NavLink>
             </div>
         )
