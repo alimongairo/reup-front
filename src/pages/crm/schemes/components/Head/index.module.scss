@@ -1,0 +1,10 @@
+.wrapper{
+
+    :not(.isEditable){
+        display: flex;
+        align-items: center;
+    }
+    .isEditable{
+
+    }
+}
