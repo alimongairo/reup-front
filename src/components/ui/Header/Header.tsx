@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactHTMLElement, ReactNode } from 'react';
 import { ReactComponent as LogoIcon } from "../../../../static/images/icons/logo.svg";
 import { ReactComponent as SearchIcon } from "../../../../static/images/icons/loype.svg";
 import { ReactComponent as HeartIcon } from "../../../../static/images/icons/heart.svg";
@@ -17,8 +17,14 @@ interface IProps {
   type: number,
 }
 
+interface IPropsNavLinkIcon {
+  to: string,
+  isFill?: boolean,
+  children: JSX.Element,
+  [x:string]: any,
+}
 // component for color icons in active NavLink
-const NavLinkIcon = ({ to, isFill = true, children, ...props }: any) => {
+const NavLinkIcon = ({ to, isFill = true, children, ...props }: IPropsNavLinkIcon) => {
   return (
     <NavLink to={to} {...props}>
       {({ isActive }) => (
