@@ -1,3 +1,5 @@
+@import '../../../styles/vars.scss';
+
 h1.typography,
 h2.typography {
     font-family: "Dela Gothic One", sans-serif;
@@ -7,12 +9,12 @@ h2.typography {
 
 h1.typography {
     font-size: 64px;
-    margin-bottom: 50px;
+    margin-bottom: $margin-h1;
     letter-spacing: 2.56px;
 }
 
 h2.typography {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: $margin-h2;
     letter-spacing: 1.28px;
 }

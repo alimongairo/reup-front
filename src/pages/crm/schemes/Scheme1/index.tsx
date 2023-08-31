@@ -6,6 +6,8 @@ import { useQuery } from "../../../../hooks";
 import { Layout } from "../components";
 
 const Scheme1 = () => {
+   
+
     const query = useQuery();
     const isEditable = query.get("isEditable") === 'true';
 

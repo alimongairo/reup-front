@@ -18,6 +18,10 @@
     color: #000000;
   }
   
+  a{
+    line-height: 0;
+  }
+  
   a,
   span,
   p,

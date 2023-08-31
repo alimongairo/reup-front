@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { Head } from "..";
 import cx from './index.module.scss';
 
@@ -7,13 +7,15 @@ interface IProps {
     component: ReactNode,
 }
 
-export default function Top({ isEditable, component }: IProps) {
+export default function Layout({ isEditable, component }: IProps) {
+    const [isEditing, setIsEditing] = useState<boolean>(false);
+
     return (
         <>
             {isEditable &&
                 (<div>head bricks component</div>)
             }
-            <Head isEditable={isEditable} schemeId={0} />
+            <Head isEditable={isEditable} isEditing={isEditing} setIsEditing={setIsEditing}/>
 
             {/* TODO: add container*/}
             {component}

@@ -3,29 +3,35 @@ import { ReactComponent as EditIcon } from "../../../../../../static/images/icon
 import { Typography, Button } from "../../../../../components/ui";
 import cls from 'classnames';
 import cx from './index.module.scss';
-import { NavLink } from "react-router-dom";
 
-interface IProps{
+interface IProps {
     isEditable: boolean,
-    schemeId: number,
+    isEditing: boolean,
+    setIsEditing: (val: boolean) => void,
 }
 
-export default function Head({isEditable, schemeId}: IProps) {
-  return (
-    <div className={cls(cx.wrapper, {
-        [cx.isEditable]: isEditable,
-    })}>
-    <Typography variant="h1">страница бренда</Typography>
-    {
-        isEditable && (
-            <div className={cx.btnsList}>
-                <Button viewType="iconBtn"><EditIcon /></Button>
-                {/* TODO: релогин */}
-                <Button>выход</Button>
-                <NavLink to={`/crm/brand/${schemeId}/?isEditable=false`}><Button>превью</Button></NavLink>
-            </div>
-        )
+export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
+    const onEditClick = () => {
+        setIsEditing(true);
     }
-    </div>
-  )
+
+    return (
+        <div className={cls(cx.wrapper, {
+            [cx.isEditable]: isEditable,
+        })}>
+
+            <Typography variant="h1">страница бренда</Typography>
+
+            {
+                isEditable && !isEditing ? (<Button onClick={onEditClick}>редактировать</Button>) : (
+                    <div className={cx.btnsList}>
+                        <Button>отменить</Button>
+                        <Button>сохранить</Button>
+                        <Button viewType="iconBtn"><EditIcon /></Button>
+                    </div>
+                )
+            }
+
+        </div>
+    )
 }
