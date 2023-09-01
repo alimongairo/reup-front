@@ -10,7 +10,7 @@ const MyButton = ({ children, viewType = "default", ...props }: IProps) => {
   const { variant = "outlined", size = "medium" } = props;
 
   return (
-    <Button {...props} className={`button ${viewType === "iconBtn" && "icon"}`} variant={variant} size={size} >
+    <Button {...props} className={`${props.className} button ${viewType === "iconBtn" && "icon"}`} variant={variant} size={size} >
       {children}
     </Button>
   )

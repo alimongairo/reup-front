@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image } from '../../../../ui';
+import { Button, Image } from '../../../../ui';
 import cls from 'classnames';
 import cx from './index.module.scss';
 
@@ -15,7 +15,7 @@ export default function EditableImage({ isEditing, className, src = process.env.
     <div className={cls(className, cx.editableImage)}>
       <Image src={src} alt={alt} />
       {
-        isEditing && <div>edit btn</div>
+        isEditing && <Button className={cx.button}>добавить фото / видео</Button>
       }
     </div>
   )
