@@ -1,4 +1,4 @@
-import React, { ReactHTMLElement, ReactNode } from 'react';
+import React from "react";
 import { ReactComponent as LogoIcon } from "../../../../static/images/icons/logo.svg";
 import { ReactComponent as SearchIcon } from "../../../../static/images/icons/loype.svg";
 import { ReactComponent as HeartIcon } from "../../../../static/images/icons/heart.svg";
@@ -8,13 +8,13 @@ import { ReactComponent as CRMIcon } from "../../../../static/images/icons/crm.s
 import { ReactComponent as MarketIcon } from "../../../../static/images/icons/market.svg";
 import cx from './index.module.scss';
 import cls from 'classnames';
-import { confReturner } from "./constants";
+import { Roles, confReturner } from "../../../routes/constants";
 import { NavLink } from "react-router-dom";
 import { strokeColorReturner } from "../../../helpers";
 import { uid } from 'react-uid';
 
 interface IProps {
-  type: number,
+  type: Roles,
 }
 
 interface IPropsNavLinkIcon {
@@ -39,7 +39,7 @@ const NavLinkIcon = ({ to, isFill = true, children, ...props }: IPropsNavLinkIco
 
 export default function Header({ type }: IProps) {
 
-  const config = confReturner(type || 0);
+  const config = confReturner(type || null);
 
   return (
     <div className={cx.header}>

@@ -1,4 +1,3 @@
-import React from 'react'
 import {Typography, TypographyProps} from '@mui/material';
 import cx from './index.module.scss';
 

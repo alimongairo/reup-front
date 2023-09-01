@@ -1,26 +1,26 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ErrorPage, MainPage, EditPage, BrandPage } from "../pages";
+import { ErrorPage, MainPage, EditPage, BrandPage, StockPage } from "../pages";
+import routes from "../routes/config";
 
 export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <MainPage />
-    },
-    {
-        path: "/crm",
-        element: <EditPage />
-    },
-    {
-        path: "/crm",
-        element: <EditPage />
-    },
-    // /crm/scheme/1
-    {
-        path: "/crm/brand/:schemeId",
-        element: <BrandPage />
-    },
     {
         path: "*",
         element: <ErrorPage />
     },
+    {
+        path: routes.main,
+        element: <MainPage />
+    },
+    {
+        path: routes.crm,
+        element: <EditPage />
+    },
+    {
+        path: routes.brand(':schemeId'),
+        element: <BrandPage />
+    },
+    {
+        path: routes.stock,
+        element: <StockPage />
+    }
 ])

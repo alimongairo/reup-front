@@ -1,85 +1,88 @@
-/*
-  0 - хедер владельца бренда в CRM
-  1 - хедер владельца бренда в маркетплейсе
-  2 - хедер покупателя
-  */
+import routes from "./config";
+
+export enum Roles {
+    brand = 'brand',  // владельца бренда в CRM
+    seller = 'seller',  // владельца бренда в маркетплейсе
+    customer = 'customer',  // покупателя
+}
+
  
 //   TODO: add correct links
   const CRMLinks = [
     {
       name: "страница бренда",
-      link: "/crm",
+      link: routes.crm,
     },
     {
       name: "склад",
-      link: "/crm",
+      link: routes.stock,
     },
     {
       name: "заказы",
-      link: "/crm",
+      link: routes.main,
     },
     {
       name: "финансы",
-      link: "/crm",
+      link: routes.main,
     },
 ];
 
 const marketLinks = [
     {
         name: "локальные бренды",
-        link: "/",
+        link: routes.main,
     },
     {
         name: " селективные винтажки",
-        link: "/",
+        link: routes.main,
     },
     {
         name: "апсайкл",
-        link: "/",
+        link: routes.main,
     },
     {
         name: "обувь",
-        link: "/",
+        link: routes.main,
     },
     {
         name: "украшения",
-        link: "/",
+        link: routes.main,
     },
     {
         name: "sale",
-        link: "/",
+        link: routes.main,
     },
 ];
 
-const type0Conf = {
+const brandConf = {
     list: CRMLinks,
     isSearch: false,
     typeBtn: "CRM",
     isActions: false,
 };
 
-const type1Conf = {
+const sellerConf = {
     list: marketLinks,
     isSearch: true,
     typeBtn: "market",
     isActions: true,
 };
 
-const type2Conf = {
+const customerConf = {
     list: marketLinks,
     isSearch: true,
     typeBtn: false,
     isActions: true,
 };
 
-function confReturner(type: number) {
+function confReturner(type: Roles | null) {
     switch (type) {
-        case 0:
-            return type0Conf;
-        case 1: 
-            return type1Conf;
-        case 2:
-            return type2Conf;
+        case Roles.brand:
+            return brandConf;
+        case Roles.seller: 
+            return sellerConf;
+        case Roles.customer:
+            return customerConf;
         default:
             break;
     }

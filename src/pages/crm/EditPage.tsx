@@ -1,4 +1,3 @@
-import React from 'react'
 import { CRMLayout } from "../../layouts"
 import { Typography } from "../../components/ui"
 
