@@ -35,18 +35,17 @@
         gap: 1px;
         background: $color-black;
 
-        .bricks, .btns >*{
+        .bricks,
+        .main {
             padding: 32px $containerPadding-desktop;
+        }
+
+        .bricks {
             background: $color-snow;
         }
-        
-        .btns{
-            >*{
-                display: block;
-            }
-            >*:first-child{
-                background: $color-primary;
-            }
+
+        .main {
+            background: $color-primary;
         }
     }
 

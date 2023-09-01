@@ -26,7 +26,6 @@ export default function SchemeLayout({ isEditing }: Iprops) {
               <li><p>text</p></li>
               <li><p>text</p></li>
             </ul>
-            <Button variant="contained" endIcon={<RightArrowIcon />}>больше</Button>
           </div>
         </div>
       </div>

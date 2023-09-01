@@ -22,15 +22,9 @@ export default function SchemeLayout({ isEditing }: Iprops) {
           <Typography variant="h3">категории товаров</Typography>
           <Button variant="contained" endIcon={<RightArrowIcon />}>больше</Button>
         </div>
-        <div className={cx.btns}>
-          <AnchorLink href="#products">
-            <Typography variant="h3">кнопка 1</Typography>
-            <Button variant="contained" endIcon={<RightArrowIcon />}>перейти к товарам</Button>
-          </AnchorLink>
-          <AnchorLink href="#products">
-            <Typography variant="h3">кнопка 1</Typography>
-            <Button variant="contained" endIcon={<RightArrowIcon />}>перейти к товарам</Button>
-          </AnchorLink>
+        <div className={cx.main}>
+        <Typography variant="h3">Заголовок 1</Typography>
+          <p>текстовый блок</p> 
         </div>
       </div>
 
