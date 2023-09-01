@@ -1,9 +1,15 @@
 import React from 'react'
 import cx from './index.module.scss';
-import { Button, Image, Typography } from "../../../../../components/ui";
+import { Button, Image, Typography } from "../../../../ui";
 import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/right.svg';
+import { EditableImage } from "../../components";
 
-export default function Layout() {
+interface Iprops{
+  isEditing: boolean,
+}
+
+// TODO: компонент картинки или добавления is
+export default function SchemeLayout({isEditing}: Iprops) {
   return (
     <div className={cx.wrapper}>
       <div className={cx.top}>
@@ -12,7 +18,8 @@ export default function Layout() {
           <p>Текст описание от бренда</p>
         </div>
         <div className={cx.pic}>
-          <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image} />
+          {/* <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image} /> */}
+          <EditableImage className={cx.image} isEditing={isEditing}/>
           <div className={cx.links}><ul className={cx.list}><li><p>text</p></li><li><p>text</p></li><li><p>text</p></li></ul><Button variant="contained" endIcon={<RightArrowIcon />}>больше</Button></div>
         </div>
       </div>
@@ -23,15 +30,15 @@ export default function Layout() {
       </div>
 
       <div className={cx.gallery}>
-        <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image} />
-        <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image} />
-        <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image} />
-        <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image} />
+      <EditableImage className={cx.image} isEditing={isEditing}/>
+      <EditableImage className={cx.image} isEditing={isEditing}/>
+      <EditableImage className={cx.image} isEditing={isEditing}/>
+      <EditableImage className={cx.image} isEditing={isEditing}/>
         <div className={cx.title}>
           <Typography variant="h3">заголовок</Typography>
           <p>основной текст</p>
         </div>
-        <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image} />
+        <EditableImage className={cx.image} isEditing={isEditing}/>
 
       </div>
 

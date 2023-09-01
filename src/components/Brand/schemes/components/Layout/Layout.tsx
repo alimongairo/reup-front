@@ -5,10 +5,12 @@ import cx from './index.module.scss';
 interface IProps {
     isEditable: boolean,
     component: ReactNode,
+    isEditing: boolean,
+    setIsEditing: (val: boolean) => void,
 }
 
-export default function Layout({ isEditable, component }: IProps) {
-    const [isEditing, setIsEditing] = useState<boolean>(false);
+export default function Layout({ isEditable, component, isEditing, setIsEditing }: IProps) {
+    
 
     return (
         <>

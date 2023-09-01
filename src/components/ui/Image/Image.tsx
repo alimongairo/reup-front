@@ -7,7 +7,7 @@ import cx from './index.module.scss';
 interface IProps {
     alt: string,
     src: string | undefined,
-    className: string | undefined,
+    className?: string ,
 }
 
 // TODO: we can create trackWindowScroll in Gallery (visible on load)
