@@ -1,9 +1,13 @@
 import React from 'react'
+import SchemeLayout from "../SchemeLayout/SchemeLayout"
 
-type Props = {}
+interface IProps{
+  isEditing: boolean,
+}
 
-export default function EditablePage({}: Props) {
+
+export default function EditablePage({isEditing }: IProps) {
   return (
-    <div>EditablePage3</div>
+    <SchemeLayout isEditing={isEditing}/>
   )
 }

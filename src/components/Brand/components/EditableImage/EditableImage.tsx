@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Image } from '../../../../ui';
+import { Button, Image } from '../../../ui';
 import cls from 'classnames';
 import cx from './index.module.scss';
 

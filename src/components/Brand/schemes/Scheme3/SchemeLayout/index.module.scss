@@ -1,0 +1,90 @@
+@import "../../../../../styles/vars.scss";
+@import "../../../../../styles/mixins.scss";
+
+.wrapper {
+    @include compensatePadding-desktop();
+
+    .top {
+        height: 653px;
+        display: flex;
+        align-items: stretch;
+        background: $color-gray-2;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background: $color-black;
+            position: absolute;
+            left: 0;
+            top: 60%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .title {
+            padding: $containerPadding-desktop;
+            padding-top: 27rem;
+            width: 33%;
+            flex-shrink: 0;
+        }
+
+        .pic {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            position: relative;
+
+            &::before {
+                content: "";
+                height: 100%;
+                width: 1px;
+                background: $color-black;
+                position: absolute;
+                left: 50%;
+                top: 0%;
+                z-index: 2;
+                pointer-events: none;
+            }
+
+            .image{
+                flex-grow: 1;
+            }
+
+            .links {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 50px;
+                background: $color-snow;
+
+                .list{
+                    display: flex;
+                    li{
+                        margin-right: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .banner{
+        background: $color-primary;
+        padding: 32px $containerPadding-desktop;
+        line-height: 0;
+    }
+
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 400px);
+        gap: 1px;
+        background: $color-black;
+        .title{
+            background: $color-snow;
+            padding: 32px $containerPadding-desktop;
+        }
+    }
+
+}

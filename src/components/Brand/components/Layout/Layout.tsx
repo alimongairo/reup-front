@@ -18,6 +18,8 @@ export default function Layout({ isEditable, component, isEditing, setIsEditing 
 
             {/* TODO: add container*/}
             {component}
+
+            <div id="products">products list</div>
         </>
     )
 }

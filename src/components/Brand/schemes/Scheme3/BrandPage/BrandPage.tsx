@@ -1,7 +1,9 @@
 import React from 'react'
+import SchemeLayout from "../SchemeLayout/SchemeLayout";
 
+//TODO: страница отображения бренда на самом сайте
 export default function BrandPage() {
   return (
-    <div>BrandPage3</div>
+    <SchemeLayout isEditing={false}/>
   )
 }
