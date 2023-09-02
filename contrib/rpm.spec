@@ -28,7 +28,6 @@ Requires: nodejs == 2:16.20.2
 %setup -T -D -qa 1
 
 %install
-ls contrib
 %{__install} -D -m 755 contrib/reup-frontend.service %{buildroot}/%{_unitdir}/reup-frontend.service
 %{__mkdir_p} %{buildroot}/usr/local/etc/reup-frontend
 
