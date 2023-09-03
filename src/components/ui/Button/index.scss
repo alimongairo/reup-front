@@ -81,6 +81,7 @@
 
             svg {
                 fill: $color-snow;
+                stroke: $color-snow;
             }
         }
 
@@ -137,8 +138,70 @@
             fill: $color-snow;
             stroke: $color-snow;
         }
+
+        &:hover,
+        &:active {
+            border: 1px solid $color-snow;
+            color: $color-snow;
+            text-shadow: 0 0 .65px $color-snow, 0 0 .65px $color-snow;
+
+            svg {
+                fill: $color-snow;
+                stroke: $color-snow;
+            }
+        }
+
+        &:hover {
+            background: $color-primary-light;
+            border: 1px solid $color-primary-light;
+        }
+
+        &:active {
+            background: $color-primary;
+            border: 1px solid $color-primary;
+        }
+
+
+        &.MuiButton-contained {
+
+            &:hover {
+                border: none;
+                background: none;
+                color: $color-primary-light;
+
+                >* {
+                    color: $color-primary-light;
+                }
+
+                svg {
+                    fill: $color-primary-light;
+                    stroke: $color-primary-light;
+                }
+            }
+
+            &:active {
+                background: none;
+                color: $color-primary;
+
+                >* {
+                    color: $color-primary;
+                }
+
+
+                svg {
+                    fill: $color-primary;
+                    stroke: $color-primary;
+                }
+            }
+        }
     }
 
 
+    // ----------- icon -----------
+    &.icon-cross {
+        svg {
+            height: 12px;
+        }
+    }
 
 }

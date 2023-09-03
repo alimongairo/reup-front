@@ -48,12 +48,26 @@
             background: $color-primary;
         }
 
-        .bricksList{
+        .bricksList {
             padding-top: 10px;
-            >*{
+
+            .brick {
                 margin-top: 20px;
-                &:not(:last-child){
+                padding-right: 28px;
+
+                &:not(:last-child) {
                     margin-right: 24px;
+                }
+
+                svg {
+                    position: absolute;
+                    top: 0;
+                    height: 100%;
+                    width: 12px;
+                    box-sizing: content-box;
+                    padding: 0 12px;
+                    right: 0;
+
                 }
             }
         }
