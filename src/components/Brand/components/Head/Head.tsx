@@ -25,11 +25,11 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
 
             {
                 isEditable
-                    ? (!isEditing ? (<Button onClick={onEditClick}>редактировать</Button>) : (
+                    ? (!isEditing ? (<Button onClick={onEditClick} colorM="black">редактировать</Button>) : (
                         <div className={cx.btnsList}>
-                            <Button>отменить</Button>
-                            <Button>сохранить</Button>
-                            <Button viewType="iconBtn"><EditIcon /></Button>
+                            <Button colorM="black">отменить</Button>
+                            <Button colorM="black">сохранить</Button>
+                            <Button colorM="black" viewType="iconBtn"><EditIcon /></Button>
                         </div>
                     )) 
                     : null

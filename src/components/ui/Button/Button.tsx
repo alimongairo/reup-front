@@ -4,11 +4,11 @@ import './index.scss';
 
 interface IProps extends ButtonProps {
   viewType?: "default" | "iconBtn",
-  colorM?: "white" | "black",
+  colorM?: "white" | "black" | "",
   iconName?: string,
 }
 
-const MyButton = ({ children, viewType = "default", colorM="black", iconName, ...props }: IProps) => {
+const MyButton = ({ children, viewType = "default", colorM="", iconName, ...props }: IProps) => {
   const { variant = "outlined", size = "medium" } = props;
 
   return (

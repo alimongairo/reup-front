@@ -27,7 +27,7 @@ const Slider = ({ slides, isEditing }: IProps) => {
         <Typography variant="h2" className={cx.brandName}>
           {slides[0].title || 'Название бренда'}
         </Typography>
-        <Button variant="contained" endIcon={<RightArrowIcon />} onClick={() => setActiveSlide(1)} className={cls(cx.nextBtb, cx.btn)}><Typography variant="h2" >о нас</Typography></Button>
+        <Button variant="contained" endIcon={<RightArrowIcon />} onClick={() => setActiveSlide(1)} className={cls(cx.nextBtb, cx.btn)} colorM="black"><Typography variant="h2" >о нас</Typography></Button>
       </div>
 
       <div className={cls(cx.slide, { [cx.active]: activeSlide === 1 })}>

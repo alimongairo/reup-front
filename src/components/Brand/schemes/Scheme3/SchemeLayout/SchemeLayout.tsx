@@ -32,7 +32,7 @@ export default function SchemeLayout({ isEditing }: Iprops) {
 
       <div className={cx.banner}>
         <Typography variant="h2">создай свой уникальный образ вместе с Balenciaga</Typography>
-        <Button variant="contained" endIcon={<RightArrowIcon />}>перейти к товарам</Button>
+        <Button variant="contained" endIcon={<RightArrowIcon />} colorM="black">перейти к товарам</Button>
       </div>
 
       <div className={cx.gallery}>
