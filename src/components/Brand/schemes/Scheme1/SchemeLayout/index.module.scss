@@ -47,6 +47,16 @@
         .main {
             background: $color-primary;
         }
+
+        .bricksList{
+            padding-top: 10px;
+            >*{
+                margin-top: 20px;
+                &:not(:last-child){
+                    margin-right: 24px;
+                }
+            }
+        }
     }
 
     .gallery {

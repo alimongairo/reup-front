@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cx from './index.module.scss';
 import { Button, Typography } from "../../../../ui";
 import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/right.svg';
+import { ReactComponent as CrossIcon } from '../../../../../../static/images/icons/cross.svg';
 import { EditableImage, Slider, ISlide } from "../../../components";
+import { uid } from 'react-uid';
 
 interface Iprops {
   isEditing: boolean,
@@ -21,6 +23,9 @@ export default function SchemeLayout({ isEditing }: Iprops) {
     },
   ];
 
+  const categories = Array(10).fill("category");
+  const [bricks, setBricks] = useState(categories);
+
   return (
     <div className={cx.wrapper}>
 
@@ -30,6 +35,16 @@ export default function SchemeLayout({ isEditing }: Iprops) {
         <div className={cx.bricks}>
           <Typography variant="h3">категории товаров</Typography>
           <Button variant="contained" endIcon={<RightArrowIcon />}>больше</Button>
+
+          <div className={cx.bricksList}>
+            {
+              bricks.map((item, index) => (
+                <Button key={uid(item, index)}>{item}<CrossIcon onClick={() => console.log('remove')}/></Button>
+              )
+              )}
+
+          </div>
+
         </div>
         <div className={cx.main}>
           <Typography variant="h3">Заголовок 1</Typography>
