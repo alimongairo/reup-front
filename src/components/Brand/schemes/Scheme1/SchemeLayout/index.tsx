@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import cx from './index.module.scss';
 import { Button, Typography } from "../../../../ui";
-import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/right.svg';
+import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
 import { ReactComponent as CrossIcon } from '../../../../../../static/images/icons/cross.svg';
 import { EditableImage, Slider, ISlide } from "../../../components";
 import { uid } from 'react-uid';

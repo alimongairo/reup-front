@@ -3,7 +3,7 @@ import { Head } from "..";
 import cx from './index.module.scss';
 import ProductItem from "../../../ProductItem";
 import { uid } from "react-uid";
-import FiltersImg from '../../../../../static/images/others/filters.png';
+import FiltersImg from '../../../../../static/images/crm/filters.png';
 import { Image } from "../../../ui";
 
 interface IProps {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Typography } from "../../../ui";
 import { EditableImage } from "..";
-import { ReactComponent as RightArrowIcon } from '../../../../../static/images/icons/arrows/right.svg';
+import { ReactComponent as RightArrowIcon } from '../../../../../static/images/icons/arrows/default.svg';
 import cls from 'classnames';
 import cx from './index.module.scss';
 

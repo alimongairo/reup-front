@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from './index.module.scss';
 import { Button, Image, Typography } from "../../../../ui";
-import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/right.svg';
+import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
 import { EditableImage } from "../../../components";
 
 interface Iprops {
