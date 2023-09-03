@@ -1,6 +1,10 @@
 import React, { useState, ReactNode } from 'react';
 import { Head } from "..";
 import cx from './index.module.scss';
+import ProductItem from "../../../ProductItem/ProductItem";
+import { uid } from "react-uid";
+import FiltersImg from '../../../../../static/images/others/filters.png';
+import { Image } from "../../../ui";
 
 interface IProps {
     isEditable: boolean,
@@ -10,19 +14,28 @@ interface IProps {
 }
 
 export default function Layout({ isEditable, component, isEditing, setIsEditing }: IProps) {
-    
+    const productsPlug = Array(27).fill(null);
 
     return (
         <>
-        {
-            isEditable && <Head isEditable={isEditable} isEditing={isEditing} setIsEditing={setIsEditing}/>
-        }
-            
+            {
+                isEditable && <Head isEditable={isEditable} isEditing={isEditing} setIsEditing={setIsEditing} />
+            }
 
-            {/* TODO: add container*/}
+
             {component}
 
-            <div id="products">products list</div>
+            <div id="products" className={cx.products}>
+                <Image src={FiltersImg} className={cx.filters} />
+                <div className={cx.list}>
+
+                    {
+                        productsPlug.map((_, index) => <ProductItem key={uid(index)} />)
+                    }
+
+                </div>
+            </div>
+
         </>
     )
 }

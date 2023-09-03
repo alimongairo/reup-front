@@ -57,8 +57,7 @@
         height: fit-content;
 
         svg {
-            width: 18px;
-            height: auto;
+            height: 18px;
         }
 
     }
@@ -201,6 +200,12 @@
     &.icon-cross {
         svg {
             height: 12px;
+        }
+    }
+
+    &.icon-fav{
+        svg{
+            height: 24px;
         }
     }
 

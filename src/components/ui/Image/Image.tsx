@@ -5,14 +5,14 @@ import cls from "classnames";
 import cx from './index.module.scss';
 
 interface IProps {
-    alt: string,
-    src: string | undefined,
+    alt?: string,
+    src?: string | undefined,
     className?: string ,
 }
 
 // TODO: we can create trackWindowScroll in Gallery (visible on load)
 export default function Image(props: IProps) {
-    const { alt, src = "", className } = props;
+    const { alt = "placeholder", src = process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE, className } = props;
 
     return (
         <div className={cls(cx.image, className)}>

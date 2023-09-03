@@ -1,0 +1,58 @@
+@import '../../styles/vars.scss';
+
+.product {
+    display: flex;
+    flex-direction: column;
+
+    .image {
+        position: relative;
+        width: 100%;
+       flex-grow: 1;
+        margin-bottom: 8px;
+
+        .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .fav {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 2;
+        }
+    }
+
+
+    .info {
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .sub {
+            margin-bottom: 16px;
+        }
+
+        .ftr {
+            display: flex;
+            border-top: 1px solid $color-black;
+
+            button {
+                margin-top: -1px;
+            }
+
+            p {
+                font-size: 20px;
+                font-weight: bold;
+                align-self: center;
+                margin-left: 12px;
+            }
+        }
+    }
+}
