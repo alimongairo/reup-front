@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as EditIcon } from "../../../../../static/images/icons/edit.svg";
-import { Typography, Button } from "../../../../components/ui";
+import { Typography, Button } from "../../../ui";
 import cls from 'classnames';
 import cx from './index.module.scss';
 

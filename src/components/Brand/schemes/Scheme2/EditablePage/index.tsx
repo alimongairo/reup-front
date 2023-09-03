@@ -1,5 +1,5 @@
 import React from 'react'
-import SchemeLayout from "../SchemeLayout/SchemeLayout"
+import SchemeLayout from "../SchemeLayout"
 
 interface IProps{
   isEditing: boolean,
