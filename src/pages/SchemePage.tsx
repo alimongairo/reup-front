@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 const schemes = [<Scheme1 key={0} />, <Scheme2 key={1} />, <Scheme3 key={2} />];
 
-export default function BrandPage() {
+export default function SchemePage() {
     const { schemeId } = useParams();
     const CurrentScheme = schemes[Number(schemeId)];
 

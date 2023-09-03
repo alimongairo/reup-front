@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ErrorPage, MainPage, BrandPage } from "../pages";
+import { ErrorPage, MainPage, SchemePage, SchemeSelectionPage } from "../pages";
 
 export const router = createBrowserRouter([
     {
@@ -7,13 +7,13 @@ export const router = createBrowserRouter([
         element: <MainPage />
     },
     {
-        path: "/crm/brand/:schemeId",
-        element: <BrandPage />
+        path: "/crm/scheme/:schemeId",
+        element: <SchemePage />
     },
-    // {
-    //     path: "/crm/brand",
-    //     element: <разводящая стр />
-    // },
+    {
+        path: "/crm/schemes",
+        element: <SchemeSelectionPage />
+    },
     {
         path: "*",
         element: <ErrorPage />

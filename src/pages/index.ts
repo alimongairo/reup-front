@@ -1,5 +1,6 @@
 import MainPage from "./MainPage";
 import ErrorPage from "./ErrorPage";
-import BrandPage from "./BrandPage.tsx";
+import SchemePage from "./SchemePage.tsx";
+import SchemeSelectionPage from "./SchemeSelectionPage.tsx";
 
-export {ErrorPage, MainPage, BrandPage};
+export {ErrorPage, MainPage, SchemePage, SchemeSelectionPage};
