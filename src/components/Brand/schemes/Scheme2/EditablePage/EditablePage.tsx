@@ -3,11 +3,12 @@ import SchemeLayout from "../SchemeLayout/SchemeLayout"
 
 interface IProps{
   isEditing: boolean,
+  isEditable: boolean,
 }
 
 
-export default function EditablePage({isEditing }: IProps) {
+export default function EditablePage({isEditing, isEditable }: IProps) {
   return (
-    <SchemeLayout isEditing={isEditing}/>
+    <SchemeLayout isEditing={isEditing} isEditable={isEditable}/>
   )
 }

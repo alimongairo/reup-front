@@ -14,7 +14,10 @@ export default function Layout({ isEditable, component, isEditing, setIsEditing 
 
     return (
         <>
-            <Head isEditable={isEditable} isEditing={isEditing} setIsEditing={setIsEditing}/>
+        {
+            isEditable && <Head isEditable={isEditable} isEditing={isEditing} setIsEditing={setIsEditing}/>
+        }
+            
 
             {/* TODO: add container*/}
             {component}

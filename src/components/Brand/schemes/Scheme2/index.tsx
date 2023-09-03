@@ -13,8 +13,8 @@ const Scheme2 = () => {
 
     const component = useWithEdit({
         editable: isEditable,
-        disableComponent: <BrandPage />,
-        editComponent: <EditableScheme isEditing={isEditing}/>,
+        disableComponent: <BrandPage isEditable={isEditable}/>,
+        editComponent: <EditableScheme isEditing={isEditing} isEditable={isEditable}/>,
     });
 
     return <Layout isEditable={isEditable} component={component} isEditing={isEditing} setIsEditing={setIsEditing}/>;
