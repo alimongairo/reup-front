@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
-// import Image from 'next/image';
-
-// import Heading from '@/components/common/Heading';
-// import Text from '@/components/common/Text';
-// import LinkWithArrow from '@/components/common/LinkWithArrow';
-// import Button from '@/components/common/Button';
-
-import cx from './index.module.scss';
 import { Button, Typography } from "../../../ui";
 import { EditableImage } from "..";
 import { ReactComponent as RightArrowIcon } from '../../../../../static/images/icons/arrows/right.svg';
+import cls from 'classnames';
+import cx from './index.module.scss';
 
 interface ISlide {
   title: string;
@@ -20,31 +13,30 @@ interface ISlide {
 
 interface IProps {
   slides: [ISlide, ISlide];
+  isEditing: boolean,
 }
 
-const Slider = ({ slides }: IProps) => {
+const Slider = ({ slides, isEditing }: IProps) => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   return (
     <div className={cx.wrapper}>
-      <div className={classNames(cx.slide, { [cx.active]: activeSlide === 0 })}>
-    
-          {/* TODO: correct this is Editing */}
-          <EditableImage isEditing={false} className={cx.image} />
-      
+
+      <div className={cls(cx.slide, { [cx.active]: activeSlide === 0 })}>
+        <EditableImage isEditing={isEditing} className={cx.image} />
         <Typography variant="h2" className={cx.brandName}>
           {slides[0].title || 'Название бренда'}
         </Typography>
-        <Button variant="contained" endIcon={<RightArrowIcon />} onClick={() => setActiveSlide(1)} className={cx.nextBtb}><Typography variant="h2" >о нас</Typography></Button>
+        <Button variant="contained" endIcon={<RightArrowIcon />} onClick={() => setActiveSlide(1)} className={cls(cx.nextBtb, cx.btn)}><Typography variant="h2" >о нас</Typography></Button>
       </div>
-      <div className={classNames(cx.slide, { [cx.active]: activeSlide === 1 })}>
-       
-          <EditableImage isEditing={false} className={cx.image}/>
-      
+
+      <div className={cls(cx.slide, { [cx.active]: activeSlide === 1 })}>
+        <EditableImage isEditing={isEditing} className={cx.image} />
         <Typography variant="h2" className={cx.brandName}>{slides[1].title}</Typography>
-        <Typography variant="h2">{slides[1].description || 'Описание бренда'}</Typography>
-        <Button variant="contained" endIcon={<RightArrowIcon />} onClick={() => setActiveSlide(0)} className={cx.backBtb}></Button>
+        <p className={cx.description}>{slides[1].description || 'Описание бренда'}</p>
+        <Button variant="contained" endIcon={<RightArrowIcon />} onClick={() => setActiveSlide(0)} className={cls(cx.backBtb, cx.btn)} colorM="white"></Button>
       </div>
+
     </div>
   );
 };

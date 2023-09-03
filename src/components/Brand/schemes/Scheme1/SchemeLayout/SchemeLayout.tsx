@@ -13,24 +13,18 @@ export default function SchemeLayout({ isEditing }: Iprops) {
   const slides: [ISlide, ISlide] = [
     {
       title:
-        '1 название бренда',
+        'название бренда',
     },
     {
       title: 'о нас',
-      description: 'о нас',
+      description: "Lorem ipsum dolor sit amet consectetur. In nulla nulla velit lacinia suscipit quisque nisi. Auctor cras mattis facilisis quam dui velit ultrices.",
     },
   ];
 
   return (
     <div className={cx.wrapper}>
-      {/* <div className={cx.top}>
-        <EditableImage className={cx.image} isEditing={isEditing} />
-        <Typography variant="h2" className={cx.title}>название бренда</Typography>
-      </div> */}
 
-
-      <Slider slides={slides} />
-
+      <Slider slides={slides} isEditing={isEditing} />
 
       <div className={cx.links}>
         <div className={cx.bricks}>
@@ -51,7 +45,6 @@ export default function SchemeLayout({ isEditing }: Iprops) {
           <Typography variant="h3">заголовок</Typography>
           <p>основной текст</p>
         </div>
-
       </div>
 
     </div>

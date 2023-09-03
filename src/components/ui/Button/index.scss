@@ -4,36 +4,16 @@
     font-family: "Gilroy", "sans-serif";
     border-radius: 0;
     text-transform: lowercase;
-    color: $color-black;
     border: 1px solid $color-black;
     line-height: 1;
     min-width: fit-content;
 
-    &:hover,
-    &:active {
-        border: 1px solid $color-black;
-        color: $color-snow;
-        text-shadow: 0 0 .65px $color-snow, 0 0 .65px $color-snow;
-
-        svg {
-            fill: $color-snow;
-        }
+    >* {
+        margin-bottom: 0;
+        line-height: 1;
     }
 
-    &:hover {
-        background: $color-primary-light;
-        border: 1px solid $color-primary-light;
-    }
 
-    &:active {
-        background: $color-primary;
-        border: 1px solid $color-primary;
-    }
-
-    svg {
-        fill: $color-black;
-        stroke: $color-black;
-    }
 
     &.Mui-disabled {
         background: $color-gray-6;
@@ -69,38 +49,96 @@
         }
     }
 
-    &.MuiButton-contained{
+    &.MuiButton-contained {
         padding: 0;
         border: 0;
         box-shadow: none;
         background: none;
         height: fit-content;
 
-        svg{
+        svg {
             width: 18px;
             height: auto;
         }
-        &:hover{
-            background: none;
-            color: $color-primary-light;
-            text-shadow: 0 0 .65px $color-primary-light, 0 0 .65px $color-primary-light;
-            
-            svg{
-                fill: $color-primary-light;
-                stroke: $color-primary-light;
+
+    }
+
+
+    // ----------- color -----------
+    &.black {
+        color: $color-black;
+
+        svg {
+            fill: $color-black;
+            stroke: $color-black;
+        }
+
+        &:hover,
+        &:active {
+            border: 1px solid $color-black;
+            color: $color-snow;
+            text-shadow: 0 0 .65px $color-snow, 0 0 .65px $color-snow;
+
+            svg {
+                fill: $color-snow;
             }
         }
 
-        &:active{
-            background: none;
-            color: $color-primary;
-            text-shadow: 0 0 .65px $color-primary, 0 0 .65px $color-primary;
+        &:hover {
+            background: $color-primary-light;
+            border: 1px solid $color-primary-light;
+        }
 
-            svg{
-                fill: $color-primary;
-                stroke: $color-primary;
+        &:active {
+            background: $color-primary;
+            border: 1px solid $color-primary;
+        }
+
+
+        &.MuiButton-contained {
+
+            &:hover {
+                border: none;
+                background: none;
+                color: $color-primary-light;
+
+                >* {
+                    color: $color-primary-light;
+                }
+
+                svg {
+                    fill: $color-primary-light;
+                    stroke: $color-primary-light;
+                }
             }
+
+            &:active {
+                background: none;
+                color: $color-primary;
+
+                >* {
+                    color: $color-primary;
+                }
+
+
+                svg {
+                    fill: $color-primary;
+                    stroke: $color-primary;
+                }
+            }
+        }
+
+    }
+
+    &.white {
+        color: $color-snow;
+
+        svg {
+            fill: $color-snow;
+            stroke: $color-snow;
         }
     }
+
+
 
 }
