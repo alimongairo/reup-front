@@ -35,7 +35,7 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
                         <div className={cx.btnsList}>
                             <Button colorM="black">отменить</Button>
                             <Button colorM="black">сохранить</Button>
-                            <Button colorM="black" viewType="iconBtn" onClick={toggleMenu}><EditIcon /></Button>
+                            <Button colorM="black" viewType="iconBtn" onClick={toggleMenu} isActive={visibleMenu}><EditIcon /></Button>
                             <Menu visible={visibleMenu} />
                         </div>
                     ))

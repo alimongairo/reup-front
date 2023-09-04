@@ -73,7 +73,8 @@
         }
 
         &:hover,
-        &:active {
+        &:active,
+        &.active {
             border: 1px solid $color-black;
             color: $color-snow;
             text-shadow: 0 0 .65px $color-snow, 0 0 .65px $color-snow;
@@ -89,9 +90,8 @@
             border: 1px solid $color-primary-light;
         }
 
-        &:active {
+        &:active, &.active {
             background: $color-primary;
-            border: 1px solid $color-primary;
         }
 
 
