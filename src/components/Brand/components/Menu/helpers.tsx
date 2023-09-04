@@ -27,4 +27,6 @@ export interface IMenuContext {
   updateData: (data: TSchemeData) => void;
 }
 
+// В контекст записывается активное окно
+// Сами данные тоже нужно как-то собирать и где-то хранить, чтобы отправлять готовый объект по кнопочке "сохранить" или же ничего не отправлять по кнопочке "отмена"
 export const MenuContext = createContext<IMenuContext | null>(null);
