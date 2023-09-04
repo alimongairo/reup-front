@@ -1,0 +1,10 @@
+.wrapper {
+    display: grid;
+    justify-content: flex-start;
+    gap: 8px;
+
+    .link {
+        width: fit-content;
+        font-weight: 500;
+    }
+}

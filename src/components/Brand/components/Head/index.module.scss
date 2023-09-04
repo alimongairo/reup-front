@@ -15,6 +15,7 @@
         .btnsList {
             display: flex;
             flex-wrap: nowrap;
+            position: relative;
 
             button {
                 &:first-child {

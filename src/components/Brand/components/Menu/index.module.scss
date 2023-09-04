@@ -1,0 +1,33 @@
+@import '../../../../styles/vars.scss';
+
+.wrapper {
+    background: $color-gray-4;
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    z-index: 100;
+    width: 591px;
+    max-width: calc(100vw - $containerPadding-desktop);
+    max-height: 500px;
+    padding: 32px 23px;
+    border: 1px solid $color-black;
+
+    &.visible {
+        display: flex;
+    }
+}
+
+.link {
+    align-items: center;
+}
+
+.text {
+    display: inline-block;
+    max-width: 200px;
+}
+
+.title {
+    text-align: right;
+}
