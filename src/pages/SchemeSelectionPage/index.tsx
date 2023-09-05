@@ -36,7 +36,7 @@ export default function SchemeSelectionPage() {
                             schemes.map((item, index) => <Field key={uid(item.id, index)} isActive={item.id === activeScheme} title={item.title} onClick={() => onSchemeClick(item.id)} />)
                         }
                     </div>
-                    <Link to={`${ERoutes.CrmScheme}/${activeScheme}`}>
+                    <Link to={`${ERoutes.CrmScheme}/${activeScheme}/?isEditable=true`}>
                         <Button colorM="black" >выбрать</Button>
                     </Link>
 

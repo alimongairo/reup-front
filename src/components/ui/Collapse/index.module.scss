@@ -1,0 +1,46 @@
+.title,
+.content {
+  margin: 1rem 0;
+}
+
+.content {
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.moreText,
+.title {
+  cursor: pointer;
+}
+
+.moreText{
+  text-decoration: underline;
+}
+
+.minus {
+  position: absolute;
+  transition: 0.3s;
+}
+
+.collapseIcon {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+}
+
+.rotate {
+  transform: rotateZ(90deg);
+  &__180 {
+    transform: rotateZ(180deg);
+  }
+}
+
+.wrapper {
+  position: relative;
+  transition: 0.3s;
+}
+
+.icon {
+  width: 6px;
+  height: auto;
+}

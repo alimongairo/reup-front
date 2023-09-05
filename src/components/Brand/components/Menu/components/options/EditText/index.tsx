@@ -1,7 +1,16 @@
-import React from 'react'
+import { MenuContext } from "../../../helpers";
+import Container from '../../Container';
+import Options from './Options';
+import { useContext } from 'react';
 
-export default function EditText() {
+const EditText = () => {
+  const menuContext = useContext(MenuContext);
+
   return (
-    <div>EditText</div>
-  )
-}
+    <Container title="добавить текст" onBack={menuContext?.toHome}>
+      <Options />
+    </Container>
+  );
+};
+
+export default EditText;
