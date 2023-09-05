@@ -1,7 +1,18 @@
-import React from 'react'
+import { useContext } from 'react';
+import { MenuContext } from "../../../helpers";
+import { Container } from "..";
+import Options from "./Options";
 
-export default function ColorAndFamily() {
+
+const ColorAndFamily = () => {
+  const contextMenu = useContext(MenuContext);
   return (
-    <div>ColorAndFamily</div>
-  )
-}
+    <Container
+      title={'изменить цвет и шрифт текста'}
+      onBack={contextMenu?.toHome}
+    >
+      <Options />
+    </Container>
+  );
+};
+export default ColorAndFamily;

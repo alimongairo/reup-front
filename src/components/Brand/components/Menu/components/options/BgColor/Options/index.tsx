@@ -43,7 +43,8 @@ const Options = () => {
             name: "string",
             value: EColors.Black
         }
-    ]
+    ];
+    
     return (
         <div>
             {bgColors?.map((color, index) => (

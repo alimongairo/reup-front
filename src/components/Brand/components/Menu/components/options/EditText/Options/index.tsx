@@ -59,6 +59,7 @@ const Options = () => {
     value: "string",
     title: "string",
   }]
+
   return (
     <div>
       {editText?.map((field) => {

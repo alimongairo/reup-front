@@ -14,7 +14,7 @@ export default function Menu({ visible }: IProps) {
   const [activeMenu, setActiveMenu] = useState(ELabelsName.DefaultList);
   const DisplayComponent = menuMaps.get(activeMenu);
 
-  // TODO: mock 
+  // TODO: mock
   const schemeData = {
     editText: [{
       name: "string",
