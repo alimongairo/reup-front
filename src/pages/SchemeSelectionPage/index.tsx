@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Scheme1 from '../../../static/images/crm/schemes/scheme1.png';
 import Scheme2 from '../../../static/images/crm/schemes/scheme2.png';
 import Scheme3 from '../../../static/images/crm/schemes/scheme3.png';
+import { ERoutes } from "../../app/router/types";
 
 const schemes = [
     { id: 0, title: "шаблон / 1", img: Scheme1 },
@@ -35,7 +36,7 @@ export default function SchemeSelectionPage() {
                             schemes.map((item, index) => <Field key={uid(item.id, index)} isActive={item.id === activeScheme} title={item.title} onClick={() => onSchemeClick(item.id)} />)
                         }
                     </div>
-                    <Link to={`/crm/scheme/${activeScheme}`}>
+                    <Link to={`${ERoutes.CrmScheme}/${activeScheme}`}>
                         <Button colorM="black" >выбрать</Button>
                     </Link>
 

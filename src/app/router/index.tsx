@@ -1,21 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ErrorPage, MainPage, SchemePage, SchemeSelectionPage } from "../pages";
+import { ErrorPage, MainPage, SchemePage, SchemeSelectionPage } from "../../pages";
+import { ERoutes } from "./types";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
+        path: ERoutes.Default,
         element: <MainPage />
     },
     {
-        path: "/crm/scheme/:schemeId",
+        path: `${ERoutes.CrmScheme}/:schemeId`,
         element: <SchemePage />
     },
     {
-        path: "/crm/schemes",
+        path: ERoutes.CrmSchemesMain,
         element: <SchemeSelectionPage />
     },
     {
-        path: "*",
+        path: ERoutes.Error,
         element: <ErrorPage />
     },
 ])
