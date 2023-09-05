@@ -15,6 +15,7 @@
   overflow: auto;
 
   .back {
+    cursor: pointer;
     transform: rotateZ(180deg);
 
     svg {

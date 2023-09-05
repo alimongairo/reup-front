@@ -10,11 +10,11 @@ import {
   TSchemeData,
   TSchemeNum,
 } from './models';
-import {AppCategory, ColorAndFamily, EditText, BgColor} from "./components/options";
+import {AddCategory, ColorAndFamily, EditText, BgColor} from "./components/options";
 
 export const menuMaps = new Map<ELabelsName, ReactNode>([
   [ELabelsName.DefaultList, <DefaultMenu key={1} />],
-  [ELabelsName.AddCategory, <AppCategory key={2} />],
+  [ELabelsName.AddCategory, <AddCategory key={2} />],
   [ELabelsName.ColorAndFamily, <ColorAndFamily key={3} />],
   [ELabelsName.EditText, <EditText key={4} />],
   [ELabelsName.BgColor, <BgColor key={5} />],
