@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import {Collapse, Input, Divider} from '../../../../../../../ui';
+import { Collapse, Input, Divider } from '../../../../../../../ui';
 
 
 
@@ -17,8 +17,8 @@ interface IEditTextOption {
 }
 
 const EditTextOption = ({ title, name, value }: IEditTextOption) => {
-//   const dispatch = useAppDispatch();
-//   const editText = useAppSelector(brandSettingsTextSelector);
+  //   const dispatch = useAppDispatch();
+  //   const editText = useAppSelector(brandSettingsTextSelector);
 
   const onChange = (newValue: string) => {
     // const newData = editText.map((item) => {
@@ -51,10 +51,10 @@ const EditTextOption = ({ title, name, value }: IEditTextOption) => {
 };
 
 const Options = () => {
-//   const dispatch = useAppDispatch();
-//   const editText = useAppSelector(brandSettingsTextSelector);
-// TODO: mock
-const editText = [{
+  //   const dispatch = useAppDispatch();
+  //   const editText = useAppSelector(brandSettingsTextSelector);
+  // TODO: mock
+  const editText = [{
     name: "string",
     value: "string",
     title: "string",
