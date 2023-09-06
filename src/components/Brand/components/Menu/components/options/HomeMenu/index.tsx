@@ -56,7 +56,6 @@ const HomeMenu = () => {
                     <Button
                         key={uid(link.title, index)}
                         variant="contained"
-                        colorM="black"
                         endIcon={<ArrowIcon />}
                         className={cx.link}
                         onClick={link.onClick}

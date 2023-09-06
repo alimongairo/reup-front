@@ -27,8 +27,6 @@ export default function SchemeLayout({ isEditing }: Iprops) {
   const [bricks, setBricks] = useState(categories);
 
   const onBrickRemove = (index: number) => {
-
-    console.log(index)
     setBricks((prev) => prev.filter((_, i) => i !== index));
   }
 
@@ -40,12 +38,12 @@ export default function SchemeLayout({ isEditing }: Iprops) {
       <div className={cx.links}>
         <div className={cx.bricks}>
           <Typography variant="h3">категории товаров</Typography>
-          <Button variant="contained" endIcon={<RightArrowIcon />} colorM="black">больше</Button>
+          <Button variant="contained" endIcon={<RightArrowIcon />}>больше</Button>
 
           <div className={cx.bricksList}>
             {
               bricks.map((item, index) => (
-                <Button key={uid(item, index)} className={cx.brick} endIcon={isEditing ? <CrossIcon onClick={() => onBrickRemove(index)} /> : null} iconName="cross" colorM="black">{item}</Button>
+                <Button key={uid(item, index)} className={cx.brick} endIcon={isEditing ? <CrossIcon onClick={() => onBrickRemove(index)} /> : null} iconName="cross">{item}</Button>
               ))
             }
           </div>

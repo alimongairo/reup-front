@@ -4,6 +4,7 @@ import { Typography, Button } from "../../../ui";
 import { Menu } from "..";
 import cls from 'classnames';
 import cx from './index.module.scss';
+import Confirm from "../../../ui/Confirm";
 
 interface IProps {
     isEditable: boolean,
@@ -20,6 +21,24 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
         setIsEditing(true);
     }
 
+    const [isCancelOpen, setIsCancelOpen] = useState(false);
+    const [isSaveOpen, setIsSaveOpen] = useState(false);
+
+    const handleOpenCancelConfirm = () => {
+        setIsCancelOpen(true);
+    }
+
+    const handleCloseCancelConfirm = () => {
+        setIsCancelOpen(false);
+    }
+
+    const handleOpenSaveConfirm = () => {
+        setIsCancelOpen(true);
+    }
+
+    const handleCloseSaveConfirm = () => {
+        setIsCancelOpen(false);
+    }
 
     return (
         <div className={cls(cx.wrapper, {
@@ -31,16 +50,32 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
             {
                 isEditable
                     // TODO: return !isEditing
-                    ? (isEditing ? (<Button onClick={onEditClick} colorM="black">редактировать</Button>) : (
+                    ? (!isEditing ? (<Button onClick={onEditClick}  >редактировать</Button>) : (
                         <div className={cx.btnsList}>
-                            <Button colorM="black">отменить</Button>
-                            <Button colorM="black">сохранить</Button>
-                            <Button colorM="black" viewType="iconBtn" onClick={toggleMenu} isActive={visibleMenu}><EditIcon /></Button>
+                            <Button onClick={handleOpenCancelConfirm}>отменить</Button>
+                            <Button onClick={handleOpenSaveConfirm}>сохранить</Button>
+                            <Button viewType="iconBtn" onClick={toggleMenu} isActive={visibleMenu}><EditIcon /></Button>
                             <Menu visible={visibleMenu} />
                         </div>
                     ))
                     : null
             }
+
+            <Confirm
+                visible={isCancelOpen}
+                onClose={handleCloseCancelConfirm}
+                onSubmit={() => { }}
+            >
+                <div>Вы действительно хотите отменить изменения? Данное действие нельзя отменить.</div>
+            </Confirm>
+
+            <Confirm
+                visible={isSaveOpen}
+                onClose={handleCloseSaveConfirm}
+                onSubmit={() => { }}
+            >
+                <div>Проверьте ваши изменения, после подтверждения сохранения ваша страница будет обновлена!</div>
+            </Confirm>
 
         </div>
     )

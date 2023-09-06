@@ -37,7 +37,7 @@ export default function SchemeSelectionPage() {
                         }
                     </div>
                     <Link to={`${ERoutes.CrmScheme}/${activeScheme}/?isEditable=true`}>
-                        <Button colorM="black" >выбрать</Button>
+                        <Button>выбрать</Button>
                     </Link>
 
                 </div>

@@ -10,7 +10,7 @@ interface IProps extends ButtonProps {
   isActive?: boolean,
 }
 
-const MyButton = ({ children, viewType = "default", colorM = "", iconName, isActive = false, ...props }: IProps) => {
+const MyButton = ({ children, viewType = "default", colorM = "black", iconName, isActive = false, ...props }: IProps) => {
   const { variant = "outlined", size = "medium" } = props;
 
   return (

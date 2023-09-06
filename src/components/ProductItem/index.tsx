@@ -19,7 +19,7 @@ export default function ProductItem() {
                 <p className={cx.title}>Название</p>
                 <p className={cx.sub}>Бренд</p>
                 <div className={cx.ftr}>
-                    <Button colorM="black">в корзину</Button>
+                    <Button>в корзину</Button>
                     <p>7 500 ₽</p>
                 </div>
             </div>
