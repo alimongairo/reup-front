@@ -1,0 +1,92 @@
+@import "../../../../../styles/vars.scss";
+@import "../../../../../styles/mixins.scss";
+
+.wrapper {
+    @include compensatePadding-desktop();
+
+    .top {
+        height: 610px;
+        border-bottom: 1px solid $color-black;
+
+        .image {
+            height: 100%;
+        }
+    }
+
+    .logo {
+        height: 94px;
+        border-bottom: 1px solid $color-black;
+
+
+        &.isEditable {
+            .image {
+                height: 100%;
+                width: 36%;
+                margin: 0 auto;
+            }
+
+            button {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &:not(.isEditable) {
+            .image {
+                height: 100%;
+                align-items: center;
+
+                img {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .counter {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 623px;
+        border-bottom: 1px solid $color-black;
+        background: $color-black;
+        gap: 1px;
+
+        >* {
+            background: $color-snow;
+        }
+
+        .card {
+            padding: $containerPadding-desktop;
+
+            p {
+                margin-bottom: 32px;
+            }
+
+            .image {
+                width: 100%;
+                height: 382px;
+            }
+        }
+
+        .main{
+            display: flex;
+            flex-direction: column;
+            .image{
+                flex-grow: 1;
+                border-bottom: 1px solid $color-black;
+            }
+            .txt{
+                display: flex;
+                align-items: center;
+                padding: 32px $containerPadding-desktop;
+                min-height: 100px;
+                >*{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+
+    }
+}

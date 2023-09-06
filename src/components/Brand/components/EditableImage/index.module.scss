@@ -1,0 +1,22 @@
+@import '../../../../styles/vars.scss';
+
+.editableImage {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    div {
+        flex-grow: 1;
+    }
+
+    .button{
+        color: $color-primary;
+        border-color: $color-primary;
+        width: fit-content;
+        position: absolute;
+        top: $containerPadding-desktop;
+        left: $containerPadding-desktop;
+        right: $containerPadding-desktop;
+
+    }
+}

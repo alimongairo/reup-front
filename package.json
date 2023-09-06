@@ -14,16 +14,24 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.7",
     "@mui/styled-engine-sc": "^5.14.7",
+    "@types/react-lazy-load-image-component": "^1.5.3",
+    "classnames": "^2.3.2",
     "@reduxjs/toolkit": "^1.9.5",
     "react": "^18.2.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.15.0",
+    "react-uid": "^2.3.3",
     "styled-components": "^5.3.11",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-svgr": "^3.2.0"
   },
   "devDependencies": {
+    "@types/node": "^20.5.7",
     "@types/react": "^18.2.15",
+    "@types/react-anchor-link-smooth-scroll": "^1.0.2",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
@@ -31,6 +39,7 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "sass": "^1.66.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.9"
   }
