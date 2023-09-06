@@ -281,3 +281,10 @@ body {
 		display:none !important;
 	}
 }
+
+p{
+  font-size: 16px;
+  font-family: "Gilroy", "sans-serif";
+  letter-spacing: 1.12px;
+  line-height: 110%;
+}

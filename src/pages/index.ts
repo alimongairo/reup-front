@@ -1,7 +1,7 @@
 import MainPage from "./MainPage";
 import ErrorPage from "./ErrorPage";
-import EditPage from './crm/EditPage';
-import BrandPage from "./crm/BrandPage";
-import StockPage from "./crm/StockPage";
+import StockPage from "./StockPage";
+import SchemePage from "./SchemePage";
+import SchemeSelectionPage from "./SchemeSelectionPage";
 
-export {ErrorPage, MainPage, EditPage, BrandPage, StockPage};
+export {ErrorPage, MainPage, SchemePage, SchemeSelectionPage, StockPage};

@@ -9,3 +9,14 @@ declare module '*.svg' {
     const src: string
     export default src
 }
+
+declare module "*.png"{
+    import React = require('react')
+    export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>
+    const src: string
+    export default src
+};
+
+declare module "*.svg";
+declare module "*.jpeg";
+declare module "*.jpg";

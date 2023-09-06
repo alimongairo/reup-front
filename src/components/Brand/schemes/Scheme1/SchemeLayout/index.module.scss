@@ -1,0 +1,87 @@
+@import "../../../../../styles/vars.scss";
+@import "../../../../../styles/mixins.scss";
+
+@import "../../../../../styles/vars.scss";
+@import "../../../../../styles/mixins.scss";
+
+.wrapper {
+    @include compensatePadding-desktop();
+
+    .top {
+        height: 633px;
+        display: flex;
+        align-items: stretch;
+        position: relative;
+
+        .title {
+            position: absolute;
+            top: 30px;
+            padding: $containerPadding-desktop;
+            width: 100%;
+            text-align: center;
+        }
+
+        .image {
+            flex-grow: 1;
+        }
+    }
+
+    .links {
+        border-top: 1px solid $color-black;
+        border-bottom: 1px solid $color-black;
+        line-height: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background: $color-black;
+
+        .bricks,
+        .main {
+            padding: 32px $containerPadding-desktop;
+        }
+
+        .bricks {
+            background: $color-snow;
+        }
+
+        .main {
+            background: $color-primary;
+        }
+
+        .bricksList {
+            padding-top: 10px;
+
+            .brick {
+                margin-top: 20px;
+                padding-right: 28px;
+
+                &:not(:last-child) {
+                    margin-right: 24px;
+                }
+
+                svg {
+                    position: absolute;
+                    top: 0;
+                    height: 100%;
+                    width: 12px;
+                    box-sizing: content-box;
+                    padding: 0 12px;
+                    right: 0;
+
+                }
+            }
+        }
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr 1fr;
+        grid-template-rows: 357px;
+        gap: 12px;
+
+        .title {
+            background: $color-snow;
+            padding: 32px $containerPadding-desktop;
+        }
+    }
+}

@@ -6,3 +6,8 @@
     width: 100%;
     margin: 0 auto;
 }
+
+@mixin compensatePadding-desktop{
+    margin-left: calc(-1 * $containerPadding-desktop);
+    margin-right: calc(-1 * $containerPadding-desktop);
+}
