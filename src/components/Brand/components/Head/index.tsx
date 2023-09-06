@@ -50,7 +50,7 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
             {
                 isEditable
                     // TODO: return !isEditing
-                    ? (!isEditing ? (<Button onClick={onEditClick}  >редактировать</Button>) : (
+                    ? (isEditing ? (<Button onClick={onEditClick}  >редактировать</Button>) : (
                         <div className={cx.btnsList}>
                             <Button onClick={handleOpenCancelConfirm}>отменить</Button>
                             <Button onClick={handleOpenSaveConfirm}>сохранить</Button>
@@ -64,7 +64,12 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
             <Confirm
                 visible={isCancelOpen}
                 onClose={handleCloseCancelConfirm}
-                onSubmit={() => { }}
+                buttons={
+                    <>
+                        <Button onClick={() => { }}>отменить</Button>
+                        <Button onClick={handleCloseCancelConfirm}>назад</Button>
+                    </>
+                }
             >
                 <div>Вы действительно хотите отменить изменения? Данное действие нельзя отменить.</div>
             </Confirm>
@@ -72,7 +77,12 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
             <Confirm
                 visible={isSaveOpen}
                 onClose={handleCloseSaveConfirm}
-                onSubmit={() => { }}
+                buttons={
+                    <>
+                        <Button onClick={handleCloseSaveConfirm}>назад</Button>
+                        <Button onClick={() => { }}>сохранить</Button>
+                    </>
+                }
             >
                 <div>Проверьте ваши изменения, после подтверждения сохранения ваша страница будет обновлена!</div>
             </Confirm>

@@ -10,11 +10,11 @@ import cx from './index.module.scss';
 interface IProps {
   visible: boolean;
   onClose: () => void;
-  onSubmit: () => void;
   children: ReactNode;
+  buttons?: ReactNode;
 }
 
-const Confirm = ({ visible, onClose, onSubmit, children }: IProps) => {
+const Confirm = ({ visible, onClose, children, buttons }: IProps) => {
   useEffect(() => {
     if (visible) {
       document.body.style.overflow = 'hidden';
@@ -32,10 +32,14 @@ const Confirm = ({ visible, onClose, onSubmit, children }: IProps) => {
           </span>
           <div className={cx.content}>
             {children}
-            <div className={cx.btns}>
-              <Button onClick={onSubmit}>да</Button>
-              <Button onClick={onClose}>отмена</Button>
-            </div>
+            {
+              buttons && (
+                <div className={cx.btns}>
+                  {buttons}
+                </div>
+              )
+            }
+
           </div>
         </div>
         <span className={cx.closeMask} onClick={onClose}></span>
