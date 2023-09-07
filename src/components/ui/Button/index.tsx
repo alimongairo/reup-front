@@ -1,5 +1,4 @@
-import React from 'react'
-import { Button, ButtonProps } from '@mui/material';
+import { Button as MuiButton, ButtonProps } from '@mui/material';
 import cls from 'classnames';
 import './index.scss';
 
@@ -10,18 +9,18 @@ interface IProps extends ButtonProps {
   isActive?: boolean,
 }
 
-const MyButton = ({ children, viewType = "default", colorM = "black", iconName, isActive = false, ...props }: IProps) => {
+const Button = ({ children, viewType = "default", colorM = "black", iconName, isActive = false, ...props }: IProps) => {
   const { variant = "outlined", size = "medium" } = props;
 
   return (
-    <Button {...props} className={cls(props.className, "button", colorM, {
+    <MuiButton {...props} className={cls(props.className, "button", colorM, {
       "icon": viewType === "iconBtn",
       [`icon-${iconName}`]: iconName,
       ["active"]: isActive,
     })} variant={variant} size={size} >
       {children}
-    </Button>
+    </MuiButton>
   )
 }
 
-export default MyButton;
+export default Button;

@@ -1,8 +1,10 @@
-import { useMemo, useState } from 'react';
+import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 import cx from './index.module.scss';
+
 import TableRow, { StockItem } from './TableRow';
-import { Button, Typography } from '../ui';
-import SearchInput from '../ui/SearchInput/SearchInput';
+import { Button, Input, Typography } from '../ui';
+import { useNavigate } from 'react-router-dom';
+import { ERoutes } from '../../app/router/config';
 
 const data: StockItem[] = [
   {
@@ -32,7 +34,17 @@ const data: StockItem[] = [
 ];
 
 const StockLayout = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState('');
+
+  const handleClickAdd = useCallback(() => {
+    navigate(`${ERoutes.Product}/new`);
+  }, []);
+
+  const handleSearch = useCallback(
+    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setSearch(e.target.value);
+    }, []);
 
   const items = data.filter((el) =>
     el.name.toLowerCase().includes(search.toLowerCase()),
@@ -53,10 +65,10 @@ const StockLayout = () => {
   return (
     <div className={cx.wrapper}>
       <div className={cx.header}>
-        <Typography variant="h1">склад</Typography>
+        <Typography variant="h1" className={cx.headerLabel}>склад</Typography>
         <div className={cx.headerActions}>
-          <SearchInput value={search} onChange={setSearch} />
-          <Button size="small">+ добавить товар</Button>
+          <Input value={search} onChange={handleSearch} search/>
+          <Button size="small" onClick={handleClickAdd}>+ добавить товар</Button>
         </div>
       </div>
       <table>

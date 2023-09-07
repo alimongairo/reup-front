@@ -1,4 +1,5 @@
 import { useState } from 'react';
+//@ts-ignore
 import img from '../../../static/images/tmp.png';
 import editIcon from '../../../static/images/icons/edit.svg';
 import deleteIcon from '../../../static/images/icons/delete.svg';
@@ -7,8 +8,8 @@ import upArrow from '../../../static/images/icons/upArrowSmall.svg';
 
 import cx from './index.module.scss';
 
-// import Confirm from '../../common/Confirm';
 import { Button } from '../ui';
+import PopUp from '../ui/PopUp';
 
 export interface StockItem {
   img: string | null;
@@ -104,10 +105,11 @@ const TableRow = ({ item }: Props) => {
         </tr>
       )}
 
-      {/* <Confirm
+      <PopUp
         visible={open}
         onClose={() => setOpen(false)}
         onSubmit={() => {}}
+        type='confirm'
       >
         <div>Вы действительно хотите удалить товар?</div>
         <div>&nbsp;</div>
@@ -116,7 +118,7 @@ const TableRow = ({ item }: Props) => {
           еще будете обязаны выполнить доставку тем покупателям, которые уже
           купили этот товар, но еще не получили его.
         </div>
-      </Confirm> */}
+      </PopUp>
     </>
   );
 };

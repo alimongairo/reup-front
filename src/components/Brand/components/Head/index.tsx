@@ -4,7 +4,7 @@ import { Typography, Button } from "../../../ui";
 import { Menu } from "..";
 import cls from 'classnames';
 import cx from './index.module.scss';
-import Confirm from "../../../ui/Confirm";
+import PopUp from '../../../ui/PopUp';
 
 interface IProps {
     isEditable: boolean,
@@ -61,31 +61,28 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
                     : null
             }
 
-            <Confirm
+            <PopUp
                 visible={isCancelOpen}
                 onClose={handleCloseCancelConfirm}
-                buttons={
-                    <>
-                        <Button onClick={() => { }}>да</Button>
-                        <Button onClick={handleCloseCancelConfirm}>назад</Button>
-                    </>
-                }
+                onSubmit={() => {}}
+                type='confirm'
             >
                 <div>Вы действительно хотите отменить изменения?</div>
-            </Confirm>
+            </PopUp>
 
-            <Confirm
+            <PopUp
                 visible={isSaveOpen}
                 onClose={handleCloseSaveConfirm}
-                buttons={
+                type='custom'
+                customButtons={
                     <>
                         <Button onClick={handleCloseSaveConfirm}>назад</Button>
-                        <Button onClick={() => { }}>сохранить</Button>
+                        <Button onClick={() => {}}>сохранить</Button>
                     </>
                 }
             >
                 <div>Проверьте изменения, после подтверждения сохранения ваша страница будет обновлена!</div>
-            </Confirm>
+            </PopUp>
 
         </div>
     )

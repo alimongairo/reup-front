@@ -23,4 +23,8 @@ export const router = createBrowserRouter([
         path: ERoutes.Stock,
         element: <StockPage />
     },
+    {
+        path: `${ERoutes.Product}/:id`,
+        element: <></>
+    },
 ])
