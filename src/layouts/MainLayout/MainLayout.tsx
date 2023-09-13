@@ -8,7 +8,7 @@ export default function MainLayout({children}: IProps) {
   return (
     <div className={cx.wrapper}>
       {/* TODO:  1 or 2 (who is logged) */}
-        <Header type={1}/>
+        <Header type={2}/>
         <div className={cx.container}>{children}</div>
         
     </div>
