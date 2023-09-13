@@ -6,7 +6,7 @@
     grid-template-columns: 259px 1fr;
     gap: 25px;
     padding: $containerPadding-desktop;
-    @include compensatePadding-desktop;
+    @include outer;
 
     .filters{
         img{
