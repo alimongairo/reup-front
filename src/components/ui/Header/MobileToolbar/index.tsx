@@ -5,7 +5,7 @@ import { ReactComponent as BasketIcon } from "../../../../../static/images/icons
 import { ReactComponent as HeartIcon } from "../../../../../static/images/icons/heart.svg";
 import { ReactComponent as UserIcon } from "../../../../../static/images/icons/user.svg";
 
-import NavLinkIcon from "../NavLinkIcon";
+import NavLinkIcon from "../../NavLinkIcon";
 import cx from './index.module.scss';
 
 export default function MobileToolbar() {

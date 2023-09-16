@@ -12,7 +12,7 @@ import { confReturner } from "./constants";
 import { Link, NavLink } from "react-router-dom";
 import { uid } from 'react-uid';
 import { ERoutes } from "../../../app/router/types";
-import NavLinkIcon from "./NavLinkIcon";
+import NavLinkIcon from "../NavLinkIcon";
 
 interface IProps {
   type: number,

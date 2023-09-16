@@ -1,0 +1,17 @@
+@import '../../../../styles/vars.scss';
+
+.wrapper {
+    display: grid;
+}
+
+@media(max-width: $media-mobile) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(min-width: $media-desktop) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
