@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import cls from 'classnames';
 
 interface IProps {
-  to: string;
+  to?: string;
 }
 
 export default function MoreLink({to = "/"} : IProps) {
