@@ -1,10 +1,6 @@
 @import '../../../styles/mixins.scss';
 @import '../../../styles/vars.scss';
 
-
-// TODO: состояния (active tool - fill svg)
-// Мобилка (перемещается в тулбар - отдельный компонент)
-
 .header{
     position: fixed;
     top: 0;
@@ -84,9 +80,6 @@
         li{
             line-height: 1;
             padding: 0 3%;
-            .active{
-                color: $color-primary;
-            }
         }
     }
     

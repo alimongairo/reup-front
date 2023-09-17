@@ -9,10 +9,10 @@ import { ReactComponent as MarketIcon } from "../../../../static/images/icons/ma
 import cx from './index.module.scss';
 import cls from 'classnames';
 import { confReturner } from "./constants";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { uid } from 'react-uid';
 import { ERoutes } from "../../../app/router/types";
-import NavLinkIcon from "../NavLinkIcon";
+import { NavLinkIcon, NavLink } from "..";
 
 interface IProps {
   type: number,
@@ -30,12 +30,7 @@ function Header({ type }: IProps) {
           <ul className={cls("as-desktop", cx.linksList)}>{config?.list.map((item) =>
 
             <li key={uid(item.name)}>
-              <NavLink to={item.link}
-                className={({isActive}) => cls({
-                  [cx.active]: isActive
-                })
-                }
-              >
+              <NavLink to={item.link}>
                 {item.name}
               </NavLink>
             </li>)}

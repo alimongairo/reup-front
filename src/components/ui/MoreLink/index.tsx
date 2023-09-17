@@ -1,10 +1,7 @@
 import React from 'react';
 import { ReactComponent as MoreIcon } from '../../../../static/images/icons/more.svg';
-
+import { NavLinkIcon, NavLink } from "..";
 import cx from './index.module.scss';
-import NavLinkIcon from "../NavLinkIcon";
-import { NavLink } from "react-router-dom";
-import cls from 'classnames';
 
 interface IProps {
   to?: string;
@@ -12,7 +9,7 @@ interface IProps {
 
 export default function MoreLink({to = "/"} : IProps) {
   return (
-    <NavLink to={to} className={({ isActive }) => cls(cx.more, { [cx.active]: isActive })}>
+    <NavLink to={to}>
       <>
         <p className={cx.txt}>больше</p>
         <NavLinkIcon to={to}><MoreIcon /></NavLinkIcon>

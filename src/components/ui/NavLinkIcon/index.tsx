@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from "react-router-dom"
 import { strokeColorReturner } from "../../../helpers";
+import { NavLink } from "..";
 
 interface IPropsNavLinkIcon {
     to: string,

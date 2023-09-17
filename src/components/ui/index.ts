@@ -1,4 +1,4 @@
-import {Header, MobileToolbar} from "./Header";
+import { Header, MobileToolbar } from "./Header";
 import Typography from "./Typography";
 import Button from "./Button";
 import MoreLink from "./MoreLink";
@@ -7,9 +7,32 @@ import Fav from "./Fav";
 import Collapse from "./Collapse";
 import Input from './Input';
 import Divider from "./Divider";
-import {Colors, EColors, IColor} from './Colors';
-import {IRadioProps, RadioGroup} from "./Radio";
+import { Colors, EColors, IColor } from './Colors';
+import { IRadioProps, RadioGroup } from "./Radio";
+import {Bricks, EAlign, IBrick} from "./Bricks";
+import NavLinkIcon from "./NavLinkIcon";
+import NavLink from "./NavLink";
 
-export {Header, MobileToolbar, Typography, Button, MoreLink, Image, Fav, Collapse, Input, Divider, Colors, EColors, RadioGroup};
+export {
+    Header,
+    MobileToolbar,
+    Typography,
+    Button, EAlign,
+    MoreLink,
+    Image,
+    Fav,
+    Collapse,
+    Input,
+    Divider,
+    Colors, EColors,
+    RadioGroup,
+    Bricks,
+    NavLink,
+    NavLinkIcon
+};
 
-export type { IColor, IRadioProps};
+export type {
+    IColor,
+    IRadioProps,
+    IBrick
+};
