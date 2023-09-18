@@ -1,4 +1,4 @@
-import React, { ReactHTMLElement, ReactNode } from 'react';
+import React from 'react';
 import { ReactComponent as LogoIcon } from "../../../../static/images/icons/logo.svg";
 import { ReactComponent as SearchIcon } from "../../../../static/images/icons/loype.svg";
 import { ReactComponent as HeartIcon } from "../../../../static/images/icons/heart.svg";
@@ -9,52 +9,28 @@ import { ReactComponent as MarketIcon } from "../../../../static/images/icons/ma
 import cx from './index.module.scss';
 import cls from 'classnames';
 import { confReturner } from "./constants";
-import { NavLink } from "react-router-dom";
-import { strokeColorReturner } from "../../../helpers";
+import { Link } from "react-router-dom";
 import { uid } from 'react-uid';
+import { ERoutes } from "../../../app/router/types";
+import { NavLinkIcon, NavLink } from "..";
 
 interface IProps {
   type: number,
 }
 
-interface IPropsNavLinkIcon {
-  to: string,
-  isFill?: boolean,
-  children: JSX.Element,
-  [x: string]: any,
-}
-// component for color icons in active NavLink
-const NavLinkIcon = ({ to, isFill = true, children, ...props }: IPropsNavLinkIcon) => {
-  return (
-    <NavLink to={to} {...props}>
-      {({ isActive }) => (
-        React.cloneElement(children, {
-          fill: isFill ? strokeColorReturner(isActive) : "none",
-          stroke: strokeColorReturner(isActive),
-        })
-      )}
-    </NavLink>
-  )
-}
-
-export default function Header({ type }: IProps) {
+function Header({ type }: IProps) {
 
   const config = confReturner(type || 0);
 
   return (
     <div className={cx.header}>
       <div className={cx.container}>
-        <LogoIcon className={cx.logo} />
+        <Link to={ERoutes.Default} className={cx.logo}><LogoIcon  /></Link>
         <div className={cx.main}>
           <ul className={cls("as-desktop", cx.linksList)}>{config?.list.map((item) =>
 
             <li key={uid(item.name)}>
-              <NavLink to={item.link}
-                className={({isActive}) => cls({
-                  [cx.active]: isActive
-                })
-                }
-              >
+              <NavLink to={item.link}>
                 {item.name}
               </NavLink>
             </li>)}
@@ -67,7 +43,7 @@ export default function Header({ type }: IProps) {
         {
           config?.isActions && (
             <ul className={cls("as-desktop", cx.actions)}>
-              <li><NavLinkIcon to="/" isFill={false}><HeartIcon className={cx.icon} /></NavLinkIcon></li>
+              <li><NavLinkIcon to="/" isFill={true}><HeartIcon className={cx.icon} /></NavLinkIcon></li>
               <li><NavLinkIcon to="/" isFill={false}><UserIcon className={cx.icon} /></NavLinkIcon></li>
               <li><NavLinkIcon to="/" isFill={false}><BasketIcon className={cx.icon} /></NavLinkIcon></li>
             </ul>)
@@ -82,3 +58,6 @@ export default function Header({ type }: IProps) {
     </div>
   )
 }
+
+import MobileToolbar from "./MobileToolbar";
+export {MobileToolbar, Header}
