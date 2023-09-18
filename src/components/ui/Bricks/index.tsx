@@ -17,11 +17,12 @@ interface IBrick {
 
 interface IProps {
     list: IBrick[];
+    className?: string;
 }
 
-function Bricks({ list }: IProps) {
+function Bricks({ list, className }: IProps) {
     return (
-        <ul className={cx.bricks}>
+        <ul className={cls(cx.bricks, className)}>
             {
                 list.map(({ link, label, align = EAlign.Left }) => (
                     <li className={cls(cx.item, cx[align])}><NavLink to={link}>{label}</NavLink></li>

@@ -14,11 +14,11 @@ const MyButton = ({ children, viewType = "default", colorM = "black", iconName, 
   const { variant = "outlined", size = "medium" } = props;
 
   return (
-    <Button {...props} className={cls(props.className, "button", colorM, {
+    <Button {...props} className={cls("button", colorM, {
       "icon": viewType === "iconBtn",
       [`icon-${iconName}`]: iconName,
       ["active"]: isActive,
-    })} variant={variant} size={size} >
+    }, props.className)} variant={variant} size={size} >
       {children}
     </Button>
   )
