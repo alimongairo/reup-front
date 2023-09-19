@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from "..";
 import cls from 'classnames';
 import cx from './index.module.scss';
+import { uid } from "react-uid";
 
 enum EAlign {
     Left = 'left',
@@ -25,7 +26,7 @@ function Bricks({ list, className }: IProps) {
         <ul className={cls(cx.bricks, className)}>
             {
                 list.map(({ link, label, align = EAlign.Left }) => (
-                    <li className={cls(cx.item, cx[align])}><NavLink to={link}>{label}</NavLink></li>
+                    <li className={cls(cx.item, cx[align])} key={uid(label)}><NavLink to={link}>{label}</NavLink></li>
                 ))
             }
         </ul>
