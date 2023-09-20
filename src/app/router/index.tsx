@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ErrorPage, MainPage, SchemePage, SchemeSelectionPage, StockPage } from "../../pages";
+import { ErrorPage, MainPage, ProductEditPage, SchemePage, SchemeSelectionPage, StockPage } from "../../pages";
 import { ERoutes } from "./config";
 
 export const router = createBrowserRouter([
@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
         element: <StockPage />
     },
     {
-        path: `${ERoutes.Product}/:id`,
-        element: <></>
+        path: `${ERoutes.ProductEdit}/:id`,
+        element: <ProductEditPage />
     },
 ])

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 
 import cx from './index.module.scss';
-import MyTypography from "../Typography";
+import Typography from "../Typography";
 
 export enum EColors {
   Pink = '#A175FF',
@@ -33,7 +33,7 @@ interface IColorsProps {
 export const Colors = ({ colors, onChange, value }: IColorsProps) => {
   return (
     <div>
-      <MyTypography variant="h3">цвет</MyTypography>
+      <Typography variant="h3">цвет</Typography>
       <div className={cx.colorList}>
         {(colors || defaultColors).map((color) => (
           <div

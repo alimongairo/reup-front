@@ -1,11 +1,12 @@
-import StockPage from "../components/Stock";
+import StockLayout from "../components/Stock";
 import { CRMLayout } from "../layouts";
 
-export default function BrandPage() {
-
+const StockPage = () => {
     return (
         <CRMLayout>
-            <StockPage />
+            <StockLayout />
         </CRMLayout>
     )
 }
+
+export default StockPage;
