@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as MoreIcon } from '../../../../static/images/icons/more.svg';
-import { NavLinkIcon, NavLink } from "..";
+import { NavLink } from "..";
 import cx from './index.module.scss';
 
 interface IProps {
@@ -12,7 +12,7 @@ export default function MoreLink({to = "/"} : IProps) {
     <NavLink to={to}>
       <>
         <p className={cx.txt}>больше</p>
-        <NavLinkIcon to={to}><MoreIcon /></NavLinkIcon>
+       <MoreIcon />
       </>
     </NavLink>
   )

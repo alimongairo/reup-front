@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { MainLayout } from "../../layouts"
-import { Top } from "./components"
-import { Bricks, EAlign, IBrick } from "../../components/ui"
+import { ProductSelections, Top } from "./components"
+import { Bricks, EAlign, IBrick, Typography } from "../../components/ui"
 import { ERoutes } from "../../app/router/types"
+import cx from './index.module.scss';
 
 const bricksListMock: IBrick[] = [
   {
@@ -51,7 +52,9 @@ export default function MainPage() {
   return (
     <MainLayout>
       <Top />
-      <Bricks list={bricksList} />
+      <Bricks list={bricksList} className={cx.bricks}/>
+      <Typography variant="h1">новый бренд</Typography>
+      <ProductSelections />
     </MainLayout>
   )
 }

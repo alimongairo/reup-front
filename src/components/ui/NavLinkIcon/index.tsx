@@ -9,6 +9,7 @@ interface IPropsNavLinkIcon {
     [x: string]: any,
 }
 
+// TODO: create NavLink with coloring svg 
 
 // component for color icons in active NavLink
 const NavLinkIcon = ({ to, isFill = true, children, ...props }: IPropsNavLinkIcon) => {
