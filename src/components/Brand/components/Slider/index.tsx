@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Typography } from "../../../ui";
-import { EditableImage } from "..";
+import { EditableImage, EditableText } from "..";
 import { ReactComponent as RightArrowIcon } from '../../../../../static/images/icons/arrows/default.svg';
 import cls from 'classnames';
 import cx from './index.module.scss';
@@ -16,6 +16,7 @@ interface IProps {
   isEditing: boolean,
 }
 
+
 const Slider = ({ slides, isEditing }: IProps) => {
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -24,9 +25,12 @@ const Slider = ({ slides, isEditing }: IProps) => {
 
       <div className={cls(cx.slide, { [cx.active]: activeSlide === 0 })}>
         <EditableImage isEditing={isEditing} className={cx.image} src={slides[0].imgSource}/>
-        <Typography variant="h2" className={cx.brandName}>
+        {/* <Typography variant="h2" className={cx.brandName}>
           {slides[0].title || 'Название бренда'}
-        </Typography>
+        </Typography> */}
+        <EditableText type="h2" className={cx.brandName} isEditing={isEditing} currentText={slides[0].title || 'Название бренда'} markup={<Typography variant="h2" className={cx.brandName}>
+          {slides[0].title || 'Название бренда'}
+        </Typography> }/>
         <Button variant="contained" endIcon={<RightArrowIcon />} onClick={() => setActiveSlide(1)} className={cls(cx.nextBtb, cx.btn)}><Typography variant="h2" >о нас</Typography></Button>
       </div>
 

@@ -49,8 +49,7 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
 
             {
                 isEditable
-                    // TODO: return !isEditing
-                    ? (isEditing ? (<Button onClick={onEditClick}  >редактировать</Button>) : (
+                    ? (!isEditing ? (<Button onClick={onEditClick}  >редактировать</Button>) : (
                         <div className={cx.btnsList}>
                             <Button onClick={handleOpenCancelConfirm}>отменить</Button>
                             <Button onClick={handleOpenSaveConfirm}>сохранить</Button>

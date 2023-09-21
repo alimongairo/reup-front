@@ -46,8 +46,7 @@ export default function SchemeLayout({ isEditing }: Iprops) {
           <Slider
             slides={[
               {
-                title:
-                  dataObj.name,
+                title: dataObj.name,
                 imgSource: dataObj.image1_main,
               },
               {
