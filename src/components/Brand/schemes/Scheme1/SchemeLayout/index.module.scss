@@ -78,10 +78,19 @@
         grid-template-columns: 1fr 1fr 2fr 1fr;
         grid-template-rows: 357px;
         gap: 12px;
+        position: relative;
 
         .title {
             background: $color-snow;
             padding: 32px $containerPadding-desktop;
+        }
+
+        .subText{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: -13px;
+            margin-bottom: 0;
         }
     }
 }

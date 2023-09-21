@@ -12,10 +12,6 @@ const Scheme1 = () => {
 
     const [isEditing, setIsEditing] = useState<boolean>(false);
 
-   
-
-   
-    
     const component = useWithEdit({
         editable: isEditable,
         disableComponent: <BrandPage />,

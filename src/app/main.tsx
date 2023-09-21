@@ -10,5 +10,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Provider store={store}>
       <App />
     </Provider>
-    </ErrorBoundary>
+  </ErrorBoundary>
 );

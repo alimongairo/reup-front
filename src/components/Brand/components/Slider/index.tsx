@@ -23,7 +23,7 @@ const Slider = ({ slides, isEditing }: IProps) => {
     <div className={cx.wrapper}>
 
       <div className={cls(cx.slide, { [cx.active]: activeSlide === 0 })}>
-        <EditableImage isEditing={isEditing} className={cx.image} />
+        <EditableImage isEditing={isEditing} className={cx.image} src={slides[0].imgSource}/>
         <Typography variant="h2" className={cx.brandName}>
           {slides[0].title || 'Название бренда'}
         </Typography>
@@ -31,7 +31,7 @@ const Slider = ({ slides, isEditing }: IProps) => {
       </div>
 
       <div className={cls(cx.slide, { [cx.active]: activeSlide === 1 })}>
-        <EditableImage isEditing={isEditing} className={cx.image} />
+        <EditableImage isEditing={isEditing} className={cx.image} src={slides[1].imgSource}/>
         <Typography variant="h2" className={cx.brandName}>{slides[1].title}</Typography>
         <p className={cx.description}>{slides[1].description || 'Описание бренда'}</p>
         <Button variant="contained" endIcon={<RightArrowIcon />} onClick={() => setActiveSlide(0)} className={cls(cx.backBtb, cx.btn)} colorM="white"></Button>
