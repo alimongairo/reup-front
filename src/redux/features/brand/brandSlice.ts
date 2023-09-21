@@ -16,6 +16,7 @@ export const brandSlice = createSlice({
             state.id = action.payload.id;
         },
     },
+    
 });
 
 export default brandSlice.reducer;

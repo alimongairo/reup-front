@@ -3,7 +3,8 @@ import { TestData } from '../../types/testTypes';
 
 export const brandPageStyle1Api = api.injectEndpoints({
     endpoints: (builder) => ({
-        getBrandPageStyle1Data: builder.query<TestData, {scheme_id: number, vendor_id: string}>({
+        // TODO: BrandData  ???
+        getBrandPageStyle1Data: builder.query<any, {scheme_id: number, vendor_id: string}>({
             query: ({scheme_id, vendor_id}) => ({
                 url: `/BrandPageStyle${scheme_id + 1}/vendor_id=${vendor_id}`,
             }),
