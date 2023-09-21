@@ -1,9 +1,10 @@
 @import '../../../../styles/vars.scss';
 
-.input{
+.textarea{
     background: inherit;
     border: none;
     outline: none;
+    line-height: 2;
 }
 
 // cx.h2{
