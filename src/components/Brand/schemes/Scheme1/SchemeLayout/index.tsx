@@ -5,7 +5,7 @@ import { ReactComponent as RightArrowIcon } from '../../../../../../static/image
 import { ReactComponent as CrossIcon } from '../../../../../../static/images/icons/cross.svg';
 import { EditableImage, Slider } from "../../../components";
 import { uid } from 'react-uid';
-import { useGetBrandPageStyle1DataQuery } from '../../../../../redux/api/brandApi';
+import { useGetBrandPageStyle1DataQuery } from '../../../../../redux/api/brandPageStyle1Api';
 import { useTypedSelector } from "../../../../../hooks";
 
 interface Iprops {
@@ -14,7 +14,9 @@ interface Iprops {
 
 export default function SchemeLayout({ isEditing }: Iprops) {
   const brand = useTypedSelector((state) => state.brand);
-  let { data, error, isLoading, isUninitialized } = useGetBrandPageStyle1DataQuery({ scheme_id: brand.scheme_id, vendor_id: brand.id }); // TODO: вывести поля
+  // TODO: replace "12" to brand.id (1-33 вендор первая схема)
+  // TODO: replace 0 to brand.scheme_id (номер схемы)
+  let { data, error, isLoading } = useGetBrandPageStyle1DataQuery({ scheme_id: 0, vendor_id: "12" });
 
   // TODO: fix any
   const [dataObj, setDataObj] = useState<any>();
@@ -23,7 +25,6 @@ export default function SchemeLayout({ isEditing }: Iprops) {
     const newDataObj = data && data[0];
     setDataObj(newDataObj);
   }, [data]);
-
 
   const categories = ["cat1", "cat2", "cat3"];
   const [bricks, setBricks] = useState(categories);
