@@ -10,6 +10,7 @@ import { EColors, EFamilies, TColorAndFamily } from "../../../../models";
 // import { useAppDispatch, useAppSelector } from '@/hooks/store';
 
 import cx from './index.module.scss';
+import { uid } from "react-uid";
 
 
 const ColorOption = ({ title, color, name, family, size }: TColorAndFamily) => {
@@ -71,7 +72,7 @@ const Options = () => {
     <div>
       {colorAndFamily.map((field) => {
         return (
-          <>
+          <div key={uid(field.name)}>
             <ColorOption
               title={field.title}
               color={field.color}
@@ -80,7 +81,7 @@ const Options = () => {
               size={field.size}
             />
             <Divider direction={'horizontal'} />
-          </>
+          </div>
         );
       })}
     </div>

@@ -7,6 +7,7 @@ import React, {
 
 import cx from '../index.module.scss';
 import classNames from 'classnames';
+import { uid } from "react-uid";
 
 interface IProps
   extends DetailedHTMLProps<
@@ -45,9 +46,8 @@ const CodeInput = ({ onChange, ...props }: IProps) => {
     <div className={classNames(cx.input)}>
       {codes.map((code, index) => {
         return (
-          <>
+          <div key={uid(code)}>
             <input
-              key={index}
               className={cx.codeInput}
               maxLength={1}
               id={String(index)}
@@ -56,7 +56,7 @@ const CodeInput = ({ onChange, ...props }: IProps) => {
               autoComplete="off"
             />
             {index !== codes.length - 1 && ' - '}
-          </>
+          </div>
         );
       })}
     </div>
