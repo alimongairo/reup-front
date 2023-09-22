@@ -16,7 +16,7 @@ const EditableText = ({ currentText, isEditing, markup, className, type }: any) 
                 isEditing ? <textarea className={cls(cx.textarea, cx[type], className)}
                     value={value}
                     onChange={(e) => onChange(e.target.value)}
-                    
+
                 // TODO: fix any
                 /> : markup
             }

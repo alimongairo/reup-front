@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import cx from './index.module.scss';
 import { Button, Typography } from "../../../../ui";
 import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
 import { ReactComponent as CrossIcon } from '../../../../../../static/images/icons/cross.svg';
@@ -7,6 +6,7 @@ import { EditableImage, Slider } from "../../../components";
 import { uid } from 'react-uid';
 import { useGetBrandPageStyle1DataQuery } from '../../../../../redux/api/brandPageStyle1Api';
 import { useTypedSelector } from "../../../../../hooks";
+import cx from './index.module.scss';
 
 interface Iprops {
   isEditing: boolean,

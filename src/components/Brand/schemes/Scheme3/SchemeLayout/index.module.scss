@@ -57,7 +57,14 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 10px 50px;
-                background: $color-snow;
+                background: $color-gray-2;
+
+                .list{
+                    display: flex;
+                    li{
+                        margin-right: 25px;
+                    }
+                }
             }
         }
     }
