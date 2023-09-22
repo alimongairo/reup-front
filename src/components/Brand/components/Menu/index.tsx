@@ -65,7 +65,8 @@ export default function Menu({ visible }: IProps) {
       updateData,
     };
   }, [schemeId]);
-
+  const theme = React.useContext(MenuContext);
+  console.log(theme)
   return (
     <div className={cls(cx.wrapper, { [cx.visible]: visible })}>
       <MenuContext.Provider value={initialContextValue}>

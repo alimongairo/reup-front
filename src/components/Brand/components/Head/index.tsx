@@ -61,8 +61,8 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
             }
 
             <Confirm
-                visible={isCancelOpen}
-                onClose={handleCloseCancelConfirm}
+                visible={isSaveOpen}
+                onClose={handleCloseSaveConfirm}
                 buttons={
                     <>
                         <Button onClick={() => { }}>отменить</Button>
@@ -74,8 +74,8 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
             </Confirm>
 
             <Confirm
-                visible={isSaveOpen}
-                onClose={handleCloseSaveConfirm}
+                visible={isCancelOpen}
+                onClose={handleCloseCancelConfirm}
                 buttons={
                     <>
                         <Button onClick={handleCloseSaveConfirm}>назад</Button>

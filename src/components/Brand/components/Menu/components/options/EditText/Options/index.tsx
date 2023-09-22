@@ -9,6 +9,9 @@ import { Collapse, Input, Divider } from '../../../../../../../ui';
 // import { useAppDispatch, useAppSelector } from '@/hooks/store';
 
 import cx from './index.module.scss';
+import { useTypedDispatch, useTypedSelector } from "../../../../../../../../hooks";
+import { setBrandSettingsByField } from "../../../../../../../../redux/features/brandSetting/slice";
+import { brandSettingsTextSelector } from "../../../../../../../../redux/features/brandSetting/selectors";
 
 interface IEditTextOption {
   title: string;
@@ -17,20 +20,21 @@ interface IEditTextOption {
 }
 
 const EditTextOption = ({ title, name, value }: IEditTextOption) => {
-  //   const dispatch = useAppDispatch();
-  //   const editText = useAppSelector(brandSettingsTextSelector);
+  const dispatch = useTypedDispatch();
+  const editText = useTypedSelector(brandSettingsTextSelector);
 
   const onChange = (newValue: string) => {
-    // const newData = editText.map((item) => {
-    //   if (item.name === name) {
-    //     return {
-    //       ...item,
-    //       value: newValue,
-    //     };
-    //   }
-    //   return item;
-    // });
-    // dispatch(setBrandSettingsByField({ field: 'editText', newData }));
+    // TODO: fix any
+    const newData = editText.map((item: any) => {
+      if (item.name === name) {
+        return {
+          ...item,
+          value: newValue,
+        };
+      }
+      return item;
+    });
+    dispatch(setBrandSettingsByField({ field: 'editText', newData }));
     console.log("onChange")
   };
 
