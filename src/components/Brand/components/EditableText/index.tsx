@@ -1,3 +1,5 @@
+// Не используется (нужно для того, чтобы менять текст при клике на него - мейби в дальнейшем апгрейднуть brandPage)
+
 import cls from 'classnames';
 import cx from './index.module.scss';
 import { useState } from "react";

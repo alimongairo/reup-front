@@ -9,7 +9,7 @@ export default function CRMLayout({children}: IProps) {
     <div className={cx.wrapper}>
         <Header type={0}/>
         <div className={cx.container}>{children}</div>
-        
+
     </div>
   )
 }

@@ -8,23 +8,24 @@ import { useGetBrandPageStyle1DataQuery } from '../../../../../redux/api/brandPa
 import { useTypedSelector } from "../../../../../hooks";
 import cx from './index.module.scss';
 
-interface Iprops {
+// TODO: fx any
+interface IProps {
   isEditing: boolean,
+  data: any;
 }
 
-export default function SchemeLayout({ isEditing }: Iprops) {
-  const brand = useTypedSelector((state) => state.brand);
-  // TODO: replace "12" to brand.id (1-33 вендор первая схема)
-  // TODO: replace 0 to brand.scheme_id (номер схемы)
-  let { data, error, isLoading } = useGetBrandPageStyle1DataQuery({ scheme_id: 0, vendor_id: "12" });
+export default function SchemeLayout({ isEditing, data }: IProps) {
+  // // TODO: replace "12" to brand.id (1-33 вендор первая схема)
+  // // TODO: replace 0 to brand.scheme_id (номер схемы)
+  // let { data, error, isLoading } = useGetBrandPageStyle1DataQuery({ scheme_id: 0, vendor_id: "12" });
 
-  // TODO: fix any
-  const [dataObj, setDataObj] = useState<any>();
+  // // TODO: fix any
+  // const [dataObj, setDataObj] = useState<any>();
 
-  useEffect(() => {
-    const newDataObj = data && data[0];
-    setDataObj(newDataObj);
-  }, [data]);
+  // useEffect(() => {
+  //   const newDataObj = data && data[0];
+  //   setDataObj(newDataObj);
+  // }, [data]);
 
   const categories = ["cat1", "cat2", "cat3"];
   const [bricks, setBricks] = useState(categories);
@@ -34,25 +35,19 @@ export default function SchemeLayout({ isEditing }: Iprops) {
   }
 
   return (
-    <>
-      {/* TODO: сделать обработку ошибки и загрузки для всех страниц */}
-      {error ? (
-        <p>Oh no, there was an error</p>
-      ) : isLoading ? (
-        <p>loading...</p>
-      ) : dataObj ? (
+    
         <div className={cx.wrapper}>
 
           <Slider
             slides={[
               {
-                title: dataObj.name,
-                imgSource: dataObj.image1_main,
+                title: data.name,
+                imgSource: data.image1_main,
               },
               {
-                title: dataObj.about,
-                description: dataObj.description_2page,
-                imgSource: dataObj.image2_main,
+                title: data.about,
+                description: data.description_2page,
+                imgSource: data.image2_main,
               },
             ]}
             isEditing={isEditing}
@@ -74,36 +69,35 @@ export default function SchemeLayout({ isEditing }: Iprops) {
             </div>
             <div className={cx.main}>
               {
-                dataObj.heading && <Typography variant="h3">{dataObj.heading}</Typography>
+                data.heading && <Typography variant="h3">{data.heading}</Typography>
               }
               {
-                dataObj.text1_block && <p>{dataObj.text1_block}</p>
+                data.text1_block && <p>{data.text1_block}</p>
               }
             </div>
           </div>
 
           <div className={cx.gallery}>
-            <EditableImage className={cx.image} isEditing={isEditing} src={dataObj.image_header1}/>
-            <EditableImage className={cx.image} isEditing={isEditing} src={dataObj.image_header2}/>
-            <EditableImage className={cx.image} isEditing={isEditing} src={dataObj.image_header3}/>
+            <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header1}/>
+            <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header2}/>
+            <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header3}/>
             <div className={cx.title}>
               {
-                dataObj.heading2 && <Typography variant="h3">{dataObj.heading2}</Typography>
+                data.heading2 && <Typography variant="h3">{data.heading2}</Typography>
               }
               {
-                dataObj.text2_block && <p>{dataObj.text2_block}</p>
+                data.text2_block && <p>{data.text2_block}</p>
               }
 
               {
-                dataObj.text2 && <Typography className={cx.subText} variant="h3">{dataObj.text2}</Typography>
+                data.text2 && <Typography className={cx.subText} variant="h3">{data.text2}</Typography>
               }
             </div>
 
           </div>
 
         </div>
-      ) : null}
-    </>
+      ) 
 
-  )
+  
 }

@@ -6,11 +6,13 @@ import {
   TSchemeData,
 } from '../../../components/Brand/components/Menu/models.ts';
 import { EColors } from "../../../components/ui";
+import { useGetBrandPageStyle1DataQuery } from "../../api/brandPageStyle1Api.ts";
 
 
 const initialState: TSchemeData = {
+  // эти поля приходят из эндпоинта bransPageStyle1 (value брать оттуда)
   editText: [
-    { name: 'brandName', title: 'название бренда', value: 'Название бренда 1' },
+    { name: 'brandName', title: 'название бренда', value: '111ь Название бренда 1' },
     {
       name: 'descriptionSlide2',
       title: 'текст с описанием бренда (2 слайд)',
@@ -95,9 +97,12 @@ const initialState: TSchemeData = {
   ],
 };
 
+// const {data} = useGetBrandPageStyle1DataQuery({ scheme_id: 0, vendor_id: "12" });
+// console.log(data);
+
 const brandSettingSlice = createSlice({
   name: "brandSettingAlias",
-  initialState,
+  initialState, // тут брать инфо из приходящих данных
   reducers: {
     setBrandSettingsByField(
       state,
@@ -106,6 +111,7 @@ const brandSettingSlice = createSlice({
         newData: TSchemeData[keyof TSchemeData];
       }>,
     ) {
+      console.log('setSet')
       return {
         ...state,
         [action.payload.field]: action.payload.newData,
