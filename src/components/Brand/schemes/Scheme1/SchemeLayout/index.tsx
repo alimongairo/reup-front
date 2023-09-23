@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Button, Typography } from "../../../../ui";
 import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
 import { ReactComponent as CrossIcon } from '../../../../../../static/images/icons/cross.svg';
 import { EditableImage, Slider } from "../../../components";
 import { uid } from 'react-uid';
-import { useGetBrandPageStyle1DataQuery } from '../../../../../redux/api/brandPageStyle1Api';
-import { useTypedSelector } from "../../../../../hooks";
 import cx from './index.module.scss';
 
 // TODO: fx any
@@ -15,18 +13,6 @@ interface IProps {
 }
 
 export default function SchemeLayout({ isEditing, data }: IProps) {
-  // // TODO: replace "12" to brand.id (1-33 вендор первая схема)
-  // // TODO: replace 0 to brand.scheme_id (номер схемы)
-  // let { data, error, isLoading } = useGetBrandPageStyle1DataQuery({ scheme_id: 0, vendor_id: "12" });
-
-  // // TODO: fix any
-  // const [dataObj, setDataObj] = useState<any>();
-
-  // useEffect(() => {
-  //   const newDataObj = data && data[0];
-  //   setDataObj(newDataObj);
-  // }, [data]);
-
   const categories = ["cat1", "cat2", "cat3"];
   const [bricks, setBricks] = useState(categories);
 

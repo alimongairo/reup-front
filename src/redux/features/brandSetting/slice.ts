@@ -6,94 +6,95 @@ import {
   TSchemeData,
 } from '../../../components/Brand/components/Menu/models.ts';
 import { EColors } from "../../../components/ui";
-import { useGetBrandPageStyle1DataQuery } from "../../api/brandPageStyle1Api.ts";
 
 
 const initialState: TSchemeData = {
   // эти поля приходят из эндпоинта bransPageStyle1 (value брать оттуда)
   editText: [
-    { name: 'brandName', title: 'название бренда', value: '111ь Название бренда 1' },
-    {
-      name: 'descriptionSlide2',
-      title: 'текст с описанием бренда (2 слайд)',
-      value: 'текст с описанием бренда (2 слайд)',
-    },
-    { name: 'title', title: 'заголовок', value: 'заголовок' },
-    { name: 'mainText', title: 'основной текст', value: 'основной текст' },
-    { name: 'btn1', title: 'кнопка 1', value: 'кнопка 1' },
-    { name: 'btn2', title: 'кнопка 2', value: 'кнопка 2' },
-    { name: 'text', title: 'текст 2', value: 'текст 2' },
+    // { name: 'brandName', title: 'название бренда', value: '111ь Название бренда 1' },
+    // {
+    //   name: 'descriptionSlide2',
+    //   title: 'текст с описанием бренда (2 слайд)',
+    //   value: 'текст с описанием бренда (2 слайд)',
+    // },
+    // { name: 'title', title: 'заголовок', value: 'заголовок' },
+    // { name: 'mainText', title: 'основной текст', value: 'основной текст' },
+    // { name: 'btn1', title: 'кнопка 1', value: 'кнопка 1' },
+    // { name: 'btn2', title: 'кнопка 2', value: 'кнопка 2' },
+    // { name: 'text', title: 'текст 2', value: 'текст 2' },
   ],
   bgColor: [
-    { title: 'фон', value: EColors.Pink, name: 'bgColor' },
-    { title: 'категории', name: 'category' },
-    { title: 'кнопка 1', name: 'btn1' },
-    { title: 'кнопка 2', name: 'btn2' },
-    { title: 'компоненты', name: 'components' },
+    // { title: 'фон', value: EColors.Pink, name: 'bgColor' },
+    // { title: 'категории', name: 'category' },
+    // { title: 'кнопка 1', name: 'btn1' },
+    // { title: 'кнопка 2', name: 'btn2' },
+    // { title: 'компоненты', name: 'components' },
   ],
   categories: {
     allCategories: [
-      { title: 'верхняя одежда', name: 'outerwear' },
-      { title: 'штаны-oversize', name: 'pants-oversize' },
-      { title: 'category 1', name: 'category1' },
-      { title: 'category 2', name: 'category2' },
-      { title: 'category 3', name: 'category3' },
-      { title: 'category 4', name: 'category4' },
-      { title: 'category 5', name: 'category5' },
-      { title: 'category 6', name: 'category6' },
+      // { title: 'верхняя одежда', name: 'outerwear' },
+      // { title: 'штаны-oversize', name: 'pants-oversize' },
+      // { title: 'category 1', name: 'category1' },
+      // { title: 'category 2', name: 'category2' },
+      // { title: 'category 3', name: 'category3' },
+      // { title: 'category 4', name: 'category4' },
+      // { title: 'category 5', name: 'category5' },
+      // { title: 'category 6', name: 'category6' },
     ],
-    value: [{ title: 'штаны-oversize', name: 'pants-oversize' }],
+    value: [
+      // { title: 'штаны-oversize', name: 'pants-oversize' }
+    ],
   },
   colorAndFamily: [
-    {
-      title: 'название бренда',
-      name: 'brandName',
-      family: EFamilies.DelaGothicOne,
-      size: 32,
-      color: EColors.Black,
-    },
-    {
-      title: 'о нас',
-      name: 'about',
-      family: EFamilies.DelaGothicOne,
-      size: 32,
-      color: EColors.Black,
-    },
-    {
-      title: 'текст с описанием бренда (2 слайд)',
-      name: 'slide2',
-      family: EFamilies.DelaGothicOne,
-      size: 32,
-      color: EColors.Black,
-    },
-    {
-      title: 'категории товаров, кнопки 1,2',
-      name: 'category',
-      family: EFamilies.DelaGothicOne,
-      size: 32,
-      color: EColors.Black,
-    },
-    {
-      title: 'заголовок',
-      name: 'title',
-      family: EFamilies.DelaGothicOne,
-      size: 32,
-      color: EColors.Black,
-    },
-    {
-      title: 'основной текст',
-      name: 'mainText',
-      family: EFamilies.DelaGothicOne,
-      size: 32,
-      color: EColors.Black,
-    },
-    {
-      title: 'текст 2',
-      name: 'text',
-      family: EFamilies.DelaGothicOne,
-      size: 32,
-      color: EColors.Black,
-    },
+    // {
+    //   title: 'название бренда',
+    //   name: 'brandName',
+    //   family: EFamilies.DelaGothicOne,
+    //   size: 32,
+    //   color: EColors.Black,
+    // },
+    // {
+    //   title: 'о нас',
+    //   name: 'about',
+    //   family: EFamilies.DelaGothicOne,
+    //   size: 32,
+    //   color: EColors.Black,
+    // },
+    // {
+    //   title: 'текст с описанием бренда (2 слайд)',
+    //   name: 'slide2',
+    //   family: EFamilies.DelaGothicOne,
+    //   size: 32,
+    //   color: EColors.Black,
+    // },
+    // {
+    //   title: 'категории товаров, кнопки 1,2',
+    //   name: 'category',
+    //   family: EFamilies.DelaGothicOne,
+    //   size: 32,
+    //   color: EColors.Black,
+    // },
+    // {
+    //   title: 'заголовок',
+    //   name: 'title',
+    //   family: EFamilies.DelaGothicOne,
+    //   size: 32,
+    //   color: EColors.Black,
+    // },
+    // {
+    //   title: 'основной текст',
+    //   name: 'mainText',
+    //   family: EFamilies.DelaGothicOne,
+    //   size: 32,
+    //   color: EColors.Black,
+    // },
+    // {
+    //   title: 'текст 2',
+    //   name: 'text',
+    //   family: EFamilies.DelaGothicOne,
+    //   size: 32,
+    //   color: EColors.Black,
+    // },
   ],
 };
 
@@ -104,6 +105,31 @@ const brandSettingSlice = createSlice({
   name: "brandSettingAlias",
   initialState, // тут брать инфо из приходящих данных
   reducers: {
+    setBaseData(state,
+      action: PayloadAction) {
+
+      const { payload } = action as any;
+
+      if (payload) {
+        const data = [
+          { name: "name", title: "Название", value: payload.name },
+          { name: "about", title: "О нас", value: payload.about },
+          { name: "description_2page", title: "2 страница слайдера", value: payload.description_2page },
+          { name: "heading", title: "Заголовок 1", value: payload.heading },
+          { name: "text1_block", title: "Текстовый блок 1", value: payload.text1_block },
+          { name: "heading2", title: "Заголовок 2", value: payload.heading2 },
+          { name: "text2_block", title: "Текстовый блок 2", value: payload.text2_block },
+          { name: "text2", title: "Заголовк", value: payload.text2 },
+        ];
+
+        return {
+          ...state,
+          editText: data,
+        }
+      }
+
+    },
+
     setBrandSettingsByField(
       state,
       action: PayloadAction<{
@@ -111,7 +137,6 @@ const brandSettingSlice = createSlice({
         newData: TSchemeData[keyof TSchemeData];
       }>,
     ) {
-      console.log('setSet')
       return {
         ...state,
         [action.payload.field]: action.payload.newData,
@@ -148,5 +173,5 @@ const brandSettingSlice = createSlice({
 });
 
 export default brandSettingSlice.reducer;
-export const { setBrandSettingsByField, addCategory, removeCategory } =
+export const { setBaseData, setBrandSettingsByField, addCategory, removeCategory } =
   brandSettingSlice.actions;

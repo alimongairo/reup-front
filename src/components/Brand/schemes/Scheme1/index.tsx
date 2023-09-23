@@ -11,7 +11,6 @@ interface IProps {
 }
 
 const Scheme1 = ({data} : IProps) => {
-    console.log(data)
     const query = useQuery();
     const isEditable = query.get("isEditable") === 'true';
 
