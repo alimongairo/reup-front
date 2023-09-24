@@ -8,7 +8,7 @@ import store from './store';
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <ErrorBoundary>
     <Provider store={store}>
-      <App />
+      <App/>
     </Provider>
   </ErrorBoundary>
 );

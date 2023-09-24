@@ -4,9 +4,12 @@ import {
 import { router } from "./router";
 import '../styles/global.css';
 
+// TODO: put color to store 
 function App() {
   return (
+    <div>
       <RouterProvider router={router} />
+    </div>
   );
 }
 

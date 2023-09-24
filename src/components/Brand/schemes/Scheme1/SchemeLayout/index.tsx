@@ -22,7 +22,7 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
 
   return (
     
-        <div className={cx.wrapper}>
+        <div className={cx.wrapper} >
 
           <Slider
             slides={[

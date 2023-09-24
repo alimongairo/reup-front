@@ -43,7 +43,7 @@ export default function SchemePage() {
     const CurrentScheme = schemes[Number(schemeId)];
 
     return (
-        <>
+        <div style={{ background: dataObj?.background_color ? dataObj.background_color : "inherit" }}>
             {/* TODO: сделать обработку ошибки и загрузки для всех страниц */}
             {error ? (
                 <p>Oh no, there was an error</p>
@@ -54,6 +54,6 @@ export default function SchemePage() {
                     <Typography variant="h1">{CurrentScheme}</Typography>
                 </CRMLayout>
             ) : null}
-        </>
+        </div>
     )
 }
