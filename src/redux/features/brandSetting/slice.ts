@@ -10,13 +10,7 @@ import { EColors } from "../../../components/ui";
 
 const initialState: TSchemeData = {
   editText: [],
-  bgColor: [
-    // { title: 'фон', value: EColors.Pink, name: 'bgColor' },
-    // { title: 'категории', name: 'category' },
-    // { title: 'кнопка 1', name: 'btn1' },
-    // { title: 'кнопка 2', name: 'btn2' },
-    // { title: 'компоненты', name: 'components' },
-  ],
+  bgColor: [],
   categories: {
     allCategories: [
       // { title: 'верхняя одежда', name: 'outerwear' },
@@ -102,37 +96,52 @@ const brandSettingSlice = createSlice({
 
       if (data) {
         // TODO: fx any
-        let data = [] as any;
+        let editTextData = [] as any;
+        let colorAndFamilyData = [] as any;
         switch (schemeId) {
-          case 0: data = [
-            { name: "name", title: "Название", value: data.name },
-            { name: "about", title: "О нас", value: data.about },
-            { name: "description_2page", title: "2 страница слайдера", value: data.description_2page },
-            { name: "heading", title: "Заголовок 1", value: data.heading },
-            { name: "text1_block", title: "Текстовый блок 1", value: data.text1_block },
-            { name: "heading2", title: "Заголовок 2", value: data.heading2 },
-            { name: "text2_block", title: "Текстовый блок 2", value: data.text2_block },
-            { name: "text2", title: "Заголовк", value: data.text2 },
-          ];
-          case 1: data = [
-
-          ];
-          case 2: data = [
+          case 0: {
+            editTextData = [
+              { name: "name", title: "Название", value: data.name },
+              { name: "about", title: "О нас", value: data.about },
+              { name: "description_2page", title: "2 страница слайдера", value: data.description_2page },
+              { name: "heading", title: "Заголовок 1", value: data.heading },
+              { name: "text1_block", title: "Текстовый блок 1", value: data.text1_block },
+              { name: "heading2", title: "Заголовок 2", value: data.heading2 },
+              { name: "text2_block", title: "Текстовый блок 2", value: data.text2_block },
+              { name: "text2", title: "Заголовк", value: data.text2 },
+            ];
+            colorAndFamilyData = [
+              {
+                title: 'Название',
+                name: 'name',
+                family: data.name_param.fontFamily,
+                size: data.name_param.fontSize,
+                color: data.name.color,
+              }
+            ];
+          };
+          case 1: editTextData = [];
+          case 2: editTextData = [
             { name: "heading1", title: "Заголово 1", value: data.heading1 },
             { name: "text1_block", title: "Текстовый блок 1", value: data.text1_block },
             { name: "heading2", title: "Заголовок 2", value: data.heading2 },
             { name: "text2_block", title: "Текстовый блок 2", value: data.text2_block },
             { name: "heading3", title: "Заголовок 3", value: data.heading3 },
           ];
-
           default: []
+        };
 
-        }
+        const bgColorData = [
+          { name: "background_color", title: "Цвет фона", value: data.background_color },
+        ];
+
 
 
         return {
           ...state,
-          editText: data,
+          editText: editTextData,
+          bgColor: bgColorData,
+          colorAndFamily: colorAndFamilyData,
         }
       }
 

@@ -32,22 +32,19 @@ interface IColorsProps {
 
 export const Colors = ({ colors, onChange, value }: IColorsProps) => {
   return (
-    <div>
-      <MyTypography variant="h3">цвет</MyTypography>
-      <div className={cx.colorList}>
-        {(colors || defaultColors).map((color) => (
-          <div
-            className={classNames(cx.colorItem, {
-              [cx.active]: color.value === value,
-            })}
-            key={color.value}
-            onClick={() => {
-              onChange?.(color.value || EColors.Black);
-            }}
-            style={{ backgroundColor: color.value }}
-          ></div>
-        ))}
-      </div>
+    <div className={cx.colorList}>
+      {(colors || defaultColors).map((color) => (
+        <div
+          className={classNames(cx.colorItem, {
+            [cx.active]: color.value === value,
+          })}
+          key={color.value}
+          onClick={() => {
+            onChange?.(color.value || EColors.Black);
+          }}
+          style={{ backgroundColor: color.value }}
+        ></div>
+      ))}
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { useTypedDispatch, useTypedSelector } from "../../../../../../../../hook
 import { setBrandSettingsByField } from "../../../../../../../../redux/features/brandSetting/slice";
 import { brandSettingsTextSelector } from "../../../../../../../../redux/features/brandSetting/selectors";
 import cx from './index.module.scss';
+import { uid } from "react-uid";
 
 interface IEditTextOption {
   title: string;
@@ -53,7 +54,7 @@ const Options = () => {
     <>
       {editText?.map((field) => {
         return (
-          <span key={field.name}>
+          <span key={uid(field.name)}>
             <EditTextOption
               title={field.title}
               name={field.name}

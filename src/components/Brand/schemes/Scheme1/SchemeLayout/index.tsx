@@ -5,6 +5,7 @@ import { ReactComponent as CrossIcon } from '../../../../../../static/images/ico
 import { EditableImage, Slider } from "../../../components";
 import { uid } from 'react-uid';
 import cx from './index.module.scss';
+import { styleParser } from "../../../../../helpers";
 
 // TODO: fx any
 interface IProps {
@@ -28,11 +29,14 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
             slides={[
               {
                 title: data.name,
+                titleStyle: styleParser(data.name_param),
                 imgSource: data.image1_main,
               },
               {
                 title: data.about,
+                titleStyle: styleParser(data.about_param),
                 description: data.description_2page,
+                descriptionStyle: styleParser(data.description_2page_param),
                 imgSource: data.image2_main,
               },
             ]}
@@ -55,10 +59,10 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
             </div>
             <div className={cx.main}>
               {
-                data.heading && <Typography variant="h3">{data.heading}</Typography>
+                data.heading && <Typography variant="h3" style={styleParser(data.heading1_param) || ''}>{data.heading}</Typography>
               }
               {
-                data.text1_block && <p>{data.text1_block}</p>
+                data.text1_block && <p style={styleParser(data.text1_block_param)}>{data.text1_block}</p>
               }
             </div>
           </div>
@@ -69,14 +73,14 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
             <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header3}/>
             <div className={cx.title}>
               {
-                data.heading2 && <Typography variant="h3">{data.heading2}</Typography>
+                data.heading2 && <Typography variant="h3" style={styleParser(data.heading2_param)}>{data.heading2}</Typography>
               }
               {
-                data.text2_block && <p>{data.text2_block}</p>
+                data.text2_block && <p style={styleParser(data.text2_block_param)}>{data.text2_block}</p>
               }
 
               {
-                data.text2 && <Typography className={cx.subText} variant="h3">{data.text2}</Typography>
+                data.text2 && <Typography className={cx.subText} variant="h3" style={styleParser(data.text2_param)}>{data.text2}</Typography>
               }
             </div>
 
