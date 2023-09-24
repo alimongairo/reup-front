@@ -1,11 +1,18 @@
+@import '../../../styles/vars.scss';
+
+.title{
+  color: $color-gray-82;
+}
+
 .title,
 .content {
-  margin: 1rem 0;
+  margin: 7px 0;
 }
 
 .content {
   overflow: hidden;
   transition: 0.3s;
+  margin: 0;
 }
 
 .moreText,

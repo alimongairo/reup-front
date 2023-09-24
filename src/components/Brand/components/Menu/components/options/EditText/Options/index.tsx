@@ -27,7 +27,6 @@ const EditTextOption = ({ title, name, value }: IEditTextOption) => {
       return item;
     });
     dispatch(setBrandSettingsByField({ field: 'editText', newData }));
-    console.log(newValue)
   };
 
 
@@ -51,20 +50,20 @@ const Options = () => {
   const editText = useTypedSelector(brandSettingsTextSelector);
 
   return (
-    <div>
+    <>
       {editText?.map((field) => {
         return (
-          <div key={field.name}>
+          <span key={field.name}>
             <EditTextOption
               title={field.title}
               name={field.name}
               value={field.value}
             />
-            <Divider direction={'horizontal'} />
-          </div>
+            <Divider direction={'horizontal'} color="grey"/>
+          </span>
         );
       })}
-    </div>
+    </>
   );
 };
 

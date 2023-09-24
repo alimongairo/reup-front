@@ -5,7 +5,12 @@ import useWithEdit from '../../../../hooks/useWithEdit';
 import { useQuery } from "../../../../hooks";
 import { Layout } from "../../components";
 
-const Scheme3 = () => {
+// TODO: fx any
+interface IProps {
+    data: any;
+}
+
+const Scheme3 = ({data} : IProps) => {
     const query = useQuery();
     const isEditable = query.get("isEditable") === 'true';
 
@@ -13,8 +18,8 @@ const Scheme3 = () => {
 
     const component = useWithEdit({
         editable: isEditable,
-        disableComponent: <BrandPage />,
-        editComponent: <EditableScheme isEditing={isEditing}/>,
+        disableComponent: <BrandPage data={data}/>,
+        editComponent: <EditableScheme isEditing={isEditing} data={data}/>,
     });
 
     return <Layout isEditable={isEditable} component={component} isEditing={isEditing} setIsEditing={setIsEditing}/>;

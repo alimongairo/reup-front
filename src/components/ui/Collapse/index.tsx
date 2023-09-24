@@ -51,9 +51,9 @@ const Collapse = ({
           <MinusIcon className={classNames(cx.minus, { [cx.rotate]: isClose })} />
         </div>
       )}
-      <Typography variant="h3" className={cx.title} onClick={toggleOpen}>
+      <p className={cx.title} onClick={toggleOpen}>
         {title}
-      </Typography>
+      </p>
 
       <div className={cx.content} ref={contentRef}>
         {content}

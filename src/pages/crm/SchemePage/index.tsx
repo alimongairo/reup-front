@@ -13,11 +13,21 @@ export default function SchemePage() {
     const { schemeId } = useParams() as any;
 
     // TODO: replace "12" to brand.id 
-        // 1-33 вендор первая схема
-        // 34-67 вторая
-        // 68-100 третья
+    // 1-33 вендор первая схема
+    // 34-67 вторая
+    // 68-100 третья
     // TODO: replace schemeId to brand.scheme_id (номер схемы из стора)
-    let { data, error, isLoading } = useGetBrandPageStyle1DataQuery({ scheme_id: +schemeId, vendor_id: "12" });
+    // mock fn - remove
+    const vendorIdReturner = (schemeId: number) => {
+        switch (schemeId) {
+            case 0: return "12";
+            case 1: return "40";
+            case 2: return "70";
+            default: return "1"
+        }
+    }
+
+    let { data, error, isLoading } = useGetBrandPageStyle1DataQuery({ scheme_id: +schemeId, vendor_id: vendorIdReturner(+schemeId) });
 
     // TODO: fix any
     const [dataObj, setDataObj] = useState<any>();
@@ -25,13 +35,13 @@ export default function SchemePage() {
     useEffect(() => {
         const newDataObj = data && data[0];
         setDataObj(newDataObj);
-        dispatch(setBaseData(newDataObj));
+        dispatch(setBaseData({data: newDataObj, schemeId: +schemeId}));
     }, [data]);
 
 
-    const schemes = [<Scheme1 key={0} data={dataObj} />, <Scheme2 key={1} />, <Scheme3 key={2} />];
+    const schemes = [<Scheme1 key={0} data={dataObj} />, <Scheme2 key={1} />, <Scheme3 key={2} data={dataObj} />];
     const CurrentScheme = schemes[Number(schemeId)];
-    
+
     return (
         <>
             {/* TODO: сделать обработку ошибки и загрузки для всех страниц */}
