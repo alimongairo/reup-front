@@ -108,7 +108,7 @@ const brandSettingSlice = createSlice({
               { name: "text1_block", title: "Текстовый блок 1", value: data.text1_block },
               { name: "heading2", title: "Заголовок 2", value: data.heading2 },
               { name: "text2_block", title: "Текстовый блок 2", value: data.text2_block },
-              { name: "text2", title: "Заголовк", value: data.text2 },
+              { name: "text2", title: "Текст 2", value: data.text2 },
             ];
             colorAndFamilyData = [
               {
@@ -116,26 +116,85 @@ const brandSettingSlice = createSlice({
                 name: 'name',
                 family: data.name_param.fontFamily,
                 size: data.name_param.fontSize,
-                color: data.name.color,
-              }
+                color: data.name_param.color,
+              },
+              {
+                title: 'О нас',
+                name: 'about',
+                family: data.about_param.fontFamily,
+                size: data.about_param.fontSize,
+                color: data.about_param.color,
+              },
+              {
+                title: '2 страница слайдера',
+                name: 'description_2page',
+                family: data.description_2page_param.fontFamily,
+                size: data.description_2page_param.fontSize,
+                color: data.description_2page_param.color,
+              },
+              {
+                title: 'Заголовок 1',
+                name: 'heading',
+                family: data.heading1_param.fontFamily,
+                size: data.heading1_param.fontSize,
+                color: data.heading1_param.color,
+              },
+              {
+                title: 'Текстовый блок 1',
+                name: 'text1_block',
+                family: data.text1_block_param.fontFamily,
+                size: data.text1_block_param.fontSize,
+                color: data.text1_block_param.color,
+              },
+              {
+                title: 'Заголовок 2',
+                name: 'heading2',
+                family: data.heading2_param.fontFamily,
+                size: data.heading2_param.fontSize,
+                color: data.heading2_param.color,
+              },
+              {
+                title: 'Текстовый блок 2',
+                name: 'text2_block',
+                family: data.text2_block_param.fontFamily,
+                size: data.text2_block_param.fontSize,
+                color: data.text2_block_param.color,
+              },
+              {
+                title: 'Текст 2',
+                name: 'text2',
+                family: data.text2_param.fontFamily,
+                size: data.text2_param.fontSize,
+                color: data.text2_param.color,
+              },
             ];
           };
           case 1: editTextData = [];
-          case 2: editTextData = [
-            { name: "heading1", title: "Заголово 1", value: data.heading1 },
-            { name: "text1_block", title: "Текстовый блок 1", value: data.text1_block },
-            { name: "heading2", title: "Заголовок 2", value: data.heading2 },
-            { name: "text2_block", title: "Текстовый блок 2", value: data.text2_block },
-            { name: "heading3", title: "Заголовок 3", value: data.heading3 },
-          ];
+          case 2: {
+            editTextData = [
+              { name: "heading1", title: "Заголово 1", value: data.heading1 },
+              { name: "text1_block", title: "Текстовый блок 1", value: data.text1_block },
+              { name: "heading2", title: "Заголовок 2", value: data.heading2 },
+              { name: "text2_block", title: "Текстовый блок 2", value: data.text2_block },
+              { name: "heading3", title: "Заголовок 3", value: data.heading3 },
+            ];
+            // colorAndFamilyData = [
+            //   {
+            //     title: '',
+            //     name: '',
+            //     family: data..fontFamily,
+            //     size: data..fontSize,
+            //     color: data..color,
+            //   },
+            // ]
+          }
+
           default: []
         };
 
         const bgColorData = [
           { name: "background_color", title: "Цвет фона", value: data.background_color },
         ];
-
-
 
         return {
           ...state,

@@ -56,7 +56,7 @@ const Options = () => {
   const colorAndFamily = useTypedSelector(brandSettingsColorAndFamilySelector);
   
   return (
-    <div>
+    <>
       {colorAndFamily.map((field) => {
         return (
           <div key={uid(field.name)}>
@@ -67,11 +67,11 @@ const Options = () => {
               name={field.name}
               size={field.size}
             />
-            <Divider direction={'horizontal'} />
+            <Divider direction={'horizontal'} color="grey"/>
           </div>
         );
       })}
-    </div>
+    </>
   );
 };
 
