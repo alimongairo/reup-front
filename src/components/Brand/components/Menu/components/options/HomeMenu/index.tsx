@@ -32,7 +32,7 @@ const HomeMenu = () => {
             onClick: () => contextValue?.setActiveMenu(ELabelsName.EditText)
         },
         {
-            title: "изменить цвет фона и кнопок",
+            title: "изменить цвет фона",
             onClick: () => contextValue?.setActiveMenu(ELabelsName.BgColor)
         },
         {

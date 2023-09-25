@@ -39,7 +39,7 @@ export default function SchemePage() {
     }, [data]);
 
 
-    const schemes = [<Scheme1 key={0} data={dataObj} />, <Scheme2 key={1} />, <Scheme3 key={2} data={dataObj} />];
+    const schemes = [<Scheme1 key={0} data={dataObj} />, <Scheme2 key={1} data={dataObj}/>, <Scheme3 key={2} data={dataObj} />];
     const CurrentScheme = schemes[Number(schemeId)];
 
     return (

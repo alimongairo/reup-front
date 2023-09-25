@@ -4,6 +4,7 @@ import { Button, Typography } from "../../../../ui";
 import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
 import { EditableImage } from "../../../components";
 import cx from './index.module.scss';
+import { styleParser } from "../../../../../helpers";
 
 interface IProps {
   isEditing: boolean,
@@ -19,8 +20,8 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
         <div className={cx.wrapper}>
           <div className={cx.top}>
             <div className={cx.title}>
-              <Typography variant="h2">{data.heading1}</Typography>
-              <p>{data.text1_block}</p>
+              <Typography variant="h2" style={styleParser(data.heading1_param)}>{data.heading1}</Typography>
+              <p style={styleParser(data.text1_block_param)}>{data.text1_block}</p>
             </div>
             <div className={cx.pic}>
               {/* <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image} /> */}
@@ -38,7 +39,7 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
           </div>
 
           <div className={cx.banner}>
-            <Typography variant="h2">{data.heading3}</Typography>
+            <Typography variant="h2" style={styleParser(data.heading3_param)}>{data.heading3}</Typography>
             <Button variant="contained" endIcon={<RightArrowIcon />}>перейти к товарам</Button>
           </div>
 
@@ -48,8 +49,8 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
             <EditableImage className={cx.image} isEditing={isEditing} src={data.image1_right} />
             <EditableImage className={cx.image} isEditing={isEditing} src={data.image2_left} />
             <div className={cx.title}>
-              <Typography variant="h3">{data.heading2}</Typography>
-              <p>{data.text2_block}</p>
+              <Typography variant="h3" style={styleParser(data.heading2_param)}>{data.heading2}</Typography>
+              <p style={styleParser(data.text2_block_param)}>{data.text2_block}</p>
             </div>
             <EditableImage className={cx.image} isEditing={isEditing} src={data.image2_right} />
 

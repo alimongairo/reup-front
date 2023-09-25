@@ -113,81 +113,173 @@ const brandSettingSlice = createSlice({
             colorAndFamilyData = [
               {
                 title: 'Название',
-                name: 'name',
+                name: 'name_param',
                 family: data.name_param.fontFamily,
                 size: data.name_param.fontSize,
                 color: data.name_param.color,
               },
               {
                 title: 'О нас',
-                name: 'about',
+                name: 'about_param',
                 family: data.about_param.fontFamily,
                 size: data.about_param.fontSize,
                 color: data.about_param.color,
               },
               {
                 title: '2 страница слайдера',
-                name: 'description_2page',
+                name: 'description_2page_param',
                 family: data.description_2page_param.fontFamily,
                 size: data.description_2page_param.fontSize,
                 color: data.description_2page_param.color,
               },
               {
                 title: 'Заголовок 1',
-                name: 'heading',
+                name: 'heading1_param',
                 family: data.heading1_param.fontFamily,
                 size: data.heading1_param.fontSize,
                 color: data.heading1_param.color,
               },
               {
                 title: 'Текстовый блок 1',
-                name: 'text1_block',
+                name: 'text1_block_param',
                 family: data.text1_block_param.fontFamily,
                 size: data.text1_block_param.fontSize,
                 color: data.text1_block_param.color,
               },
               {
                 title: 'Заголовок 2',
-                name: 'heading2',
+                name: 'heading2_param',
                 family: data.heading2_param.fontFamily,
                 size: data.heading2_param.fontSize,
                 color: data.heading2_param.color,
               },
               {
                 title: 'Текстовый блок 2',
-                name: 'text2_block',
+                name: 'text2_block_param',
                 family: data.text2_block_param.fontFamily,
                 size: data.text2_block_param.fontSize,
                 color: data.text2_block_param.color,
               },
               {
                 title: 'Текст 2',
-                name: 'text2',
+                name: 'text2_param',
                 family: data.text2_param.fontFamily,
                 size: data.text2_param.fontSize,
                 color: data.text2_param.color,
               },
             ];
+            break;
           };
-          case 1: editTextData = [];
+          case 1: {
+            editTextData = [
+              { name: "heading1", title: "Заголовок 1", value: data.heading1 },
+              { name: "text1_block", title: "Текстовый блок 1", value: data.text1_block },
+              { name: "heading2", title: "Заголовок 2", value: data.heading2 },
+              { name: "text2_block", title: "Текстовый блок 2", value: data.text2_block },
+              { name: "text", title: "Текст", value: data.text },
+              { name: "heading3", title: "Заголовок 3", value: data.heading3 },
+              { name: "text3_block", title: "Текстовый блок 3", value: data.text3_block },
+            ];
+            colorAndFamilyData = [
+              {
+                title: 'Заголовок 1',
+                name: 'heading1_param',
+                family: data.heading1_param.fontFamily,
+                size: data.heading1_param.fontSize,
+                color: data.heading1_param.color,
+              },
+              {
+                title: 'Текстовый блок 1',
+                name: 'text1_block_param',
+                family: data.text1_block_param.fontFamily,
+                size: data.text1_block_param.fontSize,
+                color: data.text1_block_param.color,
+              },
+              {
+                title: 'Заголовок 2',
+                name: 'heading2_param',
+                family: data.heading2_param.fontFamily,
+                size: data.heading2_param.fontSize,
+                color: data.heading2_param.color,
+              },
+              {
+                title: 'Текстовый блок 2',
+                name: 'text2_block_param',
+                family: data.text2_block_param.fontFamily,
+                size: data.text2_block_param.fontSize,
+                color: data.text2_block_param.color,
+              },
+              {
+                title: 'Текст',
+                name: 'text_param',
+                family: data.text_param.fontFamily,
+                size: data.text_param.fontSize,
+                color: data.text_param.color,
+              },
+              {
+                title: 'Заголовок 3',
+                name: 'heading3_param',
+                family: data.heading3_param.fontFamily,
+                size: data.heading3_param.fontSize,
+                color: data.heading3_param.color,
+              },
+              {
+                title: 'Текстовый блок 3',
+                name: 'text3_block_param',
+                family: data.text3_block_param.fontFamily,
+                size: data.text3_block_param.fontSize,
+                color: data.text3_block_param.color,
+              },
+            ];
+            break;
+          };
           case 2: {
             editTextData = [
-              { name: "heading1", title: "Заголово 1", value: data.heading1 },
+              { name: "heading1", title: "Заголовок 1", value: data.heading1 },
               { name: "text1_block", title: "Текстовый блок 1", value: data.text1_block },
               { name: "heading2", title: "Заголовок 2", value: data.heading2 },
               { name: "text2_block", title: "Текстовый блок 2", value: data.text2_block },
               { name: "heading3", title: "Заголовок 3", value: data.heading3 },
             ];
-            // colorAndFamilyData = [
-            //   {
-            //     title: '',
-            //     name: '',
-            //     family: data..fontFamily,
-            //     size: data..fontSize,
-            //     color: data..color,
-            //   },
-            // ]
-          }
+            colorAndFamilyData = [
+              {
+                title: 'Заголовок 1',
+                name: 'heading1_param',
+                family: data.heading1_param.fontFamily,
+                size: data.heading1_param.fontSize,
+                color: data.heading1_param.color,
+              },
+              {
+                title: 'Текстовый блок 1',
+                name: 'text1_block_param',
+                family: data.text1_block_param.fontFamily,
+                size: data.text1_block_param.fontSize,
+                color: data.text1_block_param.color,
+              },
+              {
+                title: 'Заголовок 2',
+                name: 'heading3_param',
+                family: data.heading3_param.fontFamily,
+                size: data.heading3_param.fontSize,
+                color: data.heading3_param.color,
+              },
+              {
+                title: 'Текстовый блок 2',
+                name: 'heading2_param',
+                family: data.heading2_param.fontFamily,
+                size: data.heading2_param.fontSize,
+                color: data.heading2_param.color,
+              },
+              {
+                title: 'Заголовок 3',
+                name: 'text2_block_param',
+                family: data.text2_block_param.fontFamily,
+                size: data.text2_block_param.fontSize,
+                color: data.text2_block_param.color,
+              },
+            ];
+            break;
+          };
 
           default: []
         };
