@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction, useCallback, useEffect } from 'react';
-import cx from './index.module.scss';
 import SizeSelectSingle from './SizeSelectSingle';
 import SizeSelectRange from './SizeSelectRange';
 import { Product, SizeType } from '../../../types/productEditTypes';
@@ -15,22 +14,19 @@ const sizes = ['36', '38', '42', '44', '46'];
 
 const SizeBlock = ({ state, setState }: Props) => {
   const handleChange = useCallback(
-    (name: string) => {
-      return (value: string) => setState((prevState) => ({ ...prevState, [name]: value }));
-    },
-    [setState],
-  );
+    (name: string) => (value: string) => 
+      setState((prevState) => ({ ...prevState, [name]: value })),
+  [setState]);
 
   useEffect(() => {
     state.sizeType === SizeType.single
-      ? setState({ ...state, sizes: [''] })
-      : setState({ ...state, sizes: [['', '']] });
-  }, [setState, state, state.sizeType]);
+      ? setState((prevState) => ({ ...prevState, sizes: [''] }))
+      : setState((prevState)=>({ ...prevState, sizes: [['', '']] }));
+  }, [setState, state.sizeType]);
 
   return (
     <Grid container spacing={6}>
       <Grid item xs={6}>
-        <div className={cx.switcherBox}>
           <Switcher
             value={state.sizeCountry}
             onChange={handleChange('sizeCountry')}
@@ -39,31 +35,29 @@ const SizeBlock = ({ state, setState }: Props) => {
           />
           {state.sizeCountry && (
             <Switcher
+              additional
               value={state.sizeType}
               onChange={handleChange('sizeType')}
               leftOption={{ label: 'размер', value: SizeType.single }}
               rightOption={{ label: 'диапозон размеров', value: SizeType.range }}
             />
           )}
-        </div>
       </Grid>
       <Grid item xs={6}>
-        <div className={cx.sizesBox}>
-          {state.sizeType === SizeType.single && (
-            <SizeSelectSingle
-              value={state.sizes as string[]}
-              onChange={handleChange('sizes')}
-              sizes={sizes}
-            />
-          )}
-          {state.sizeType === SizeType.range && (
-            <SizeSelectRange
-              value={state.sizes as string[][]}
-              onChange={handleChange('sizes')}
-              sizes={sizes}
-            />
-          )}
-        </div>
+        {state.sizeType === SizeType.single && (
+          <SizeSelectSingle
+            value={state.sizes as string[]}
+            onChange={handleChange('sizes')}
+            sizes={sizes}
+          />
+        )}
+        {state.sizeType === SizeType.range && (
+          <SizeSelectRange
+            value={state.sizes as string[][]}
+            onChange={handleChange('sizes')}
+            sizes={sizes}
+          />
+        )}
       </Grid>
     </Grid>
   );

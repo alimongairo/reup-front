@@ -14,6 +14,9 @@ import SizeBlock from "./SizeBlock";
 const options = [
     { label: 'option 1', value: '1' },
     { label: 'option 2', value: '2' },
+    { label: 'option 3', value: '3' },
+    { label: 'option 4', value: '4' },
+    { label: 'option 5', value: '5' },
   ];
 
 const delivery = '0';
@@ -60,7 +63,7 @@ const ProductEditLayout = () => {
         }));
     }, []);
 
-    const mainBlock = useMemo(() => { // fix textarea
+    const mainBlock = useMemo(() => {
         return (
             <div className={cx.block}>
                 <div className={cx.heading}>
@@ -131,13 +134,13 @@ const ProductEditLayout = () => {
                 <div className={cx.heading}>
                     <Typography variant='h2'>мультимедиа</Typography>
                 </div>
-                <Grid container direction='row' spacing={6}>
-                    <Grid item xs={3}>
+                <Grid container direction='row' spacing={3}>
+                    <Grid container item xs={3} >
                         <ImageUpload main value={state.media.main} onChange={handleChangeMainMedia}/>
                     </Grid>
-                    <Grid item container direction='row' xs={9} spacing={6}>
+                    <Grid item container direction='row' xs={9} spacing={3}>
                         {state.media.other.map((el, i) => (
-                            <Grid item xs={3} spacing={6} key={i}>
+                            <Grid container item xs={3} key={i}>
                                 <ImageUpload value={el} onChange={handleChangeMedia(i)}/>
                             </Grid>
                         ))}
@@ -230,7 +233,7 @@ const ProductEditLayout = () => {
         );
     }, [state]);
 
-    const sizeBlock = useMemo(() => { // fix
+    const sizeBlock = useMemo(() => {
         return (
             <div className={cx.block}>
                 <div className={cx.heading}>

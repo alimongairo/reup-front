@@ -1,8 +1,8 @@
 import { useCallback} from 'react';
 import cx from './index.module.scss';
 import classNames from 'classnames';
-import { Button, Select } from '../../../ui';
-import { ReactComponent as AddIcon } from '../../../../../static/images/icons/add.svg';
+import { Select } from '../../../ui';
+import { ReactComponent as AddIcon } from '../../../../../static/images/icons/plus.svg';
 import { ReactComponent as DeleteIcon } from '../../../../../static/images/icons/close.svg';
 
 interface Props {
@@ -45,7 +45,9 @@ const SizeSelect = ({ sizes, value, onChange }: Props) => {
           <div key={i} className={cx.sizeBlock}>
             <div className={cx.iconBox}>
               <DeleteIcon
-                className={classNames(cx.icon, i === 0 ? cx.hide : '')}
+                width={15}
+                height={15}
+                className={i === 0 ? cx.hide : ''}
                 onClick={() => handleDelete(i)}
               />
             </div>
@@ -70,9 +72,9 @@ const SizeSelect = ({ sizes, value, onChange }: Props) => {
         );
       })}
       <div>
-        <Button className={cx.button} onClick={handleAdd}>
-          <AddIcon/>
-        </Button>
+        <div className={cx.button} onClick={handleAdd}>
+          <AddIcon width={22} height={22} />
+        </div>
       </div>
     </div>
   );

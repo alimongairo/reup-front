@@ -1,19 +1,19 @@
 .common {
-    width: 174px;
-    height: 236px;
 
-    button {
-        min-width: 174px;
-        min-height: 236px;
+    .button {
+        display: flex;
+        align-items: center;
+        width: 150px;
+        height: 200px;
         background-color: #e8e8e8;
-        border: 0px;
-        padding: 50px 24px 118px 24px;
+        padding-inline: 24px;
     }
 
     .titleBox {
         display: flex;
         align-items: center;
-        padding: 16px 24px;
+        width: 100%;
+        padding: 16px 16px;
         color: #7991f5;
         border: 1px solid #7991f5;
 
@@ -25,20 +25,20 @@
 }
   
 .main {
-    width: 325px;
-    height: 496px;
 
-    button {
-        min-width: 325px;
-        min-height: 496px;
+    .button {
+        display: flex;
+        align-items: center;
+        width: 318px;
+        height: 424px;
         background-color: #e8e8e8;
-        border: 0px;
-        padding: 50px 24px 318px 24px;
+        padding-inline: 24px;
     }
 
     .titleBox {
         display: flex;
         align-items: center;
+        text-align: center;
         padding: 16px 24px;
         color: #7991f5;
         border: 1px solid #7991f5;

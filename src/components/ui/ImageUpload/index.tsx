@@ -1,8 +1,6 @@
 import { useCallback } from 'react';
 import cx from './index.module.scss';
 
-import Button from '../Button';
-
 import image from '../../../../static/images/tmp.png';
 import icon from '../../../../static/images/icons/close.svg';
 import { Stack } from '@mui/material';
@@ -43,7 +41,7 @@ const ImageUpload = ({ main, value, onChange }: Props) => {
       </div>
     ) : (
       <div className={cx.main}>
-        <Button onClick={handleClick}>
+        <div className={cx.button} onClick={handleClick}>
             <Stack>
                 <div className={cx.titleBox}>
                     <div>+</div>
@@ -53,7 +51,7 @@ const ImageUpload = ({ main, value, onChange }: Props) => {
                     <div>обложкой может быть только фотография</div>
                 </div>
             </Stack>
-        </Button>
+        </div>
       </div>
     );
   }
@@ -72,7 +70,7 @@ const ImageUpload = ({ main, value, onChange }: Props) => {
     </div>
   ) : (
     <div className={cx.common}>
-      <Button onClick={handleClick}>
+      <div className={cx.button} onClick={handleClick}>
         <div className={cx.titleBox}>
           <div>+</div>
           <div className={cx.title}>
@@ -81,7 +79,7 @@ const ImageUpload = ({ main, value, onChange }: Props) => {
             видео
           </div>
         </div>
-      </Button>
+      </div>
     </div>
   );
 };

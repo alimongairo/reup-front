@@ -1,24 +1,25 @@
 import { useCallback } from 'react';
-import { ISelectOption } from '../Select';
 import cx from './index.module.scss';
 import classNames from 'classnames';
+import { ISelectOption } from '../Select/interface';
 
 interface Props {
   value: string;
   onChange: any;
   leftOption: ISelectOption;
   rightOption: ISelectOption;
+  additional?: boolean;
 }
 
-const Switcher = ({ value, onChange, leftOption, rightOption }: Props) => {
+const Switcher = ({ value, onChange, leftOption, rightOption, additional }: Props) => {
   const handleClick = useCallback(
     (newValue: string) => onChange(newValue),
     [onChange],
   );
 
   return (
-    <div className={cx.container}>
-      <span
+    <div className={classNames(cx.container, additional ? cx.additional : '',)}>
+      <div
         className={classNames(
           cx.switch,
           cx.leftSwitch,
@@ -27,8 +28,8 @@ const Switcher = ({ value, onChange, leftOption, rightOption }: Props) => {
         onClick={() => handleClick(leftOption.value)}
       >
         {leftOption.label}
-      </span>
-      <span
+      </div>
+      <div
         className={classNames(
           cx.switch,
           cx.rightSwitch,
@@ -37,7 +38,7 @@ const Switcher = ({ value, onChange, leftOption, rightOption }: Props) => {
         onClick={() => handleClick(rightOption.value)}
       >
         {rightOption.label}
-      </span>
+      </div>
     </div>
   );
 };
