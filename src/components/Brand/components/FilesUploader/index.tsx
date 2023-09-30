@@ -213,16 +213,16 @@ export const FilesUploader = (props: UploaderProps) => {
         handleFilesChange,
       }}
     >
-      <div >{children}</div>
+      <div>{children}</div>
     </UploaderContext.Provider>
   );
 };
 
-FilesUploader.Input = function Input({ label = '+ Загрузить' }) {
+FilesUploader.Input = function Input({ label = '+ Загрузить', ...props }) {
   const { fileInputRef, handleFilesChange } = useFilesUploader();
 
   return (
-    <div id={uid(1)}>
+    <div id={uid(1)} className={props.className}>
       <input
         ref={fileInputRef}
         type='file'
