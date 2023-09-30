@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Image } from '../../../ui';
+import { Image } from '../../../ui';
 import cls from 'classnames';
 import cx from './index.module.scss';
 import { FilesUploader } from "..";
@@ -17,9 +17,7 @@ export default function EditableImage({ isEditing, className, src = process.env.
       <Image src={src} alt={alt} />
       {
         isEditing && (
-        // <Button  colorM="">добавить фото / видео</Button>
-        <FilesUploader><FilesUploader.Input className={cx.input} label="добавить фото / видео"/></FilesUploader>
-
+          <FilesUploader><FilesUploader.Input className={cx.input} label="добавить фото / видео" /></FilesUploader>
         )
       }
     </div>

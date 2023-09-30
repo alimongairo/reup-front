@@ -15,26 +15,26 @@ import type { ValidationResult } from "./logic";
 
 import { useFilesFormField, FilesField } from './logic/useFilesFormField.ts';
 
-//import api from 'some-path/api'; // самописный модуль, вызов методов которого возвращает промисы
-
-// MediaFileRequestOptions
+// TODO: отправляем только, когда файл загружен, тк он мб тяжелым и загружаться дольше 
+// и при отправке файла еще не будет или он будет повержден
 import { MediaFilesResponse } from "./logic/status.ts";
 import { uid } from "react-uid";
 import useTypedDispatch from "../../../../hooks/useTypedDispatch.ts";
+import { MenuContext } from "../Menu/helpers.tsx";
 
-const UploaderContext = React.createContext<
-  | {
-      isUpLoading: boolean;
-      fileInputRef: React.RefObject<HTMLInputElement>;
-      selectedFiles: FilesField; // тип FilesField объявлен в хуке 'useFilesFormField'
-      handleFilesDrop: (droppedFiles: File[]) => void;
-      handleFilesChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    }
-  | undefined
->(undefined);
+// const UploaderContext = React.createContext<
+//   | {
+//       isUpLoading: boolean;
+//       fileInputRef: React.RefObject<HTMLInputElement>;
+//       selectedFiles: FilesField; // тип FilesField объявлен в хуке 'useFilesFormField'
+//       handleFilesDrop: (droppedFiles: File[]) => void;
+//       handleFilesChange: (event: ChangeEvent<HTMLInputElement>) => void;
+//     }
+//   | undefined
+// >(undefined);
 
 const useFilesUploader = () => {
-  const context = useContext(UploaderContext);
+  const context = useContext(MenuContext);
 
   if (!context) {
     throw new Error(
@@ -51,6 +51,8 @@ const STATUS = {
   uploaded: 'uploaded',
   error: 'error',
 } as const;
+
+const fileFormats = ".xls,.xlsx, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel";
 
 type UploadEntry = {
   name: string;
@@ -129,6 +131,7 @@ export const FilesUploader = (props: UploaderProps) => {
 
   const dispatch = useTypedDispatch();
 
+  //
   useEffect(() => {
     // const uploadMediaFiles = async () => {
     //   if (selectedFiles.value.length === 0) {
@@ -203,18 +206,22 @@ export const FilesUploader = (props: UploaderProps) => {
     fileInputRef.current && (fileInputRef.current.value = '');
   };
 
+
+  // TODO: контекст у нас на более верхнем уровне - как-то туда перенести логику загрузки изображений
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! а мейби нам тут нужен контекст только чтобы отслеживтаь загрузку и досточно только того
+  // , что мы загрузке будем диспатчить в стоп под ключ картинки, а при сохранении тупа отправлять весь объект из стора
   return (
-    <UploaderContext.Provider
-      value={{
-        isUpLoading,
-        fileInputRef,
-        selectedFiles,
-        handleFilesDrop,
-        handleFilesChange,
-      }}
-    >
+    // <MenuContext.Provider
+    //   value={{
+    //     isUpLoading,
+    //     fileInputRef,
+    //     selectedFiles,
+    //     handleFilesDrop,
+    //     handleFilesChange,
+    //   }}
+    // >
       <div>{children}</div>
-    </UploaderContext.Provider>
+    // </MenuContext.Provider>
   );
 };
 
@@ -229,6 +236,7 @@ FilesUploader.Input = function Input({ label = '+ Загрузить', ...props 
         multiple
         onChange={handleFilesChange}
         id='file-uploader-input-button'
+        accept={fileFormats}
       />
       <label
         htmlFor='file-uploader-input-button'
