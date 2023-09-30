@@ -35,6 +35,7 @@ type UploadEntry = {
     uploaded?: MediaFilesResponse['data'][number];
 };
 
+// описывает результат Promise.allSettled
 type UploadResult = {
     status: 'fulfilled' | 'rejected';
     value?: {
@@ -44,3 +45,20 @@ type UploadResult = {
     };
     reason?: any;
 };
+
+type UploaderProps = {
+    /* срабатывает в момент выбора файлов */
+    onFilesSelected?: () => void;
+    /* срабатывает в момент сброса файлов */
+    onFilesCleared?: () => void;
+    /* срабатывает, когда стартует процесс загрузки всех файлов */
+    onUploadStart?: (uploadEntries: UploadEntry[]) => void;
+    /* срабатывает, когда процесс загрузки всех файлов завершён */
+    onUploadEnd?: (uploadResult: UploadResult[]) => void;
+    /* срабатывает, когда процесс загрузки одного файла завершён */
+    onFileUploadEnd?: (file: File, obj: Partial<UploadEntry>) => void;
+    children?: React.ReactNode;
+};
+
+export {STATUS};
+export type {MediaFilesResponse, UploadEntry, UploadResult, UploaderProps}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button, Typography } from "../../../../ui";
 import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
 import { ReactComponent as CrossIcon } from '../../../../../../static/images/icons/cross.svg';
-import { EditableImage, Slider } from "../../../components";
+import { EditableImage, FilesUploader, Slider } from "../../../components";
 import { uid } from 'react-uid';
 import cx from './index.module.scss';
 import { styleParser } from "../../../../../helpers";
@@ -24,6 +24,8 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
   return (
     
         <div className={cx.wrapper} >
+
+<FilesUploader><FilesUploader.Input/></FilesUploader>
 
           <Slider
             slides={[

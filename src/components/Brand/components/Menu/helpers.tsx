@@ -22,6 +22,7 @@ export const menuMaps = new Map<ELabelsName, ReactNode>([
   [ELabelsName.BgColor, <BgColor key={5} />],
 ]);
 
+// context for upload brandStyle
 export interface IMenuContext {
   setActiveMenu: (activeMenu: ELabelsName) => void;
   toHome: () => void;
@@ -29,10 +30,10 @@ export interface IMenuContext {
   schemeData: TSchemeData;
   updateData: (data: TSchemeData) => void;
   // files uploader
-  isUpLoading: boolean;
-  selectedFiles: FilesField; // тип FilesField объявлен в хуке 'useFilesFormField'
-  handleFilesChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  fileInputRef: React.RefObject<HTMLInputElement>;
+  isUpLoading?: boolean;
+  selectedFiles?: FilesField; // тип FilesField объявлен в хуке 'useFilesFormField'
+  handleFilesChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  fileInputRef?: React.RefObject<HTMLInputElement>;
 }
 
 // В контекст записывается активное окно

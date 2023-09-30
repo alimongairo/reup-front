@@ -10,7 +10,7 @@ type FilesField = Omit<DefaultField, "value" | "error"> & {
   clear: () => void;
 };
 
-function useFilesFormField(
+export function useFilesFormField(
   id: string,
   validators: Validator<File>[],
   init: File[] = []
