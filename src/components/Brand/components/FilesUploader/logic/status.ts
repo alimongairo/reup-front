@@ -47,18 +47,26 @@ type UploadResult = {
 };
 
 type UploaderProps = {
-    /* срабатывает в момент выбора файлов */
     onFilesSelected?: () => void;
-    /* срабатывает в момент сброса файлов */
     onFilesCleared?: () => void;
-    /* срабатывает, когда стартует процесс загрузки всех файлов */
     onUploadStart?: (uploadEntries: UploadEntry[]) => void;
-    /* срабатывает, когда процесс загрузки всех файлов завершён */
     onUploadEnd?: (uploadResult: UploadResult[]) => void;
-    /* срабатывает, когда процесс загрузки одного файла завершён */
     onFileUploadEnd?: (file: File, obj: Partial<UploadEntry>) => void;
-    children?: React.ReactNode;
-};
+    children?: JSX.Element;
+    className?: string;
+    name: string;
+  };
 
-export {STATUS};
-export type {MediaFilesResponse, UploadEntry, UploadResult, UploaderProps}
+// const formatToUploadEntries = (
+//     files: File[],
+//     errors: ValidationResult[]
+// ): UploadEntry[] =>
+//     files.map((file, index) => ({
+//         name: file.name,
+//         status: errors[index] ? STATUS.error : STATUS.pending,
+//         item: undefined,
+//         error: errors[index],
+//     }));
+
+export { STATUS };
+export type { MediaFilesResponse, UploadEntry, UploadResult, UploaderProps }

@@ -1,98 +1,22 @@
-// TODO: разнести на файлы хорошо бы, чтобы повысить читаемость кода
-
 import React, {
   useState,
   useEffect,
   useCallback,
   useRef,
-  useContext,
+  ChangeEvent,
 } from 'react';
-import type { ChangeEvent } from 'react';
 
 import imageMaxResolution from './logic/image-max-resolution.ts';
 import fileMaxSize from './logic/file-max-size.ts';
-import type { ValidationResult } from "./logic";
-
-import { useFilesFormField, FilesField } from './logic/useFilesFormField.ts';
-
-// TODO: отправляем только, когда файл загружен, тк он мб тяжелым и загружаться дольше 
-// и при отправке файла еще не будет или он будет повержден
-import { MediaFilesResponse } from "./logic/status.ts";
+import { useFilesFormField } from './logic/useFilesFormField.ts';
+import { UploaderProps } from "./logic/status.ts";
 import { uid } from "react-uid";
 import useTypedDispatch from "../../../../hooks/useTypedDispatch.ts";
 import { setBrandSettingsByField } from "../../../../redux/features/brandSetting/slice.ts";
-
-const UploaderContext = React.createContext<
-  | {
-    isUpLoading: boolean;
-    fileInputRef: React.RefObject<HTMLInputElement>;
-    selectedFiles: FilesField; // тип FilesField объявлен в хуке 'useFilesFormField'
-    handleFilesChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  }
-  | undefined
->(undefined);
-
-const useFilesUploader = () => {
-  const context = useContext(UploaderContext);
-
-  if (!context) {
-    throw new Error(
-      'This component must be used within a <FileUploader> component.'
-    );
-  }
-
-  return context;
-};
-
-const STATUS = {
-  initial: 'initial',
-  pending: 'pending',
-  uploaded: 'uploaded',
-  error: 'error',
-} as const;
-
-const fileFormats = "image/gif, image/jpeg, image/png, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel";
-
-type UploadEntry = {
-  name: string;
-  status: keyof typeof STATUS;
-  error: string | null;
-  uploaded?: MediaFilesResponse['data'][number];
-};
-
-type UploadResult = {
-  status: 'fulfilled' | 'rejected';
-  value?: {
-    status: UploadEntry['status'];
-    uploaded?: UploadEntry['uploaded'];
-    error?: UploadEntry['error'];
-  };
-  reason?: any;
-};
+import { UploaderContext, useFilesUploader } from "./logic/useFilesUploader.ts";
+import { INPUT_WHITELIST } from "./logic/constants.ts";
 
 const validators = [fileMaxSize(), imageMaxResolution()];
-
-const formatToUploadEntries = (
-  files: File[],
-  errors: ValidationResult[]
-): UploadEntry[] =>
-  files.map((file, index) => ({
-    name: file.name,
-    status: errors[index] ? STATUS.error : STATUS.pending,
-    item: undefined,
-    error: errors[index],
-  }));
-
-type UploaderProps = {
-  onFilesSelected?: () => void;
-  onFilesCleared?: () => void;
-  onUploadStart?: (uploadEntries: UploadEntry[]) => void;
-  onUploadEnd?: (uploadResult: UploadResult[]) => void;
-  onFileUploadEnd?: (file: File, obj: Partial<UploadEntry>) => void;
-  children?: JSX.Element;
-  className?: string;
-  name: string;
-};
 
 export const FilesUploader = (props: UploaderProps) => {
   const {
@@ -105,16 +29,17 @@ export const FilesUploader = (props: UploaderProps) => {
     children,
     name,
   } = props;
-
   const [isUpLoading, setUpLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const dispatch = useTypedDispatch();
+
   const selectedFiles = useFilesFormField('files', validators);
 
-  // сохраняем ссылки на функции, чтобы не тригерить useEffect, так как
+  // ??? сохраняем ссылки на функции, чтобы не тригерить useEffect, так как
   // ссылка на selectedFiles будет изменятся между ре-рендерами,
   // но внутренние ссылки на объекты будут стабильны
-  const { clear: clearSelectedFiles, handleChange: handleChangeHandler } =
+  const { clear: clearSelectedFiles } =
     selectedFiles;
 
   const resetUploader = useCallback(() => {
@@ -124,10 +49,7 @@ export const FilesUploader = (props: UploaderProps) => {
     onFilesCleared?.();
   }, [clearSelectedFiles, onFilesCleared]);
 
-  const dispatch = useTypedDispatch();
-
   useEffect(() => {
-    // TODO: write axios logic when connect it
     const uploadMediaFiles = async () => {
 
       if (selectedFiles.value.length === 0) {
@@ -143,47 +65,6 @@ export const FilesUploader = (props: UploaderProps) => {
           const newData = {[name]: options.source};
           dispatch(setBrandSettingsByField({ field: 'images', newData }));
         })
-
-      // setUpLoading(true);
-
-      // onUploadStart?.(
-      //   formatToUploadEntries(selectedFiles.value, selectedFiles.error)
-      // );
-
-      // const allPromises = selectedFiles.value
-      //   .filter((item, index) => !selectedFiles.error[index])
-      //   .map(async (file) => {
-      //     const options = { source: file };
-
-      //     const uploadPromise = api.post.mediaFile(options);
-      //     let uploadResult: Partial<UploadEntry> = {};
-
-      //     try {
-      //       const uploaded = await uploadPromise;
-      //       uploadResult = {
-      //         status: STATUS.uploaded,
-      //         uploaded,
-      //       };
-      //     } catch (err) {
-      //       const msg =
-      //         err instanceof Error
-      //           ? err.message
-      //           : 'Unknown Error: api.post.mediaFiles';
-      //       uploadResult = {
-      //         status: STATUS.error,
-      //         error: msg,
-      //       };
-      //     } finally {
-      //       onFileUploadEnd?.(file, uploadResult);
-      //     }
-
-      //     return uploadPromise;
-      //   });
-
-      // const uploadingResult = await Promise.allSettled(allPromises);
-      // onUploadEnd?.(uploadingResult);
-
-      // resetUploader();
     };
 
     uploadMediaFiles();
@@ -233,7 +114,7 @@ FilesUploader.Input = function Input({ label = '+ Загрузить', ...props 
         type='file'
         onChange={handleFilesChange}
         id={`file-uploader-input-button-${id}`}
-        accept={fileFormats}
+        accept={INPUT_WHITELIST}
       />
       <label
         htmlFor={`file-uploader-input-button-${id}`}

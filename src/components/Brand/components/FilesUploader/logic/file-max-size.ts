@@ -1,8 +1,6 @@
+import { DEFAULT_MAX_SIZE_IN_BYTES } from "./constants";
 import type { GetValidator } from "./index";
 
-// максимальное ограничение выставлено в 10мб
-// https://gitlab.tcsbank.ru/tj/opis/-/blob/master/app/settings.py#L65
-const DEFAULT_MAX_SIZE_IN_BYTES = 10485760;
 
 const maxFileSize: GetValidator<number, File> = (
   maxSizeInBytes = DEFAULT_MAX_SIZE_IN_BYTES

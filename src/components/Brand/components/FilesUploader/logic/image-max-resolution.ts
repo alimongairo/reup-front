@@ -1,16 +1,8 @@
 import type { GetValidator } from "./index";
 import getImageDimensions from "./get-image-dimensions";
+import { DEFAULT_MAX_RESOLUTION_IN_PIXELS, MYMETYPE_WHITELIST } from "./constants";
 
-const DEFAULT_MAX_RESOLUTION_IN_PIXELS = 25000000; // 25 mega pixels
 
-const MYMETYPE_WHITELIST = [
-  "image/png",
-  "image/jpeg",
-  "image/webp",
-  "image/gif",
-  "image/tiff",
-  "image/svg+xml",
-];
 
 const imageMaxResolution: GetValidator<number, File> = (
   maxResolutionInPixels = DEFAULT_MAX_RESOLUTION_IN_PIXELS,
@@ -50,5 +42,4 @@ const imageMaxResolution: GetValidator<number, File> = (
   };
 };
 
-export { DEFAULT_MAX_RESOLUTION_IN_PIXELS };
 export default imageMaxResolution;
