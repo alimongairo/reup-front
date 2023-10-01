@@ -1,13 +1,12 @@
 import React from 'react'
 import SchemeLayout from "../SchemeLayout"
+import { TSchemeData } from "../../../components/Menu/models"
 
-// TODO: fx any
 interface IProps{
   isEditing: boolean,
   isEditable: boolean,
-  data: any,
+  data: TSchemeData,
 }
-
 
 export default function EditablePage({isEditing, isEditable, data }: IProps) {
   return (

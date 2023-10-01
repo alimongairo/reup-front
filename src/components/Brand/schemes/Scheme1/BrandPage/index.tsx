@@ -1,8 +1,9 @@
 import React from 'react'
 import SchemeLayout from "../SchemeLayout";
+import { TSchemeData } from "../../../components/Menu/models";
 
 interface IProps {
-  data: any;
+  data: TSchemeData;
 }
 //TODO: страница отображения бренда на самом сайте
 export default function BrandPage({data} : IProps) {

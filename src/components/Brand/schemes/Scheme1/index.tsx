@@ -4,10 +4,11 @@ import EditableScheme from './EditablePage';
 import useWithEdit from '../../../../hooks/useWithEdit';
 import { useQuery } from "../../../../hooks";
 import { Layout } from "../../components";
+import { TSchemeData } from "../../components/Menu/models";
 
 // TODO: fx any
 interface IProps {
-    data: any;
+    data: TSchemeData;
 }
 
 const Scheme1 = ({data} : IProps) => {
@@ -22,7 +23,7 @@ const Scheme1 = ({data} : IProps) => {
         editComponent: <EditableScheme isEditing={isEditing} data={data}/>,
     });
 
-    return <Layout isEditable={isEditable} component={component as JSX.Element} isEditing={isEditing} setIsEditing={setIsEditing}/>;
+    return <Layout isEditable={isEditable} component={component as JSX.Element} isEditing={isEditing} setIsEditing={setIsEditing} data={data}/>;
 };
 
 export default Scheme1;

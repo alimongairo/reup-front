@@ -1,5 +1,5 @@
 import { DEFAULT_MAX_SIZE_IN_BYTES } from "./constants";
-import type { GetValidator } from "./index";
+import type { GetValidator } from "./validate";
 
 
 const maxFileSize: GetValidator<number, File> = (

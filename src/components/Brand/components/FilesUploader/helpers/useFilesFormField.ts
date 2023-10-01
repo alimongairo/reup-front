@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
-import validateValue from ".";
-import { ValidationResult, Validator } from ".";
+import validateValue from "./validate";
+import { ValidationResult, Validator } from "./validate";
 import { DefaultField } from "./types";
 
 type FilesField = Omit<DefaultField, "value" | "error"> & {
