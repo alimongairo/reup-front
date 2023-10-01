@@ -15,6 +15,7 @@ export function useFilesFormField(
   validators: Validator<File>[],
   init: File[] = []
 ): FilesField {
+  console.log("useFilesFormField")
   const [value, setValue] = useState<File[]>(init);
   const [error, setError] = useState<ValidationResult[]>([]);
 

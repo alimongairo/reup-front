@@ -30,6 +30,7 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
             title: data.name,
             titleStyle: styleParser(data.name_param),
             imgSource: data.image1_main,
+            imgName: 'image1_main',
           },
           {
             title: data.about,
@@ -37,6 +38,7 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
             description: data.description_2page,
             descriptionStyle: styleParser(data.description_2page_param),
             imgSource: data.image2_main,
+            imgName: 'image2_main',
           },
         ]}
         isEditing={isEditing}
@@ -67,9 +69,9 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
       </div>
 
       <div className={cx.gallery}>
-        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header1} />
-        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header2} />
-        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header3} />
+        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header1} name='image_header1'/>
+        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header2} name="image_header2"/>
+        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header3} name="image_header2"/>
         <div className={cx.title}>
           {
             data.heading2 && <Typography variant="h3" style={styleParser(data.heading2_param)}>{data.heading2}</Typography>

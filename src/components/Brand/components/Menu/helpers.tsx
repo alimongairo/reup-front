@@ -11,8 +11,6 @@ import {
   TSchemeNum,
 } from './models';
 import { AddCategory, ColorAndFamily, EditText, BgColor } from "./components/options";
-import { FilesField } from "../FilesUploader/logic/useFilesFormField";
-
 
 export const menuMaps = new Map<ELabelsName, ReactNode>([
   [ELabelsName.DefaultList, <DefaultMenu key={1} />],
@@ -29,11 +27,6 @@ export interface IMenuContext {
   schemeNum: TSchemeNum;
   schemeData: TSchemeData;
   updateData: (data: TSchemeData) => void;
-  // files uploader
-  isUpLoading?: boolean;
-  selectedFiles?: FilesField; // тип FilesField объявлен в хуке 'useFilesFormField'
-  handleFilesChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-  fileInputRef?: React.RefObject<HTMLInputElement>;
 }
 
 // В контекст записывается активное окно

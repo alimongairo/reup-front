@@ -62,4 +62,5 @@ export type TSchemeData = {
   bgColor: TBgColor[];
   colorAndFamily: TColorAndFamily[];
   categories: TCategories;
+  images: any;
 };

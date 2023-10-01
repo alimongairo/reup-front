@@ -25,7 +25,7 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
             </div>
             <div className={cx.pic}>
               {/* <Image src={process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} alt="placeholder" className={cx.image} /> */}
-              <EditableImage className={cx.image} isEditing={isEditing} src={data.image_main} />
+              <EditableImage className={cx.image} isEditing={isEditing} src={data.image_main} name='image_main'/>
               <div className={cx.links}>
                 <ul className={cx.list}>
                   {
@@ -44,15 +44,15 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
           </div>
 
           <div className={cx.gallery}>
-            <EditableImage className={cx.image} isEditing={isEditing} src={data.image1_left} />
-            <EditableImage className={cx.image} isEditing={isEditing} src={data.image1_middle} />
-            <EditableImage className={cx.image} isEditing={isEditing} src={data.image1_right} />
-            <EditableImage className={cx.image} isEditing={isEditing} src={data.image2_left} />
+            <EditableImage className={cx.image} isEditing={isEditing} src={data.image1_left} name='image1_left' />
+            <EditableImage className={cx.image} isEditing={isEditing} src={data.image1_middle} name='image1_middle' />
+            <EditableImage className={cx.image} isEditing={isEditing} src={data.image1_right} name='image1_right' />
+            <EditableImage className={cx.image} isEditing={isEditing} src={data.image2_left} name='image2_left' />
             <div className={cx.title}>
               <Typography variant="h3" style={styleParser(data.heading2_param)}>{data.heading2}</Typography>
               <p style={styleParser(data.text2_block_param)}>{data.text2_block}</p>
             </div>
-            <EditableImage className={cx.image} isEditing={isEditing} src={data.image2_right} />
+            <EditableImage className={cx.image} isEditing={isEditing} src={data.image2_right} name='image2_right' />
 
           </div>
 

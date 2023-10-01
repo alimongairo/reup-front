@@ -9,7 +9,9 @@ const store = configureStore({
         brandSettings: brandSettingsReducer,
         [api.reducerPath]: api.reducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false
+      }).concat(api.middleware),
 })
 
 export type RootState = ReturnType<typeof store.getState>
