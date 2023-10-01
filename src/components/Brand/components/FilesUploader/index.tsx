@@ -52,7 +52,7 @@ const STATUS = {
   error: 'error',
 } as const;
 
-const fileFormats = ".xls,.xlsx, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel";
+const fileFormats = "image/gif, image/jpeg, image/png, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel";
 
 type UploadEntry = {
   name: string;
@@ -91,6 +91,7 @@ type UploaderProps = {
   onUploadEnd?: (uploadResult: UploadResult[]) => void;
   onFileUploadEnd?: (file: File, obj: Partial<UploadEntry>) => void;
   children?: React.ReactNode;
+  className?: string;
 };
 
 export const FilesUploader = (props: UploaderProps) => {
@@ -100,6 +101,7 @@ export const FilesUploader = (props: UploaderProps) => {
     onFileUploadEnd,
     onFilesSelected,
     onFilesCleared,
+    className, 
     children,
   } = props;
 
@@ -220,7 +222,7 @@ export const FilesUploader = (props: UploaderProps) => {
     //     handleFilesChange,
     //   }}
     // >
-      <div>{children}</div>
+      <div className={className}>{children}</div>
     // </MenuContext.Provider>
   );
 };
@@ -229,7 +231,7 @@ FilesUploader.Input = function Input({ label = '+ Загрузить', ...props 
   const { fileInputRef, handleFilesChange } = useFilesUploader();
 
   return (
-    <div id={uid(1)} className={props.className}>
+    <div id={uid(1)}>
       <input
         ref={fileInputRef}
         type='file'

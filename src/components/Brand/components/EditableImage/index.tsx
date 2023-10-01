@@ -17,7 +17,7 @@ export default function EditableImage({ isEditing, className, src = process.env.
       <Image src={src} alt={alt} />
       {
         isEditing && (
-          <FilesUploader><FilesUploader.Input className={cx.input} label="добавить фото / видео" /></FilesUploader>
+          <FilesUploader className={cx.input}><FilesUploader.Input label="добавить фото / видео" /></FilesUploader>
         )
       }
     </div>
