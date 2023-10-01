@@ -242,11 +242,34 @@ const brandSettingSlice = createSlice({
         newData: TSchemeData[keyof TSchemeData];
       }>,
     ) {
-      console.log(action.payload.newData)
-      return {
-        ...state,
-        [action.payload.field]: action.payload.newData,
-      };
+      if (action.payload.field === 'images') {
+
+        const idx = state.images.findIndex(
+          (item: any) =>
+            Object.keys(item)[0] === Object.keys(action.payload.newData)[0]
+        );
+
+        if (idx !== -1) {
+          const acc = [...state.images];
+          acc[idx] = action.payload.newData;
+
+          return {
+            ...state,
+            images: acc,
+          }
+        } else {
+          return {
+            ...state,
+            images: [...state.images, action.payload.newData],
+          }
+        }
+
+      } else {
+        return {
+          ...state,
+          [action.payload.field]: action.payload.newData,
+        };
+      }
     },
 
     addCategory(state, action: PayloadAction<TCategory>) {

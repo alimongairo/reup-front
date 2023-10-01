@@ -21,7 +21,6 @@ export default function Layout({ isEditable, component, isEditing, setIsEditing,
     const productsPlug = Array(27).fill(null);
     const [activeMenu, setActiveMenu] = useState(ELabelsName.DefaultList);
 
-
     const { schemeId } = useParams();
 
     const toHome = () => {
@@ -30,7 +29,6 @@ export default function Layout({ isEditable, component, isEditing, setIsEditing,
 
     const updateData = (newData: TSchemeData) => {
         console.log({ newData, data });
-        // TODO: add schemeData (данные заполненного поля - записывается в стэйт (мне кажется, тут достаточно контекста))
     };
 
     const initialContextValue: IMenuContext = useMemo(() => {

@@ -1,9 +1,9 @@
 import { api } from '../baseApi';
 
-export const brandPageStyle2Api = api.injectEndpoints({
+export const brandPageStyle1Api = api.injectEndpoints({
     endpoints: (builder) => ({
         // TODO: fx any
-        getBrandPageStyle2Data: builder.query<any, {scheme_id: number, vendor_id: string}>({
+        getBrandPageStyleData: builder.query<any, {scheme_id: number, vendor_id: string}>({
             query: ({scheme_id, vendor_id}) => ({
                 url: `/BrandPageStyle${scheme_id + 1}/vendor_id=${vendor_id}`,
             }),
@@ -32,8 +32,8 @@ export const brandPageStyle2Api = api.injectEndpoints({
 });
   
 export const {
-    useGetBrandPageStyle2DataQuery,
+    useGetBrandPageStyleDataQuery,
     // useCreateDataMutation,
     // useUpdateDataMutation,
     // useDeleteDataMutation,
-} = brandPageStyle2Api;
+} = brandPageStyle1Api;

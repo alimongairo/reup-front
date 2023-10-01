@@ -2,10 +2,11 @@ import { Scheme1, Scheme2, Scheme3 } from '../../../components/Brand/schemes';
 import { Typography } from "../../../components/ui";
 import { CRMLayout } from "../../../layouts";
 import { useParams } from "react-router-dom";
-import { useGetBrandPageStyle1DataQuery } from "../../../redux/api/brandPageStyle1Api";
+import { useGetBrandPageStyleDataQuery } from "../../../redux/api/brandPageStyleApi";
 import { useEffect, useState } from "react";
-import { useTypedDispatch } from "../../../hooks";
+import { useTypedDispatch, useTypedSelector } from "../../../hooks";
 import { setBaseData } from "../../../redux/features/brandSetting/slice";
+import { RootState } from "../../../app/store";
 
 export default function SchemePage() {
     const dispatch = useTypedDispatch();
@@ -27,7 +28,7 @@ export default function SchemePage() {
         }
     }
 
-    let { data, error, isLoading } = useGetBrandPageStyle1DataQuery({ scheme_id: +schemeId, vendor_id: vendorIdReturner(+schemeId) });
+    let { data, error, isLoading } = useGetBrandPageStyleDataQuery({ scheme_id: +schemeId, vendor_id: vendorIdReturner(+schemeId) });
 
     // TODO: fix any
     const [dataObj, setDataObj] = useState<any>();
@@ -36,9 +37,17 @@ export default function SchemePage() {
         const newDataObj = data && data[0];
         setDataObj(newDataObj);
         dispatch(setBaseData({data: newDataObj, schemeId: +schemeId}));
+        
     }, [data]);
 
 
+    // TODO: если обновилась картинка, меняем отображение и отправляем на есрвер сразу (POST)
+    const images = useTypedSelector((state: RootState) => state.brandSettings.images);
+
+    useEffect(() => {
+     console.log('--------------------------', images)
+    }, [images])
+    
     const schemes = [<Scheme1 key={0} data={dataObj} />, <Scheme2 key={1} data={dataObj}/>, <Scheme3 key={2} data={dataObj} />];
     const CurrentScheme = schemes[Number(schemeId)];
 
