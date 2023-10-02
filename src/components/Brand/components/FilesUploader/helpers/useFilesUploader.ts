@@ -13,7 +13,6 @@ export const UploaderContext = React.createContext<
   | undefined
 >(undefined);
 
-// TODO: use for menu too
 // кастомный хук, который позволит удобно юзать наш контекст 
 // и будет контролировать корректные условия запуска (элемент управления загрузчиком не может быть использован вне контекста загрузчика)
 export const useFilesUploader = () => {

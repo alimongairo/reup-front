@@ -5,6 +5,7 @@ import { setBrandSettingsByField } from "../../../../../../../../redux/features/
 import { brandSettingsTextSelector } from "../../../../../../../../redux/features/brandSetting/selectors";
 import cx from './index.module.scss';
 import { uid } from "react-uid";
+import { TEditText } from "../../../../models";
 
 interface IEditTextOption {
   title: string;
@@ -17,8 +18,7 @@ const EditTextOption = ({ title, name, value }: IEditTextOption) => {
   const editText = useTypedSelector(brandSettingsTextSelector);
 
   const onChange = (newValue: string) => {
-    // TODO: fix any
-    const newData = editText.map((item: any) => {
+    const newData = editText.map((item: TEditText) => {
       if (item.name === name) {
         return {
           ...item,
@@ -60,7 +60,7 @@ const Options = () => {
               name={field.name}
               value={field.value}
             />
-            <Divider direction={'horizontal'} color="grey"/>
+            <Divider direction={'horizontal'} color="grey" />
           </span>
         );
       })}

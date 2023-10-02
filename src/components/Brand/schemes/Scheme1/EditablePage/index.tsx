@@ -1,10 +1,10 @@
 import React from 'react'
-import SchemeLayout from "../SchemeLayout"
-import { TSchemeData } from "../../../components/Menu/models"
+import SchemeLayout from "../SchemeLayout";
+import { IScheme1Brand } from "../../../../../types/brandTypes";
 
 interface IProps{
   isEditing: boolean,
-  data: TSchemeData
+  data: IScheme1Brand
 }
 
 

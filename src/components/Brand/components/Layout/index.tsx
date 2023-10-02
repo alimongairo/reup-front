@@ -8,13 +8,14 @@ import { Image } from "../../../ui";
 import { IMenuContext, MenuContext, menuMaps } from "../../components/Menu/helpers";
 import { useParams } from "react-router-dom";
 import { EColors, EFamilies, ELabelsName, TSchemeData, TSchemeNum } from "../../components/Menu/models.ts";
+import { IScheme1Brand, IScheme2Brand, IScheme3Brand } from "../../../../types/brandTypes.ts";
 
 interface IProps {
     isEditable: boolean,
     component: ReactNode,
     isEditing: boolean,
     setIsEditing: (val: boolean) => void,
-    data: TSchemeData,
+    data: IScheme1Brand | IScheme2Brand | IScheme3Brand,
 }
 
 export default function Layout({ isEditable, component, isEditing, setIsEditing, data }: IProps) {

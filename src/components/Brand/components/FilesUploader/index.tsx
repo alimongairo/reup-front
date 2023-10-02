@@ -55,7 +55,7 @@ export const FilesUploader = (props: UploaderProps) => {
       if (selectedFiles.value.length === 0) {
         return;
       }
-      // TODO: загружаем только 1 файл - убрать лишнее
+
       selectedFiles.value
         .filter((item, index) => !selectedFiles.error[index])
         .map(async (file) => {

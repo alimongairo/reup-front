@@ -7,17 +7,22 @@ import { useEffect, useState } from "react";
 import { useTypedDispatch, useTypedSelector } from "../../../hooks";
 import { setBaseData } from "../../../redux/features/brandSetting/slice";
 import { RootState } from "../../../app/store";
+import { IScheme1Brand, IScheme2Brand, IScheme3Brand } from "../../../types/brandTypes";
+
+type TSchemeParams = {
+    schemeId: string;
+  };
 
 export default function SchemePage() {
     const dispatch = useTypedDispatch();
-    // TODO: fx any
-    const { schemeId } = useParams() as any;
 
-    // TODO: replace "12" to brand.id 
+    const { schemeId } = useParams<keyof TSchemeParams>() as TSchemeParams;
+
+    // TODO: replace vendorIdReturner(+schemeId) to brand.id (стор)
+    // replace schemeId to brand.scheme_id (стор)
     // 1-33 вендор первая схема
     // 34-67 вторая
     // 68-100 третья
-    // TODO: replace schemeId to brand.scheme_id (номер схемы из стора)
     // mock fn - remove
     const vendorIdReturner = (schemeId: number) => {
         switch (schemeId) {
@@ -30,8 +35,7 @@ export default function SchemePage() {
 
     let { data, error, isLoading } = useGetBrandPageStyleDataQuery({ scheme_id: +schemeId, vendor_id: vendorIdReturner(+schemeId) });
 
-    // TODO: fix any
-    const [dataObj, setDataObj] = useState<any>();
+    const [dataObj, setDataObj] = useState<IScheme1Brand | IScheme2Brand | IScheme3Brand>();
 
     useEffect(() => {
         const newDataObj = data && data[0];
@@ -39,21 +43,17 @@ export default function SchemePage() {
         dispatch(setBaseData({data: newDataObj, schemeId: +schemeId}));
         
     }, [data]);
-
-
-    // TODO: если обновилась картинка, меняем отображение и отправляем на есрвер сразу (POST)
-    const images = useTypedSelector((state: RootState) => state.brandSettings.images);
-
-    useEffect(() => {
-     console.log('--------------------------', images)
-    }, [images])
     
-    const schemes = [<Scheme1 key={0} data={dataObj} />, <Scheme2 key={1} data={dataObj}/>, <Scheme3 key={2} data={dataObj} />];
+    const schemes = [
+        <Scheme1 key={0} data={dataObj as IScheme1Brand} />, 
+        <Scheme2 key={1} data={dataObj as IScheme2Brand}/>, 
+        <Scheme3 key={2} data={dataObj as IScheme3Brand} />,
+    ];
+
     const CurrentScheme = schemes[Number(schemeId)];
 
     return (
         <div style={{ background: dataObj?.background_color ? dataObj.background_color : "inherit" }}>
-            {/* TODO: сделать обработку ошибки и загрузки для всех страниц */}
             {error ? (
                 <p>Oh no, there was an error</p>
             ) : isLoading ? (

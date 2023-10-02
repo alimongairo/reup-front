@@ -4,11 +4,10 @@ import EditableScheme from './EditablePage';
 import useWithEdit from '../../../../hooks/useWithEdit';
 import { useQuery } from "../../../../hooks";
 import { Layout } from "../../components";
-import { TSchemeData } from "../../components/Menu/models";
+import { IScheme3Brand } from "../../../../types/brandTypes";
 
-// TODO: fx any
 interface IProps {
-    data: TSchemeData;
+    data: IScheme3Brand;
 }
 
 const Scheme3 = ({data} : IProps) => {

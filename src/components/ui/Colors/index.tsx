@@ -21,13 +21,13 @@ const defaultColors: IColor[] = Object.entries(EColors).map(
 
 export interface IColor {
   name: string;
-  value?: EColors;
+  value?: string | null;
 }
 
 interface IColorsProps {
   colors?: IColor[];
-  value?: EColors;
-  onChange?: (color: EColors) => void;
+  value?: string | null;
+  onChange?: (color: string) => void;
 }
 
 export const Colors = ({ colors, onChange, value }: IColorsProps) => {
@@ -40,9 +40,9 @@ export const Colors = ({ colors, onChange, value }: IColorsProps) => {
           })}
           key={color.value}
           onClick={() => {
-            onChange?.(color.value || EColors.Black);
+            onChange?.(color.value || '#000000');
           }}
-          style={{ backgroundColor: color.value }}
+          style={{ backgroundColor: color.value || "FFFFFF"}}
         ></div>
       ))}
     </div>

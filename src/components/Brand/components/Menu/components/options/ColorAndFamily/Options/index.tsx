@@ -39,9 +39,9 @@ const ColorOption = ({ title, color, name, family, size }: TColorAndFamily) => {
       title={title}
       content={
         <div className={cx.content}>
-          <PreviewFamily family={family} />
-          <SelectFamily family={family} onChange={onChange} />
-          <Size value={size} onChange={onChange} />
+          <PreviewFamily family={family as EFamilies} />
+          <SelectFamily family={family as EFamilies} onChange={onChange} />
+          <Size value={size as string} onChange={onChange} />
           <Colors
             value={color}
             onChange={(value) => onChange(value, 'color')}

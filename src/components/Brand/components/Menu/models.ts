@@ -29,7 +29,7 @@ export type TSchemeNum = 0 | 1 | 2;
 
 export type TEditText = {
   name: string;
-  value: string;
+  value: string | null;
   title: string;
 };
 
@@ -42,9 +42,9 @@ export type TBgColor = {
 export type TColorAndFamily = {
   title: string; // имя изменяемого текста
   name: string; // ключ изменяемого текста
-  family: EFamilies; // familyName
-  size: number;
-  color: EColors;
+  family: EFamilies | string | null; // familyName
+  size: string | null;
+  color: string | null;
 };
 
 export type TCategory = {

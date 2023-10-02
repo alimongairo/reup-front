@@ -6,11 +6,11 @@ import { EditableImage, Slider } from "../../../components";
 import { uid } from 'react-uid';
 import cx from './index.module.scss';
 import { styleParser } from "../../../../../helpers";
+import { IScheme1Brand } from "../../../../../types/brandTypes";
 
-// TODO: fx any
 interface IProps {
   isEditing: boolean,
-  data: any;
+  data: IScheme1Brand;
 }
 
 export default function SchemeLayout({ isEditing, data }: IProps) {
@@ -69,9 +69,9 @@ export default function SchemeLayout({ isEditing, data }: IProps) {
       </div>
 
       <div className={cx.gallery}>
-        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header1} name='image_header1'/>
-        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header2} name="image_header2"/>
-        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header3} name="image_header2"/>
+        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header1 || undefined} name='image_header1'/>
+        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header2 || undefined} name="image_header2"/>
+        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header3 || undefined} name="image_header2"/>
         <div className={cx.title}>
           {
             data.heading2 && <Typography variant="h3" style={styleParser(data.heading2_param)}>{data.heading2}</Typography>
