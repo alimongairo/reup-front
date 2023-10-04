@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { MainLayout } from "../../layouts"
-import { ProductSelections, Top } from "./components"
+import { ProductSelections, ReupChoosen, Top } from "./components"
 import { Bricks, EAlign, IBrick, Typography } from "../../components/ui"
 import { ERoutes } from "../../app/router/types"
 import cx from './index.module.scss';
@@ -55,6 +55,7 @@ export default function MainPage() {
       <Bricks list={bricksList} className={cx.bricks}/>
       <Typography variant="h1">новый бренд</Typography>
       <ProductSelections />
+      <ReupChoosen />
     </MainLayout>
   )
 }

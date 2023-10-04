@@ -5,11 +5,12 @@ import cx from './index.module.scss';
 
 interface IProps {
   to?: string;
+  className?: string;
 }
 
-export default function MoreLink({to = "/"} : IProps) {
+export default function MoreLink({to = "/", className} : IProps) {
   return (
-    <NavLink to={to}>
+    <NavLink to={to} className={className}>
       <>
         <p className={cx.txt}>больше</p>
        <MoreIcon />
