@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 import cx from './index.module.scss';
+import cls from 'classnames';
 import { Image, Button, Fav } from "../ui";
 
-export default function ProductItem() {
+interface IProps {
+    className?: string;
+    size?: 'default' | 'inSwiper';
+}
+
+export default function ProductItem({className, size = "default"}: IProps) {
     const [isFav, setIsFav] = useState(false);
 
     const onFavClick = () => {
@@ -10,7 +16,7 @@ export default function ProductItem() {
     }
 
     return (
-        <div className={cx.product}>
+        <div className={cls(cx.product, cx[size], className)}>
             <div className={cx.image}>
                 <Fav isActive={isFav} onClick={onFavClick} className={cx.fav} />
                 <Image className={cx.img}/>

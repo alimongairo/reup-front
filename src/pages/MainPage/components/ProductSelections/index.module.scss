@@ -6,29 +6,47 @@
     z-index: 1;
 }
 
-.nav {
-    button {
-        background: $color-snow;
-        width: 44px;
-        height: 44px;
-        padding: 0;
-        z-index: 2;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
+@media(min-width: $media-desktop) {
+    .nav {
+        display: contents;
 
-        &.prevBtn {
-            left: -22px;
+        button {
+            background: $color-snow;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
 
-            svg {
-                transform: rotate(180deg);
+            &.prevBtn {
+                left: -22px;
+
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+
+            &.nextBtn {
+                right: -22px;
             }
         }
 
-        &.nextBtn {
-            right: -22px;
-        }
+    }
+}
+
+@media(max-width: $media-mobile) {
+
+    .nav, .nav button {
+        display: none;
     }
 
-
+    .slide{
+        width: 175px;
+        &:not(:last-child){
+            margin-right: 8px;
+        }
+    }
+    
 }
