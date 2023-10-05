@@ -1,0 +1,13 @@
+@import '../../styles/vars.scss';
+
+@media(max-width: $media-mobile) {
+    .bricks{
+        margin-bottom: $mb-lg;
+    }
+}
+
+@media(min-width: $media-desktop) {
+    .bricks{
+        margin-bottom: $mb-lg-mobile;
+    }
+}

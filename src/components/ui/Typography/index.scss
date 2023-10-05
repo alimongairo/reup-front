@@ -10,20 +10,36 @@ h3.MuiTypography-root {
     display: block;
 }
 
-h1.MuiTypography-root {
-    font-size: 64px;
-    margin-bottom: $margin-h1;
-    letter-spacing: 2.56px;
-}
-
-h2.MuiTypography-root {
-    font-size: 32px;
-    margin-bottom: $margin-h2;
-    letter-spacing: 1.28px;
-}
-
 h3.MuiTypography-root {
     font-size: 24px;
     margin-bottom: $margin-h3;
     letter-spacing: 1.68px;
+}
+
+@media(max-width: $media-mobile) {
+    h1.MuiTypography-root {
+        font-size: 32px;
+        margin-bottom: $margin-h1-mobile;
+        letter-spacing: 1.28px;
+    }
+
+    h2.MuiTypography-root {
+        font-size: 20px;
+        margin-bottom: $margin-h2-mobile;
+        letter-spacing: 0.8px;
+    }
+}
+
+@media(min-width: $media-desktop) {
+    h1.MuiTypography-root {
+        font-size: 64px;
+        margin-bottom: $margin-h1;
+        letter-spacing: 2.56px;
+    }
+
+    h2.MuiTypography-root {
+        font-size: 32px;
+        margin-bottom: $margin-h2;
+        letter-spacing: 1.28px;
+    }
 }

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ErrorPage, MainPage, SchemePage, SchemeSelectionPage } from "../../pages";
-import { ERoutes } from "./types";
+import { ErrorPage, MainPage, SchemePage, SchemeSelectionPage, StockPage } from "../../pages";
+import { ERoutes } from "./config";
+import BrandRegistrationPage from "../../pages/crm/BrandRegistrationPage";
 
 export const router = createBrowserRouter([
     {
@@ -16,7 +17,19 @@ export const router = createBrowserRouter([
         element: <SchemeSelectionPage />
     },
     {
+        path: ERoutes.CrmBrandRegistration,
+        element: <BrandRegistrationPage />
+    },
+    {
         path: ERoutes.Error,
         element: <ErrorPage />
+    },
+    {
+        path: ERoutes.Stock,
+        element: <StockPage />
+    },
+    {
+        path: `${ERoutes.Product}/:id`,
+        element: <></>
     },
 ])

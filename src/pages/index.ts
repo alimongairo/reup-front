@@ -1,6 +1,8 @@
-import MainPage from "./MainPage";
+import MainPage from "./MainPage/index.tsx";
 import ErrorPage from "./ErrorPage";
-import SchemePage from "./SchemePage/index.tsx";
-import SchemeSelectionPage from "./SchemeSelectionPage";
+import StockPage from "./StockPage";
+import SchemePage from "./crm/SchemePage/index.tsx";
+import SchemeSelectionPage from "./crm/SchemeSelectionPage";
+import BrandRegistrationPage from "./crm/BrandRegistrationPage";
 
-export {ErrorPage, MainPage, SchemePage, SchemeSelectionPage};
+export {ErrorPage, MainPage, SchemePage, SchemeSelectionPage, BrandRegistrationPage, StockPage};

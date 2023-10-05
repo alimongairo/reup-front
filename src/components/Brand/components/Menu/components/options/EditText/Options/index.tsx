@@ -64,15 +64,14 @@ const Options = () => {
     <div>
       {editText?.map((field) => {
         return (
-          <>
+          <div key={field.name}>
             <EditTextOption
-              key={field.name}
               title={field.title}
               name={field.name}
               value={field.value}
             />
-            <Divider key={field.name} direction={'horizontal'} />
-          </>
+            <Divider direction={'horizontal'} />
+          </div>
         );
       })}
     </div>

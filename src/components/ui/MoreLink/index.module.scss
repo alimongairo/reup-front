@@ -1,0 +1,10 @@
+@import '../../../styles/vars.scss';
+
+.more {
+    display: flex;
+    flex-direction: column;
+
+    p {
+        margin-bottom: 6px;
+    }
+}
