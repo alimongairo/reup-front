@@ -17,7 +17,7 @@ const Button = ({ children, viewType = "default", colorM = "black", iconName, is
       "icon": viewType === "iconBtn",
       [`icon-${iconName}`]: iconName,
       ["active"]: isActive,
-    })} variant={variant} size={size} >
+    }, props.className)} variant={variant} size={size} >
       {children}
     </MuiButton>
   )

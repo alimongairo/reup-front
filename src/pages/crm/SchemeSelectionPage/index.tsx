@@ -1,15 +1,14 @@
 import { useState, useCallback } from 'react'
-import { CRMLayout } from "../../layouts";
+import { CRMLayout } from "../../../layouts";
 import { Field } from "./components";
 import cx from './index.module.scss';
-import { Button, Image } from "../../components/ui";
+import { Button, Image } from "../../../components/ui";
 import { uid } from "react-uid";
 import { Link } from "react-router-dom";
-import Scheme1 from '../../../static/images/crm/schemes/scheme1.png';
-import Scheme2 from '../../../static/images/crm/schemes/scheme2.png';
-import Scheme3 from '../../../static/images/crm/schemes/scheme3.png';
-import { ERoutes } from '../../app/router/config';
-
+import Scheme1 from '../../../../static/images/crm/schemes/scheme1.png';
+import Scheme2 from '../../../../static/images/crm/schemes/scheme2.png';
+import Scheme3 from '../../../../static/images/crm/schemes/scheme3.png';
+import { ERoutes } from '../../../app/router/config';
 
 const schemes = [
     { id: 0, title: "шаблон / 1", img: Scheme1 },

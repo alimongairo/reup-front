@@ -5,7 +5,7 @@
 @import "../../../../../styles/mixins.scss";
 
 .wrapper {
-    @include compensatePadding-desktop();
+    @include outer;
 
     .top {
         height: 633px;

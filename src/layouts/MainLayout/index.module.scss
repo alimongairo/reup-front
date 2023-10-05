@@ -5,14 +5,22 @@
     flex-direction: column;
 }
 
+.container{
+    box-sizing: border-box;
+}
+
 @media(min-width: $media-desktop){
     .container{
         @include container-width();
+        padding: $containerPadding-desktop;
+        padding-top: $headerHeight-desktop;
     }
 }
 
 @media(max-width: $media-mobile){
     .container{
         width: 100%;
+        padding: $containerPadding-mobile;
+        padding-top: $headerHeight-mobile;
     }
 }
