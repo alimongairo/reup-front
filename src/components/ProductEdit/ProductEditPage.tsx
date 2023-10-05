@@ -9,7 +9,6 @@ import { Grid, Stack } from "@mui/material";
 
 import cx from './index.module.scss';
 import ListSelect from "../ui/ListSelect";
-import React from "react";
 import SizeBlock from "./SizeBlock";
 
 const options = [
@@ -136,12 +135,12 @@ const ProductEditLayout = () => {
                     <Typography variant='h2'>мультимедиа</Typography>
                 </div>
                 <Grid container direction='row' spacing={3}>
-                    <Grid container item xs={3} >
+                    <Grid container item xs={4} >
                         <ImageUpload main value={state.media.main} onChange={handleChangeMainMedia}/>
                     </Grid>
-                    <Grid item container direction='row' xs={9} spacing={3}>
+                    <Grid item container direction='row' xs={8} spacing={3}>
                         {state.media.other.map((el, i) => (
-                            <Grid container item xs={3} key={i}>
+                            <Grid container item xs={12/5} key={i}>
                                 <ImageUpload value={el} onChange={handleChangeMedia(i)}/>
                             </Grid>
                         ))}
@@ -329,7 +328,7 @@ const ProductEditLayout = () => {
     }, [state]);
 
     return (
-        <div>
+        <div className={cx.wrapper}>
             {/* <CancelButton onClick={() => navigate(ERoutes.Stock)}/> */}
             <Typography variant="h1" className={cx.headerLabel}>добавить товар</Typography>
             <div className={cx.formWrapper}>

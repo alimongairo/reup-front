@@ -1,5 +1,5 @@
-import ProductEditLayout from "../components/ProductEdit";
-import { CRMLayout } from "../layouts";
+import ProductEditLayout from '../../../components/ProductEdit';
+import { CRMLayout } from '../../../layouts';
 
 const ProductEditPage = () => {
     return (

@@ -1,5 +1,5 @@
-import StockLayout from "../components/Stock";
-import { CRMLayout } from "../layouts";
+import StockLayout from '../../../components/Stock';
+import { CRMLayout } from '../../../layouts';
 
 const StockPage = () => {
     return (

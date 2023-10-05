@@ -1,79 +1,85 @@
 @import '../../styles/vars.scss';
 
-.formWrapper {
-    padding: 12px 154px;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-block: 50px;
 
-    .block {
-        padding: 50px;
+  .formWrapper {
+      padding: 12px 50px;
 
-        .heading{
-            margin-bottom: 32px;
-        }
+      .block {
+          padding: 50px;
 
-        .priceBlock {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            padding-top: 32px;
-        
-            .inputBlock {
-              display: flex;
-              gap: 24px;
-        
-              .price {
-                width: 550px;
-              }
-        
-              .sale {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                width: 130px;
-              }
-        
-              .sum {
-                height: 50px;
-                border: 1px solid #828282;
-                padding: 16px 24px;
-        
-                .sumLabel {
-                  font-weight: 700;
-                }
-        
-                .sumValue {
-                  margin-left: 12px;
-                }
-              }
-            }
-        
-            .infoBlock {
+          .heading{
+              margin-bottom: 32px;
+          }
+
+          .priceBlock {
               display: flex;
               flex-direction: column;
-              gap: 12px;
-              width: 540px;
-        
-              .infoItem {
+              gap: 32px;
+              padding-top: 32px;
+          
+              .inputBlock {
+                display: flex;
+                gap: 24px;
+          
+                .price {
+                  width: 550px;
+                }
+          
+                .sale {
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  width: 130px;
+                }
+          
+                .sum {
+                  height: 50px;
+                  border: 1px solid #828282;
+                  padding: 16px 24px;
+          
+                  .sumLabel {
+                    font-weight: 700;
+                  }
+          
+                  .sumValue {
+                    margin-left: 12px;
+                  }
+                }
+              }
+          
+              .infoBlock {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                width: 540px;
+          
+                .infoItem {
+                  display: flex;
+                  justify-content: space-between;
+                }
+              }
+          
+              .total {
                 display: flex;
                 justify-content: space-between;
+                font-size: 20px;
+                width: 540px;
+          
+                .totalLabel {
+                  font-weight: 700;
+                }
               }
             }
-        
-            .total {
-              display: flex;
-              justify-content: space-between;
-              font-size: 20px;
-              width: 540px;
-        
-              .totalLabel {
-                font-weight: 700;
-              }
-            }
-          }
-    }
+      }
 
-    .confirm {
-    display: flex;
-    justify-content: right;
-    padding-top: 16px;
-    }
+      .confirm {
+      display: flex;
+      justify-content: right;
+      padding-top: 16px;
+      }
+  }
 }
