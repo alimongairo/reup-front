@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import cls from 'classnames';
 import cx from './index.module.scss';
 import { IMenuContext, MenuContext, menuMaps } from "./helpers";

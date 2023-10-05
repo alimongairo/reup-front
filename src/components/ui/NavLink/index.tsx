@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink, NavLinkProps } from "react-router-dom";
 import cls from 'classnames';
 import cx from './index.module.scss';
