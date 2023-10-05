@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import cx from './index.module.scss';
 import classNames from 'classnames';
 import { ISelectOption } from '../Select/interface';
+import React from 'react';
 
 interface Props {
   value: string;

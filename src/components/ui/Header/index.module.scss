@@ -1,13 +1,12 @@
 @import '../../../styles/mixins.scss';
 @import '../../../styles/vars.scss';
 
-
-// TODO: состояния (active tool - fill svg)
-// Мобилка (перемещается в тулбар - отдельный компонент)
-
 .header{
-    background: $color-snow;
-
+    position: fixed;
+    top: 0;
+    transition: .3s;
+    width: 100%;
+    z-index: 100;
 }
 
 .container{
@@ -36,8 +35,10 @@
     }
 
     .logo{
-        height: auto;
-        width: 89px;
+        svg{
+            height: auto;
+            width: 89px;
+        }
     }
 
     .main{
@@ -58,12 +59,16 @@
     }
     
     .logo{
-        height: auto;
+
         width: 10%;
         padding: 20px 0;
         box-sizing: content-box;
         align-self: center;
         flex-shrink: 0;
+        svg{
+            width: 100%;
+            height: auto;
+        }
     }
     
     .linksList{
@@ -75,9 +80,6 @@
         li{
             line-height: 1;
             padding: 0 3%;
-            .active{
-                color: $color-primary;
-            }
         }
     }
     

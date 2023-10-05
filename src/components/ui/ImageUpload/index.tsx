@@ -4,6 +4,7 @@ import cx from './index.module.scss';
 import image from '../../../../static/images/tmp.png';
 import icon from '../../../../static/images/icons/close.svg';
 import { Stack } from '@mui/material';
+import React from 'react';
 
 interface Props {
   value: any;

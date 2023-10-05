@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { Head } from "..";
 import cx from './index.module.scss';
 import ProductItem from "../../../ProductItem";

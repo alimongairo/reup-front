@@ -28,6 +28,7 @@
     "react-router-dom": "^6.15.0",
     "react-uid": "^2.3.3",
     "styled-components": "^5.3.11",
+    "swiper": "^10.2.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-svgr": "^3.2.0"
   },

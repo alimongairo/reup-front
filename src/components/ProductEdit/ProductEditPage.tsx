@@ -9,6 +9,7 @@ import { Grid, Stack } from "@mui/material";
 
 import cx from './index.module.scss';
 import ListSelect from "../ui/ListSelect";
+import React from "react";
 import SizeBlock from "./SizeBlock";
 
 const options = [
