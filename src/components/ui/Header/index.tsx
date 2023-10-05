@@ -7,7 +7,6 @@ import { ReactComponent as CRMIcon } from "../../../../static/images/icons/crm.s
 import { ReactComponent as MarketIcon } from "../../../../static/images/icons/market.svg";
 import cx from './index.module.scss';
 import cls from 'classnames';
-
 import { uid } from 'react-uid';
 import { ERoles, ERoutes, confReturner } from "../../../app/router/config";
 import { Link } from "react-router-dom";

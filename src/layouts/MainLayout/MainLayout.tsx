@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import {ReactNode} from 'react';
 import { Header, MobileToolbar } from "../../components/ui";
 import cx from './index.module.scss';
 import { ERoles } from '../../app/router/config';

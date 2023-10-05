@@ -7,4 +7,3 @@ import StockPage from "./crm/StockPage/StockPage";
 import ProductEditPage from "./crm/ProductEditPage/ProductEditPage";
 
 export { ErrorPage, MainPage, SchemePage, SchemeSelectionPage, BrandRegistrationPage, StockPage, ProductEditPage };
-

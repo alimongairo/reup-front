@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { MainLayout } from "../../layouts"
 import { ProductSelections, Top } from "./components"
 import { Bricks, EAlign, IBrick, Typography } from "../../components/ui"
-import { ERoutes } from "../../app/router/types"
+import { ERoutes } from "../../app/router/config"
 import cx from './index.module.scss';
 
 const bricksListMock: IBrick[] = [
