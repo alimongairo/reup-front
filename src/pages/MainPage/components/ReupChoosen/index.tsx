@@ -8,10 +8,10 @@ import classNames from 'classnames';
 
 import { useWindowSize } from '../../../../hooks';
 
-import img from '@/static/img/model1.png';
+import img from '../../../../../static/images/hardcode/model1.png';
 import cx from './index.module.scss';
 import { Typography } from "@mui/material";
-import { MoreLink } from "../../../../components/ui";
+import { MoreLink, Image } from "../../../../components/ui";
 
 export interface IMainSlider {
   bgColor?: string;
@@ -37,21 +37,15 @@ const ReupChoosen = () => {
         >
           <div className={cx.text}>
             <Typography variant="h2">BEFREE</Typography>
-            <p >
+            <p className={cx.sub}>
               Наше дело не так однозначно, как может показаться: существующая
               теория напрямую зависит от стандартных подходов. Идейные
               соображения высшего порядка, а также разбавленное изрядной долей{' '}
             </p>
             <MoreLink className={cx.moreBtn} />
           </div>
-          <div
-            className={cx.imgWrapper}
-            style={{
-              width: typeof curWidth === 'number' ? curWidth * 0.6 : 'auto',
-            }}
-          >
-            {/* <Image src={img} alt={'img'} /> */}
-          </div>
+          <Image src={img} alt={'img'} className={cx.imgWrapper} />
+
         </div>
         <div
           className={classNames(cx.slide, {
@@ -65,21 +59,16 @@ const ReupChoosen = () => {
         >
           <div className={cx.text}>
             <Typography variant="h2">BEFREE</Typography>
-            <p>
+            <p className={cx.sub}>
               Наше дело не так однозначно, как может показаться: существующая
               теория напрямую зависит от стандартных подходов. Идейные
               соображения высшего порядка, а также разбавленное изрядной долей{' '}
             </p>
             <MoreLink className={cx.moreBtn} />
           </div>
-          <div
-            className={cx.imgWrapper}
-            style={{
-              width: typeof curWidth === 'number' ? curWidth * 0.6 : 'auto',
-            }}
-          >
-            {/* <Image src={img} alt={'img'} /> */}
-          </div>
+
+          <Image src={img} alt={'img'} className={cx.imgWrapper} />
+
         </div>
         <div
           className={classNames(cx.slide, {
@@ -93,21 +82,14 @@ const ReupChoosen = () => {
         >
           <div className={cx.text}>
             <Typography variant="h2">BEFREE</Typography>
-            <p>
+            <p className={cx.sub}>
               Наше дело не так однозначно, как может показаться: существующая
               теория напрямую зависит от стандартных подходов. Идейные
               соображения высшего порядка, а также разбавленное изрядной долей{' '}
             </p>
             <MoreLink className={cx.moreBtn} />
           </div>
-          <div
-            className={cx.imgWrapper}
-            style={{
-              width: typeof curWidth === 'number' ? curWidth * 0.6 : 'auto',
-            }}
-          >
-            {/* <Image src={img} alt={'img'} /> */}
-          </div>
+          <Image src={img} alt={'img'} className={cx.imgWrapper} />
         </div>
       </div>
       <div className={cx.footer}>

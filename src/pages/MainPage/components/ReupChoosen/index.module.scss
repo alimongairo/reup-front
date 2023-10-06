@@ -1,17 +1,15 @@
+@import '../../../../styles/vars.scss';
+
 .slides {
   display: flex;
-  overflow-x: hidden;
-  background: linear-gradient(
-    180deg,
-    rgba(54, 241, 229, 0) 20%,
-    rgb(190, 218, 98) 20%
-  );
-  @media screen and (min-width: 390px) and (max-width: 586px) {
-    background: linear-gradient(
-      0deg,
+  background: linear-gradient(180deg,
       rgba(54, 241, 229, 0) 20%,
-      rgb(190, 218, 98) 20%
-    );
+      rgb(190, 218, 98) 20%);
+
+  @media(max-width: $media-mobile) {
+    background: linear-gradient(0deg,
+        rgba(54, 241, 229, 0) 20%,
+        rgb(190, 218, 98) 20%);
   }
 
   .slide {
@@ -22,22 +20,28 @@
     transition: 0.3s;
     display: flex;
     gap: 2rem;
-    @media screen and (min-width: 390px) and (max-width: 586px) {
-      width: 100%;
-      min-width: 350px;
+    min-width: 100%;
+
+    @media(max-width: $media-mobile) {
       display: flex;
       flex-direction: column;
       margin-top: 0;
       padding: 2rem;
       padding-top: 0;
+      gap: 0;
     }
+
     &.active .text {
       opacity: 1;
     }
+
     .imgWrapper {
-      margin-top: -105px;
-      width: 100%;
-      @media screen and (min-width: 390px) and (max-width: 586px) {
+      margin-top: -5rem;
+      width: 80%;
+      aspect-ratio: 1.8;;
+      
+
+      @media(max-width: $media-mobile) {
         width: 100%;
         align-self: center;
         align-items: center;
@@ -45,10 +49,10 @@
         margin: 0;
       }
     }
+
     .imgWrapper img {
-      width: 100%;
-      height: auto;
-      @media screen and (min-width: 390px) and (max-width: 586px) {
+      
+      @media(max-width: $media-mobile) {
         padding: 0;
         margin: 0;
       }
@@ -67,18 +71,21 @@
   display: flex;
   gap: 8px;
   background: var(--reup-green);
+
   .activeCount {
     flex-grow: 1;
     background: black !important;
     opacity: 1 !important;
     transform: scale(1) !important;
   }
+
   .count {
     transition: 0.3s;
     background: #ffffff;
     opacity: 0.5;
     width: 10px;
     cursor: pointer;
+
     &:hover {
       transform: scale(1.1);
       background: #000000;
@@ -93,14 +100,20 @@
   gap: 1rem;
   padding: 2rem 0;
   opacity: 0.5;
-  @media screen and (min-width: 390px) and (max-width: 586px) {
+
+  @media(max-width: $media-mobile) {
     width: 100%;
+  }
+
+  .sub {
+    min-height: 98px;
   }
 }
 
 .moreBtn {
   margin-top: 2rem;
-  @media screen and (min-width: 390px) and (max-width: 586px) {
+
+  @media(max-width: $media-mobile) {
     margin-top: 0;
   }
 }
@@ -109,13 +122,10 @@
   background: var(--reup-green);
   border-bottom: 1px solid black;
   padding-bottom: 2rem;
-  transform: translateY(-50px);
 }
 
 .slider {
-  background: linear-gradient(
-    180deg,
-    rgba(54, 241, 229, 0) 26%,
-    rgba(190, 218, 98, 1) 26%
-  );
+  background: linear-gradient(180deg,
+      rgba(54, 241, 229, 0) 26%,
+      rgba(190, 218, 98, 1) 26%);
 }
