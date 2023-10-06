@@ -36,17 +36,17 @@ export default function ProductSelections() {
         [swiperRef],
     )
 
-    // useEffect(() => {
-    //     const handleWindowResize = () => {
-    //         setWindowWidth(window.innerWidth);
-    //     };
+    useEffect(() => {
+        const handleWindowResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
 
-    //     window.addEventListener('resize', handleWindowResize);
+        window.addEventListener('resize', handleWindowResize);
 
-    //     return () => {
-    //         window.removeEventListener('resize', handleWindowResize);
-    //     };
-    // }, []);
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
 
     useEffect(() => {
         if(windowWidth<=758){
