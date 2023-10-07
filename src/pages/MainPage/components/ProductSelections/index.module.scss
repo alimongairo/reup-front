@@ -42,7 +42,8 @@
     }
 
     .slide{
-        width: 175px;
+        max-width: 175px;
+        min-width: 175px;
         &:not(:last-child){
             margin-right: 8px;
         }

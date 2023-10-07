@@ -6,7 +6,7 @@ import classNames from 'classnames';
 // import Text from '@/components/common/Text';
 // import MoreButton from '@/components/common/MoreButton';
 
-import { useWindowSize } from '../../../../hooks';
+import { useWindowWidth } from '../../../../hooks';
 
 import img from '../../../../../static/images/hardcode/model1.png';
 import cx from './index.module.scss';
@@ -19,7 +19,7 @@ export interface IMainSlider {
 
 const ReupChoosen = () => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const { width } = useWindowSize();
+  const { width } = useWindowWidth();
   const curWidth = width ? width - 200 : 'auto';
 
   return (

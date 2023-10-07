@@ -55,7 +55,7 @@ export default function MainPage() {
       <Bricks list={bricksList} className={cx.bricks}/>
       <Typography variant="h1">новый бренд</Typography>
       <ProductSelections />
-      <ReupChoosen />
+      {/* <ReupChoosen /> */}
     </MainLayout>
   )
 }
