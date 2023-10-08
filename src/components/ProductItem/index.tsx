@@ -26,7 +26,7 @@ export default function ProductItem({className, size = "default"}: IProps) {
                 <p className={cx.sub}>Бренд</p>
                 <div className={cx.ftr}>
                     <Button>в корзину</Button>
-                    <p>7 500 ₽</p>
+                    <p>7 500&nbsp;₽</p>
                 </div>
             </div>
         </div>

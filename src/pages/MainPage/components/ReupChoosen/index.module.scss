@@ -1,6 +1,7 @@
 @import '../../../../styles/vars.scss';
 
 .slides {
+  overflow: hidden;
   display: flex;
   background: linear-gradient(180deg,
       rgba(54, 241, 229, 0) 20%,

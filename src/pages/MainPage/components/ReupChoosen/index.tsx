@@ -1,10 +1,5 @@
 import { useState } from 'react';
 import classNames from 'classnames';
-// import Image from 'next/image';
-
-// import Heading from '@/components/common/Heading';
-// import Text from '@/components/common/Text';
-// import MoreButton from '@/components/common/MoreButton';
 
 import { useWindowWidth } from '../../../../hooks';
 
@@ -19,8 +14,8 @@ export interface IMainSlider {
 
 const ReupChoosen = () => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const { width } = useWindowWidth();
-  const curWidth = width ? width - 200 : 'auto';
+  const windowWidth = useWindowWidth();
+  const curWidth = windowWidth ? windowWidth - 200 : 'auto';
 
   return (
     <div className={cx.slider}>

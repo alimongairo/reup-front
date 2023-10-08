@@ -1,11 +1,26 @@
 @import '../../../../styles/vars.scss';
+@import '../../../../styles/mixins.scss';
 
 .wrapper {
     position: relative;
     z-index: 1;
+
+   
 }
 
 @media(min-width: $media-desktop) {
+    .selection {
+        margin-bottom: $mb-lg;
+    }
+
+    .wrapper{
+        margin-bottom: 24px;
+    }
+
+    .moreBtn{
+        float: right;
+    }
+
     .nav {
         display: contents;
 
@@ -36,17 +51,35 @@
 }
 
 @media(max-width: $media-mobile) {
+    .selection {
+        margin-bottom: $mb-lg-mobile;
+    }
 
-    .nav, .nav button {
+    .wrapper{
+        margin-bottom: 16px;
+        @include outer;
+    }
+
+    .swiper{
+        @include inner;
+    }
+
+    .swiper > *{
+        display: contents;
+    }
+
+    .nav,
+    .nav button {
         display: none;
     }
 
-    .slide{
+    .slide {
         max-width: 175px;
         min-width: 175px;
-        &:not(:last-child){
+
+        &:not(:last-child) {
             margin-right: 8px;
         }
     }
-    
+
 }
