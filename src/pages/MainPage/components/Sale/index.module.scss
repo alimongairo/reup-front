@@ -1,0 +1,19 @@
+@import '../../../../styles/vars.scss';
+
+.card {
+    display: grid;
+}
+
+@media(min-width: $media-desktop) {
+    .card {
+        padding: 40px 50px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: $media-mobile) {
+    .card {
+        padding: 16px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

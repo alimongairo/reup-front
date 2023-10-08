@@ -1,11 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Navigation } from 'swiper/modules';
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
-import { useSwiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import cx from './index.module.scss';
-import { Button, MoreLink } from "../../../../components/ui";
+import { Button } from "../../../../components/ui";
 import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper'
 import { ReactComponent as ArrowIcon } from '../../../../../static/images/icons/arrows/default.svg';
 import cls from 'classnames';
@@ -14,7 +12,7 @@ import { uid } from "react-uid";
 import '../../../../styles/swipe.scss';
 import { useWindowWidth } from "../../../../hooks";
 
-export default function ProductSelections() {
+export default function ProductSlider() {
     const windowWidth = useWindowWidth();
 
     const productsPlug = Array(27).fill(null);
@@ -78,7 +76,7 @@ export default function ProductSelections() {
         [swiperInstance],
     )
     return (
-        <div className={cx.selection}>
+       
             <div className={cx.wrapper}>
                 <SwiperComponent
                     className={cls(cx.swiper, "swipe")}
@@ -98,7 +96,6 @@ export default function ProductSelections() {
                 </div>
 
             </div>
-            <MoreLink className={cx.moreBtn} />
-        </div>
+         
     )
 }

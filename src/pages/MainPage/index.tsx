@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { MainLayout } from "../../layouts"
-import { ProductSelections, ReupChoosen, Top } from "./components"
-import { Bricks, EAlign, IBrick, Typography } from "../../components/ui"
+import { Collections, ProductSlider, ReupChoosen, Sale, Top } from "./components"
+import { Bricks, EAlign, IBrick, MoreLink, Typography } from "../../components/ui"
 import { ERoutes } from "../../app/router/types"
+import Marquee from 'react-fast-marquee';
 import cx from './index.module.scss';
 
 const bricksListMock: IBrick[] = [
@@ -47,15 +48,43 @@ const bricksListMock: IBrick[] = [
 ]
 
 export default function MainPage() {
-  const [bricksList, setBricksList] = useState<IBrick[]>(bricksListMock);
+  const [bricksList] = useState<IBrick[]>(bricksListMock);
 
   return (
     <MainLayout>
       <Top />
-      <Bricks list={bricksList} className={cx.bricks}/>
+      <Bricks list={bricksList} className={cx.bricks} />
       <Typography variant="h1">новый бренд</Typography>
-      <ProductSelections />
+
+      <div className={cx.selection}>
+        <ProductSlider />
+        <MoreLink className={cx.moreBtn} />
+      </div>
+
       <ReupChoosen />
+      <Collections />
+
+      <div className={cx.fav}>
+        <Typography variant="h1">мне нравится</Typography>
+        <ProductSlider />
+        <MoreLink className={cx.moreBtn} />
+      </div>
+
+      <div className={cx.marquee}>
+        <Marquee gradient={false} speed={60} >
+          <div>dfsddsd</div>
+          <div>dfsddsd</div>
+          <div>dfsddsd</div>
+          <div>dfsddsd</div>
+        </Marquee></div>
+
+      <div className={cx.selection}>
+        <ProductSlider />
+        <MoreLink className={cx.moreBtn} />
+      </div>
+
+      <Sale />
+
     </MainLayout>
   )
 }

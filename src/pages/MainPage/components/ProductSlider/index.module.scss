@@ -9,16 +9,8 @@
 }
 
 @media(min-width: $media-desktop) {
-    .selection {
-        margin-bottom: $mb-lg;
-    }
-
     .wrapper{
         margin-bottom: 24px;
-    }
-
-    .moreBtn{
-        float: right;
     }
 
     .nav {
@@ -51,10 +43,6 @@
 }
 
 @media(max-width: $media-mobile) {
-    .selection {
-        margin-bottom: $mb-lg-mobile;
-    }
-
     .wrapper{
         margin-bottom: 16px;
         @include outer;
