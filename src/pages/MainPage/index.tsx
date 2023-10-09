@@ -2,6 +2,12 @@ import React, { useState } from 'react'
 import { MainLayout } from "../../layouts"
 import { Collections, ProductSlider, ReupChoosen, Sale, Top } from "./components"
 import { Bricks, EAlign, IBrick, MoreLink, Typography } from "../../components/ui"
+import { ReactComponent as  Upcycle1} from "../../../static/images/hardcode/main/upcycle/upcycle1.svg";
+import { ReactComponent as  Upcycle2} from "../../../static/images/hardcode/main/upcycle/upcycle2.svg";
+import { ReactComponent as  Upcycle3} from "../../../static/images/hardcode/main/upcycle/upcycle3.svg";
+import { ReactComponent as  Upcycle4} from "../../../static/images/hardcode/main/upcycle/upcycle4.svg";
+import { ReactComponent as  Upcycle5} from "../../../static/images/hardcode/main/upcycle/upcycle5.svg";
+import { ReactComponent as  Upcycle6} from "../../../static/images/hardcode/main/upcycle/upcycle6.svg";
 import { ERoutes } from "../../app/router/types"
 import Marquee from 'react-fast-marquee';
 import cx from './index.module.scss';
@@ -45,7 +51,7 @@ const bricksListMock: IBrick[] = [
     link: ERoutes.Default,
     align: EAlign.Right,
   },
-]
+];
 
 export default function MainPage() {
   const [bricksList] = useState<IBrick[]>(bricksListMock);
@@ -71,11 +77,13 @@ export default function MainPage() {
       </div>
 
       <div className={cx.marquee}>
-        <Marquee gradient={false} speed={60} >
-          <div>dfsddsd</div>
-          <div>dfsddsd</div>
-          <div>dfsddsd</div>
-          <div>dfsddsd</div>
+        <Marquee gradient={false} speed={60} className={cx.line} >
+          <Upcycle1 />
+          <Upcycle2 />
+          <Upcycle3 />
+          <Upcycle4 />
+          <Upcycle5 />
+          <Upcycle6 />
         </Marquee></div>
 
       <div className={cx.selection}>

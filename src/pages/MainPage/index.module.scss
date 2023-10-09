@@ -6,6 +6,7 @@
     @include outer;
     @include inner;
     border-bottom: 1px solid $color-black;
+ 
 }
 
 .fav {
@@ -41,6 +42,12 @@
     .marquee{
         padding: 24px 0;
         margin-bottom: $mb-lg-mobile;
+        svg{
+            margin-right: 25px;
+            height: 26px;
+            width: auto;
+        }
+        
     }
 }
 
@@ -62,5 +69,13 @@
     .marquee{
         padding: 50px 0;
         margin-bottom: $padding-lg;
+        .line{
+            svg{
+                margin-right: 50px;
+                height: 70px;
+                width: auto;
+            }
+            
+        }
     }
 }

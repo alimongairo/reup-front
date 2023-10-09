@@ -6,6 +6,7 @@
     gap: 1px;
     padding: 1px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .card {
@@ -72,6 +73,11 @@
         &.right.desktop {
             align-items: flex-start;
             text-align: left;
+        }
+
+        h3{
+            font-size: 14px;
+            word-break: break-all;
         }
     }
 }
