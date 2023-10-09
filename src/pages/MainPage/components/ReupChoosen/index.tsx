@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { useWindowWidth } from '../../../../hooks';
 
-import img from '../../../../../static/images/hardcode/model1.png';
+import img from '../../../../../static/images/hardcode/main/rc1.png';
 import cx from './index.module.scss';
 import { Typography } from "@mui/material";
 import { MoreLink, Image } from "../../../../components/ui";

@@ -1,23 +1,48 @@
 import CollectionCard from './CollectionCard';
-
-
+import img1 from '../../../../../static/images/hardcode/main/collections1.png';
+import img2 from '../../../../../static/images/hardcode/main/collections2.png';
+import img3 from '../../../../../static/images/hardcode/main/collections3.png';
+import img4 from '../../../../../static/images/hardcode/main/collections4.png';
 import cx from './index.module.scss';
 import { Typography } from "@mui/material";
+import { uid } from "react-uid";
 
-const collectionCardProps = {
-  title: 'название коллекции',
-  brand: 'бренд',
-};
+const collectionCardProps = [
+  {
+    title: 'название коллекции',
+    brand: 'бренд',
+    img: img1,
+  },
+  {
+    title: 'название коллекции',
+    brand: 'бренд',
+    img: img2,
+  },
+  {
+    title: 'название коллекции',
+    brand: 'бренд',
+    img: img3,
+  },
+  {
+    title: 'название коллекции',
+    brand: 'бренд',
+    img: img4,
+  }
+]
 
 const Collections = () => {
   return (
     <div className={cx.collections}>
       <Typography variant="h1">коллекции</Typography>
       <div className={cx.wrapper}>
-        <CollectionCard id={1} {...collectionCardProps} />
-        <CollectionCard id={2} {...collectionCardProps} />
-        <CollectionCard id={3} {...collectionCardProps} />
-        <CollectionCard id={4} {...collectionCardProps} />
+        {
+          collectionCardProps.map((item, index) => {
+            return (
+              <CollectionCard key={uid(index)} id={index} {...item} />
+            )
+          })
+        }
+
       </div>
     </div>
   );
