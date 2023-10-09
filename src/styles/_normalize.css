@@ -10,12 +10,18 @@
   html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    height: 100%;
   }
   
   body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: #000000;
+    height: 100%;
+  }
+
+  #root{
+    height: 100%;
   }
   
   a{

@@ -5,3 +5,8 @@ export enum ERoutes {
     CrmBrandRegistration = 'crm/brandRegistration',
     Error = '*',
   }
+
+
+  export enum ESocials {
+    Default = '/',
+  }

@@ -1,0 +1,16 @@
+@import '../../../styles/vars.scss';
+
+.footer{
+    
+}
+
+@media(max-width: $media-mobile){}
+.footer{
+    padding: 54px 16px 110px;
+}
+
+@media(min-width: $media-desktop){
+    .footer{
+        padding: 50px;
+    }
+}
