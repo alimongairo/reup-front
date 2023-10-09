@@ -6,9 +6,10 @@ import { ReactComponent as FbSvg } from "../../../../static/images/icons/socials
 import { ReactComponent as TgSvg } from "../../../../static/images/icons/socials/tg.svg";
 import { Link } from "react-router-dom";
 import { ERoutes, ESocials } from "../../../app/router/types";
-import { NavLink } from "..";
+import { Button, NavLink } from "..";
 import cx from './index.module.scss';
 import { uid } from "react-uid";
+import { strokeColorReturner } from "../../../helpers";
 
 // TODO: actual links
 const links = [
@@ -23,25 +24,42 @@ const links = [
   {
     title: 'Публичная оферта',
     link: ERoutes.Default
+  }, {
+    title: 'Написать в поддержку',
+    link: ERoutes.Default
+  },
+  {
+    title: 'FAQ',
+    link: ERoutes.Default
+  },
+  {
+    title: 'Публичная оферта',
+    link: ERoutes.Default
   },
 ];
+
+const socialIconStyles = {
+  fill: strokeColorReturner(false),
+  width: 24,
+  height: 24,
+}
 
 // TODO: разные картинки, но выводится ко всем первая (???)
 const socials = [
   {
-    icon: <VkSvg />,
+    icon: <VkSvg {...socialIconStyles}/>,
     link: ESocials.Default
   },
   {
-    icon: <InstaSvg />,
+    icon: <InstaSvg {...socialIconStyles}/>,
     link: ESocials.Default
   },
   {
-    icon: <FbSvg />,
+    icon: <FbSvg {...socialIconStyles}/>,
     link: ESocials.Default
   },
   {
-    icon: <TgSvg />,
+    icon: <TgSvg {...socialIconStyles}/>,
     link: ESocials.Default
   },
 ];
@@ -49,28 +67,30 @@ const socials = [
 export default function Footer() {
   return (
     <div className={cx.footer}>
+      <div className={cx.flex} >
       <Link to={ERoutes.Default} className={cx.logo}><LogoIcon /></Link>
-      <ul className={cx.links}>
-        {
-          links.map((item, index) => {
-            return (
-              <li key={uid(index)}><NavLink to={item.link}>{item.title}</NavLink></li>
-            )
-          })
-        }
-      </ul>
       <ul className={cx.socials}>
         {
           socials.map((social, index) => {
             return (
-              <li key={uid(index)}><Link to={social.link}>{social.icon}</Link></li>
+              <li key={uid(index)} className={cx.socialIcon}><Link to={social.link}>{social.icon}</Link></li>
               )
           })
         }
 
       </ul>
-      <div></div>
-      <div></div>
+      </div>
+      <ul className={cx.links}>
+        {
+          links.map((item, index) => {
+            return (
+              <li key={uid(index)} className={cx.link}><NavLink to={item.link}>{item.title}</NavLink></li>
+            )
+          })
+        }
+      </ul>
+      
+      <Button>стать продавцом</Button>
     </div>
   )
 }
