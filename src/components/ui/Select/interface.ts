@@ -1,6 +1,6 @@
 export interface ISelectOption {
     label: string;
-    value: any;
+    value: string;
 }
   
 export type SelectValue<Multiple extends boolean | undefined> = Multiple extends true

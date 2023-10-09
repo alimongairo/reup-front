@@ -26,6 +26,7 @@ const SearchableSelect = ({
   multiple,
 }: ISelect) => {
   const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState('');
 
   const onMultipleSelect = (newValue: ISelectOption) => {
     onChange([...value, newValue.value]);
@@ -45,15 +46,15 @@ const SearchableSelect = ({
           !multiple && value.length > 0 ? cx.disabled : '',
         )}
         onClick={() => setOpen(!open)}
-        onMouseLeave={() => setOpen(false)}
       >
         <div className={cx.content}>
-          <div className={cx.placeholder}>{placeholder}</div>
+          <input placeholder={placeholder} value={search} onChange={(e) => setSearch(e.target.value)}/>
           <SearchIcon/>
         </div>
         <div className={classNames(cx.dropdown, open && cx.visible)}>
           {options
             .filter((el) => !value.includes(el.value))
+            .filter((el) => el.label.includes(search))
             .map((option, i) => {
               return (
                 <div

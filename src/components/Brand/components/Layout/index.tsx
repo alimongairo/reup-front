@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Head } from "..";
 import cx from './index.module.scss';
 import ProductItem from "../../../ProductItem";

@@ -10,9 +10,9 @@ export interface Product {
         other: any[];
     };
     fabric: string[];
-    color: string;
-    pattern: string;
-    style: string;
+    color: string[];
+    pattern: string[];
+    style: string[];
     season: string;
     gender: string;
     characterictics: {
@@ -46,9 +46,9 @@ export const initState: Product = {
       other: [null, null, null, null, null, null, null, null],
     },
     fabric: [],
-    color: '',
-    pattern: '',
-    style: '',
+    color: [],
+    pattern: [],
+    style: [],
     season: '',
     gender: '',
     characterictics: {

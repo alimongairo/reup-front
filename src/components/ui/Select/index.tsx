@@ -35,7 +35,17 @@ const Select = <Multiple extends boolean | undefined = false>({
         SelectProps={{ 
             multiple,
             disabled,
-            MenuProps: { sx: { maxHeight: '400px' } } 
+            MenuProps: { 
+              sx: { 
+                maxHeight: '400px',
+                '& .MuiPaper-root': {
+                  border: '1px solid black',
+                  borderRadius: '0px',
+                  marginTop: '-1px',
+                  transition: 'none !important',
+                },
+              }
+            } 
         }}
         InputProps={{
           endAdornment: (

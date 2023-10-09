@@ -7,15 +7,13 @@ type Props = TextFieldProps & {
 }
 
 const Input = ({search, limit, ...props}: Props) => {
-  //@ts-ignore
-  const len = props.value.length;
+  const len = String(props.value).length || 0;
 
   if (search) {
     return (
       <StyledSearchInput
         {...props}
         placeholder='поиск'
-        style={{}}
         InputProps={{
           endAdornment:
             <InputAdornment position='end'>
