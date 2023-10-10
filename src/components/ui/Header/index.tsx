@@ -50,7 +50,7 @@ function Header({ type }: IProps) {
             <ul className={cls("as-desktop", cx.actions)}>
               <li><NavLinkIcon to="/" isFill={true}><HeartIcon className={cx.icon} /></NavLinkIcon></li>
               <li onClick={!isAuth ? handleClick : undefined} style={{ cursor: 'pointer' }}>
-                <NavLinkIcon style={{ pointerEvents: (isAuth ? 'all' : 'none') }} to="/sas" isFill={false}>
+                <NavLinkIcon style={{ pointerEvents: (isAuth ? 'all' : 'none') }} to="/" isFill={false}>
                   <UserIcon className={cx.icon} />
                 </NavLinkIcon>
               </li>
