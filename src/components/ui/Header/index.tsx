@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { ReactComponent as LogoIcon } from "../../../../static/images/icons/logo.svg";
 import { ReactComponent as SearchIcon } from "../../../../static/images/icons/loype.svg";
 import { ReactComponent as HeartIcon } from "../../../../static/images/icons/heart.svg";
@@ -44,7 +45,7 @@ function Header({ type }: IProps) {
           config?.isActions && (
             <ul className={cls("as-desktop", cx.actions)}>
               <li><NavLinkIcon to="/" isFill={true}><HeartIcon className={cx.icon} /></NavLinkIcon></li>
-              <li onClick={!authContextValue?.isAuth ? authContextValue?.onLoginPopupOpen : undefined} style={{ cursor: 'pointer' }}>
+              <li onClick={!authContextValue?.isAuth ? (authContextValue?.onLoginPopupOpen) : undefined} style={{ cursor: 'pointer' }}>
                 <NavLinkIcon style={{ pointerEvents: (authContextValue?.isAuth ? 'all' : 'none') }} to="/" isFill={false}>
                   <UserIcon className={cx.icon} />
                 </NavLinkIcon>
@@ -64,6 +65,5 @@ function Header({ type }: IProps) {
 }
 
 import MobileToolbar from "./MobileToolbar";
-import { ChangeEvent, useContext, useState } from "react";
 import { AuthContext } from "../../../layouts/authCotext";
 export { MobileToolbar, Header }

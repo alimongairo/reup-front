@@ -29,7 +29,7 @@ const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons }: IP
     if (type && customButtons) {
       return (
         <div className={cx.btns}>
-          {buttons}
+          {customButtons}
         </div>
       );
     } else if (type === 'confirm') {
