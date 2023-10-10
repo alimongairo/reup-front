@@ -2,12 +2,16 @@ import { NavLink, NavLinkProps } from "react-router-dom";
 import cls from 'classnames';
 import cx from './index.module.scss';
 
-export default function MyNavLink(props: NavLinkProps) {
-  const { to, children, className } = props;
+interface IProps extends NavLinkProps{
+  isFill?: boolean,
+}
+
+export default function MyNavLink(props: IProps) {
+  const { to, children, className, isFill = true, style } = props;
 
   return (
-    <NavLink to={to}
-      className={({ isActive }) => cls({ [cx.active]: isActive }, className as string)}
+    <NavLink to={to} style={style}
+      className={({ isActive }) => cls({ [cx.active]: isActive }, className as string, {[cx.isFill]: isFill})}
     >
       {children}
     </NavLink>

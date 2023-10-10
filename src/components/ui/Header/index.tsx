@@ -20,10 +20,17 @@ function Header({ type }: IProps) {
 
   const config = confReturner(type || null);
 
+  const isAuth = false;
+
+
+  const handleClick = () => {
+    console.log('AUTH')
+  }
+
   return (
     <div className={cx.header}>
       <div className={cx.container}>
-        <Link to={ERoutes.Default} className={cx.logo}><LogoIcon  /></Link>
+        <Link to={ERoutes.Default} className={cx.logo}><LogoIcon /></Link>
         <div className={cx.main}>
           <ul className={cls("as-desktop", cx.linksList)}>{config?.list.map((item) =>
 
@@ -42,7 +49,11 @@ function Header({ type }: IProps) {
           config?.isActions && (
             <ul className={cls("as-desktop", cx.actions)}>
               <li><NavLinkIcon to="/" isFill={true}><HeartIcon className={cx.icon} /></NavLinkIcon></li>
-              <li><NavLinkIcon to="/" isFill={false}><UserIcon className={cx.icon} /></NavLinkIcon></li>
+              <li onClick={!isAuth ? handleClick : undefined} style={{ cursor: 'pointer' }}>
+                <NavLinkIcon style={{ pointerEvents: (isAuth ? 'all' : 'none') }} to="/sas" isFill={false}>
+                  <UserIcon className={cx.icon} />
+                </NavLinkIcon>
+              </li>
               <li><NavLinkIcon to="/" isFill={false}><BasketIcon className={cx.icon} /></NavLinkIcon></li>
             </ul>)
         }
@@ -58,4 +69,5 @@ function Header({ type }: IProps) {
 }
 
 import MobileToolbar from "./MobileToolbar";
-export {MobileToolbar, Header}
+import { ChangeEvent } from "react";
+export { MobileToolbar, Header }
