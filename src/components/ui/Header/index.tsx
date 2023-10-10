@@ -20,12 +20,7 @@ function Header({ type }: IProps) {
 
   const config = confReturner(type || null);
 
-  const isAuth = false;
-
-
-  const handleClick = () => {
-    console.log('AUTH')
-  }
+  const authContextValue = useContext(AuthContext);
 
   return (
     <div className={cx.header}>
@@ -49,8 +44,8 @@ function Header({ type }: IProps) {
           config?.isActions && (
             <ul className={cls("as-desktop", cx.actions)}>
               <li><NavLinkIcon to="/" isFill={true}><HeartIcon className={cx.icon} /></NavLinkIcon></li>
-              <li onClick={!isAuth ? handleClick : undefined} style={{ cursor: 'pointer' }}>
-                <NavLinkIcon style={{ pointerEvents: (isAuth ? 'all' : 'none') }} to="/" isFill={false}>
+              <li onClick={!authContextValue?.isAuth ? authContextValue?.onLoginPopupOpen : undefined} style={{ cursor: 'pointer' }}>
+                <NavLinkIcon style={{ pointerEvents: (authContextValue?.isAuth ? 'all' : 'none') }} to="/" isFill={false}>
                   <UserIcon className={cx.icon} />
                 </NavLinkIcon>
               </li>
@@ -69,5 +64,6 @@ function Header({ type }: IProps) {
 }
 
 import MobileToolbar from "./MobileToolbar";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useContext, useState } from "react";
+import { AuthContext } from "../../../layouts/authCotext";
 export { MobileToolbar, Header }
