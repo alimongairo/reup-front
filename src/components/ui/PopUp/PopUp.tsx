@@ -14,9 +14,11 @@ interface IProps {
   onSubmit?: () => void;
   type?: 'confirm' | 'alert' | 'custom';
   customButtons?: ReactNode;
+  isSloseBtn?: boolean;
+  isBordered?: boolean;
 }
 
-const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons }: IProps) => {
+const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons, isSloseBtn = true, isBordered = true }: IProps) => {
   useEffect(() => {
     if (visible) {
       document.body.style.overflow = 'hidden';
@@ -53,10 +55,15 @@ const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons }: IP
   return (
     <Modal open={visible}>
       <div className={cx.backModal}>
-        <div className={classNames(cx.wrapper)}>
-          <span className={cx.closeBtn} onClick={onClose}>
-            <img src={close} alt={'close'} />
-          </span>
+        <div className={classNames(cx.wrapper, {[cx.bordered]: isBordered})}>
+          {
+            isSloseBtn && (
+              <span className={cx.closeBtn} onClick={onClose}>
+                <img src={close} alt={'close'} />
+              </span>
+            )
+          }
+
           <div className={cx.content}>
             {children}
             {buttons}

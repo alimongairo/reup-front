@@ -65,5 +65,5 @@ function Header({ type }: IProps) {
 }
 
 import MobileToolbar from "./MobileToolbar";
-import { AuthContext } from "../../../layouts/authCotext";
+import { AuthContext } from "../../../app/auth/authCotext";
 export { MobileToolbar, Header }

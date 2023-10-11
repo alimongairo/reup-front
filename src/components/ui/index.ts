@@ -13,6 +13,7 @@ import {Tabs, ETabsView} from "./Tabs"; // TODO: old
 import {Bricks, EAlign, IBrick} from "./Bricks";
 import NavLinkIcon from "./NavLinkIcon";
 import NavLink from "./NavLink";
+import PopUp from "./PopUp";
 
 export {
     Header,
@@ -30,7 +31,8 @@ export {
     Tabs, ETabsView, 
     Bricks,
     NavLink,
-    NavLinkIcon
+    NavLinkIcon,
+    PopUp
 };
 
 export type {
