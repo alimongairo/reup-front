@@ -9,10 +9,6 @@ import { MenuContext } from "../../../helpers";
 import { useNavigate } from 'react-router-dom';
 import { ERoutes } from '../../../../../../../app/router/config';
 
-// import cx from '@/components/Brands/Menu/index.module.scss';
-// import { EPagesRoutes } from '@/constants/router';
-
-
 const HomeMenu = () => {
     const contextValue = useContext(MenuContext);
 

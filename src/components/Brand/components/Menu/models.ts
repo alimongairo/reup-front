@@ -1,4 +1,3 @@
-// import { EColors } from '@/components/common/Colors';
 export enum EColors {
   Pink = '#A175FF',
   Blue = '#7991F5',

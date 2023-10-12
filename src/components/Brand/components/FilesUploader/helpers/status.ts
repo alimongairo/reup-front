@@ -55,7 +55,7 @@ type UploaderProps = {
     children?: JSX.Element;
     className?: string;
     name: string;
-  };
+};
 
 // const formatToUploadEntries = (
 //     files: File[],
