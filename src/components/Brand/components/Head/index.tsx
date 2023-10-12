@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ReactComponent as EditIcon } from "../../../../../static/images/icons/edit.svg";
 import { Typography, Button } from "../../../ui";
 import { Menu } from "..";
 import cls from 'classnames';
 import cx from './index.module.scss';
-import Confirm from "../../../ui/Confirm";
 import { ELabelsName } from "../Menu/models";
+import PopUp from '../../../ui/PopUp';
 
 interface IProps {
     isEditable: boolean,
@@ -51,7 +51,8 @@ export default function Head({ isEditable, isEditing, setIsEditing, activeMenu }
 
             {
                 isEditable
-                    ? (!isEditing ? (<Button onClick={onEditClick}  >редактировать</Button>) : (
+                    // TODO: return !isEditing
+                    ? (isEditing ? (<Button onClick={onEditClick}>редактировать</Button>) : (
                         <div className={cx.btnsList}>
                             <Button onClick={handleOpenCancelConfirm}>отменить</Button>
                             <Button onClick={handleOpenSaveConfirm}>сохранить</Button>
@@ -62,31 +63,28 @@ export default function Head({ isEditable, isEditing, setIsEditing, activeMenu }
                     : null
             }
 
-            <Confirm
-                visible={isSaveOpen}
-                onClose={handleCloseSaveConfirm}
-                buttons={
-                    <>
-                        <Button onClick={() => { }}>отменить</Button>
-                        <Button onClick={handleCloseCancelConfirm}>назад</Button>
-                    </>
-                }
-            >
-                <div>Вы действительно хотите отменить изменения? Данное действие нельзя отменить.</div>
-            </Confirm>
-
-            <Confirm
+            <PopUp
                 visible={isCancelOpen}
                 onClose={handleCloseCancelConfirm}
-                buttons={
+                onSubmit={() => {}}
+                type='confirm'
+            >
+                <div>Вы действительно хотите отменить изменения?</div>
+            </PopUp>
+
+            <PopUp
+                visible={isSaveOpen}
+                onClose={handleCloseSaveConfirm}
+                type='custom'
+                customButtons={
                     <>
                         <Button onClick={handleCloseSaveConfirm}>назад</Button>
-                        <Button onClick={() => { }}>сохранить</Button>
+                        <Button onClick={() => {}}>сохранить</Button>
                     </>
                 }
             >
-                <div>Проверьте ваши изменения, после подтверждения сохранения ваша страница будет обновлена!</div>
-            </Confirm>
+                <div>Проверьте изменения, после подтверждения сохранения ваша страница будет обновлена!</div>
+            </PopUp>
 
         </div>
     )
