@@ -45,7 +45,8 @@ function Header({ type }: IProps) {
           config?.isActions && (
             <ul className={cls("as-desktop", cx.actions)}>
               <li><NavLinkIcon to="/" isFill={true}><HeartIcon className={cx.icon} /></NavLinkIcon></li>
-              <li onClick={!authContextValue?.isAuth ? (authContextValue?.onLoginPopupOpen) : undefined} style={{ cursor: 'pointer' }}>
+              {/* TODO: когда первый раз котрываем - 1 экран. дальше меняем */}
+              <li onClick={!authContextValue?.isAuth ? (() => authContextValue?.onLoginPopupOpen(0)) : undefined} style={{ cursor: 'pointer' }}>
                 <NavLinkIcon style={{ pointerEvents: (authContextValue?.isAuth ? 'all' : 'none') }} to="/" isFill={false}>
                   <UserIcon className={cx.icon} />
                 </NavLinkIcon>

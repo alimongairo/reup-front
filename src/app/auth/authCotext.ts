@@ -1,10 +1,17 @@
 import { createContext } from "react";
 
-export type AuthContextType = {
+ type TLogPart = {
+  first: boolean,
+  second: boolean,
+  third: boolean,
+};
+
+ type AuthContextType = {
     isAuth: boolean,
-    isLoginPopup: boolean,
+    isLoginPopup: TLogPart,
     isRegistrationPopup: boolean,
-    onLoginPopupOpen: () => void;
+    onLoginPopupOpen: (idx: number) => void;
   }
 
 export const AuthContext = createContext<AuthContextType | null>(null);
+export type {TLogPart, AuthContextType};

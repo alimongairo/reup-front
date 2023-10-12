@@ -10,7 +10,7 @@ import cx from './index.module.scss';
 interface IProps {
   visible: boolean;
   children: ReactNode;
-  onClose: () => void;
+  onClose?: () => void;
   onSubmit?: () => void;
   type?: 'confirm' | 'alert' | 'custom';
   customButtons?: ReactNode;

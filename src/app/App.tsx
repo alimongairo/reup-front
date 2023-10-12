@@ -1,29 +1,56 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import {
   RouterProvider,
 } from "react-router-dom";
 import { router } from "./router";
 import '../styles/global.css';
-import { AuthContext, AuthContextType } from "./auth";
+import { AuthContext, AuthContextType, TLogPart } from "./auth";
 import { PopUp, Typography } from "../components/ui/";
-import FirstScreen from "./auth/components/FirstScreen";
-import SecondScreen from "./auth/components/SecondScreen";
-import ThirdScreen from "./auth/components/ThirdScreen";
-
+import { loginPopupConf } from "./auth/config";
 function App() {
-    // TODO: mock
+  // TODO: mock
   const isAuth = false;
 
-  const [isLoginPopup, setIsLoginPopup] = useState(false);
+  const initialIsLoginPopup = {
+    first: false,
+    second: false,
+    third: false,
+  };
+
+  const [activeLogin, setActiveLogin] = useState<number | null>(null);
+  const [isLoginPopup, setIsLoginPopup] = useState(initialIsLoginPopup);
+
   const [isRegistrationPopup, setIsRegistrationPopup] = useState(false);
 
-  const onLoginPopupOpen = () => {
-    console.log('onLoginPopupOpen')
-    setIsLoginPopup(true);
+  const onLoginPopupOpen = (id: number) => {
+    setIsLoginPopup({ ...initialIsLoginPopup, [Object.keys(isLoginPopup)[id]]: true });
   }
 
+  const onNextLoginPart = (id?: number) => {
+    setActiveLogin((prev) => {
+      if (prev !== null && prev < Object.keys(isLoginPopup).length - 1) {
+        return ++prev
+      } else if (prev === null) {
+        return 1
+      } else {
+        onLoginPopupClose();
+        return null;
+      }
+    });
+  }
+
+  useEffect(() => {
+    activeLogin !== null && onLoginPopupOpen(activeLogin);
+
+    return () => {
+      setIsLoginPopup(initialIsLoginPopup);
+    }
+
+  }, [activeLogin])
+
   const onLoginPopupClose = () => {
-    console.log("onLoginPopupClose")
+    console.log('onLoginPopupClose')
+    setIsLoginPopup(initialIsLoginPopup); return;
   }
 
   const initialContextValue: AuthContextType = useMemo(() => {
@@ -35,59 +62,38 @@ function App() {
     };
   }, [isAuth]);
 
-  const loginPopupConf = {
-    title: 'вход в личный кабинет',
-    parts: [
-      {
-        id: 0,
-        content: <FirstScreen />,
-      },
-      {
-        id: 1,
-        content: <SecondScreen />,
-      },
-      {
-        id: 2,
-        content: <ThirdScreen />,
-      },
-    ]
-  };
-
-  const regPopupConf = {
-    title: 'регистрация',
-    parts: [
-      {
-        id: 0,
-        content:  <FirstScreen />,
-      },
-      {
-        id: 1,
-        content: <SecondScreen />,
-      },
-      {
-        id: 2,
-        content: <ThirdScreen />,
-      },
-    ]
-  };
+  const getKeyValue = <U extends keyof T, T extends object>(key: U) => (obj: T) => obj[key];
 
   return (
     <>
       <AuthContext.Provider value={initialContextValue}>
-        <RouterProvider router={router} />
+        <div>
+          <RouterProvider router={router} />
+
+          {
+            loginPopupConf.parts.map((part, idx) => {
+              return (
+                <PopUp
+                  visible={getKeyValue<keyof TLogPart, TLogPart>(Object.keys(isLoginPopup)[idx] as keyof TLogPart)(isLoginPopup)}
+                  type='custom'
+                  customButtons={false}
+                  isSloseBtn={false} // add back btn
+                  isBordered={false}
+                >
+                  <Typography variant="h3">{loginPopupConf.title}</Typography>
+                  <button onClick={() => onNextLoginPart()}>{idx}next</button>
+                </PopUp>
+
+              )
+            })
+          }
+
+
+        </div>
       </AuthContext.Provider>
 
-      {/* TODO: use fullScreen prop after merge useWindowWidth hook */}
-      <PopUp
-        visible={isLoginPopup}
-        onClose={onLoginPopupClose}
-        type='custom'
-        customButtons={false}
-        isSloseBtn={false} // add back btn
-        isBordered={false}
-      >
-        <Typography variant="h3">вход в личный кабинет</Typography>
-      </PopUp>
+
+
     </>
   );
 }
