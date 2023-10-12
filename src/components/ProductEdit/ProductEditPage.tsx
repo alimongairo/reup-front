@@ -150,7 +150,7 @@ const ProductEditLayout = () => {
         );
     }, [state]);
 
-    const detailsBlock = useMemo(() => { // fix icons color
+    const detailsBlock = useMemo(() => {
         return (
             <div className={cx.block}>
                 <div className={cx.heading}>
@@ -165,6 +165,7 @@ const ProductEditLayout = () => {
                             onChange={handleSelect('fabric')}
                             options={options}
                             multiple
+                            withPercentage
                         />
                     </Grid>
                     <Grid item xs={6}>

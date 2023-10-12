@@ -9,11 +9,24 @@
   background-color: #7991f5;
   border-color: black;
   color: white;
+  font-weight: 500;
 
   .icon {
-    color: white;
-    width: 17px;
-    height: 17px;
     cursor: pointer;
+  }
+
+  .percentageInput{
+    width: 70px;
+    height: 21px;
+    background-color: white;
+
+    input {
+      padding: 0;
+      border: 0;
+    }
+    
+    .MuiTextField-root {
+      padding: 0;
+    }
   }
 }

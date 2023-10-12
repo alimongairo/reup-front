@@ -73,7 +73,7 @@ const SizeSelect = ({ sizes, value, onChange }: Props) => {
       })}
       <div>
         <div className={cx.button} onClick={handleAdd}>
-          <AddIcon width={22} height={22} />
+          <AddIcon width={22} height={22} stroke='#fff'/>
         </div>
       </div>
     </div>

@@ -1,14 +1,14 @@
 import { TextField, styled } from "@mui/material";
 import { ReactComponent as SearchIcon } from '../../../../static/images/icons/search.svg';
 
-export const StyledTextField = styled(TextField)<{textarea: boolean}>`
+export const StyledTextField = styled(TextField)`
   fieldset {
     border: 1px solid black;
     border-radius: 0px;
   }
 
   input {
-    height: 18px;
+    height: 100%;
     padding: 16px 14px;
   }
 
@@ -18,15 +18,14 @@ export const StyledTextField = styled(TextField)<{textarea: boolean}>`
   }
 
   & .MuiInputBase-root {
-    height: ${({ textarea }) => (textarea ? '100%' : '18px')};
+    height: 100%;
   }
 
   & .MuiFormControl-root {
-    height: ${({ textarea }) => (textarea ? '100%' : '18px')};
+    height: '100%';
   }
 
   & .MuiOutlinedInput-root {
-    min-height: 50px;
     max-height: 240px;
     padding-right: 20px;
   }

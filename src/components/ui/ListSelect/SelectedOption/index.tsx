@@ -1,6 +1,6 @@
 import cx from './index.module.scss';
 import classNames from 'classnames';
-import { ReactComponent as DeleteIconActive } from '../../../../../static/images/icons/close.svg'
+import { ReactComponent as DeleteIcon } from '../../../../../static/images/icons/close.svg'
 import { ISelectOption } from '../../Select/interface';
 
 interface Props {
@@ -20,7 +20,7 @@ const SelectedOption = ({ option, active, disabled }: Props) => {
         )}
       >
         {option.label}
-        {active && <DeleteIconActive />}
+        {active && <DeleteIcon fill='#fff' width='14px' height='14px'/>}
       </div>
     );
   }

@@ -26,7 +26,7 @@ const Input = ({search, limit, ...props}: Props) => {
 
   return (
     <div>
-      <StyledTextField {...props} textarea={Boolean(props.multiline)}/>
+      <StyledTextField {...props}/>
       {limit && <LimitBlock className={len > limit - 11  ? 'warning' : ''}>{len}/{limit}</LimitBlock>}
     </div>
   );

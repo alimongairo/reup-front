@@ -15,6 +15,7 @@ export interface ISelect {
   onChange: any;
   value: string | string[];
   multiple?: boolean;
+  withPercentage?: boolean;
 }
 
 const SearchableSelect = ({
@@ -24,6 +25,7 @@ const SearchableSelect = ({
   onChange,
   value,
   multiple,
+  withPercentage,
 }: ISelect) => {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
@@ -80,6 +82,7 @@ const SearchableSelect = ({
                 option={options.find((option) => option.value == el)}
                 value={value}
                 onChange={onChange}
+                withPercentage={withPercentage}
               />
             ))
           ) : (
@@ -87,6 +90,7 @@ const SearchableSelect = ({
               option={options.find((option) => option.value == value)}
               value={value}
               onChange={onChange}
+              withPercentage={withPercentage}
             />
           )}
         </div>

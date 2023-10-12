@@ -1,15 +1,20 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import cx from './index.module.scss';
 import { ReactComponent as DeleteIcon } from '../../../../../static/images/icons/close.svg';
 import { ISelectOption } from '../../Select/interface';
+// import { Input } from '../..';
+// import { InputAdornment } from '@mui/material';
 
 interface Props {
   option: ISelectOption | undefined;
   value: string | string[];
   onChange: any;
+  withPercentage?: boolean;
 }
 
-const SelectedOption = ({ option, value, onChange }: Props) => {
+const SelectedOption = ({ option, value, onChange, withPercentage }: Props) => {
+  // const [val, setVal] = useState('');
+
   const handleDelete = useCallback(() => {
     onChange(
       Array.isArray(value) ? value.filter((el) => el !== option?.value) : '', 
@@ -20,7 +25,21 @@ const SelectedOption = ({ option, value, onChange }: Props) => {
     return (
       <div className={cx.option}>
         {option.label}
-        <DeleteIcon onClick={handleDelete} className={cx.icon}/>
+
+        {withPercentage && <></>}
+
+        {/* {withPercentage && (
+          <Input
+            value={val}
+            onChange={(e) => setVal(e.target.value)}
+            className={cx.percentageInput} 
+            InputProps={{
+              endAdornment: <InputAdornment position="end">%</InputAdornment>,
+            }}
+          />
+        )} */}
+
+        <DeleteIcon onClick={handleDelete} className={cx.icon} fill='#fff' width='14px' height='14px'/>
       </div>
     );
   }
