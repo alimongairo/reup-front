@@ -1,27 +1,25 @@
-import { Collapse, Divider, EColors, IColor, Colors } from '../../../../../../../ui';
-
-
-// import { useAppDispatch, useAppSelector } from '@/hooks/store';
-// import { setBrandSettingsByField } from '@/store/brandSetting/slice';
-// import { brandSettingsBgColorsSelector } from '@/store/brandSetting/selectors';
+import { Collapse, EColors, IColor, Colors } from '../../../../../../../ui';
+import { useTypedDispatch, useTypedSelector } from "../../../../../../../../hooks";
+import { setBrandSettingsByField } from "../../../../../../../../redux/features/brandSetting/slice";
+import { brandSettingsBgColorsSelector } from "../../../../../../../../redux/features/brandSetting/selectors";
+import { uid } from "react-uid";
 
 const BgColorOption = ({ title, value, name }: IColor & { title: string }) => {
-    //   const dispatch = useAppDispatch();
-    //   const bgColors = useAppSelector(brandSettingsBgColorsSelector);
+    const dispatch = useTypedDispatch();
+    const bgColors = useTypedSelector(brandSettingsBgColorsSelector);
 
     const onChange = (color: EColors) => {
-        // const newData = bgColors.map((item) => {
-        //   if (item.name === name) {
-        //     return {
-        //       ...item,
-        //       value: color,
-        //     };
-        //   }
-        //   return item;
-        // });
+        const newData = bgColors.map((item) => {
+            if (item.name === name) {
+                return {
+                    ...item,
+                    value: color,
+                };
+            }
+            return item;
+        });
 
-        // dispatch(setBrandSettingsByField({ field: 'bgColor', newData: newData }));
-        console.log("onChange")
+        dispatch(setBrandSettingsByField({ field: 'bgColor', newData: newData }));
     };
 
     return (
@@ -33,32 +31,21 @@ const BgColorOption = ({ title, value, name }: IColor & { title: string }) => {
 };
 
 const Options = () => {
-    //   const bgColors = useAppSelector(brandSettingsBgColorsSelector);
+    const bgColors = useTypedSelector(brandSettingsBgColorsSelector);
 
-    // TODO: mock
-    const bgColors = [
-        {
-
-            title: "string",
-            name: "string",
-            value: EColors.Black
-        }
-    ];
-    
     return (
-        <div>
+        <>
             {bgColors?.map((color, index) => (
-                <>
+                <span key={uid(index)}>
                     <BgColorOption
                         key={color.name}
                         title={color.title}
                         name={color.name}
                         value={color.value}
                     />
-                    <Divider key={color.name} direction={'horizontal'} />
-                </>
+                </span>
             ))}
-        </div>
+        </>
     );
 };
 

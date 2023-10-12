@@ -1,28 +1,19 @@
 import React, { useState } from 'react'
-import cx from './index.module.scss';
 import { Button, Typography } from "../../../../ui";
 import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
 import { ReactComponent as CrossIcon } from '../../../../../../static/images/icons/cross.svg';
-import { EditableImage, Slider, ISlide } from "../../../components";
+import { EditableImage, Slider } from "../../../components";
 import { uid } from 'react-uid';
+import cx from './index.module.scss';
+import { styleParser } from "../../../../../helpers";
+import { IScheme1Brand } from "../../../../../types/brandTypes";
 
-interface Iprops {
+interface IProps {
   isEditing: boolean,
+  data: IScheme1Brand;
 }
 
-export default function SchemeLayout({ isEditing }: Iprops) {
-
-  const slides: [ISlide, ISlide] = [
-    {
-      title:
-        'название бренда',
-    },
-    {
-      title: 'о нас',
-      description: "Lorem ipsum dolor sit amet consectetur. In nulla nulla velit lacinia suscipit quisque nisi. Auctor cras mattis facilisis quam dui velit ultrices.",
-    },
-  ];
-
+export default function SchemeLayout({ isEditing, data }: IProps) {
   const categories = ["cat1", "cat2", "cat3"];
   const [bricks, setBricks] = useState(categories);
 
@@ -31,9 +22,27 @@ export default function SchemeLayout({ isEditing }: Iprops) {
   }
 
   return (
-    <div className={cx.wrapper}>
 
-      <Slider slides={slides} isEditing={isEditing} />
+    <div className={cx.wrapper} >
+      <Slider
+        slides={[
+          {
+            title: data.name,
+            titleStyle: styleParser(data.name_param),
+            imgSource: data.image1_main,
+            imgName: 'image1_main',
+          },
+          {
+            title: data.about,
+            titleStyle: styleParser(data.about_param),
+            description: data.description_2page,
+            descriptionStyle: styleParser(data.description_2page_param),
+            imgSource: data.image2_main,
+            imgName: 'image2_main',
+          },
+        ]}
+        isEditing={isEditing}
+      />
 
       <div className={cx.links}>
         <div className={cx.bricks}>
@@ -50,21 +59,36 @@ export default function SchemeLayout({ isEditing }: Iprops) {
 
         </div>
         <div className={cx.main}>
-          <Typography variant="h3">Заголовок 1</Typography>
-          <p>текстовый блок</p>
+          {
+            data.heading && <Typography variant="h3" style={styleParser(data.heading1_param) || ''}>{data.heading}</Typography>
+          }
+          {
+            data.text1_block && <p style={styleParser(data.text1_block_param)}>{data.text1_block}</p>
+          }
         </div>
       </div>
 
       <div className={cx.gallery}>
-        <EditableImage className={cx.image} isEditing={isEditing} />
-        <EditableImage className={cx.image} isEditing={isEditing} />
-        <EditableImage className={cx.image} isEditing={isEditing} />
+        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header1 || undefined} name='image_header1'/>
+        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header2 || undefined} name="image_header2"/>
+        <EditableImage className={cx.image} isEditing={isEditing} src={data.image_header3 || undefined} name="image_header2"/>
         <div className={cx.title}>
-          <Typography variant="h3">заголовок</Typography>
-          <p>основной текст</p>
+          {
+            data.heading2 && <Typography variant="h3" style={styleParser(data.heading2_param)}>{data.heading2}</Typography>
+          }
+          {
+            data.text2_block && <p style={styleParser(data.text2_block_param)}>{data.text2_block}</p>
+          }
+
+          {
+            data.text2 && <Typography className={cx.subText} variant="h3" style={styleParser(data.text2_param)}>{data.text2}</Typography>
+          }
         </div>
+
       </div>
 
     </div>
   )
+
+
 }

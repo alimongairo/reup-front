@@ -3,28 +3,28 @@ import { Typography, IRadioProps, RadioGroup } from "../../../../../../../../../
 const sizes: IRadioProps[] = [
   {
     label: '32px',
-    value: 32,
+    value: '32',
     labelPlacement: 'left',
   },
   {
     label: '28px',
-    value: 28,
+    value: '28',
     labelPlacement: 'left',
   },
   {
     label: '20px',
-    value: 20,
+    value: '20',
     labelPlacement: 'left',
   },
   {
     label: '16px',
-    value: 16,
+    value: '16',
     labelPlacement: 'left',
   },
 ];
 
 interface IProps {
-  value?: number;
+  value?: string;
   onChange: (value: IRadioProps['value'], fieldName: string) => void;
 }
 

@@ -18,8 +18,6 @@ interface IProps {
   tabHeader?: ReactNode;
 }
 
-// TODO: отрефакторить, добавить кеширование
-
 export const Tabs = ({
   tabs,
   activeTab,

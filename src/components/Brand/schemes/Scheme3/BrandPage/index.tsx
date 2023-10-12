@@ -1,9 +1,14 @@
 import React from 'react'
 import SchemeLayout from "../SchemeLayout";
+import { TSchemeData } from "../../../components/Menu/models";
+import { IScheme3Brand } from "../../../../../types/brandTypes";
 
-//TODO: страница отображения бренда на самом сайте
-export default function BrandPage() {
+interface IProps {
+  data: IScheme3Brand,
+}
+
+export default function BrandPage({data} : IProps) {
   return (
-    <SchemeLayout isEditing={false}/>
+    <SchemeLayout isEditing={false} data={data}/>
   )
 }

@@ -4,8 +4,13 @@ import EditableScheme from './EditablePage';
 import useWithEdit from '../../../../hooks/useWithEdit';
 import { useQuery } from "../../../../hooks";
 import { Layout } from "../../components";
+import { IScheme3Brand } from "../../../../types/brandTypes";
 
-const Scheme3 = () => {
+interface IProps {
+    data: IScheme3Brand;
+}
+
+const Scheme3 = ({data} : IProps) => {
     const query = useQuery();
     const isEditable = query.get("isEditable") === 'true';
 
@@ -13,11 +18,11 @@ const Scheme3 = () => {
 
     const component = useWithEdit({
         editable: isEditable,
-        disableComponent: <BrandPage />,
-        editComponent: <EditableScheme isEditing={isEditing}/>,
+        disableComponent: <BrandPage data={data}/>,
+        editComponent: <EditableScheme isEditing={isEditing} data={data}/>,
     });
 
-    return <Layout isEditable={isEditable} component={component} isEditing={isEditing} setIsEditing={setIsEditing}/>;
+    return <Layout isEditable={isEditable} component={component} isEditing={isEditing} setIsEditing={setIsEditing} data={data}/>;
 };
 
 export default Scheme3;

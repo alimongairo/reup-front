@@ -48,7 +48,7 @@
                 pointer-events: none;
             }
 
-            .image{
+            .image {
                 flex-grow: 1;
             }
 
@@ -57,11 +57,12 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 10px 50px;
-                background: $color-snow;
+                background: $color-gray-2;
 
-                .list{
+                .list {
                     display: flex;
-                    li{
+
+                    li {
                         margin-right: 25px;
                     }
                 }
@@ -69,19 +70,24 @@
         }
     }
 
-    .banner{
+    .banner {
         background: $color-primary;
         padding: 32px $containerPadding-desktop;
         line-height: 0;
     }
 
-    .gallery{
+    .gallery {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 400px);
         gap: 1px;
         background: $color-black;
-        .title{
+
+        >* {
+            background: $color-snow;
+        }
+
+        .title {
             background: $color-snow;
             padding: 32px $containerPadding-desktop;
         }
