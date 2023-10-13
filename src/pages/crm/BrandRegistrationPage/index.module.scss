@@ -1,5 +1,3 @@
-// @import 'styles/mixins.scss';
-
 .heading {
   margin: 2rem 0;
 }
@@ -13,10 +11,6 @@
   }
 }
 
-.wrapper {
- // @include contentWidth(true, true, calc(100% - 4rem));
-}
-
 .tabs {
   & > *:not(:first-child) {
     padding-left: 0;
@@ -27,8 +21,4 @@
 
 .subcontent {
   padding-left: 2rem;
-  form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
 }

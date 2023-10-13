@@ -9,7 +9,7 @@ import Input from './Input';
 import Divider from "./Divider";
 import {Colors, EColors, IColor} from './Colors';
 import {IRadioProps, RadioGroup} from "./Radio";
-import {Tabs, ETabsView} from "./Tabs"; // TODO: old
+import {Tabs, ETabsView} from "./Tabs";
 import {Bricks, EAlign, IBrick} from "./Bricks";
 import NavLinkIcon from "./NavLinkIcon";
 import NavLink from "./NavLink";

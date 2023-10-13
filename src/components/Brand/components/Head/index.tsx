@@ -4,15 +4,17 @@ import { Typography, Button } from "../../../ui";
 import { Menu } from "..";
 import cls from 'classnames';
 import cx from './index.module.scss';
+import { ELabelsName } from "../Menu/models";
 import PopUp from '../../../ui/PopUp';
 
 interface IProps {
     isEditable: boolean,
     isEditing: boolean,
     setIsEditing: (val: boolean) => void,
+    activeMenu: ELabelsName,
 }
 
-export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
+export default function Head({ isEditable, isEditing, setIsEditing, activeMenu }: IProps) {
     const [visibleMenu, setVisibleMenu] = useState(true);
 
     const toggleMenu = () => setVisibleMenu((prev) => !prev);
@@ -55,7 +57,7 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
                             <Button onClick={handleOpenCancelConfirm}>отменить</Button>
                             <Button onClick={handleOpenSaveConfirm}>сохранить</Button>
                             <Button viewType="iconBtn" onClick={toggleMenu} isActive={visibleMenu}><EditIcon /></Button>
-                            <Menu visible={visibleMenu} />
+                            <Menu visible={visibleMenu} activeMenu={activeMenu} />
                         </div>
                     ))
                     : null
