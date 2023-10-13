@@ -93,7 +93,7 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
               <GoogleSvg />
               <AppleSvg />
             </div>
-            <p>еще не зарегистрированы?</p>
+            <p className={cx.note}>еще не зарегистрированы?</p>
             {/* TODO: открываем попап регистрации */}
             <button className={cx.send}><p>зарегистрироваться</p></button>
           </>

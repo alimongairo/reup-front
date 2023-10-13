@@ -31,6 +31,10 @@
     font-weight: bold;
 }
 
+.note{
+    opacity: 0.5;
+}
+
 @media(min-width: $media-desktop) {
     .wrapper {
         padding: calc(87px - $margin-h3) 0 0;

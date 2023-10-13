@@ -9,7 +9,6 @@ export const StyledTextField = styled(TextField)`
   }
 
   input{
-    font-weight: normal;
     box-sizing:border-box;
     height: 100%;
     width: 100%

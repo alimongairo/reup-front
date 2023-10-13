@@ -10,6 +10,14 @@
     font-weight: bold;
 }
 
+.note{
+    opacity: 0.5;
+}
+
+.wrapper input {
+    text-align: center;
+}
+
 @media(min-width: $media-desktop) {
     .wrapper {
         padding: calc(87px - $margin-h3) 0 0;
