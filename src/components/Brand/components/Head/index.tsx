@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ReactComponent as EditIcon } from "../../../../../static/images/icons/edit.svg";
 import { Typography, Button } from "../../../ui";
 import { Menu } from "..";
 import cls from 'classnames';
 import cx from './index.module.scss';
-import Confirm from "../../../ui/Confirm";
+import { ELabelsName } from "../Menu/models";
+import PopUp from '../../../ui/PopUp';
 
 interface IProps {
     isEditable: boolean,
     isEditing: boolean,
     setIsEditing: (val: boolean) => void,
+    activeMenu: ELabelsName,
 }
 
-export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
+export default function Head({ isEditable, isEditing, setIsEditing, activeMenu }: IProps) {
     const [visibleMenu, setVisibleMenu] = useState(true);
 
     const toggleMenu = () => setVisibleMenu((prev) => !prev);
@@ -50,42 +52,39 @@ export default function Head({ isEditable, isEditing, setIsEditing }: IProps) {
             {
                 isEditable
                     // TODO: return !isEditing
-                    ? (isEditing ? (<Button onClick={onEditClick}  >редактировать</Button>) : (
+                    ? (isEditing ? (<Button onClick={onEditClick}>редактировать</Button>) : (
                         <div className={cx.btnsList}>
                             <Button onClick={handleOpenCancelConfirm}>отменить</Button>
                             <Button onClick={handleOpenSaveConfirm}>сохранить</Button>
                             <Button viewType="iconBtn" onClick={toggleMenu} isActive={visibleMenu}><EditIcon /></Button>
-                            <Menu visible={visibleMenu} />
+                            <Menu visible={visibleMenu} activeMenu={activeMenu} />
                         </div>
                     ))
                     : null
             }
 
-            <Confirm
+            <PopUp
                 visible={isCancelOpen}
                 onClose={handleCloseCancelConfirm}
-                buttons={
-                    <>
-                        <Button onClick={() => { }}>отменить</Button>
-                        <Button onClick={handleCloseCancelConfirm}>назад</Button>
-                    </>
-                }
+                onSubmit={() => {}}
+                type='confirm'
             >
-                <div>Вы действительно хотите отменить изменения? Данное действие нельзя отменить.</div>
-            </Confirm>
+                <div>Вы действительно хотите отменить изменения?</div>
+            </PopUp>
 
-            <Confirm
+            <PopUp
                 visible={isSaveOpen}
                 onClose={handleCloseSaveConfirm}
-                buttons={
+                type='custom'
+                customButtons={
                     <>
                         <Button onClick={handleCloseSaveConfirm}>назад</Button>
-                        <Button onClick={() => { }}>сохранить</Button>
+                        <Button onClick={() => {}}>сохранить</Button>
                     </>
                 }
             >
-                <div>Проверьте ваши изменения, после подтверждения сохранения ваша страница будет обновлена!</div>
-            </Confirm>
+                <div>Проверьте изменения, после подтверждения сохранения ваша страница будет обновлена!</div>
+            </PopUp>
 
         </div>
     )

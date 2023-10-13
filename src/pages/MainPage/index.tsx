@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { MainLayout } from "../../layouts"
 import { Collections, ProductSlider, ReupChoosen, Sale, Top } from "./components"
 import { Bricks, EAlign, IBrick, MoreLink, Typography } from "../../components/ui"

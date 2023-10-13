@@ -1,76 +1,28 @@
-import React, { HTMLInputTypeAttribute, TextareaHTMLAttributes } from 'react';
-import classNames from 'classnames';
-import CodeInput from './CodeInput';
+import { InputAdornment, TextFieldProps } from '@mui/material';
+import { StyledSearchIcon, StyledSearchInput, StyledTextField } from './InputStyled';
 
-import cx from './index.module.scss';
-
-interface IProps
-  extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
-  type?: HTMLInputTypeAttribute;
-  codeInput?: boolean;
-  invalid?: boolean;
-  label?: string;
-  errorMessage?: string;
-  theme?: 'light' | 'grey';
-  isTextArea?: boolean;
-  isWrapped?: boolean;
+type Props = TextFieldProps & {
+    search?: boolean;
 }
 
-const Input = ({
-  className,
-  invalid,
-  errorMessage,
-  codeInput,
-  label,
-  theme = 'light',
-  isTextArea,
-  isWrapped = false,
-  ...props
-}: IProps) => {
-  if (codeInput) {
-    return <CodeInput {...props} />;
+const Input = ({search, ...props} : Props) => {
+  if (search) {
+    return (
+      <StyledSearchInput
+        {...props}
+        placeholder='поиск'
+        InputProps={{
+          endAdornment:
+            <InputAdornment position='end'>
+              <StyledSearchIcon />
+            </InputAdornment>
+        }}
+        
+      />
+    );
   }
 
-  const Input = (
-    <>
-      {label && <p className={cx.label}>{label}</p>}
-      {isTextArea ? (
-        <textarea
-          className={classNames(className, cx.input, cx[theme], {
-            [cx.invalid]: invalid,
-          })}
-          {...(props as TextareaHTMLAttributes<HTMLTextAreaElement>)}
-        />
-      ) : (
-        <input
-          className={classNames(className, cx.input, cx[theme], {
-            [cx.invalid]: invalid,
-          })}
-          {...props}
-        />
-      )}
-
-      {errorMessage && (
-        <p
-          className={classNames(
-            { [cx.visibleError]: invalid },
-            cx.errorMessage,
-          )}
-        >
-          {errorMessage}
-        </p>
-      )}
-    </>
-  );
-
-  if (!isWrapped) {
-    return Input;
-  } else {
-    return <div>{Input}</div>;
-  }
+  return <StyledTextField {...props} />;
 };
 
 export default Input;
