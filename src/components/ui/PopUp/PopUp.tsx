@@ -1,11 +1,9 @@
 import { ReactNode, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import close from '../../../../static/images/icons/close.svg';
-
-import Button from '../Button';
 import { Modal } from '@mui/material';
-
 import cx from './index.module.scss';
+import { Button } from "..";
 
 interface IProps {
   visible: boolean;

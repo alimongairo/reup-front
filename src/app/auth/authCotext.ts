@@ -11,6 +11,7 @@ import { createContext } from "react";
     isLoginPopup: TLogPart,
     isRegistrationPopup: boolean,
     onLoginPopupOpen: (idx: number) => void;
+    onLoginPopupClose: () => void;
     onNextLoginPart: (idx?: number) => void;
   }
 

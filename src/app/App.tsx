@@ -29,7 +29,7 @@ function App() {
 
   const onNextLoginPart = (id?: number) => {
     setActiveLogin((prev) => {
-      if (id) {
+      if (id && !isNaN(id)) {
         return id;
       } else if (prev !== null && prev < Object.keys(isLoginPopup).length - 1) {
         return ++prev;
@@ -62,6 +62,7 @@ function App() {
       isLoginPopup,
       isRegistrationPopup,
       onLoginPopupOpen,
+      onLoginPopupClose,
       onNextLoginPart,
     };
   }, [isAuth]);
@@ -72,7 +73,7 @@ function App() {
     <>
       <AuthContext.Provider value={initialContextValue}>
         <div>
-          <RouterProvider router={router} />
+          <RouterProvider router={router}/>
           {
             loginPopupConf.parts.map((part, idx) => {
               return (
@@ -84,7 +85,7 @@ function App() {
                   isSloseBtn={false} // add back btn
                   isBordered={false}
                 >
-                  <Typography variant="h3">{loginPopupConf.title}</Typography>
+                  <Typography variant="h3">{part.title}</Typography>
                   {part.content}
                   <button onClick={() => onNextLoginPart()}>{idx}next</button>
                 </PopUp>

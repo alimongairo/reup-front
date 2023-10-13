@@ -1,13 +1,9 @@
 import React, { useContext } from 'react'
 import { Input, Button } from "../../../../components/ui";
-import cx from './index.module.scss';
 import { uid } from "react-uid";
 import { AuthContext } from "../..";
-
-export enum EType {
-  LOGIN = "login",
-  REG = "registration",
-}
+import { EType } from "../types";
+import cx from './index.module.scss';
 
 interface IProps {
   type?: EType,
@@ -87,6 +83,7 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
       {
         type === EType.LOGIN && (
           <>
+          {/* Кнопку делаем неактивной, пока поля не бдут заполнены */}
           <Button onClick={() => authContextValue?.onNextLoginPart(2)}>Войти </Button>
           <Button onClick={authContextValue?.onNextLoginPart as () => void}>войти по номеру телефонa</Button>
           </>
