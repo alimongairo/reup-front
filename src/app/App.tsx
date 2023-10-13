@@ -7,6 +7,7 @@ import '../styles/global.css';
 import { AuthContext, AuthContextType, TLogPart } from "./auth";
 import { PopUp, Typography } from "../components/ui/";
 import { loginPopupConf } from "./auth/config";
+import { uid } from "react-uid";
 function App() {
   // TODO: mock
   const isAuth = false;
@@ -28,10 +29,12 @@ function App() {
 
   const onNextLoginPart = (id?: number) => {
     setActiveLogin((prev) => {
-      if (prev !== null && prev < Object.keys(isLoginPopup).length - 1) {
-        return ++prev
+      if (id) {
+        return id;
+      } else if (prev !== null && prev < Object.keys(isLoginPopup).length - 1) {
+        return ++prev;
       } else if (prev === null) {
-        return 1
+        return 1;
       } else {
         onLoginPopupClose();
         return null;
@@ -59,6 +62,7 @@ function App() {
       isLoginPopup,
       isRegistrationPopup,
       onLoginPopupOpen,
+      onNextLoginPart,
     };
   }, [isAuth]);
 
@@ -69,11 +73,11 @@ function App() {
       <AuthContext.Provider value={initialContextValue}>
         <div>
           <RouterProvider router={router} />
-
           {
             loginPopupConf.parts.map((part, idx) => {
               return (
                 <PopUp
+                  key={uid(part.id)}
                   visible={getKeyValue<keyof TLogPart, TLogPart>(Object.keys(isLoginPopup)[idx] as keyof TLogPart)(isLoginPopup)}
                   type='custom'
                   customButtons={false}
@@ -81,6 +85,7 @@ function App() {
                   isBordered={false}
                 >
                   <Typography variant="h3">{loginPopupConf.title}</Typography>
+                  {part.content}
                   <button onClick={() => onNextLoginPart()}>{idx}next</button>
                 </PopUp>
 

@@ -1,6 +1,10 @@
 import React from 'react'
 
-export default function SecondScreen() {
+interface IProps {
+  type?: "login" | "registration"
+}
+
+export default function SecondScreen({type = "login"}: IProps) {
   return (
     <div>SecondScreen</div>
   )

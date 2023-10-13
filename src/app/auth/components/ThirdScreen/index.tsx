@@ -1,6 +1,10 @@
 import React from 'react'
 
-export default function ThirdScreen() {
+interface IProps {
+  type?: "login" | "registration"
+}
+
+export default function ThirdScreen({type = "login"}: IProps) {
   return (
     <div>ThirdScreen</div>
   )

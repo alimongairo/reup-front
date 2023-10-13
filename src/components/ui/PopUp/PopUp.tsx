@@ -52,6 +52,7 @@ const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons, isSl
     }
   }, []);
 
+  if (visible) {
   return (
     <Modal open={visible}>
       <div className={cx.backModal}>
@@ -73,6 +74,7 @@ const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons, isSl
       </div>
     </Modal>
   );
+}
 };
 
 export default PopUp;
