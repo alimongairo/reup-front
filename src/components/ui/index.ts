@@ -1,4 +1,5 @@
 import { Header, MobileToolbar } from "./Header";
+import Footer from "./Footer";
 import Typography from "./Typography";
 import Button from "./Button";
 import MoreLink from "./MoreLink";
@@ -17,6 +18,7 @@ import NavLink from "./NavLink";
 export {
     Header,
     MobileToolbar,
+    Footer,
     Typography,
     Button, EAlign,
     MoreLink,

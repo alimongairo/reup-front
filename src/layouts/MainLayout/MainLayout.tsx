@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import { Header, MobileToolbar } from "../../components/ui";
+import React, {ReactNode} from 'react';
+import { Footer, Header, MobileToolbar } from "../../components/ui";
 import cx from './index.module.scss';
 import { ERoles } from '../../app/router/config';
 
@@ -12,6 +12,7 @@ export default function MainLayout({ children }: IProps) {
         <Header type={ERoles.customer}/>
         <div className={cx.container}>{children}</div>
         <MobileToolbar />
+        <Footer />
     </div>
   )
 }

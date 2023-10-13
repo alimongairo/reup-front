@@ -6,6 +6,8 @@ function strokeColorReturner(isActive: boolean): string {
     }
 }
 
+import { debounce } from "./debounce";
+
 type TParsedStyle = {
     color?: string,
     fontFamily?: string,
@@ -24,5 +26,5 @@ function styleParser(val: string | null) {
     return JSON.parse(test);
 }
 
-export { strokeColorReturner, styleParser };
+export { strokeColorReturner, styleParser, debounce };
 export type { TParsedStyle }

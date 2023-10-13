@@ -1,0 +1,48 @@
+@media all and (max-width:758px){
+  .swipe {
+    critical:this;
+    position:relative; /* for right padding */
+    overflow-x:scroll;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling: touch;
+    display:flex;
+  }
+
+  .swipe{ /* not valid yet */
+    scrollbar-width:none;
+  }
+
+  .swipe::-webkit-scrollbar{
+    critical:this;
+    display:none;
+  }
+
+  .swipe > *{
+    critical:this;
+    position: relative;
+    margin-left:15px;
+  }
+
+  .swipe > *:first-child{
+    critical:this;
+    margin-left:0;
+  }
+
+  .swipe > *:last-child:after { /* for right padding */
+    critical:this;
+    content: "";
+    display: block;
+    position: absolute;
+    right: -15px;
+    width: 15px;
+    height: 1px;
+  }
+
+  .swipe [class*='grid_cell'] {
+    critical:this;
+    width:260px;
+    flex-shrink: 0;
+  }
+}
+
+
