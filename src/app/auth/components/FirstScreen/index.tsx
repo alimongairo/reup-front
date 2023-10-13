@@ -1,9 +1,12 @@
 import React, { useContext } from 'react'
-import { Input, Button } from "../../../../components/ui";
+import { Input, Button, EBtnColor } from "../../../../components/ui";
 import { uid } from "react-uid";
+import { ReactComponent as GoogleSvg } from '../../../../../static/images/icons/google.svg';
+import { ReactComponent as AppleSvg } from '../../../../../static/images/icons/apple.svg';
 import { AuthContext } from "../..";
 import { EType } from "../types";
 import cx from './index.module.scss';
+
 
 interface IProps {
   type?: EType,
@@ -83,9 +86,16 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
       {
         type === EType.LOGIN && (
           <>
-          {/* Кнопку делаем неактивной, пока поля не бдут заполнены */}
-          <Button onClick={() => authContextValue?.onNextLoginPart(2)}>Войти </Button>
-          <Button onClick={authContextValue?.onNextLoginPart as () => void}>войти по номеру телефонa</Button>
+            {/* Кнопку делаем неактивной, пока поля не бдут заполнены */}
+            <Button onClick={() => authContextValue?.onNextLoginPart(2)}>Войти </Button>
+            <Button colorM={EBtnColor.NOTE} onClick={authContextValue?.onNextLoginPart as () => void}>войти по номеру телефонa</Button>
+            <div className={cx.fBtns}>
+              <GoogleSvg />
+              <AppleSvg />
+            </div>
+            <p>еще не зарегистрированы?</p>
+            {/* TODO: открываем попап регистрации */}
+            <button className={cx.send}><p>зарегистрироваться</p></button>
           </>
         )
       }
@@ -93,8 +103,8 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
       {
         type === EType.REG && (
           <>
-          <div>confirm checkbox</div>
-          <div>мы отправим вам код в sms</div>
+            <div>confirm checkbox</div>
+            <div>мы отправим вам код в sms</div>
           </>
         )
       }

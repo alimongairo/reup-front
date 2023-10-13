@@ -1,9 +1,13 @@
 @import '../../../../styles/vars.scss';
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    gap: $margin-h2-mobile;
+    grid-auto-flow: row;
+
+    button {
+        width: fit-content;
+    }
 }
 
 .label {
@@ -11,8 +15,20 @@
     margin-bottom: 8px;
 }
 
-.input {
-    margin-bottom: $margin-h2-mobile;
+.fBtns {
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: column;
+}
+
+.fBtns,
+.wrapper button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reg p{
+    font-weight: bold;
 }
 
 @media(min-width: $media-desktop) {

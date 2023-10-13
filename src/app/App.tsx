@@ -87,7 +87,7 @@ function App() {
                 >
                   <Typography variant="h3">{part.title}</Typography>
                   {part.content}
-                  <button onClick={() => onNextLoginPart()}>{idx}next</button>
+                  {/* <button onClick={() => onNextLoginPart()}>{idx}next</button> */}
                 </PopUp>
 
               )

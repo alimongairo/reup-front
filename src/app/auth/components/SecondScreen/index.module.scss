@@ -1,0 +1,25 @@
+@import '../../../../styles/vars.scss';
+
+.wrapper {
+    display: grid;
+    gap: $margin-h2-mobile;
+    grid-auto-flow: row;
+}
+
+.send p{
+    font-weight: bold;
+}
+
+@media(min-width: $media-desktop) {
+    .wrapper {
+        padding: calc(87px - $margin-h3) 0 0;
+        width: 100%;
+        box-sizing: border-box;
+
+        .field {
+            width: 100%;
+        }
+    }
+}
+
+@media(max-width: $media-mobile) {}

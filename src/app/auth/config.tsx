@@ -12,7 +12,7 @@ const loginPopupConf = {
         {
             title: 'вход в личный кабинет',
             id: 1,
-            content: <SecondScreen type={EType.LOGIN}/>,
+            content: <SecondScreen/>,
         },
         {
             title: 'вы успешно вошли!',
@@ -32,7 +32,7 @@ const regPopupConf = {
         {
             title: 'регистрация',
             id: 1,
-            content: <SecondScreen type={EType.REG}/>,
+            content: <SecondScreen/>,
         },
         {
             title: 'регистрация успешно завершена!',

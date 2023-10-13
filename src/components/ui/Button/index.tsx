@@ -3,7 +3,7 @@ import cls from 'classnames';
 import './index.scss';
 
 enum EBtnColor {
-  NOTE = "note",
+  NOTE = "note black",
   WHITE = "white",
   BLACK = "black",
   DEFAULT = "",
