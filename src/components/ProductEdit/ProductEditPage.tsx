@@ -283,6 +283,7 @@ const ProductEditLayout = () => {
                     <div className={cx.inputBlock}>
                         <div className={cx.price}>
                             <Input
+                                type='number'
                                 fullWidth
                                 label="стоимость"
                                 value={state.price}
@@ -291,6 +292,7 @@ const ProductEditLayout = () => {
                         </div>
                         <div className={cx.sale}>
                             <Input
+                                type='number'
                                 fullWidth
                                 label="скидка"
                                 value={state.discount}

@@ -12,6 +12,11 @@ export const StyledTextField = styled(TextField)`
     padding: 16px 14px;
   }
 
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none; // Yeah, yeah everybody write about it
+  }
+
   input::placeholder {
     font-family: 'Gilroy', sans-serif;
     font-size: 16px;
