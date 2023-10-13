@@ -5,9 +5,6 @@ import { useCallback, useMemo } from "react";
 import { Input } from "..";
 import { Close as CloseIcon } from '@mui/icons-material';
 
-// import cx from './index.module.scss';
-// import cls from 'classnames';
-
 const Select = <Multiple extends boolean | undefined = false>({
     options,
     onChange,
@@ -48,6 +45,7 @@ const Select = <Multiple extends boolean | undefined = false>({
             } 
         }}
         InputProps={{
+          style: {height: '50px'},
           endAdornment: (
             <InputAdornment position='end' onClick={handleClear}>
               {isVisibleIconClear && !disabled && <CloseIcon />}
