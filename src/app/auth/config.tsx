@@ -13,6 +13,8 @@ const loginPopupConf = {
             title: 'вход в личный кабинет',
             id: 1,
             content: <SecondScreen/>,
+            isCloseBtn: true,
+            isBackBtn: true,
         },
         {
             title: 'вы успешно вошли!',

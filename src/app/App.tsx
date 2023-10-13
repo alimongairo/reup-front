@@ -29,7 +29,7 @@ function App() {
 
   const onNextLoginPart = (id?: number) => {
     setActiveLogin((prev) => {
-      if (id && !isNaN(id)) {
+      if (id !== undefined && !isNaN(id)) {
         return id;
       } else if (prev !== null && prev < Object.keys(isLoginPopup).length - 1) {
         return ++prev;
@@ -52,7 +52,6 @@ function App() {
   }, [activeLogin])
 
   const onLoginPopupClose = () => {
-    console.log('onLoginPopupClose')
     setIsLoginPopup(initialIsLoginPopup); return;
   }
 
@@ -69,6 +68,10 @@ function App() {
 
   const getKeyValue = <U extends keyof T, T extends object>(key: U) => (obj: T) => obj[key];
 
+  const onBackClick = () => {
+    onNextLoginPart(0);
+  };
+
   return (
     <>
       <AuthContext.Provider value={initialContextValue}>
@@ -81,13 +84,13 @@ function App() {
                   key={uid(part.id)}
                   visible={getKeyValue<keyof TLogPart, TLogPart>(Object.keys(isLoginPopup)[idx] as keyof TLogPart)(isLoginPopup)}
                   type='custom'
-                  customButtons={false}
-                  isSloseBtn={false} // add back btn
+                  onBackClick={onBackClick}
+                  isBackBtn={part?.isBackBtn}
+                  isCloseBtn={part?.isCloseBtn} // add back btn
                   isBordered={false}
                 >
                   <Typography variant="h3">{part.title}</Typography>
                   {part.content}
-                  {/* <button onClick={() => onNextLoginPart()}>{idx}next</button> */}
                 </PopUp>
 
               )

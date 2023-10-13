@@ -1,22 +1,26 @@
 import { ReactNode, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
-import close from '../../../../static/images/icons/close.svg';
+import {ReactComponent as CloseSvg} from '../../../../static/images/icons/close.svg';
+import {ReactComponent as BackSvg} from '../../../../static/images/icons/arrows/back.svg';
 import { Modal } from '@mui/material';
 import cx from './index.module.scss';
 import { Button } from "..";
+import { strokeColorReturner } from "../../../helpers";
 
 interface IProps {
   visible: boolean;
   children: ReactNode;
   onClose?: () => void;
+  onBackClick?: () => void;
   onSubmit?: () => void;
   type?: 'confirm' | 'alert' | 'custom';
   customButtons?: ReactNode;
-  isSloseBtn?: boolean;
+  isCloseBtn?: boolean;
   isBordered?: boolean;
+  isBackBtn?: boolean;
 }
 
-const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons, isSloseBtn = true, isBordered = true }: IProps) => {
+const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons, isCloseBtn = true, isBordered = true, isBackBtn = false, onBackClick }: IProps) => {
   useEffect(() => {
     if (visible) {
       document.body.style.overflow = 'hidden';
@@ -56,10 +60,16 @@ const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons, isSl
       <div className={cx.backModal}>
         <div className={classNames(cx.wrapper, {[cx.bordered]: isBordered})}>
           {
-            isSloseBtn && (
-              <span className={cx.closeBtn} onClick={onClose}>
-                <img src={close} alt={'close'} />
-              </span>
+            isCloseBtn && (
+              <button className={cx.closeBtn} onClick={onClose}>
+                <CloseSvg stroke={strokeColorReturner(false)}/>
+              </button>
+            )
+          }
+
+          {
+            isBackBtn && (
+              <button onClick={onBackClick} className={cx.backBtn}><BackSvg stroke={strokeColorReturner(false)}/></button>
             )
           }
 
