@@ -2,8 +2,8 @@ import { useCallback, useState } from 'react';
 import cx from './index.module.scss';
 import { ReactComponent as DeleteIcon } from '../../../../../static/images/icons/close.svg';
 import { ISelectOption } from '../../Select/interface';
-// import { Input } from '../..';
-// import { InputAdornment } from '@mui/material';
+import { Input } from '../..';
+import { InputAdornment } from '@mui/material';
 
 interface Props {
   option: ISelectOption | undefined;
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const SelectedOption = ({ option, value, onChange, withPercentage }: Props) => {
-  // const [val, setVal] = useState('');
+  const [val, setVal] = useState('');  // TODO: form field control 
 
   const handleDelete = useCallback(() => {
     onChange(
@@ -26,9 +26,7 @@ const SelectedOption = ({ option, value, onChange, withPercentage }: Props) => {
       <div className={cx.option}>
         {option.label}
 
-        {withPercentage && <></>}
-
-        {/* {withPercentage && (
+        {withPercentage && ( // TODO: fix padding
           <Input
             value={val}
             onChange={(e) => setVal(e.target.value)}
@@ -37,7 +35,7 @@ const SelectedOption = ({ option, value, onChange, withPercentage }: Props) => {
               endAdornment: <InputAdornment position="end">%</InputAdornment>,
             }}
           />
-        )} */}
+        )}
 
         <DeleteIcon onClick={handleDelete} className={cx.icon} fill='#fff' width='14px' height='14px'/>
       </div>

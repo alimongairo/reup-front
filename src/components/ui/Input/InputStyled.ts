@@ -32,7 +32,6 @@ export const StyledTextField = styled(TextField)`
 
   & .MuiOutlinedInput-root {
     max-height: 240px;
-    padding-right: 20px;
   }
 
   & .MuiFormLabel-root {

@@ -16,17 +16,21 @@
   }
 
   .percentageInput{
-    width: 70px;
+    width: 75px;
     height: 21px;
     background-color: white;
 
     input {
-      padding: 0;
+      padding: 4px;
       border: 0;
     }
     
-    .MuiTextField-root {
-      padding: 0;
+    & .MuiOutlinedInput-root {
+      padding-right: 4px;
+    }
+
+    & .MuiInputAdornment-root {
+      margin: 0px;
     }
   }
 }
