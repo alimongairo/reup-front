@@ -2,4 +2,6 @@ import FirstScreen from "./FirstScreen";
 import SecondScreen from "./SecondScreen";
 import ThirdScreen from "./ThirdScreen";
 
-export {FirstScreen, SecondScreen, ThirdScreen};
+import AuthPopup from "./AuthPopup";
+
+export {FirstScreen, SecondScreen, ThirdScreen, AuthPopup};

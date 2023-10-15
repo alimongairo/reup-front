@@ -6,8 +6,7 @@ import { ReactComponent as AppleSvg } from '../../../../../static/images/icons/a
 import { AuthContext } from "../..";
 import { EType } from "../types";
 import cx from './index.module.scss';
-import { EPopupType } from "../../../App";
-
+import { EPopupType } from "../AuthPopup";
 
 interface IProps {
   type?: EType,
@@ -104,7 +103,8 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
         type === EType.REG && (
           <>
             <div>confirm checkbox</div>
-            <div>мы отправим вам код в sms</div>
+            <p className={cx.note}>мы отправим вам код в sms</p>
+            <Button onClick={authContextValue?.onNextPart as () => void}>отправить код</Button>
             <div className={cx.fBtns}>
               <GoogleSvg />
               <AppleSvg />
