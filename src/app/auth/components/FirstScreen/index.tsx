@@ -6,6 +6,7 @@ import { ReactComponent as AppleSvg } from '../../../../../static/images/icons/a
 import { AuthContext } from "../..";
 import { EType } from "../types";
 import cx from './index.module.scss';
+import { EPopupType } from "../../../App";
 
 
 interface IProps {
@@ -87,15 +88,14 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
         type === EType.LOGIN && (
           <>
             {/* Кнопку делаем неактивной, пока поля не бдут заполнены */}
-            <Button onClick={() => authContextValue?.onNextLoginPart(2)}>Войти </Button>
-            <Button colorM={EBtnColor.NOTE} onClick={authContextValue?.onNextLoginPart as () => void}>войти по номеру телефонa</Button>
+            <Button onClick={() => authContextValue?.onNextPart(2)}>Войти </Button>
+            <Button colorM={EBtnColor.NOTE} onClick={authContextValue?.onNextPart as () => void}>войти по номеру телефонa</Button>
             <div className={cx.fBtns}>
               <GoogleSvg />
               <AppleSvg />
             </div>
             <p className={cx.note}>еще не зарегистрированы?</p>
-            {/* TODO: открываем попап регистрации */}
-            <button className={cx.send}><p>зарегистрироваться</p></button>
+            <button className={cx.send} onClick={() => authContextValue?.onPopupTypeChange(EPopupType.REG)}><p>зарегистрироваться</p></button>
           </>
         )
       }
@@ -105,6 +105,12 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
           <>
             <div>confirm checkbox</div>
             <div>мы отправим вам код в sms</div>
+            <div className={cx.fBtns}>
+              <GoogleSvg />
+              <AppleSvg />
+            </div>
+            <p className={cx.note}>уже зарегистрированы?</p>
+            <button className={cx.send} onClick={() => authContextValue?.onPopupTypeChange(EPopupType.LOGIN)}><p>войти</p></button>
           </>
         )
       }

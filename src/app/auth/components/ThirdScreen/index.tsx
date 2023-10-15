@@ -11,7 +11,7 @@ export default function ThirdScreen({ type = EType.LOGIN }: IProps) {
   const authContextValue = useContext(AuthContext);
 
   if (type === EType.LOGIN) {
-      return (<Button onClick={authContextValue?.onLoginPopupClose as () => void}>к покупкам</Button>)
+      return (<Button onClick={authContextValue?.onPopupClose as () => void}>к покупкам</Button>)
   } else {
     return (<div>добавили информацию в личный кабинет</div>)
 

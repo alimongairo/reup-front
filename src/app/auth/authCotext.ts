@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { EPopupType } from "../App";
 
  type TLogPart = {
   first: boolean,
@@ -8,11 +9,11 @@ import { createContext } from "react";
 
  type AuthContextType = {
     isAuth: boolean,
-    isLoginPopup: TLogPart,
-    isRegistrationPopup: boolean,
-    onLoginPopupOpen: (idx: number) => void;
-    onLoginPopupClose: () => void;
-    onNextLoginPart: (idx?: number) => void;
+    isPopup: TLogPart,
+    onPopupOpen: (idx: number) => void;
+    onPopupClose: () => void;
+    onNextPart: (idx?: number) => void;
+    onPopupTypeChange: (type: EPopupType) => void;
   }
 
 export const AuthContext = createContext<AuthContextType | null>(null);
