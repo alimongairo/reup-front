@@ -1,4 +1,5 @@
 import { Header, MobileToolbar } from "./Header";
+import Footer from "./Footer";
 import Typography from "./Typography";
 import {Button, EBtnColor} from "./Button";
 import MoreLink from "./MoreLink";
@@ -18,6 +19,7 @@ import PopUp from "./PopUp";
 export {
     Header,
     MobileToolbar,
+    Footer,
     Typography,
     Button, EBtnColor, EAlign,
     MoreLink,

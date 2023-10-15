@@ -84,3 +84,18 @@
       opacity: 1;
     }
   }
+
+
+  @media(max-width: $media-mobile) {
+    .fullscreen{
+      .content{
+        padding: 50px 32px;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: stretch;
+      }
+      .wrapper, .backModal, .closeMask{
+        display: contents;
+      }
+    }
+  }

@@ -2,7 +2,9 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { Typography, PopUp } from "../../../components/ui";
 import { AuthContext, AuthContextType, TLogPart } from "..";
 import { uid } from "react-uid";
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { loginPopupConf, regPopupConf } from "../config";
+import { useWindowWidth } from "../../../hooks";
 
 interface IProps {
     children: JSX.Element,
@@ -14,18 +16,17 @@ export enum EPopupType {
 }
 
 export default function AuthPopup({ children }: IProps) {
-    // TODO: вынести логику попапа в хок
-    // TODO: fullsreen for popup
+    const windowWidth = useWindowWidth();
     // TODO: mock
     const isAuth = false;
 
     const initialisPopup = {
         first: false,
         second: false,
-        third: true,
+        third: false,
     };
 
-    const [activePopupType, setActivePopupType] = useState<EPopupType>(EPopupType.REG);
+    const [activePopupType, setActivePopupType] = useState<EPopupType>(EPopupType.LOGIN);
 
     const [activeLogin, setActiveLogin] = useState<number | null>(null);
 
@@ -92,6 +93,9 @@ export default function AuthPopup({ children }: IProps) {
 
     const getKeyValue = <U extends keyof T, T extends object>(key: U) => (obj: T) => obj[key];
 
+    
+    const fullScreen = useMediaQuery('(max-width:758px)');
+
     return (
         <AuthContext.Provider value={initialContextValue}>{children}
 
@@ -106,6 +110,7 @@ export default function AuthPopup({ children }: IProps) {
                             isBackBtn={part?.isBackBtn}
                             isCloseBtn={part?.isCloseBtn} // add back btn
                             isBordered={false}
+                            fullScreen={fullScreen}
                         >
                             <Typography variant="h3" align="center" >{part.title}</Typography>
                             {part.content}

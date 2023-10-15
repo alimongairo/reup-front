@@ -53,6 +53,34 @@
                 font-weight: bold;
                 align-self: center;
                 margin-left: 12px;
+                padding: 10px 0
+            }
+        }
+    }
+}
+
+
+@media(max-width: $media-mobile) {
+    .product {
+        &.inSwiper {
+            .image {
+                min-height: 209px;
+            }
+
+            .title {
+                font-size: 14px;
+            }
+
+            .info .ftr {
+                button {
+                    font-size: 14px;
+                    padding: 8px;
+                }
+
+                p {
+                    font-size: 14px;
+                    margin-left: 8px;
+                }
             }
         }
     }

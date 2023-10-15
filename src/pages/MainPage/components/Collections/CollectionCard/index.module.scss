@@ -1,0 +1,30 @@
+@import '../../../../../styles/vars.scss';
+
+.wrapper {
+  cursor: pointer;
+  background: $color-snow;
+  .text {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 12px;
+    box-sizing: border-box;
+    .title {
+      font-weight: bold;
+    }
+  }
+}
+
+.wrapper {
+  .image {
+    width: 100%;
+    aspect-ratio: 0.83;
+  }
+}
+
+@media(min-width: $media-desktop) {
+  .wrapper {
+    .image {
+      width: 100%;
+    }
+  }
+}

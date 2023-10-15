@@ -3,10 +3,12 @@
 .wrapper{
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .container{
     box-sizing: border-box;
+    flex-grow: 1;
 }
 
 @media(min-width: $media-desktop){

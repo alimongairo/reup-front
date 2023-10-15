@@ -27,24 +27,20 @@
     margin-right: auto;
 }
 
-.reg p{
+.reg p {
     font-weight: bold;
 }
 
-.note{
+.note {
     opacity: 0.5;
 }
 
-@media(min-width: $media-desktop) {
-    .wrapper {
-        padding: calc(32px - $margin-h3) 0 0;
-        width: 100%;
-        box-sizing: border-box;
+.wrapper {
+    padding: calc(32px - $margin-h3) 0 0;
+    width: 100%;
+    box-sizing: border-box;
 
-        .field {
-            width: 100%;
-        }
+    .field {
+        width: 100%;
     }
 }
-
-@media(max-width: $media-mobile) {}
