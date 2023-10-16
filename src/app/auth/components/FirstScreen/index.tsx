@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { Input, Button, EBtnColor } from "../../../../components/ui";
+import { Input, Button, EBtnColor, Checkbox } from "../../../../components/ui";
 import { uid } from "react-uid";
 import { ReactComponent as GoogleSvg } from '../../../../../static/images/icons/google.svg';
 import { ReactComponent as AppleSvg } from '../../../../../static/images/icons/apple.svg';
@@ -8,6 +8,8 @@ import { EType } from "../types";
 import cx from './index.module.scss';
 import { EPopupType } from "../AuthPopup";
 import InputMask from 'react-input-mask';
+import { ERoutes } from "../../../router/config";
+import { Link } from "react-router-dom";
 
 interface IProps {
   type?: EType,
@@ -86,10 +88,15 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
 
   const formRef = useRef<HTMLFormElement>(null);
 
+  const [checkbox, setCheckbox] = useState(false);
+
   const [formData, setFormData] = useState<
     ILoginFormFields | IRegFormfields | {}
   >({});
 
+  const onCheckboxClick = () => {
+    setCheckbox(prev => !prev);
+  }
   const onSendForm = () => {
     console.log('onSendForm')
     if (formRef.current) {
@@ -101,6 +108,7 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
         ...Object.fromEntries([...data]),
       }));
       // после отправки нужно будет чистить setFormData({})
+      // без чекбокса данные не отправляем
     }
   };
 
@@ -119,7 +127,7 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
                 item.type === 'tel' ?
                   <InputMask
                     mask='+9 (999) 999-99-99'
->
+                  >
                     {
                       // @ts-ignore: https://blog.logrocket.com/implementing-react-input-mask-web-apps/
                       (inputProps) => <Input {...inputProps} />
@@ -155,9 +163,12 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
       {
         type === EType.REG && (
           <>
-            <div>confirm checkbox</div>
+            <div className={cx.confirm}>
+              <Checkbox value={checkbox} onChange={onCheckboxClick}/>
+              <p className={cx.note}>я ознакомился и согласен с <Link to={ERoutes.Default}>политикой обработки персональных</Link> данных и пользовательским соглашением</p>
+            </div>
             <p className={cx.note}>мы отправим вам код в sms</p>
-            <Button onClick={onSendForm}>отправить код</Button>
+            <Button onClick={onSendForm} disabled={!checkbox}>отправить код</Button>
             <div className={cx.fBtns}>
               <GoogleSvg />
               <AppleSvg />

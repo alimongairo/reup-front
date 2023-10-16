@@ -15,6 +15,7 @@ import {Bricks, EAlign, IBrick} from "./Bricks";
 import NavLinkIcon from "./NavLinkIcon";
 import NavLink from "./NavLink";
 import PopUp from "./PopUp";
+import Checkbox from './Checkbox';
 
 export {
     Header,
@@ -34,7 +35,8 @@ export {
     Bricks,
     NavLink,
     NavLinkIcon,
-    PopUp
+    PopUp,
+    Checkbox
 };
 
 export type {
