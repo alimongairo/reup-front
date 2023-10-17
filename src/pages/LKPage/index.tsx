@@ -7,6 +7,8 @@ import {
   LKOrders
 } from './tabs'
 import { MainLayout } from "../../layouts";
+import { Bricks, EAlign } from "../../components/ui";
+import { ERoutes } from "../../app/router/config";
 
 type TTabParams = {
   tabName: string;
@@ -29,11 +31,37 @@ export default function LKPage() {
     orders: <LKOrders key='orders' />,
   };
 
+  const bricksList = [
+    {
+      label: 'избранное',
+      link: `${ERoutes.LK}/fav`,
+      align: EAlign.Left,
+    },
+    {
+      label: 'мои заказы',
+      link: `${ERoutes.LK}/orders`,
+      align: EAlign.Center,
+    },
+    {
+      label: 'стать продавцом',
+      link: `${ERoutes.LK}/join`,
+      align: EAlign.Right,
+    },
+    {
+      label: 'мои данные',
+      link: `${ERoutes.LK}/main`,
+      align: EAlign.Right,
+    },
+  ]
+
   const currentTab = tabs[tabName as keyof TTabName];
 
   return (
     <MainLayout>
-      {currentTab}
+      <Bricks list={bricksList} />
+      <div>
+        {currentTab}
+      </div>
     </MainLayout>
   )
 }

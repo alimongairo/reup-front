@@ -14,7 +14,6 @@ export default ({ command, mode }) => {
     // Generate hash
     const hash = crypto
       .createHash('md5')
-      .update(css)
       .digest('base64')
       .substring(0, 5);
 
