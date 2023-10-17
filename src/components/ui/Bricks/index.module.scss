@@ -27,9 +27,14 @@
         align-items: center;
         height: 100%;
 
+        &.fill.mainLink{
+            color: $color-primary;
+        }
+        
         &.active.fill {
             background: $color-primary;
             color: $color-snow;
+            
         }
     }
 

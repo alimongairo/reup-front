@@ -15,6 +15,7 @@ interface IBrick {
     label: string;
     link: string;
     align?: EAlign;
+    isMain?: boolean;
 }
 
 enum EColorType {
@@ -32,7 +33,7 @@ function Bricks({ list, colorType = EColorType.TEXT, className }: IProps) {
     return (
         <ul className={cls(cx.bricks, className)}>
             {
-                list.map(({ link, label, align = EAlign.Left }) => (
+                list.map(({ link, label, align = EAlign.Left, isMain = false }) => (
                     <li className={cls(cx.item, cx[align])} key={uid(label)}>
                         {
                             colorType === EColorType.TEXT
@@ -41,7 +42,7 @@ function Bricks({ list, colorType = EColorType.TEXT, className }: IProps) {
                                 )
                                 : (
                                     <NavLink to={link}
-                                        className={({ isActive }) => cls({ [cx.active]: isActive }, cx[colorType], className as string)}
+                                        className={({ isActive }) => cls({ [cx.active]: isActive }, cx[colorType], {[cx.mainLink]: isMain})}
                                     >
                                         {label}
                                     </NavLink>)
