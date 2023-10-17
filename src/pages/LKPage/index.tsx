@@ -7,8 +7,9 @@ import {
   LKOrders
 } from './tabs'
 import { MainLayout } from "../../layouts";
-import { Bricks, EAlign } from "../../components/ui";
+import { Bricks, EAlign, EColorType } from "../../components/ui";
 import { ERoutes } from "../../app/router/config";
+import cx from './index.module.scss';
 
 type TTabParams = {
   tabName: string;
@@ -58,7 +59,7 @@ export default function LKPage() {
 
   return (
     <MainLayout>
-      <Bricks list={bricksList} />
+      <Bricks list={bricksList} colorType={EColorType.FILL} className={cx.bricks}/>
       <div>
         {currentTab}
       </div>

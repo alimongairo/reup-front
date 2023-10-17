@@ -10,29 +10,45 @@
     @include outer();
 
     >* {
-            background: $color-snow;
-        }
+        background: $color-snow;
+    }
 }
 
 .item {
-    padding: 0 $containerPadding-mobile;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 
     a {
+        padding: 0 $containerPadding-mobile;
+        line-height: 1;
+        width: 100%;
         font-weight: bold;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        &.active.fill {
+            background: $color-primary;
+            color: $color-snow;
+        }
     }
 
     &.left {
-        justify-content: flex-start;
+        a {
+            justify-content: flex-start;
+        }
     }
 
     &.center {
-        justify-content: space-around;
+        a {
+            justify-content: space-around;
+        }
     }
 
     &.right {
-        justify-content: flex-end;
+        a {
+            justify-content: flex-end;
+        }
     }
 }
 
