@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Typography } from "../../../ui";
+import { Button, EBtnColor, Typography } from "../../../ui";
 import { EditableImage } from "..";
 import { ReactComponent as RightArrowIcon } from '../../../../../static/images/icons/arrows/default.svg';
 import cls from 'classnames';
@@ -37,7 +37,7 @@ const Slider = ({ slides, isEditing }: IProps) => {
         <EditableImage isEditing={isEditing} className={cx.image} src={slides[1].imgSource || process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE} name={slides[1].imgName}/>
         <Typography variant="h2" className={cx.brandName} style={slides[1].titleStyle || {}}>{slides[1].title}</Typography>
         <p className={cx.description}>{slides[1].description || 'Описание бренда'}</p>
-        <Button variant="contained" endIcon={<RightArrowIcon />} onClick={() => setActiveSlide(0)} className={cls(cx.backBtb, cx.btn)} colorM="white"></Button>
+        <Button variant="contained" endIcon={<RightArrowIcon />} onClick={() => setActiveSlide(0)} className={cls(cx.backBtb, cx.btn)} colorM={EBtnColor.WHITE}></Button>
       </div>
 
     </div>

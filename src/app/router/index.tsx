@@ -2,31 +2,33 @@ import { createBrowserRouter } from "react-router-dom";
 import { ErrorPage, MainPage, SchemePage, SchemeSelectionPage, StockPage } from "../../pages";
 import { ERoutes } from "./config";
 import BrandRegistrationPage from "../../pages/crm/BrandRegistrationPage";
+import { AuthPopup } from "../auth/components";
+
 
 export const router = createBrowserRouter([
     {
         path: ERoutes.Default,
-        element: <MainPage />
+        element: <AuthPopup><MainPage /></AuthPopup>
     },
     {
         path: `${ERoutes.CrmScheme}/:schemeId`,
-        element: <SchemePage />
+        element: <AuthPopup><SchemePage /></AuthPopup>
     },
     {
         path: ERoutes.CrmSchemesMain,
-        element: <SchemeSelectionPage />
+        element: <AuthPopup><SchemeSelectionPage /></AuthPopup>
     },
     {
         path: ERoutes.CrmBrandRegistration,
-        element: <BrandRegistrationPage />
+        element: <AuthPopup><BrandRegistrationPage /></AuthPopup>
     },
     {
         path: ERoutes.Error,
-        element: <ErrorPage />
+        element: <AuthPopup><ErrorPage /></AuthPopup>
     },
     {
         path: ERoutes.Stock,
-        element: <StockPage />
+        element: <AuthPopup><StockPage /></AuthPopup>
     },
     {
         path: `${ERoutes.Product}/:id`,

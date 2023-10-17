@@ -1,0 +1,19 @@
+@import '../../../../styles/vars.scss';
+
+.note{
+    text-align: center;
+    opacity: 0.5;
+}
+
+.link{
+    font-weight: bold;
+}
+
+@media(min-width: $media-desktop) {
+    .wrapper {
+        padding: calc(32px - $margin-h3) 0 0;
+        width: 100%;
+        box-sizing: border-box;
+
+    }
+}

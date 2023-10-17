@@ -5,6 +5,13 @@ export const StyledTextField = styled(TextField)`
   fieldset {
     border: 1px solid black;
     border-radius: 0px;
+    padding: 0;
+  }
+
+  input{
+    box-sizing:border-box;
+    height: 100%;
+    width: 100%
   }
 
   input::placeholder {
