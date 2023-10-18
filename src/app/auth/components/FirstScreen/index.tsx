@@ -124,8 +124,8 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
             <div className={cx.input} key={uid(idx)}>
               <p className={cx.label}>{item.label}</p>
               {
-                item.type === 'tel' ?
-                  <InputMask
+                item.type === 'tel'
+                  ? <InputMask
                     mask='+9 (999) 999-99-99'
                     key={item.name}
                     name={item.name}
@@ -137,7 +137,8 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
                       // @ts-ignore: https://blog.logrocket.com/implementing-react-input-mask-web-apps/
                       (inputProps) => <Input {...inputProps} />
                     }
-                  </InputMask> : <Input
+                  </InputMask>
+                  : <Input
                     key={item.name}
                     name={item.name}
                     placeholder={item.placeholder}
@@ -169,7 +170,7 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
         type === EType.REG && (
           <>
             <div className={cx.confirm}>
-              <Checkbox value={checkbox} onChange={onCheckboxClick}/>
+              <Checkbox value={checkbox} onChange={onCheckboxClick} />
               <p className={cx.note}>я ознакомился и согласен с <Link to={ERoutes.Default}>политикой обработки персональных</Link> данных и пользовательским соглашением</p>
             </div>
             <p className={cx.note}>мы отправим вам код в sms</p>

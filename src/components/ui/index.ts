@@ -1,6 +1,6 @@
 import { Header, MobileToolbar } from "./Header";
 import Footer from "./Footer";
-import Typography from "./Typography";
+import Typography, {ETypographyWeight} from "./Typography";
 import {Button, EBtnColor} from "./Button";
 import MoreLink from "./MoreLink";
 import Image from "./Image";
@@ -21,7 +21,7 @@ export {
     Header,
     MobileToolbar,
     Footer,
-    Typography,
+    Typography, ETypographyWeight,
     Button, EBtnColor, EAlign,
     MoreLink,
     Image,
