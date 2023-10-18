@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
         element: <></>
     },
     {
-        path: `${ERoutes.LK}/:tabName`,
+        path: `${ERoutes.LK}/:tabName?`,
         element: <LKPage />
     },
 ])

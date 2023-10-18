@@ -1,7 +1,9 @@
 @import '../../../styles/vars.scss';
+@import '../../../styles/mixins.scss';
 
 .footer {
     display: grid;
+    @include container-width();
 }
 
 .socials {

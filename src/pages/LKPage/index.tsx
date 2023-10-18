@@ -23,7 +23,7 @@ type TTabName = {
 };
 
 export default function LKPage() {
-  const { tabName } = useParams<keyof TTabParams>() as TTabParams;
+  const { tabName = "main" } = useParams<keyof TTabParams>() as TTabParams ;
 
   const tabs = {
     fav: <LKFav key='fav' />,
