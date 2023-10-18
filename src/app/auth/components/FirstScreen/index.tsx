@@ -127,6 +127,11 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
                 item.type === 'tel' ?
                   <InputMask
                     mask='+9 (999) 999-99-99'
+                    key={item.name}
+                    name={item.name}
+                    placeholder={item.placeholder}
+                    type={item.type || 'text'}
+                    className={cx.field}
                   >
                     {
                       // @ts-ignore: https://blog.logrocket.com/implementing-react-input-mask-web-apps/

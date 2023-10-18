@@ -1,62 +1,35 @@
-import React, {useRef} from 'react'
+import React, { useRef, useState } from 'react'
 import { Typography, Input } from "../../../../components/ui"
-import { Grid, Stack } from '@mui/material';
+import cx from './index.module.scss';
 
+interface IFields {
 
+}
 const fields = [
   [
     {
-      label:
-        'Наименование партнера (полное наименование юридического лица / ФИО физического лица, осуществляющего предпринимательскую деятельность / иное наименование,если применимо)*',
-      name: 'companyName',
+      name: 'surname',
     },
     {
-      label:
-        'ФИО уполномоченного руководителя / наименование единоличногоисполнительного органа*',
-      name: 'ownerName',
+
+      name: 'name',
     },
     {
-      label: 'Адрес интернет-сайта (при наличии)*',
-      name: 'address',
+      name: 'lastName',
     },
     {
-      label:
-        'Торговое / коммерческое наименование (это наименование будет видно всем покупателям)*',
-      name: 'titleName',
-    },
-    {
-      label: 'ФИО уполномоченного представителя*',
-      name: 'representativeName',
-    },
-    {
-      label: 'Фактический адрес*',
-      name: 'addressActual ',
+      name: 'date',
     },
   ],
   [
     {
-      label: 'E-mail*',
       name: 'email',
     },
     {
-      label: 'Телефон уполномоченного представителя*',
       name: 'phone',
     },
     {
-      label: 'ИНН / регистрационный номер (если применимо)*',
-      name: 'inn',
-    },
-    {
-      label: 'КПП Наименование расчетного банка (если применимо)*',
-      name: 'kpp',
-    },
-    {
-      label: 'БИК расчетного банка / SWIFT code (если применимо)*',
-      name: 'bik',
-    },
-    {
-      label: 'Корреспондентский счет (если применимо)*',
-      name: 'account',
+      name: 'city',
     },
   ],
 ];
@@ -64,12 +37,13 @@ const fields = [
 export default function LKMain() {
   const formRef = useRef<HTMLFormElement>(null);
 
+  const [formData, setFormData] = useState<IFields | {}>({});
 
   return (
     <div>
       <Typography variant="h1">мои данные</Typography>
 
-      
+
 
     </div>
   )
