@@ -1,0 +1,55 @@
+@import '../../../../styles/vars.scss';
+
+.wrapper {
+    display: grid;
+    gap: $margin-h2-mobile;
+    grid-auto-flow: row;
+
+    button {
+        width: fit-content;
+    }
+}
+
+.label {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.fBtns {
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: column;
+}
+
+.fBtns,
+.wrapper button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reg p {
+    font-weight: bold;
+}
+
+.note {
+    opacity: 0.5;
+    text-align: center;
+}
+
+.wrapper {
+    padding: calc(32px - $margin-h3) 0 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    .field {
+        width: 100%;
+    }
+}
+
+.confirm{
+    display: flex;
+    justify-content: space-between;
+    p{
+        text-align: left;
+    }
+}
