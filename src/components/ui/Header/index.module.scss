@@ -121,18 +121,25 @@
 
     .exit {
         p {
-            display: flex;
-            align-items: center;
-            &::after {
-                content: '';
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M11.668 18.3337H15.8346C16.7551 18.3337 17.5013 17.5875 17.5013 16.667V3.33366C17.5013 2.41318 16.7551 1.66699 15.8346 1.66699H11.668' stroke='black' stroke-width='2' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M9.16797 13.3337L12.5013 10.0003L9.16797 6.66699' stroke='black' stroke-width='2' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M12.5 11C13.0523 11 13.5 10.5523 13.5 10C13.5 9.44772 13.0523 9 12.5 9V11ZM2.5 9H1.5V11H2.5V9ZM12.5 9H2.5V11H12.5V9Z' fill='black'/%3E%3C/svg%3E");
-                width: 20px;
-                height: 20px;
-                margin-left: 10px;
-                background-size: contain;
-                display: block;
-                background-repeat: no-repeat;
+           
+            pointer-events: none;
+            
+            button{
+                pointer-events: all;
+                display: flex;
+                align-items: center;
+                &::after {
+                    content: '';
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M11.668 18.3337H15.8346C16.7551 18.3337 17.5013 17.5875 17.5013 16.667V3.33366C17.5013 2.41318 16.7551 1.66699 15.8346 1.66699H11.668' stroke='black' stroke-width='2' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M9.16797 13.3337L12.5013 10.0003L9.16797 6.66699' stroke='black' stroke-width='2' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M12.5 11C13.0523 11 13.5 10.5523 13.5 10C13.5 9.44772 13.0523 9 12.5 9V11ZM2.5 9H1.5V11H2.5V9ZM12.5 9H2.5V11H12.5V9Z' fill='black'/%3E%3C/svg%3E");
+                    width: 20px;
+                    height: 20px;
+                    margin-left: 10px;
+                    background-size: contain;
+                    display: block;
+                    background-repeat: no-repeat;
+                }
             }
+          
         }
     }
 }

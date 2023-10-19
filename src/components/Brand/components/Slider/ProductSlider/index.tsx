@@ -88,7 +88,7 @@ export default function ProductSlider({list = Array(27).fill(null)}: IProductSLi
                     }}
                 >
                     {
-                        list.map((_, index) => <SwiperSlide key={uid(index)} className={cx.slide}><ProductItem size="inSwiper" /></SwiperSlide>)
+                        list.map((_, index) => <SwiperSlide key={uid(index)} className={cx.slide}><ProductItem size="apativeSize" /></SwiperSlide>)
                     }
                 </SwiperComponent>
 
