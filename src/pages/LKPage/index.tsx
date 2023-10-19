@@ -50,7 +50,7 @@ export default function LKPage() {
     },
     {
       label: 'мои данные',
-      link: `${ERoutes.LK}/main`,
+      link: `${ERoutes.LK}/`,
       align: EAlign.Right,
       isMain: true,
     },
