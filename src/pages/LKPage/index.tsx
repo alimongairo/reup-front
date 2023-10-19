@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams } from "react-router-dom";
 import {
   LKFav,
-  LKJoin,
   LKMain,
   LKOrders
 } from './tabs'
@@ -17,7 +16,6 @@ type TTabParams = {
 
 type TTabName = {
   fav: React.Component;
-  join: React.Component;
   main: React.Component;
   orders: React.Component;
 };
@@ -27,7 +25,6 @@ export default function LKPage() {
 
   const tabs = {
     fav: <LKFav key='fav' />,
-    join: <LKJoin key='join' />,
     main: <LKMain key='main' />,
     orders: <LKOrders key='orders' />,
   };
@@ -45,7 +42,7 @@ export default function LKPage() {
     },
     {
       label: 'стать продавцом',
-      link: `${ERoutes.LK}/join`,
+      link: ERoutes.CrmBrandRegistration,
       align: EAlign.Right,
     },
     {
