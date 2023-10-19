@@ -90,7 +90,7 @@ export default function Footer() {
         }
       </ul>
       
-      <Button>стать продавцом</Button>
+      <Button component={Link} to={ERoutes.CrmBrandRegistration}>стать продавцом</Button>
     </div>
   )
 }

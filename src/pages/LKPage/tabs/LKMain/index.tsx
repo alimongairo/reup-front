@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Typography, Input, Checkbox, Button } from "../../../../components/ui";
+import { Typography, Input, Button } from "../../../../components/ui";
 import InputMask from 'react-input-mask';
 import cx from './index.module.scss';
+import { FormControlLabel, Radio, RadioGroup } from "@mui/material";
 
 interface IFields {
   name: string,
@@ -28,7 +29,7 @@ const fields = [
       },
       {
         name: 'date',
-        type: 'date'
+        placeholder: 'дд.мм.гггг'
       },
     ]
   },
@@ -47,6 +48,7 @@ const fields = [
       },
       {
         name: 'city',
+        placeholder: "Нижний Новгород",
       },
     ]
   },
@@ -57,7 +59,6 @@ export default function LKMain() {
 
   const [formData, setFormData] = useState<IFields | {}>({});
 
-  // TODO: когда сменяется таб, отправлять форму (контекст (?))
   const onSendForm = () => {
     if (formRef.current) {
       const data = new FormData(formRef.current);
@@ -74,8 +75,8 @@ export default function LKMain() {
   }, [formData]);
 
   return (
-    <>
-      <form ref={formRef}>
+    <div className={cx.container}>
+      <form ref={formRef} className={cx.form}>
         <Typography variant="h1">мои данные</Typography>
 
         <div className={cx.fields}>
@@ -97,7 +98,7 @@ export default function LKMain() {
                       (inputProps) => <Input {...inputProps} />
                     }
                   </InputMask>
-                  : item.type === 'date'
+                  : item.name === 'date'
                     ? <InputMask
                       mask='99.99.9999'
                       key={item.name}
@@ -126,24 +127,25 @@ export default function LKMain() {
 
         <div className={cx.gender}>
           <Typography variant="h6">пол</Typography>
-          <div className={cx.list}>
-            <div className={cx.checkbox}>
-              <Checkbox name="female" />
-              <p className={cx.note}>женский</p>
-            </div>
-            <div className={cx.checkbox}>
-              <Checkbox name="male" />
-              <p className={cx.note}>мужской</p>
-            </div>
-          </div>
+
+          <RadioGroup
+            row
+            name="gender"
+          >
+            <FormControlLabel value="female" control={<Radio />} label="женский" />
+            <FormControlLabel value="male" control={<Radio />} label="мужской" />
+            <FormControlLabel value="other" control={<Radio />} label="другой" />
+          </RadioGroup>
+
+
         </div>
 
 
 
       </form>
 
-      <Button onClick={onSendForm} className="as-mobile">Редактировать</Button>
+      <Button onClick={onSendForm} className={cx.saveBtn}>Редактировать</Button>
 
-    </>
+    </div>
   )
 }

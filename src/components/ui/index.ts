@@ -16,6 +16,7 @@ import NavLinkIcon from "./NavLinkIcon";
 import NavLink from "./NavLink";
 import PopUp from "./PopUp";
 import Checkbox from './Checkbox';
+import Radio from './Radio';
 
 export {
     Header,
@@ -36,7 +37,8 @@ export {
     NavLink,
     NavLinkIcon,
     PopUp,
-    Checkbox
+    Checkbox,
+    Radio
 };
 
 export type {
