@@ -1,20 +1,14 @@
 import React from 'react';
-import { NavLink as MyNavLink } from "..";
+import { EBrickAlign, NavLink as MyNavLink } from "..";
 import { NavLink } from "react-router-dom";
 import cls from 'classnames';
 import cx from './index.module.scss';
 import { uid } from "react-uid";
 
-enum EAlign {
-    Left = 'left',
-    Center = 'center',
-    Right = 'right',
-}
-
 interface IBrick {
     label: string;
     link: string;
-    align?: EAlign;
+    align?: EBrickAlign;
     isMain?: boolean;
 }
 
@@ -33,7 +27,7 @@ function Bricks({ list, colorType = EColorType.TEXT, className }: IProps) {
     return (
         <ul className={cls(cx.bricks, className)}>
             {
-                list.map(({ link, label, align = EAlign.Left, isMain = false }) => (
+                list.map(({ link, label, align = EBrickAlign.Left, isMain = false }) => (
                     <li className={cls(cx.item, cx[align])} key={uid(label)}>
                         {
                             colorType === EColorType.TEXT
@@ -56,5 +50,5 @@ function Bricks({ list, colorType = EColorType.TEXT, className }: IProps) {
     )
 }
 
-export { Bricks, EAlign, EColorType };
+export { Bricks, EBrickAlign, EColorType };
 export type { IBrick };

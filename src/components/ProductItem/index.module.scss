@@ -8,7 +8,7 @@
         position: relative;
         width: 100%;
         flex-grow: 1;
-        min-height: 339px;
+        aspect-ratio: 0.76;
         margin-bottom: 8px;
 
         .img {
@@ -63,10 +63,6 @@
 @media(max-width: $media-mobile) {
     .product {
         &.inSwiper {
-            .image {
-                min-height: 209px;
-            }
-
             .title {
                 font-size: 14px;
             }

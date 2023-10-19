@@ -19,6 +19,7 @@ interface IProps {
 }
 
 export default function Layout({ isEditable, component, isEditing, setIsEditing, data }: IProps) {
+    // mock
     const productsPlug = Array(27).fill(null);
     const [activeMenu, setActiveMenu] = useState(ELabelsName.DefaultList);
 

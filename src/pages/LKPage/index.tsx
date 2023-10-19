@@ -6,9 +6,9 @@ import {
   LKOrders
 } from './tabs'
 import { MainLayout } from "../../layouts";
-import { Bricks, EAlign, EColorType } from "../../components/ui";
-import { ERoutes } from "../../app/router/config";
+import { Bricks, EColorType } from "../../components/ui";
 import cx from './index.module.scss';
+import { lkTabsList } from "../../const";
 
 type TTabParams = {
   tabName: string;
@@ -21,7 +21,10 @@ type TTabName = {
 };
 
 export default function LKPage() {
-  const { tabName = "main" } = useParams<keyof TTabParams>() as TTabParams ;
+  // разводящая это попап из шапки
+  // из MobileToolbar открываем попап 
+
+  const { tabName = "main" } = useParams<keyof TTabParams>() as TTabParams;
 
   const tabs = {
     fav: <LKFav key='fav' />,
@@ -29,35 +32,12 @@ export default function LKPage() {
     orders: <LKOrders key='orders' />,
   };
 
-  const bricksList = [
-    {
-      label: 'избранное',
-      link: `${ERoutes.LK}/fav`,
-      align: EAlign.Left,
-    },
-    {
-      label: 'мои заказы',
-      link: `${ERoutes.LK}/orders`,
-      align: EAlign.Center,
-    },
-    {
-      label: 'стать продавцом',
-      link: ERoutes.CrmBrandRegistration,
-      align: EAlign.Right,
-    },
-    {
-      label: 'мои данные',
-      link: `${ERoutes.LK}/`,
-      align: EAlign.Right,
-      isMain: true,
-    },
-  ]
 
   const currentTab = tabs[tabName as keyof TTabName];
 
   return (
     <MainLayout>
-      <Bricks list={bricksList} colorType={EColorType.FILL} className={cx.bricks}/>
+      <Bricks list={lkTabsList} colorType={EColorType.FILL} className={cx.bricks} />
       <div>
         {currentTab}
       </div>
