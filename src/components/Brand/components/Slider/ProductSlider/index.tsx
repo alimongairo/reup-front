@@ -3,19 +3,21 @@ import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import cx from './index.module.scss';
-import { Button } from "../../../../components/ui";
+import { Button } from "../../../../ui";
 import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper'
-import { ReactComponent as ArrowIcon } from '../../../../../static/images/icons/arrows/default.svg';
+import { ReactComponent as ArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
 import cls from 'classnames';
-import ProductItem from "../../../../components/ProductItem";
+import ProductItem from "../../../../ProductItem";
 import { uid } from "react-uid";
-import '../../../../styles/swipe.scss';
-import { useWindowWidth } from "../../../../hooks";
+import '../../../../../styles/swipe.scss';
+import { useWindowWidth } from "../../../../../hooks";
 
-export default function ProductSlider() {
+interface IProductSLiderProps {
+    list?: any[];
+}
+
+export default function ProductSlider({list = Array(27).fill(null)}: IProductSLiderProps) {
     const windowWidth = useWindowWidth();
-
-    const productsPlug = Array(27).fill(null);
 
     const swiperRef = useRef<SwiperRef>();
 
@@ -86,7 +88,7 @@ export default function ProductSlider() {
                     }}
                 >
                     {
-                        productsPlug.map((_, index) => <SwiperSlide key={uid(index)} className={cx.slide}><ProductItem size="inSwiper" /></SwiperSlide>)
+                        list.map((_, index) => <SwiperSlide key={uid(index)} className={cx.slide}><ProductItem size="inSwiper" /></SwiperSlide>)
                     }
                 </SwiperComponent>
 

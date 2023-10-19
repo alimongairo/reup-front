@@ -3,7 +3,6 @@
 
 .footer {
     display: grid;
-    @include container-width();
 }
 
 .socials {
@@ -56,6 +55,7 @@
         padding: 50px;
         grid-template-columns: auto 1fr auto; 
         gap: 50px 16px ;
+        @include container-width();
     }
 
     .logo{

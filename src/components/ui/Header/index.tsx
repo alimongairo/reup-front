@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ReactComponent as LogoIcon } from "../../../../static/images/icons/logo.svg";
 import { ReactComponent as SearchIcon } from "../../../../static/images/icons/loype.svg";
 import { ReactComponent as HeartIcon } from "../../../../static/images/icons/heart.svg";
@@ -17,6 +17,7 @@ import { DropDown } from "./components";
 import { strokeColorReturner } from "../../../helpers";
 import { lkTabsList } from "../../../const";
 import { AuthContext } from "../../../app/auth";
+import { useWindowWidth } from "../../../hooks";
 
 interface IProps {
   type: ERoles,
@@ -28,7 +29,11 @@ function Header({ type }: IProps) {
 
   const config = confReturner(type || null);
 
+
+  
   const [dropdownVisible, setDropdownVisible] = useState(false);
+
+
 
   const onDropdownClick = () => {
     setDropdownVisible((state) => !state);

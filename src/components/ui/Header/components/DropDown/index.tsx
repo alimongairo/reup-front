@@ -24,7 +24,7 @@ const DropDown = ({ visible = false, overlay, title, setVisible }: IProps) => {
               <p>
                 {
                   item.id === 'exit' 
-                  ? (<Link to={item.link as string}>{item.label}</Link>) 
+                  ? item.label 
                   : (<NavLink to={item.link as string}>{item.label}</NavLink>)
                 }
               </p>
