@@ -1,0 +1,87 @@
+@import '../../../../styles/vars.scss';
+
+.wrapper {
+    display: flex;
+}
+
+.img {
+    aspect-ratio: 1.2;
+    background: blanchedalmond;
+}
+
+.note {
+    color: $color-gray-82;
+}
+
+.price{
+    display: flex;
+    align-items: flex-end;
+    h2, h3{
+        margin-bottom: 0;
+    }
+    &>h3:first-child {
+       margin-right: 9px;
+       color: $color-gray-82;
+       font-family: "Gilroy", sans-serif;
+       text-decoration: line-through;
+    }
+    
+}
+
+.sizeList{
+    margin-left: calc(-1 * var(--gap));
+    .sizeBtn{
+        margin-left: var(--gap);
+        margin-bottom: var(--gap);
+    }
+}
+
+@media(max-width: $media-mobile) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .img {
+        margin-bottom: $margin-h2-mobile;
+    }
+
+    .price{
+        align-items: center;
+    }
+
+    .note,
+    .price{
+        margin-bottom: $offset-s;
+    }
+
+    .sizeList{
+       --gap: 8px;
+       margin-bottom: calc($offset-s - var(--gap));
+    }
+
+    .buyBtn{
+        width: 100%;
+    }
+}
+
+@media(min-width: $media-desktop) {
+    .img {
+        width: 58%;
+        margin-right: 24px;
+        flex-shrink: 0
+    }
+
+    .info {
+        flex-grow: 1;
+    }
+
+    .note,
+    .price{
+        margin-bottom: $offset-default;
+    }
+
+    .sizeList{
+        --gap: 12px;
+        margin-bottom: calc($offset-default - var(--gap));
+    }
+}

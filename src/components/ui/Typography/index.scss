@@ -1,15 +1,5 @@
 @import '../../../styles/vars.scss';
 
-
-h1.MuiTypography-root,
-h2.MuiTypography-root,
-h3.MuiTypography-root {
-    font-family: "Dela Gothic One", sans-serif;
-    font-weight: bold;
-    line-height: 110%;
-    display: block;
-}
-
 h3.MuiTypography-root {
     font-size: 24px;
     margin-bottom: $margin-h3;
@@ -28,6 +18,16 @@ h3.MuiTypography-root {
         margin-bottom: $margin-h2-mobile;
         letter-spacing: 0.8px;
     }
+    
+    h5.MuiTypography-root {
+        font-size: 14px;
+        margin-bottom: $margin-h6-mobile;
+        letter-spacing: 0.98px;
+    }
+
+    h6.MuiTypography-root {
+        margin-bottom: $margin-h6-mobile;
+    }
 }
 
 @media(min-width: $media-desktop) {
@@ -42,4 +42,15 @@ h3.MuiTypography-root {
         margin-bottom: $margin-h2;
         letter-spacing: 1.28px;
     }
+
+    h5.MuiTypography-root {
+        font-size: 20px;
+        margin-bottom: $margin-h6;
+        letter-spacing: 1.4px;
+    }
+
+    h6.MuiTypography-root {
+        margin-bottom: $margin-h6;
+    }
+    
 }

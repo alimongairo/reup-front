@@ -1,3 +1,5 @@
+@import '../../styles/vars.scss';
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -18,7 +20,7 @@
       .headerActions {
         display: flex;
         align-items: center;
-        gap: 32px;
+        gap: $offset-default;
       }
   
       button {
@@ -126,7 +128,7 @@
           display: flex;
           justify-content: center;
           flex-direction: column;
-          padding-bottom: 32px;
+          padding-bottom: $offset-default;
           width: fit-content;
   
           .amountItem {
@@ -139,7 +141,7 @@
         .sizes {
           display: flex;
           flex-direction: column;
-          padding-bottom: 32px;
+          padding-bottom: $offset-default;
           color: #828282;
   
           .sizeItem {

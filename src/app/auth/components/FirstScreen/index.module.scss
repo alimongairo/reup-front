@@ -37,7 +37,7 @@
 }
 
 .wrapper {
-    padding: calc(32px - $margin-h3) 0 0;
+    padding: calc($offset-default - $margin-h3) 0 0;
     width: 100%;
     box-sizing: border-box;
 

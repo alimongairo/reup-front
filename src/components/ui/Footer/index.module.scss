@@ -11,9 +11,9 @@
 
 @media(max-width: $media-mobile) {
     .footer {
-        padding: 54px 16px 110px;
+        padding: 54px $offset-s 110px;
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: $offset-s;
     }
 
     .logo{
@@ -24,9 +24,9 @@
     }
 
     .socials {
-        margin-left: -16px;
+        margin-left: calc(-1 * $offset-s);
         .socialIcon {
-            margin-left: 16px
+            margin-left: $offset-s;
         }
     }
 
@@ -53,7 +53,7 @@
     .footer {
         padding: 50px;
         grid-template-columns: auto 1fr auto; 
-        gap: 50px 16px ;
+        gap: 50px $offset-s ;
     }
 
     .logo{
@@ -64,12 +64,12 @@
     }
 
     .socials {
-        margin-left: -32px;
+        margin-left: calc(-1 * $offset-default);
         justify-content: center;
         grid-row: 2;
         grid-column: span 3;
         .socialIcon {
-            margin-left: 32px
+            margin-left: $offset-default
         }
     }
 
@@ -77,11 +77,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: -32px;
+        margin-left: calc(-1 * $offset-default);
         flex-wrap: wrap;
 
         .link {
-            margin-left: 32px;
+            margin-left: $offset-default;
         }
     }
 

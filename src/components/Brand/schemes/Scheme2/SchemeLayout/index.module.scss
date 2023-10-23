@@ -68,7 +68,7 @@
             padding: $containerPadding-desktop;
 
             p {
-                margin-bottom: 32px;
+                margin-bottom: $offset-default;
             }
 
             .image {
@@ -99,7 +99,7 @@
 
         .title {
             height: 468px;
-            padding: 32px $containerPadding-desktop;
+            padding: $offset-default $containerPadding-desktop;
             background: $color-gray-2;
 
             &:not(.isEditable) {

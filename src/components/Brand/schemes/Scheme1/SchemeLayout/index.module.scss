@@ -41,7 +41,7 @@
 
         .bricks,
         .main {
-            padding: 32px $containerPadding-desktop;
+            padding: $offset-default $containerPadding-desktop;
         }
 
         .bricks {
@@ -86,7 +86,7 @@
 
         .title {
             background: $color-snow;
-            padding: 32px $containerPadding-desktop;
+            padding: $offset-default $containerPadding-desktop;
         }
 
         .subText {
