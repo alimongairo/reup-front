@@ -1,9 +1,11 @@
 import React from 'react';
 import cx from './index.module.scss';
-import { Typography, Button } from '../../../../components/ui'
+import { Typography, Button, Collapse } from '../../../../components/ui'
 import { uid } from "react-uid";
 import { Link } from "react-router-dom";
 import { ERoutes } from "../../../../app/router/config";
+import { EFontFamily } from "../../../../components/ui/Typography";
+import InfoTable from "../InfoTable";
 
 // mock
 const sizesMock = [
@@ -34,7 +36,7 @@ export default function ProductInfo() {
         <Typography variant="h5">Befree</Typography>
         <p className={cx.note}>03289</p>
         <div className={cx.price}>
-          <Typography variant="h3">3990</Typography>
+          <Typography variant="h3" fontFamily={EFontFamily.GILROY}>3990</Typography>
           <Typography variant="h2">1990</Typography>
         </div>
         <Typography variant="h6">выберите размер</Typography>
@@ -49,8 +51,32 @@ export default function ProductInfo() {
 
         <Button className={cx.buyBtn}>купить сейчас</Button>
 
+        <div className={cx.detailsTitle}>
+          <Link to={ERoutes.Default} style={{ textDecoration: 'underline' }}><Typography variant="h6">характеристики</Typography></Link>
+        </div>
+
         <div>
-          <Link to={ERoutes.Default}><Typography variant="h6">Характеристики</Typography></Link>
+          <div className={cx.block}>
+            <Collapse
+              title={<Typography variant="h5" fontFamily={EFontFamily.GILROY}>описание</Typography>}
+              content={<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores sequi, odio tenetur dolorem sint debitis molestias eligendi veniam dignissimos! Distinctio praesentium fugit possimus doloremque saepe mollitia voluptatum eos aliquam quo?</p>}
+              moreText={<Link to={ERoutes.Default} style={{ textDecoration: 'underline', pointerEvents: 'none' }} className={cx.more}><Typography variant="h6">показать больше</Typography></Link>}
+              lessText={<Link to={ERoutes.Default} style={{ textDecoration: 'underline', pointerEvents: 'none' }} className={cx.more}><Typography variant="h6">свернуть</Typography></Link>}
+              hideCollapseIcon
+            />
+          </div>
+
+          <div className={cx.block}>
+            <Collapse
+              title={<Typography variant="h5" fontFamily={EFontFamily.GILROY}>о товаре</Typography>}
+              content={<InfoTable />}
+              className={cx.infoTable}
+            />
+
+            <div>
+              <Link to={ERoutes.Default} style={{ textDecoration: 'underline' }}><Typography variant="h6">таблица размеров</Typography></Link>
+            </div>
+          </div>
         </div>
 
       </div>

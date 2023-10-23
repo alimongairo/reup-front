@@ -293,3 +293,9 @@ p{
   letter-spacing: 1.12px;
   line-height: 110%;
 }
+
+@media(max-width:758px){
+  p{
+    font-size: 14px;
+  }
+}

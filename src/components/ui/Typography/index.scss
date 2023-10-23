@@ -6,6 +6,15 @@ h3.MuiTypography-root {
     letter-spacing: 1.68px;
 }
 
+h6.MuiTypography-root {
+    font-size: $fontSize-default;
+    font-weight: bold;
+}
+
+h5.MuiTypography-root {
+    font-weight: 500;
+}
+
 @media(max-width: $media-mobile) {
     h1.MuiTypography-root {
         font-size: 32px;
@@ -20,7 +29,7 @@ h3.MuiTypography-root {
     }
     
     h5.MuiTypography-root {
-        font-size: 14px;
+        font-size: $fontSize-default;
         margin-bottom: $margin-h6-mobile;
         letter-spacing: 0.98px;
     }

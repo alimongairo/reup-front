@@ -5,6 +5,7 @@
 }
 
 .img {
+    // TODO: устанавливать пропорции картинке и исходя из нее задавать размер 
     aspect-ratio: 1.2;
     background: blanchedalmond;
 }
@@ -22,7 +23,7 @@
     &>h3:first-child {
        margin-right: 9px;
        color: $color-gray-82;
-       font-family: "Gilroy", sans-serif;
+       font-weight: bold;
        text-decoration: line-through;
     }
     
@@ -33,6 +34,13 @@
     .sizeBtn{
         margin-left: var(--gap);
         margin-bottom: var(--gap);
+    }
+}
+
+.block{
+    border-bottom: 1px solid $color-black;
+    &:first-child{
+        border-top: 1px solid $color-black;
     }
 }
 
@@ -59,8 +67,20 @@
        margin-bottom: calc($offset-s - var(--gap));
     }
 
-    .buyBtn{
+    button.buyBtn{
         width: 100%;
+    }
+
+    button.buyBtn, .detailsTitle, .infoTable{
+        margin-bottom: $offset-s;
+    }
+
+    .more > *{
+        padding-top: $margin-h6-mobile;
+    }
+
+    .block{
+        padding: $offset-default 0;
     }
 }
 
@@ -83,5 +103,17 @@
     .sizeList{
         --gap: 12px;
         margin-bottom: calc($offset-default - var(--gap));
+    }
+
+    .more > *{
+        padding-top: $margin-h6;
+    }
+
+    button.buyBtn, .detailsTitle, .infoTable{
+        margin-bottom: $offset-default;
+    }
+
+    .block{
+        padding: 24px 0;
     }
 }
