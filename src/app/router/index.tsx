@@ -27,11 +27,11 @@ export const router = createBrowserRouter([
         element: <AuthPopup><ErrorPage /></AuthPopup>
     },
     {
-        path: ERoutes.Stock,
+        path: ERoutes.CrmStock,
         element: <AuthPopup><StockPage /></AuthPopup>
     },
     {
-        path: `${ERoutes.Product}/:id`,
+        path: `${ERoutes.CrmProduct}/:id`,
         element: <></>
     },
 ])
