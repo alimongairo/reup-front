@@ -1,11 +1,13 @@
 import React from 'react';
 import cx from './index.module.scss';
-import { Typography, Button, Collapse } from '../../../../components/ui'
+import cls from 'classnames';
+import { Typography, Button, Collapse, Image } from '../../../../components/ui'
 import { uid } from "react-uid";
 import { Link } from "react-router-dom";
 import { ERoutes } from "../../../../app/router/config";
 import { EFontFamily } from "../../../../components/ui/Typography";
 import InfoTable from "../InfoTable";
+import '../../../../styles/scroll.scss';
 
 // mock
 const sizesMock = [
@@ -27,10 +29,26 @@ const sizesMock = [
   },
 ];
 
-export default function ProductInfo() {
+interface IProps {
+  className?: string;
+};
+
+export default function ProductInfo({ className }: IProps) {
   return (
-    <div className={cx.wrapper}>
-      <div className={cx.img}></div>
+    <div className={cls(cx.wrapper, className)}>
+      <div className={cx.imgContainer}>
+        <div className={cx.content}>
+          <div className={cls(cx.slider, "scroll scroll-vertical")}>
+            <Image className={cx.sliderImg} />
+            <Image className={cx.sliderImg} />
+            <Image className={cx.sliderImg} />
+          </div>
+          <Image className={cx.img} />
+        </div>
+      </div>
+
+
+
       <div className={cx.info}>
         <Typography variant="h2">Блузка женская “Лэйди”</Typography>
         <Typography variant="h5">Befree</Typography>

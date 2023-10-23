@@ -1,7 +1,11 @@
 @import '../../styles/vars.scss';
 
 
-@media(max-width: $media-mobile) {}
+@media(max-width: $media-mobile) {
+    .productInfo{
+        margin-bottom: $mb-lg-mobile;
+    }
+}
 
 @media(min-width: $media-desktop) {
     .wrapper {
@@ -10,6 +14,10 @@
 
     .breadcrumbs{
         margin-bottom: $offset-default;
+    }
+
+    .productInfo{
+        margin-bottom: $mb-lg;
     }
 
 }

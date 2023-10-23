@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { MainLayout } from "../../layouts"
-import { Collections, ProductSlider, ReupChoosen, Sale, Top } from "./components"
-import { Bricks, EAlign, IBrick, MoreLink, Typography } from "../../components/ui"
+import { Collections, ReupChoosen, Sale, Top } from "./components";
+import { ProductSlider } from "../../components";
+import { Bricks, EAlign, IBrick, MoreLink, Typography } from "../../components/ui";
 import { ReactComponent as  Upcycle1} from "../../../static/images/hardcode/main/upcycle/upcycle1.svg";
 import { ReactComponent as  Upcycle2} from "../../../static/images/hardcode/main/upcycle/upcycle2.svg";
 import { ReactComponent as  Upcycle3} from "../../../static/images/hardcode/main/upcycle/upcycle3.svg";

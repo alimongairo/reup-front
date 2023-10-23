@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@mui/material";
 import { ERoutes } from "../../app/router/config";
 import { Link } from "react-router-dom";
 import { ProductInfo } from "./components";
+import { Typography } from "../../components/ui";
+import { ProductSlider } from "../../components";
 
 export default function ProductPage() {
     return (
@@ -20,9 +22,13 @@ export default function ProductPage() {
                         <p>блузка женская ‘лэйди’</p>
                     </Breadcrumbs>
                 </div>
-                
-                <ProductInfo />
 
+                <ProductInfo className={cx.productInfo}/>
+
+
+
+                <Typography variant="h1">вы недавно смотрели</Typography>
+                <ProductSlider />
             </div>
 
         </MainLayout>
