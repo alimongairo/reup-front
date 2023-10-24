@@ -1,10 +1,10 @@
 import React from 'react';
 import { uid } from "react-uid";
-import { Button, Typography } from "../../../../ui";
-import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
+import { Button, Typography } from "@/components/ui";
+import { ReactComponent as RightArrowIcon } from 'S#/images/icons/arrows/default.svg';
 import { EditableImage } from "../../../components";
 import cx from './index.module.scss';
-import { styleParser } from "../../../../../helpers";
+import { styleParser } from "@/helpers";
 import { IScheme3Brand } from "../../../../../types/brandTypes";
 
 interface IProps {

@@ -1,6 +1,6 @@
 
-import { Collapse, Input, Divider } from '../../../../../../../ui';
-import { useTypedDispatch, useTypedSelector } from "../../../../../../../../hooks";
+import { Collapse, Input, Divider } from '@/components/ui';
+import { useTypedDispatch, useTypedSelector } from "@/hooks";
 import { setBrandSettingsByField } from "../../../../../../../../redux/features/brandSetting/slice";
 import { brandSettingsTextSelector } from "../../../../../../../../redux/features/brandSetting/selectors";
 import cx from './index.module.scss';
@@ -38,7 +38,6 @@ const EditTextOption = ({ title, name, value }: IEditTextOption) => {
         <Input
           name={name}
           defaultValue={value}
-          isTextArea
           className={cx.textarea}
           onChange={(e) => onChange(e.target.value)}
         />
@@ -58,7 +57,7 @@ const Options = () => {
             <EditTextOption
               title={field.title}
               name={field.name}
-              value={field.value}
+              value={field.value as string}
             />
             <Divider direction={'horizontal'} color="grey" />
           </span>

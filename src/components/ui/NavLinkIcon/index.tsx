@@ -1,5 +1,5 @@
 import React from 'react';
-import { strokeColorReturner } from "../../../helpers";
+import { strokeColorReturner } from "@/helpers";
 import { NavLink } from "..";
 
 interface IPropsNavLinkIcon {

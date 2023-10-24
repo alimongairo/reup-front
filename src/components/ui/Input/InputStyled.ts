@@ -1,5 +1,5 @@
 import { TextField, styled } from "@mui/material";
-import { ReactComponent as SearchIcon } from '../../../../static/images/icons/search.svg';
+import { ReactComponent as SearchIcon } from 'S#/images/icons/search.svg';
 
 export const StyledTextField = styled(TextField)`
   fieldset {

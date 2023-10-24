@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import BrandPage from './BrandPage';
 import EditableScheme from './EditablePage';
-import useWithEdit from '../../../../hooks/useWithEdit';
-import { useQuery } from "../../../../hooks";
+import { useQuery, useWithEdit } from "../../../../hooks";
 import { Layout } from "../../components";
 import { IScheme1Brand } from "../../../../types/brandTypes";
 

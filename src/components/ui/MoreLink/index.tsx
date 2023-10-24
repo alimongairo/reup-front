@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as MoreIcon } from '../../../../static/images/icons/more.svg';
+import { ReactComponent as MoreIcon } from 'S#/images/icons/more.svg';
 import { NavLink } from "..";
 import cx from './index.module.scss';
 

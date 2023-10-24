@@ -1,4 +1,4 @@
-import {Image} from '../../../../../../../../../ui';
+import {Image} from '@/components/ui';
 import { EFamilies } from "../../../../../../models";
 import DelaGothicOne from './DelaGothicOne.svg';
 import Roboto from './Roboto.svg';

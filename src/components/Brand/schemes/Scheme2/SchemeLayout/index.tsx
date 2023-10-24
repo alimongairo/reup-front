@@ -1,9 +1,9 @@
 import React from 'react'
 import cx from './index.module.scss';
-import { Typography } from "../../../../ui";
+import { Typography } from "@/components/ui";
 import { EditableImage } from "../../../components";
 import cls from 'classnames';
-import { styleParser } from "../../../../../helpers";
+import { styleParser } from "@/helpers";
 import { IScheme2Brand } from "../../../../../types/brandTypes";
 
 interface IProps {

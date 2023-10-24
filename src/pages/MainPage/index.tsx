@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { MainLayout } from "../../layouts"
+import { MainLayout } from "@/layouts"
 import { Collections, ProductSlider, ReupChoosen, Sale, Top } from "./components"
-import { Bricks, EAlign, IBrick, MoreLink, Typography } from "../../components/ui"
-import { ReactComponent as  Upcycle1} from "../../../static/images/hardcode/main/upcycle/upcycle1.svg";
-import { ReactComponent as  Upcycle2} from "../../../static/images/hardcode/main/upcycle/upcycle2.svg";
-import { ReactComponent as  Upcycle3} from "../../../static/images/hardcode/main/upcycle/upcycle3.svg";
-import { ReactComponent as  Upcycle4} from "../../../static/images/hardcode/main/upcycle/upcycle4.svg";
-import { ReactComponent as  Upcycle5} from "../../../static/images/hardcode/main/upcycle/upcycle5.svg";
-import { ReactComponent as  Upcycle6} from "../../../static/images/hardcode/main/upcycle/upcycle6.svg";
-import { ERoutes } from "../../app/router/types"
+import { Bricks, EAlign, IBrick, MoreLink, Typography } from "@/components/ui"
+import { ReactComponent as  Upcycle1} from "S#/images/hardcode/main/upcycle/upcycle1.svg";
+import { ReactComponent as  Upcycle2} from "S#/images/hardcode/main/upcycle/upcycle2.svg";
+import { ReactComponent as  Upcycle3} from "S#/images/hardcode/main/upcycle/upcycle3.svg";
+import { ReactComponent as  Upcycle4} from "S#/images/hardcode/main/upcycle/upcycle4.svg";
+import { ReactComponent as  Upcycle5} from "S#/images/hardcode/main/upcycle/upcycle5.svg";
+import { ReactComponent as  Upcycle6} from "S#/images/hardcode/main/upcycle/upcycle6.svg";
+import { ERoutes } from "@/router/types"
 import Marquee from 'react-fast-marquee';
 import cx from './index.module.scss';
 

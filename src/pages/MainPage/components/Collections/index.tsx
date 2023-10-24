@@ -1,8 +1,8 @@
 import CollectionCard from './CollectionCard';
-import img1 from '../../../../../static/images/hardcode/main/collections1.png';
-import img2 from '../../../../../static/images/hardcode/main/collections2.png';
-import img3 from '../../../../../static/images/hardcode/main/collections3.png';
-import img4 from '../../../../../static/images/hardcode/main/collections4.png';
+import img1 from 'S#/images/hardcode/main/collections1.png';
+import img2 from 'S#/images/hardcode/main/collections2.png';
+import img3 from 'S#/images/hardcode/main/collections3.png';
+import img4 from 'S#/images/hardcode/main/collections4.png';
 import cx from './index.module.scss';
 import { Typography } from "@mui/material";
 import { uid } from "react-uid";
