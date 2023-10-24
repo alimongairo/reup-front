@@ -1,17 +1,16 @@
 import { ChangeEvent, MouseEvent, useContext, useState } from 'react';
 
-import Container from '../../Container';
-import { MenuContext } from "../../../helpers";
-import { Input, Button } from "../../../../../../ui";
-import { TCategory } from "../../../models";
+import Container from '@/components/Brand/components/Menu/components//Container';
+import { MenuContext } from "@/components/Brand/components/Menu/helpers";
+import { Input, Button } from "@/components/ui";
+import { TCategory } from "@/components/Brand/components/Menu/models";
 // import { useAppDispatch, useAppSelector } from '@/hooks/store';
 // import { brandSettingsCategoriesSelector } from '@/store/brandSetting/selectors';
 // import { addCategory, removeCategory } from '@/store/brandSetting/slice';
 
 import cx from './index.module.scss';
 
-
-
+// TODO: категорий нет на бэке
 
 const Categories = () => {
   // const dispatch = useAppDispatch();

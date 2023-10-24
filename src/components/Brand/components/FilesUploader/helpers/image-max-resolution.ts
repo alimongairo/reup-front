@@ -1,6 +1,6 @@
-import type { GetValidator } from "./validate";
-import getImageDimensions from "./get-image-dimensions";
-import { DEFAULT_MAX_RESOLUTION_IN_PIXELS, MYMETYPE_WHITELIST } from "./constants";
+import type { GetValidator } from "@/components/Brand/components/FilesUploader/helpers/validate";
+import getImageDimensions from "@/components/Brand/components/FilesUploader/helpers/get-image-dimensions";
+import { DEFAULT_MAX_RESOLUTION_IN_PIXELS, MYMETYPE_WHITELIST } from "@/components/Brand/components/FilesUploader/helpers/constants";
 
 
 

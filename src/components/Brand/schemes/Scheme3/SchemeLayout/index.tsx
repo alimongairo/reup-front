@@ -1,7 +1,7 @@
 import React from 'react';
 import { uid } from "react-uid";
 import { Button, Typography } from "../../../../ui";
-import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
+import { ReactComponent as RightArrowIcon } from 'S#/images/icons/arrows/default.svg';
 import { EditableImage } from "../../../components";
 import cx from './index.module.scss';
 import { styleParser } from "../../../../../helpers";

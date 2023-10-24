@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { Typography, PopUp } from "../../../components/ui";
-import { AuthContext, AuthContextType, TLogPart } from "..";
+import { Typography, PopUp } from "@/components/ui";
+import { AuthContext, AuthContextType, TLogPart } from "@/app/auth";
 import { uid } from "react-uid";
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { loginPopupConf, regPopupConf } from "../config";
-import { useWindowWidth } from "../../../hooks";
+import { loginPopupConf, regPopupConf } from "@/app/auth/config";
+import { useWindowWidth } from "@/hooks";
 
 interface IProps {
     children: JSX.Element,

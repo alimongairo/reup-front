@@ -1,7 +1,6 @@
 import React, {ChangeEvent} from 'react';
 import { useContext } from "react";
-import { MenuContext } from "../../Menu/helpers";
-import { FilesField } from "./types";
+import { FilesField } from "@/components/Brand/components/FilesUploader/helpers/types";
 
 export const UploaderContext = React.createContext<
   | {

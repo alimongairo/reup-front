@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { ReactComponent as EditIcon } from "../../../../../static/images/icons/edit.svg";
-import { Typography, Button } from "../../../ui";
-import { Menu } from "..";
+import { ReactComponent as EditIcon } from "S#/images/icons/edit.svg";
+import { Typography, Button, PopUp } from "@/components/ui";
+import { Menu } from "@/components/Brand/components";
+import { ELabelsName } from "@/components/Brand/components/Menu/models";
 import cls from 'classnames';
 import cx from './index.module.scss';
-import { ELabelsName } from "../Menu/models";
-import PopUp from '../../../ui/PopUp';
 
 interface IProps {
     isEditable: boolean,

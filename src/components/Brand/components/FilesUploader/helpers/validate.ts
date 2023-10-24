@@ -23,4 +23,4 @@ const validate = async <T>(
 };
 
 export type { ValidationResult, Validator, GetValidator };
-export default validate;
+export {validate as validateValue};

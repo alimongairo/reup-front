@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { EType } from "../types"
-import { Button } from "../../../../components/ui"
-import { AuthContext } from "../..";
-import cx from './index.module.scss';
+import { EType } from "@/app/auth/components/types"
+import { Button } from "@/components/ui"
+import { AuthContext } from "@/app/auth";
 import { Link } from "react-router-dom";
-import { ERoutes } from "../../../router/config";
+import { ERoutes } from "@/router/config";
+import cx from './index.module.scss';
 
 interface IProps {
   type?: EType

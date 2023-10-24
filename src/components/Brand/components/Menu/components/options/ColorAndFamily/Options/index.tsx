@@ -1,12 +1,12 @@
-import { Collapse, Colors, Divider } from '../../../../../../../ui';
-import { useTypedDispatch, useTypedSelector } from "../../../../../../../../hooks";
-import { SelectFamily, PreviewFamily, Size } from './components';
-import { EColors, EFamilies, TColorAndFamily } from "../../../../models";
-import { setBrandSettingsByField } from "../../../../../../../../redux/features/brandSetting/slice";
+import { Collapse, Colors, Divider } from '@/components/ui';
+import { useTypedDispatch, useTypedSelector } from "@/hooks";
+import { SelectFamily, PreviewFamily, Size } from '@/components/Brand/components/Menu/components/options/ColorAndFamily/Options/components';
+import { EFamilies, TColorAndFamily } from "@/components/Brand/components/Menu/models";
+import { setBrandSettingsByField } from "@/redux/features/brandSetting/slice";
 import {
   brandSettingsColorAndFamilySelector,
   brandSettingsSelector,
-} from "../../../../../../../../redux/features/brandSetting/selectors";
+} from "@/redux/features/brandSetting/selectors";
 import { uid } from "react-uid";
 import cx from './index.module.scss';
 

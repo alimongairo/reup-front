@@ -1,6 +1,6 @@
 import React from 'react';
-import { menuMaps } from "./helpers";
-import { ELabelsName } from "./models";
+import { menuMaps } from "@/components/Brand/components/Menu/helpers";
+import { ELabelsName } from "@/components/Brand/components/Menu/models";
 import cls from 'classnames';
 import cx from './index.module.scss';
 

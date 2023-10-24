@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ErrorPage, MainPage, SchemePage, SchemeSelectionPage, StockPage } from "../../pages";
+import { ErrorPage, MainPage, SchemePage, SchemeSelectionPage, StockPage } from "../pages";
 import { ERoutes } from "./config";
-import BrandRegistrationPage from "../../pages/crm/BrandRegistrationPage";
-import { AuthPopup } from "../auth/components";
+import BrandRegistrationPage from "../pages/crm/BrandRegistrationPage";
+import { AuthPopup } from "../app/auth/components";
 
 
 export const router = createBrowserRouter([

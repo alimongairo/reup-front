@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { MenuContext } from "../../../helpers";
-import { Container } from "..";
-import Options from "./Options";
+import { MenuContext } from "@/components/Brand/components/Menu/helpers";
+import { Container } from "@/components/Brand/components/Menu/components/options";
+import Options from "@/components/Brand/components/Menu/components/options/BgColor/Options";
 
 
 const ColorAndFamily = () => {

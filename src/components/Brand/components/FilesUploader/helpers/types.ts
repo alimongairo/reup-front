@@ -6,5 +6,5 @@ type DefaultField = {
   reset: () => void;
 };
 
-import { FilesField } from "./useFilesFormField";
+import { FilesField } from "@/components/Brand/components/FilesUploader/helpers/useFilesFormField";
 export type {FilesField, DefaultField};

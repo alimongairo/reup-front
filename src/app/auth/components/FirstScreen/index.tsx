@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { Input, Button, EBtnColor, Checkbox } from "../../../../components/ui";
+import { Input, Button, EBtnColor, Checkbox } from "@/components/ui";
 import { uid } from "react-uid";
-import { ReactComponent as GoogleSvg } from '../../../../../static/images/icons/google.svg';
-import { ReactComponent as AppleSvg } from '../../../../../static/images/icons/apple.svg';
-import { AuthContext } from "../..";
-import { EType } from "../types";
-import cx from './index.module.scss';
-import { EPopupType } from "../AuthPopup";
+import { ReactComponent as GoogleSvg } from 'S#/images/icons/google.svg';
+import { ReactComponent as AppleSvg } from 'S#/images/icons/apple.svg';
+import { AuthContext } from "@/app/auth/";
+import { EType } from "@/app/auth/components/types";
+import { EPopupType } from "@/app/auth/components/AuthPopup";
 import InputMask from 'react-input-mask';
-import { ERoutes } from "../../../router/config";
+import { ERoutes } from "@/router/config";
 import { Link } from "react-router-dom";
+import cx from './index.module.scss';
 
 interface IProps {
   type?: EType,

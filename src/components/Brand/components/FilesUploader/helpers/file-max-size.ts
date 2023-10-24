@@ -1,5 +1,5 @@
-import { DEFAULT_MAX_SIZE_IN_BYTES } from "./constants";
-import type { GetValidator } from "./validate";
+import { DEFAULT_MAX_SIZE_IN_BYTES } from "@/components/Brand/components/FilesUploader/helpers/constants";
+import type { GetValidator } from "@/components/Brand/components/FilesUploader/helpers/validate";
 
 
 const maxFileSize: GetValidator<number, File> = (

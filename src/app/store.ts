@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { api } from '../redux/baseApi';
-import brandReducer from '../redux/features/brand/brandSlice';
-import brandSettingsReducer from '../redux/features/brandSetting/slice'
+import { api } from '@/redux/baseApi';
+import brandReducer from '@/redux/features/brand/brandSlice';
+import brandSettingsReducer from '@/redux/features/brandSetting/slice'
 
 const store = configureStore({
     reducer: {

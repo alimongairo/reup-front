@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useMemo } from 'react';
 import cls from 'classnames';
-import { ReactComponent as CloseSvg } from '../../../../static/images/icons/close.svg';
-import { ReactComponent as BackSvg } from '../../../../static/images/icons/arrows/back.svg';
+import { ReactComponent as CloseSvg } from 'S#/images/icons/close.svg';
+import { ReactComponent as BackSvg } from 'S#/images/icons/arrows/back.svg';
 import { Dialog } from '@mui/material';
 import cx from './index.module.scss';
 import { Button } from "..";

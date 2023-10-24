@@ -1,5 +1,5 @@
-import { FirstScreen, SecondScreen, ThirdScreen } from "./components";
-import { EType } from "./components/types";
+import { FirstScreen, SecondScreen, ThirdScreen } from "@/app/auth/components";
+import { EType } from "@/app/auth/components/types";
 
 const loginPopupConf = {
 

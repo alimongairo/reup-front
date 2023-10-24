@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import cx from './index.module.scss';
-import { Input } from "../../../../components/ui";
+import { Input } from "@/components/ui";
 import InputMask from 'react-input-mask';
+import cx from './index.module.scss';
 
 export default function SecondScreen() {
   const [code, setCode] = useState('');

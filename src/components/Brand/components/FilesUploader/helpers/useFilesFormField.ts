@@ -1,7 +1,6 @@
 import { useCallback, useState } from "react";
-import validateValue from "./validate";
-import { ValidationResult, Validator } from "./validate";
-import { DefaultField } from "./types";
+import { validateValue, ValidationResult, Validator } from "@/components/Brand/components/FilesUploader/helpers/validate";
+import { DefaultField } from "@/components/Brand/components/FilesUploader/helpers/types";
 
 type FilesField = Omit<DefaultField, "value" | "error"> & {
   value: File[];

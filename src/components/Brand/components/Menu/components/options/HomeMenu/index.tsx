@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ReactComponent as ArrowIcon } from '../../../../../../../../static/images/icons/arrows/default.svg';
+import { ReactComponent as ArrowIcon } from 'S#/images/icons/arrows/default.svg';
 import Container from '../../Container';
 import { Button } from "../../../../../../ui";
 import cx from './index.module.scss';
@@ -7,7 +7,7 @@ import { ELabelsName } from "../../../models";
 import { uid } from "react-uid";
 import { MenuContext } from "../../../helpers";
 import { useNavigate } from 'react-router-dom';
-import { ERoutes } from '../../../../../../../app/router/config';
+import { ERoutes } from '../../../../../../../router/config';
 
 const HomeMenu = () => {
     const contextValue = useContext(MenuContext);

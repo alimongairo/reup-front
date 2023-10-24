@@ -5,7 +5,7 @@ import 'swiper/css/navigation';
 import cx from './index.module.scss';
 import { Button } from "../../../../components/ui";
 import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper'
-import { ReactComponent as ArrowIcon } from '../../../../../static/images/icons/arrows/default.svg';
+import { ReactComponent as ArrowIcon } from 'S#/images/icons/arrows/default.svg';
 import cls from 'classnames';
 import ProductItem from "../../../../components/ProductItem";
 import { uid } from "react-uid";

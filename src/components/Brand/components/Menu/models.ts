@@ -1,13 +1,3 @@
-export enum EColors {
-  Pink = '#A175FF',
-  Blue = '#7991F5',
-  Green = '#BDDA63',
-  White = '#FFFFFF',
-  Grey = '#D3D0C8',
-  Black = '#000000',
-}
-
-
 export enum ELabelsName {
   DefaultList = 'defaultList',
   AddCategory = 'addCategory',
@@ -35,7 +25,7 @@ export type TEditText = {
 export type TBgColor = {
   title: string;
   name: string;
-  value?: EColors;
+  value?: string;
 };
 
 export type TColorAndFamily = {

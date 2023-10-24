@@ -6,15 +6,16 @@ import React, {
   ChangeEvent,
 } from 'react';
 
-import imageMaxResolution from './helpers/image-max-resolution.ts';
-import fileMaxSize from './helpers/file-max-size.ts';
-import { useFilesFormField } from './helpers/useFilesFormField.ts';
-import { UploaderProps } from "./helpers/status.ts";
+import imageMaxResolution from '@/components/Brand/components/FilesUploader/helpers/image-max-resolution.ts';
+import fileMaxSize from '@/components/Brand/components/FilesUploader/helpers/file-max-size.ts';
+import { useFilesFormField } from '@/components/Brand/components/FilesUploader/helpers/useFilesFormField.ts';
+import { UploaderContext, useFilesUploader } from "@/components/Brand/components/FilesUploader/helpers/useFilesUploader.ts";
+import { UploaderProps } from "@/components/Brand/components/FilesUploader/helpers/status.ts";
 import { uid } from "react-uid";
-import useTypedDispatch from "../../../../hooks/useTypedDispatch.ts";
-import { setBrandSettingsByField } from "../../../../redux/features/brandSetting/slice.ts";
-import { UploaderContext, useFilesUploader } from "./helpers/useFilesUploader.ts";
-import { INPUT_WHITELIST } from "./helpers/constants.ts";
+import useTypedDispatch from "@/hooks/useTypedDispatch.ts";
+import { setBrandSettingsByField } from "@/redux/features/brandSetting/slice.ts";
+
+import { INPUT_WHITELIST } from "@/components/Brand/components/FilesUploader/helpers/constants.ts";
 
 const validators = [fileMaxSize(), imageMaxResolution()];
 

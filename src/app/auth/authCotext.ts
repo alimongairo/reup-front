@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { EPopupType } from "./components/AuthPopup";
+import { EPopupType } from "@/app/auth/components/AuthPopup";
 
  type TLogPart = {
   first: boolean,
