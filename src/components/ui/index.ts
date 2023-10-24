@@ -21,7 +21,7 @@ export {
     Header,
     MobileToolbar,
     Footer,
-    Typography,
+    Typography, EFontFamily,
     Button, EBtnColor, EAlign,
     MoreLink,
     Image,

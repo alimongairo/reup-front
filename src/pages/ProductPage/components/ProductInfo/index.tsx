@@ -1,13 +1,13 @@
 import React from 'react';
-import cx from './index.module.scss';
 import cls from 'classnames';
-import { Typography, Button, Collapse, Image } from '../../../../components/ui'
+import { Typography, Button, Collapse, Image } from '@/components/ui'
 import { uid } from "react-uid";
 import { Link } from "react-router-dom";
-import { ERoutes } from "../../../../app/router/config";
-import { EFontFamily } from "../../../../components/ui/Typography";
+import { ERoutes } from "@/router/config";
+import { EFontFamily } from "@/components/ui";
 import InfoTable from "../InfoTable";
-import '../../../../styles/scroll.scss';
+import '@/styles/scroll.scss';
+import cx from './index.module.scss';
 
 // mock
 const sizesMock = [

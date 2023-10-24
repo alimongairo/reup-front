@@ -1,11 +1,9 @@
-@import '../../styles/vars.scss';
-@import '../../styles/mixins.scss';
+@import '@/styles/vars.scss';
+@import '@/styles/mixins.scss';
 
 .wrapper {
     position: relative;
     z-index: 1;
-
-   
 }
 
 @media(min-width: $media-desktop) {

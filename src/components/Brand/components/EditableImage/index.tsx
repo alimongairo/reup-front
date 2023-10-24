@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image } from '../../../ui';
+import { Image } from '@/components/ui';
 import cls from 'classnames';
 import cx from './index.module.scss';
 import { FilesUploader } from "..";

@@ -1,4 +1,4 @@
-import { Image } from "../../../../../components/ui";
+import { Image } from "@/components/ui";
 import cx from './index.module.scss';
 
 interface IProps {

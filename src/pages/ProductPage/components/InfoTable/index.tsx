@@ -1,4 +1,4 @@
-import { Typography } from "../../../../components/ui";
+import { Typography } from "@/components/ui";
 import cx from './index.module.scss';
 
 const InfoTable = () => {

@@ -1,8 +1,8 @@
 import React from 'react'
 import cx from './index.module.scss';
-import { Image, MoreLink, Typography } from "../../../../components/ui";
-import img1 from '../../../../../static/images/hardcode/main/top1.png';
-import img2 from '../../../../../static/images/hardcode/main/top2.png';
+import { Image, MoreLink, Typography } from "@/components/ui";
+import img1 from 'S#/images/hardcode/main/top1.png';
+import img2 from 'S#/images/hardcode/main/top2.png';
 
 export default function Top() {
   return (

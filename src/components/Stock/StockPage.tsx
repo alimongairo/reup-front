@@ -2,9 +2,9 @@ import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 import cx from './index.module.scss';
 
 import TableRow, { StockItem } from './TableRow';
-import { Button, Input, Typography } from '../ui';
+import { Button, Input, Typography } from '@/components/ui';
 import { useNavigate } from 'react-router-dom';
-import { ERoutes } from '../../app/router/config';
+import { ERoutes } from '@/router/config';
 
 const data: StockItem[] = [
   {

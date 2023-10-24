@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import { Footer, Header, MobileToolbar } from "../../components/ui";
+import { Footer, Header, MobileToolbar } from "@/components/ui";
 import cx from './index.module.scss';
-import { ERoles } from '../../app/router/config';
+import { ERoles } from '@/router/config';
 
 interface IProps { children: ReactNode }
 export default function MainLayout({ children }: IProps) {
