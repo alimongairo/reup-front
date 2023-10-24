@@ -1,8 +1,8 @@
-import { MouseEvent, useContext, useState } from 'react';
+import { ChangeEvent, MouseEvent, useContext, useState } from 'react';
 
 import Container from '../../Container';
 import { MenuContext } from "../../../helpers";
-import { Input, Button } from "../../../../../../ui";
+import { Input, Button } from "@/components/ui";
 import { TCategory } from "../../../models";
 // import { useAppDispatch, useAppSelector } from '@/hooks/store';
 // import { brandSettingsCategoriesSelector } from '@/store/brandSetting/selectors';
@@ -21,7 +21,7 @@ const Categories = () => {
   //   brandSettingsCategoriesSelector,
   // );
 
-  // TODO: mock
+  // TODO: mock ( на бэке не готовы категории )
   const currentCategories = [{
     title: "string",
     name: "string",
@@ -68,8 +68,7 @@ const Categories = () => {
       </p>
       <Input
         placeholder={'название категории'}
-        // TODO: fix any
-        onChange={(e: any) => onSearch(e.target.value)}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => onSearch(e.target.value)}
       />
       <div className={cx.searchResult}>
         {allCategoriesFiltered.map((item) => {

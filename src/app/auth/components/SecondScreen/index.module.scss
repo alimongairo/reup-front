@@ -1,0 +1,34 @@
+@import '@/styles/vars.scss';
+
+.wrapper {
+    display: grid;
+    gap: $margin-h2-mobile;
+    grid-auto-flow: row;
+}
+
+.send p{
+    font-weight: bold;
+}
+
+.note{
+    text-align: center;
+    opacity: 0.5;
+}
+
+.wrapper input {
+    text-align: center;
+}
+
+@media(min-width: $media-desktop) {
+    .wrapper {
+        padding: calc(32px - $margin-h3) 0 0;
+        width: 100%;
+        box-sizing: border-box;
+
+        .field {
+            width: 100%;
+        }
+    }
+}
+
+@media(max-width: $media-mobile) {}

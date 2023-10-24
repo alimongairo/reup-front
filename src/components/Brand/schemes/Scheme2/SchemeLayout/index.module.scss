@@ -1,5 +1,5 @@
-@import "../../../../../styles/vars.scss";
-@import "../../../../../styles/mixins.scss";
+@import "@/styles/vars.scss";
+@import "@/styles/mixins.scss";
 
 .wrapper {
     @include outer;
@@ -16,7 +16,15 @@
     .logo {
         height: 94px;
         border-bottom: 1px solid $color-black;
+        background: $color-snow;
 
+
+        .image {
+            span,
+            img {
+                object-fit: contain;
+            }
+        }
 
         &.isEditable {
             .image {
@@ -69,24 +77,42 @@
             }
         }
 
-        .main{
-            display: flex;
-            flex-direction: column;
-            .image{
-                flex-grow: 1;
-                border-bottom: 1px solid $color-black;
-            }
-            .txt{
-                display: flex;
-                align-items: center;
-                padding: 32px $containerPadding-desktop;
-                min-height: 100px;
-                >*{
-                    margin-bottom: 0;
-                }
+        .main {
+            .image {
+                height: 100%;
+                width: 100%;
             }
         }
 
+    }
 
+    .third {
+        position: relative;
+
+        .txt {
+            background: $color-snow;
+            padding: $containerPadding-desktop;
+            height: 134px;
+            box-sizing: border-box;
+            border-bottom: 1px solid $color-black;
+        }
+
+        .title {
+            height: 468px;
+            padding: 32px $containerPadding-desktop;
+            background: $color-gray-2;
+
+            &:not(.isEditable) {
+                background: $color-primary-extraLight;
+            }
+        }
+
+        .img {
+            position: absolute;
+            top: 7px;
+            right: 6%;
+            width: 744px;
+            height: 508px;
+        }
     }
 }

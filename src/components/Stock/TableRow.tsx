@@ -1,14 +1,12 @@
 import { useState } from 'react';
-import img from '../../../static/images/tmp.png';
-import { ReactComponent as EditIcon } from '../../../static/images/icons/edit.svg';
-import { ReactComponent as DeleteIcon } from '../../../static/images/icons/delete.svg';
-import { ReactComponent as DownArrow } from '../../../static/images/icons/downArrowSmall.svg';
-import { ReactComponent as UpArrow } from '../../../static/images/icons/upArrowSmall.svg';
 
+import img from 'S#/images/tmp.png';
+import { ReactComponent as EditIcon } from 'S#/images/icons/edit.svg';
+import { ReactComponent as DeleteIcon } from 'S#/images/icons/delete.svg';
+import { ReactComponent as DownArrow } from 'S#/images/icons/downArrowSmall.svg';
+import { ReactComponent as UpArrow } from 'S#/images/icons/upArrowSmall.svg';
+import { Button, PopUp } from '@/components/ui';
 import cx from './index.module.scss';
-
-import { Button } from '../ui';
-import PopUp from '../ui/PopUp';
 import { Image } from '../ui';
 
 export interface StockItem {

@@ -1,5 +1,5 @@
-@import '../../../styles/vars.scss';
-@import '../../../styles/mixins.scss';
+@import '@/styles/vars.scss';
+@import '@/styles/mixins.scss';
 
 .bricks {
     display: grid;
@@ -8,10 +8,13 @@
     border-top: 1px solid $color-black;
     border-bottom: 1px solid $color-black;
     @include outer();
+
+    >* {
+            background: $color-snow;
+        }
 }
 
 .item {
-    background-color: $color-snow;
     padding: 0 $containerPadding-mobile;
     display: flex;
     align-items: center;

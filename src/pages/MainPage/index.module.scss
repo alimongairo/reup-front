@@ -1,13 +1,81 @@
-@import '../../styles/vars.scss';
+@import '@/styles/vars.scss';
+@import '@/styles/mixins.scss';
+
+.fav,
+.marquee {
+    @include outer;
+    @include inner;
+    border-bottom: 1px solid $color-black;
+ 
+}
+
+.fav {
+    background: $color-green;
+    display: flex;
+    flex-direction: column;
+
+    h1,
+    .moreBtn {
+        align-self: flex-end;
+    }
+}
+
+.selection{
+    .moreBtn {
+        align-self: flex-end;
+    } 
+}
 
 @media(max-width: $media-mobile) {
-    .bricks{
+    .bricks {
         margin-bottom: $mb-lg;
+    }
+
+    .selection {
+        margin-bottom: $mb-lg-mobile;
+    }
+
+    .fav {
+        padding-bottom: 32px;
+    }
+
+    .marquee{
+        padding: 24px 0;
+        margin-bottom: $mb-lg-mobile;
+        svg{
+            margin-right: 25px;
+            height: 26px;
+            width: auto;
+        }
+        
     }
 }
 
 @media(min-width: $media-desktop) {
-    .bricks{
+    .bricks {
         margin-bottom: $mb-lg-mobile;
+    }
+
+    .selection {
+        margin-bottom: $mb-lg;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fav {
+        padding-bottom: $padding-lg;
+    }
+
+    .marquee{
+        padding: 50px 0;
+        margin-bottom: $padding-lg;
+        .line{
+            svg{
+                margin-right: 50px;
+                height: 70px;
+                width: auto;
+            }
+            
+        }
     }
 }

@@ -1,0 +1,42 @@
+@import '@/styles/vars.scss';
+@import '@/styles/mixins.scss';
+
+.collections {
+  @include outer;
+  @include inner;
+  background: $color-green;
+
+}
+
+
+.wrapper {
+  display: grid;
+  background: $color-black;
+  gap: 1px;
+  padding: 1px;
+  box-sizing: border-box;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@media(min-width: $media-desktop) {
+  .collections {
+    padding-top: $padding-lg;
+    padding-bottom: $padding-lg;
+  }
+
+  .wrapper{
+    grid-template-columns: repeat(2, minmax(455px, 500px));
+  }
+}
+
+@media(max-width: $media-mobile) {
+  .collections {
+    padding-bottom: $padding-lg-mobile;
+  }
+  
+  .wrapper{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}

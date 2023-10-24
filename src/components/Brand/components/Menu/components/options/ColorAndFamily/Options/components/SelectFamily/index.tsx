@@ -1,5 +1,5 @@
 
-import { Typography, IRadioProps, RadioGroup } from "../../../../../../../../../ui";
+import { Typography, IRadioProps, RadioGroup } from "@/components/ui";
 import { EFamilies } from "../../../../../../models";
 
 const families: IRadioProps[] = [

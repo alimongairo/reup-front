@@ -1,0 +1,91 @@
+@import '@/styles/vars.scss';
+
+.footer {
+    display: grid;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+}
+
+@media(max-width: $media-mobile) {
+    .footer {
+        padding: 54px 16px 110px;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .logo{
+        svg{
+            height: auto;
+            width: 89px;
+        }
+    }
+
+    .socials {
+        margin-left: -16px;
+        .socialIcon {
+            margin-left: 16px
+        }
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+      
+
+        .link {
+            &:not(:last-child){
+                margin-bottom: 6px;
+            }
+        }
+    }
+
+    .flex{
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+}
+
+@media(min-width: $media-desktop) {
+    .footer {
+        padding: 50px;
+        grid-template-columns: auto 1fr auto; 
+        gap: 50px 16px ;
+    }
+
+    .logo{
+        svg{
+            height: auto;
+            width: 118px;
+        }
+    }
+
+    .socials {
+        margin-left: -32px;
+        justify-content: center;
+        grid-row: 2;
+        grid-column: span 3;
+        .socialIcon {
+            margin-left: 32px
+        }
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -32px;
+        flex-wrap: wrap;
+
+        .link {
+            margin-left: 32px;
+        }
+    }
+
+    .flex{
+        display: contents;
+    }
+}

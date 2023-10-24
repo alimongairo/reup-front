@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 
 import cx from './index.module.scss';
-import Typography from "../Typography";
 
 export enum EColors {
   Pink = '#A175FF',
@@ -21,33 +20,30 @@ const defaultColors: IColor[] = Object.entries(EColors).map(
 
 export interface IColor {
   name: string;
-  value?: EColors;
+  value?: string | null;
 }
 
 interface IColorsProps {
   colors?: IColor[];
-  value?: EColors;
-  onChange?: (color: EColors) => void;
+  value?: string | null;
+  onChange?: (color: string) => void;
 }
 
 export const Colors = ({ colors, onChange, value }: IColorsProps) => {
   return (
-    <div>
-      <Typography variant="h3">цвет</Typography>
-      <div className={cx.colorList}>
-        {(colors || defaultColors).map((color) => (
-          <div
-            className={classNames(cx.colorItem, {
-              [cx.active]: color.value === value,
-            })}
-            key={color.value}
-            onClick={() => {
-              onChange?.(color.value || EColors.Black);
-            }}
-            style={{ backgroundColor: color.value }}
-          ></div>
-        ))}
-      </div>
+    <div className={cx.colorList}>
+      {(colors || defaultColors).map((color) => (
+        <div
+          className={classNames(cx.colorItem, {
+            [cx.active]: color.value === value,
+          })}
+          key={color.value}
+          onClick={() => {
+            onChange?.(color.value || '#000000');
+          }}
+          style={{ backgroundColor: color.value || "FFFFFF"}}
+        ></div>
+      ))}
     </div>
   );
 };

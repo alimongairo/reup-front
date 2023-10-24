@@ -1,0 +1,83 @@
+@import '@/styles/vars.scss';
+
+.wrapper {
+    display: grid;
+    background: $color-black;
+    gap: 1px;
+    padding: 1px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.card {
+    background: $color-snow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.green {
+        background: $color-green;
+    }
+
+    &.primary {
+        background: $color-primary;
+    }
+
+    &.right {
+        align-items: flex-end;
+        text-align: right;
+    }
+}
+
+@media(min-width: $media-desktop) {
+    .wrapper {
+        grid-template-rows: minmax(526px, auto) minmax(328px, auto);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        padding: 40px 50px;
+    }
+}
+
+@media(max-width: $media-mobile) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item {
+        &:nth-child(4){
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        &:nth-child(5){
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        
+        &:nth-child(3),
+        &:nth-child(6) {
+            grid-column: span 2;
+        }
+
+        &:nth-child(3) {
+            min-height: 320px;
+        }
+    }
+
+    .card {
+        padding: 16px;
+
+        &.right.desktop {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        h3{
+            font-size: 14px;
+            word-break: break-all;
+        }
+    }
+}

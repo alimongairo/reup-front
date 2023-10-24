@@ -1,8 +1,5 @@
-@import "../../../../../styles/vars.scss";
-@import "../../../../../styles/mixins.scss";
-
-@import "../../../../../styles/vars.scss";
-@import "../../../../../styles/mixins.scss";
+@import "@/styles/vars.scss";
+@import "@/styles/mixins.scss";
 
 .wrapper {
     @include outer;
@@ -34,6 +31,10 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 1px;
         background: $color-black;
+
+        >* {
+            background: $color-snow;
+        }
 
         .bricks,
         .main {
@@ -78,10 +79,19 @@
         grid-template-columns: 1fr 1fr 2fr 1fr;
         grid-template-rows: 357px;
         gap: 12px;
+        position: relative;
 
         .title {
             background: $color-snow;
             padding: 32px $containerPadding-desktop;
+        }
+
+        .subText {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: -13px;
+            margin-bottom: 0;
         }
     }
 }

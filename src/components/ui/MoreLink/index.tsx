@@ -1,18 +1,20 @@
 import React from 'react';
-import { ReactComponent as MoreIcon } from '../../../../static/images/icons/more.svg';
+import { ReactComponent as MoreIcon } from 'S#/images/icons/more.svg';
 import { NavLink } from "..";
 import cx from './index.module.scss';
 
 interface IProps {
   to?: string;
+  className?: string;
+  text?: string,
 }
 
-export default function MoreLink({to = "/"} : IProps) {
+export default function MoreLink({ to = "/", className, text = "больше" }: IProps) {
   return (
-    <NavLink to={to}>
+    <NavLink to={to} className={className}>
       <>
-        <p className={cx.txt}>больше</p>
-       <MoreIcon />
+        <p className={cx.txt}>{text}</p>
+        <MoreIcon />
       </>
     </NavLink>
   )

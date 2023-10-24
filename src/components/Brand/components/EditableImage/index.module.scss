@@ -1,4 +1,4 @@
-@import '../../../../styles/vars.scss';
+@import '@/styles/vars.scss';
 
 .editableImage {
     display: flex;
@@ -9,14 +9,44 @@
         flex-grow: 1;
     }
 
-    .button{
-        color: $color-primary;
-        border-color: $color-primary;
-        width: fit-content;
+    .input {
+        line-height: 0;
+        z-index: 2;
         position: absolute;
         top: $containerPadding-desktop;
         left: $containerPadding-desktop;
         right: $containerPadding-desktop;
 
+
+        input[type='file'] {
+            color: transparent;
+            background-color: transparent;
+            display: none;
+            padding: 6px 0 0 7px;
+
+            &::-webkit-file-upload-button {
+                display: none;
+            }
+
+            &::file-selector-button {
+                display: none;
+            }
+        }
+
+        label {
+            color: $color-primary;
+            border-color: $color-primary;
+            width: fit-content;
+            font-size: $fontSize-default;
+            padding: 16px 24px;
+            border: 1px solid $color-primary;
+            white-space: nowrap;
+        }
+    }
+}
+
+@media(hover: hover) {
+    .input label:hover {
+        cursor: pointer;
     }
 }

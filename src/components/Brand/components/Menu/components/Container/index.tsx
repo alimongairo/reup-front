@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
-import {ReactComponent as ArrowIcon} from '../../../../../../../static/images/icons/arrows/default.svg';
+
+import {ReactComponent as ArrowIcon} from 'S#/images/icons/arrows/default.svg';
+
 import cls from 'classnames';
 import cx from './index.module.scss';
 

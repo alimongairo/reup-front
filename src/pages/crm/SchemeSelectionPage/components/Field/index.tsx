@@ -1,6 +1,6 @@
 import React from 'react';
-import { ReactComponent as BottomArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
-import { ReactComponent as CrossIcon } from '../../../../../../static/images/icons/cross.svg';
+import { ReactComponent as BottomArrowIcon } from 'S#/images/icons/arrows/default.svg';
+import { ReactComponent as CrossIcon } from 'S#/images/icons/cross.svg';
 import cls from 'classnames';
 import cx from './index.module.scss';
 

@@ -23,6 +23,11 @@ body {
   font-style: normal;
 }
 
+button:disabled{
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 @font-face {
   font-family: 'Dela Gothic One';
   src: url('../../static/fonts/DelaGothicOne/DelaGothicOne-Regular.ttf');
