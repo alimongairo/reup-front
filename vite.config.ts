@@ -2,7 +2,8 @@
 import react from '@vitejs/plugin-react'
 import eslint from 'vite-plugin-eslint';
 import svgr from "vite-plugin-svgr";
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig, loadEnv } from 'vite';
+import { fileURLToPath } from 'node:url';
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(process.env.local, process.cwd())
@@ -19,6 +20,11 @@ export default defineConfig(({ command, mode }) => {
     define: {
       'process.env': env,
     },
-
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+        'S#': fileURLToPath(new URL('./static', import.meta.url)),
+      }
+    }
   }
 })
