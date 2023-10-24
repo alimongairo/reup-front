@@ -1,8 +1,8 @@
 import React from 'react';
-import { Image, MoreLink, Typography } from "../../../../components/ui";
-import img1 from '../../../../../static/images/hardcode/main/sale1.png';
-import img2 from '../../../../../static/images/hardcode/main/sale2.png';
-import img3 from '../../../../../static/images/hardcode/main/sale3.png';
+import { Image, MoreLink, Typography } from "@/components/ui";
+import img1 from 'S#/images/hardcode/main/sale1.png';
+import img2 from 'S#/images/hardcode/main/sale2.png';
+import img3 from 'S#/images/hardcode/main/sale3.png';
 import cls from 'classnames';
 import cx from './index.module.scss';
 

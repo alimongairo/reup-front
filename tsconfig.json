@@ -28,6 +28,7 @@
       "layouts": ["./src/layouts"],
       "pages": ["./src/pages"],
       "redux": ["./src/redux"],
+      "router": ["./src/router"],
       "styles": ["./src/styles"],
       "types": ["./src/types"],
       "S#/*": ["./static/*"],

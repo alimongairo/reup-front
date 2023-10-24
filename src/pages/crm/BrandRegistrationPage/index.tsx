@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Tabs, ETabsView, Typography, Button } from '../../../components/ui';
+import { Tabs, ETabsView, Typography, Button } from '@/components/ui';
 import {
   IFreelanceFormFields,
   ICorporateFormfields,
@@ -8,7 +8,7 @@ import {
 } from './constants';
 
 
-import { CRMLayout } from "../../../layouts";
+import { CRMLayout } from "@/layouts";
 import cx from './index.module.scss';
 import { BrandRegistrationForm } from "./components";
 

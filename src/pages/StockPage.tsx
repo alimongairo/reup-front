@@ -1,5 +1,5 @@
 import StockPage from "../components/Stock";
-import { CRMLayout } from "../layouts";
+import { CRMLayout } from "@/layouts";
 
 export default function BrandPage() {
 

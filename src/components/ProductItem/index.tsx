@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import cx from './index.module.scss';
 import cls from 'classnames';
-import { Image, Button, Fav } from "../ui";
+import { Image, Button, Fav } from "@/components/ui";
 
 interface IProps {
     className?: string;

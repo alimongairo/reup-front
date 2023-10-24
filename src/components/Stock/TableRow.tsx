@@ -1,15 +1,12 @@
 import { useState } from 'react';
 //@ts-ignore
-import img from '../../../static/images/tmp.png';
-import editIcon from '../../../static/images/icons/edit.svg';
-import deleteIcon from '../../../static/images/icons/delete.svg';
-import downArrow from '../../../static/images/icons/downArrowSmall.svg';
-import upArrow from '../../../static/images/icons/upArrowSmall.svg';
-
+import img from 'S#/images/tmp.png';
+import editIcon from 'S#/images/icons/edit.svg';
+import deleteIcon from 'S#/images/icons/delete.svg';
+import downArrow from 'S#/images/icons/downArrowSmall.svg';
+import upArrow from 'S#/images/icons/upArrowSmall.svg';
+import { Button, PopUp } from '@/components/ui';
 import cx from './index.module.scss';
-
-import { Button } from '../ui';
-import PopUp from '../ui/PopUp';
 
 export interface StockItem {
   img: string | null;
