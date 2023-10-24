@@ -36,9 +36,10 @@ interface IProps {
 export default function ProductInfo({ className }: IProps) {
   return (
     <div className={cls(cx.wrapper, className)}>
+     
       <div className={cx.imgContainer}>
         <div className={cx.content}>
-          <div className={cls(cx.slider, "scroll scroll-vertical")}>
+          <div className={cls(cx.slider, "scroll scroll-vertical as-desktop")}>
             <Image className={cx.sliderImg} />
             <Image className={cx.sliderImg} />
             <Image className={cx.sliderImg} />

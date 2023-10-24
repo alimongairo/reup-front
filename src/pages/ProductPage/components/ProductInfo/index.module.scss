@@ -86,26 +86,6 @@
 }
 
 @media(min-width: $media-desktop) {
-    .imgContainer {
-        width: 58%;
-        margin-right: 24px;
-        flex-shrink: 0;
-        display: flex;
-        align-items: flex-start;
-
-        .slider {
-            width: calc(100% - 71% - $offset-default);
-            margin-right: $offset-default;
-            flex-shrink: 0;
-        }
-
-
-        .img {
-            width: 71%;
-            aspect-ratio: 0.8;
-        }
-    }
-
     .info {
         flex-grow: 1;
     }
@@ -135,6 +115,11 @@
     }
 
     .imgContainer {
+        width: 58%;
+        margin-right: 24px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: flex-start;
         position: relative;
         align-self: flex-start;
 
@@ -155,11 +140,20 @@
         }
 
         .slider {
+            width: calc(100% - 71% - $offset-default);
+            margin-right: $offset-default;
+            flex-shrink: 0;
+
             .sliderImg {
                 width: 100%;
                 aspect-ratio: 0.7;
                 flex-shrink: 0;
             }
+        }
+
+        .img {
+            width: 71%;
+            aspect-ratio: 0.8;
         }
     }
 }
