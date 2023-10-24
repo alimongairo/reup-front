@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { debounce } from "../helpers";
+import { debounce } from "@/helpers";
 
 export const useWindowWidth = (delay = 700) => {
   const [windowWidth, setWindowWidth] = useState<number>(0);

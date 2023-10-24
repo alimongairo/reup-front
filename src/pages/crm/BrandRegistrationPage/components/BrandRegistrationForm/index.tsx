@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { LegacyRef } from 'react';
-import { Input } from "../../../../../components/ui";
+import { Input } from "@/components/ui";
 import { Grid, Stack } from '@mui/material';
 
 interface IField {

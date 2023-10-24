@@ -3,11 +3,11 @@ import { Head } from "..";
 import cx from './index.module.scss';
 import ProductItem from "../../../ProductItem";
 import { uid } from "react-uid";
-import FiltersImg from '../../../../../static/images/crm/filters.png';
-import { Image } from "../../../ui";
-import { IMenuContext, MenuContext, menuMaps } from "../../components/Menu/helpers";
+import FiltersImg from 'S#/images/crm/filters.png';
+import { Image } from "@/components/ui";
+import { IMenuContext, MenuContext } from "../../components/Menu/helpers";
 import { useParams } from "react-router-dom";
-import { EColors, EFamilies, ELabelsName, TSchemeData, TSchemeNum } from "../../components/Menu/models.ts";
+import { ELabelsName, TSchemeData, TSchemeNum } from "../../components/Menu/models.ts";
 import { IScheme1Brand, IScheme2Brand, IScheme3Brand } from "../../../../types/brandTypes.ts";
 
 interface IProps {

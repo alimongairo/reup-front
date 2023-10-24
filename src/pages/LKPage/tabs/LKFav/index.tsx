@@ -5,7 +5,7 @@ import { ProductSlider } from "../../../MainPage/components";
 import { Link } from "react-router-dom";
 import ProductItem from "../../../../components/ProductItem";
 import { uid } from "react-uid";
-import { ERoutes } from "../../../../app/router/config";
+import { ERoutes } from "@/router/config";
 import { EmptyList } from "../components";
 
 export default function LKFav() {

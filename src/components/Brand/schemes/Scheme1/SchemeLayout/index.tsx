@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Button, Typography } from "../../../../ui";
-import { ReactComponent as RightArrowIcon } from '../../../../../../static/images/icons/arrows/default.svg';
-import { ReactComponent as CrossIcon } from '../../../../../../static/images/icons/cross.svg';
+import { Button, Typography } from "@/components/ui";
+import { ReactComponent as RightArrowIcon } from 'S#/images/icons/arrows/default.svg';
+import { ReactComponent as CrossIcon } from 'S#/images/icons/cross.svg';
 import { EditableImage, Slider } from "../../../components";
 import { uid } from 'react-uid';
 import cx from './index.module.scss';
-import { styleParser } from "../../../../../helpers";
+import { styleParser } from "@/helpers";
 import { IScheme1Brand } from "../../../../../types/brandTypes";
 
 interface IProps {

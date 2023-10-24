@@ -1,9 +1,8 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
-import {ReactComponent as MinusIcon} from '../../../../static/images/icons/minus.svg';
+import {ReactComponent as MinusIcon} from 'S#/images/icons/minus.svg';
 import cx from './index.module.scss';
 import cls from 'classnames';
-import {Typography, Image} from '../../ui'
 
 interface IProps {
   title: string;

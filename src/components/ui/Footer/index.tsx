@@ -1,15 +1,15 @@
 import React from 'react';
-import { ReactComponent as LogoIcon } from "../../../../static/images/icons/logo.svg";
-import { ReactComponent as VkSvg } from "../../../../static/images/icons/socials/vk.svg";
-import { ReactComponent as InstaSvg } from "../../../../static/images/icons/socials/insta.svg";
-import { ReactComponent as FbSvg } from "../../../../static/images/icons/socials/fb.svg";
-import { ReactComponent as TgSvg } from "../../../../static/images/icons/socials/tg.svg";
+import { ReactComponent as LogoIcon } from "S#/images/icons/logo.svg";
+import { ReactComponent as VkSvg } from "S#/images/icons/socials/vk.svg";
+import { ReactComponent as InstaSvg } from "S#/images/icons/socials/insta.svg";
+import { ReactComponent as FbSvg } from "S#/images/icons/socials/fb.svg";
+import { ReactComponent as TgSvg } from "S#/images/icons/socials/tg.svg";
 import { Link } from "react-router-dom";
-import { ERoutes, ESocials } from "../../../app/router/types";
+import { ERoutes, ESocials } from "@/router/types";
 import { Button, NavLink } from "..";
 import cx from './index.module.scss';
 import { uid } from "react-uid";
-import { strokeColorReturner } from "../../../helpers";
+import { strokeColorReturner } from "@/helpers";
 
 // TODO: actual links
 const links = [

@@ -1,7 +1,7 @@
-import { Collapse, Colors, Divider } from '../../../../../../../ui';
-import { useTypedDispatch, useTypedSelector } from "../../../../../../../../hooks";
+import { Collapse, Colors, Divider } from '@/components/ui';
+import { useTypedDispatch, useTypedSelector } from "@/hooks";
 import { SelectFamily, PreviewFamily, Size } from './components';
-import { EColors, EFamilies, TColorAndFamily } from "../../../../models";
+import { EFamilies, TColorAndFamily } from "../../../../models";
 import { setBrandSettingsByField } from "../../../../../../../../redux/features/brandSetting/slice";
 import {
   brandSettingsColorAndFamilySelector,

@@ -11,7 +11,7 @@ import fileMaxSize from './helpers/file-max-size.ts';
 import { useFilesFormField } from './helpers/useFilesFormField.ts';
 import { UploaderProps } from "./helpers/status.ts";
 import { uid } from "react-uid";
-import useTypedDispatch from "../../../../hooks/useTypedDispatch.ts";
+import {useTypedDispatch} from "../../../../hooks";
 import { setBrandSettingsByField } from "../../../../redux/features/brandSetting/slice.ts";
 import { UploaderContext, useFilesUploader } from "./helpers/useFilesUploader.ts";
 import { INPUT_WHITELIST } from "./helpers/constants.ts";

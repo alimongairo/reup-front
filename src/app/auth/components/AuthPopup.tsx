@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { Typography, PopUp } from "../../../components/ui";
+import { Typography, PopUp } from "@/components/ui";
 import { AuthContext, AuthContextType, TLogPart } from "..";
 import { uid } from "react-uid";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { loginPopupConf, regPopupConf } from "../config";
-import { useWindowWidth } from "../../../hooks";
 
 interface IProps {
     children: JSX.Element,
@@ -16,7 +15,6 @@ export enum EPopupType {
 }
 
 export default function AuthPopup({ children }: IProps) {
-    const windowWidth = useWindowWidth();
     // TODO: mock
     const isAuth = false;
 

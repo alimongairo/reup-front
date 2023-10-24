@@ -1,12 +1,11 @@
 import { Scheme1, Scheme2, Scheme3 } from '../../../components/Brand/schemes';
-import { Typography } from "../../../components/ui";
-import { CRMLayout } from "../../../layouts";
+import { Typography } from "@/components/ui";
+import { CRMLayout } from "@/layouts";
 import { useParams } from "react-router-dom";
 import { useGetBrandPageStyleDataQuery } from "../../../redux/api/brandPageStyleApi";
 import { useEffect, useState } from "react";
-import { useTypedDispatch, useTypedSelector } from "../../../hooks";
+import { useTypedDispatch } from "@/hooks";
 import { setBaseData } from "../../../redux/features/brandSetting/slice";
-import { RootState } from "../../../app/store";
 import { IScheme1Brand, IScheme2Brand, IScheme3Brand } from "../../../types/brandTypes";
 
 type TSchemeParams = {

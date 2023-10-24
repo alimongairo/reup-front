@@ -7,7 +7,7 @@ import {
   TSchemeData,
 } from '../../../components/Brand/components/Menu/models.ts';
 import { IScheme1Brand, IScheme2Brand, IScheme3Brand } from "../../../types/brandTypes.ts";
-import { TParsedStyle } from "../../../helpers/index.ts";
+import { TParsedStyle } from "@/helpers";
 
 const initialState: TSchemeData = {
   editText: [],
