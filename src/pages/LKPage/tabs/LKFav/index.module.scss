@@ -1,0 +1,27 @@
+@import "../../../../styles/vars.scss";
+
+.list {
+    display: grid;
+}
+
+@media(max-width: $media-mobile) {
+    .fav {
+        margin-bottom: $mb-lg-mobile;
+    }
+
+    .list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px 16px;
+    }
+}
+
+@media(min-width: $media-desktop) {
+    .fav {
+        margin-bottom: $mb-lg;
+    }
+
+    .list {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 24px 48px;
+    }
+}

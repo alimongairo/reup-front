@@ -7,15 +7,17 @@ import { Button } from "@/components/ui";
 import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper'
 import { ReactComponent as ArrowIcon } from 'S#/images/icons/arrows/default.svg';
 import cls from 'classnames';
-import ProductItem from "../../../../components/ProductItem";
+import ProductItem from "../../../../ProductItem";
 import { uid } from "react-uid";
 import '@/styles/swipe.scss';
 import { useWindowWidth } from "@/hooks";
 
-export default function ProductSlider() {
-    const windowWidth = useWindowWidth();
+interface IProductSLiderProps {
+    list?: any[];
+}
 
-    const productsPlug = Array(27).fill(null);
+export default function ProductSlider({list = Array(27).fill(null)}: IProductSLiderProps) {
+    const windowWidth = useWindowWidth();
 
     const swiperRef = useRef<SwiperRef>();
 
@@ -86,7 +88,7 @@ export default function ProductSlider() {
                     }}
                 >
                     {
-                        productsPlug.map((_, index) => <SwiperSlide key={uid(index)} className={cx.slide}><ProductItem size="inSwiper" /></SwiperSlide>)
+                        list.map((_, index) => <SwiperSlide key={uid(index)} className={cx.slide}><ProductItem size="apativeSize" /></SwiperSlide>)
                     }
                 </SwiperComponent>
 

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { MainLayout } from "@/layouts"
 import { Collections, ProductSlider, ReupChoosen, Sale, Top } from "./components"
-import { Bricks, EAlign, IBrick, MoreLink, Typography } from "@/components/ui"
+import { Bricks, EBrickAlign, IBrick, MoreLink, Typography } from "@/components/ui"
 import { ReactComponent as  Upcycle1} from "S#/images/hardcode/main/upcycle/upcycle1.svg";
 import { ReactComponent as  Upcycle2} from "S#/images/hardcode/main/upcycle/upcycle2.svg";
 import { ReactComponent as  Upcycle3} from "S#/images/hardcode/main/upcycle/upcycle3.svg";
@@ -16,12 +16,12 @@ const bricksListMock: IBrick[] = [
   {
     label: 'Верхняя одежда',
     link: ERoutes.Default,
-    align: EAlign.Right,
+    align: EBrickAlign.Right,
   },
   {
     label: 'Обувь',
     link: ERoutes.Default,
-    align: EAlign.Right,
+    align: EBrickAlign.Right,
   },
   {
     label: 'Штаны',
@@ -34,22 +34,22 @@ const bricksListMock: IBrick[] = [
   {
     label: 'Сумки',
     link: ERoutes.Default,
-    align: EAlign.Center,
+    align: EBrickAlign.Center,
   },
   {
     label: 'Рубашки',
     link: ERoutes.Default,
-    align: EAlign.Center,
+    align: EBrickAlign.Center,
   },
   {
     label: 'Платья',
     link: ERoutes.Default,
-    align: EAlign.Right,
+    align: EBrickAlign.Right,
   },
   {
     label: 'Костюмы',
     link: ERoutes.Default,
-    align: EAlign.Right,
+    align: EBrickAlign.Right,
   },
 ];
 

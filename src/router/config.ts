@@ -3,9 +3,10 @@ export enum ERoutes {
     Default = '/',
     CrmScheme = '/crm/scheme',
     CrmSchemesMain = '/crm/schemes',
-    CrmBrandRegistration = 'crm/brandRegistration',
+    CrmBrandRegistration = '/crm/brandRegistration',
     Stock = '/crm/stock',
-    Product = '/crm/product'
+    Product = '/crm/product',
+    LK = '/lk'
 }
 
 export enum ERoles {

@@ -10,7 +10,7 @@ import { IScheme1Brand, IScheme2Brand, IScheme3Brand } from "../../../types/bran
 
 type TSchemeParams = {
     schemeId: string;
-  };
+};
 
 export default function SchemePage() {
     const dispatch = useTypedDispatch();
