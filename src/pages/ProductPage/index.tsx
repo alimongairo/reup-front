@@ -6,7 +6,7 @@ import { ERoutes } from "@/router/config";
 import { Link } from "react-router-dom";
 import { ProductInfo } from "./components";
 import { Typography } from "@/components/ui";
-import roductSlider from "@/components/ProductSlider";
+import ProductSlider from "@/components/ProductSlider";
 import cx from './index.module.scss';
 
 export default function ProductPage() {
