@@ -7,7 +7,7 @@ export enum ERoutes {
     CrmProduct = '/crm/product',
     CrmStock = '/crm/stock',
     Product = '/product',
-   
+    LK = '/lk',
 }
 
 export enum ERoles {

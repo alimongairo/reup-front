@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ErrorPage, MainPage, ProductPage, SchemePage, SchemeSelectionPage, StockPage, BrandRegistrationPage } from "@/pages";
 import { ERoutes } from "@/router/config";
+import { ErrorPage, LKPage, MainPage, ProductPage, SchemePage, SchemeSelectionPage, StockPage, BrandRegistrationPage } from "@/pages";
 import { AuthPopup } from "../app/auth/components";
 
 
@@ -36,5 +36,9 @@ export const router = createBrowserRouter([
     {
         path: `${ERoutes.Product}/:id`,
         element: <AuthPopup><ProductPage /></AuthPopup>
+    },
+    {
+        path: `${ERoutes.LK}/:tabName?`,
+        element: <AuthPopup><LKPage /></AuthPopup>
     },
 ])

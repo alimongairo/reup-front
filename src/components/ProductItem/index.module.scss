@@ -1,5 +1,12 @@
 @import '@/styles/vars.scss';
 
+
+.title {
+    font-size: 150%;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
 .product {
     display: flex;
     flex-direction: column;
@@ -8,7 +15,7 @@
         position: relative;
         width: 100%;
         flex-grow: 1;
-        min-height: 339px;
+        aspect-ratio: 0.76;
         margin-bottom: 8px;
 
         .img {
@@ -30,11 +37,11 @@
 
 
     .info {
-        .title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
+        // .title {
+        //     font-size: 20px;
+        //     font-weight: bold;
+        //     margin-bottom: 8px;
+        // }
 
         .sub {
             margin-bottom: $offset-s;
@@ -62,11 +69,7 @@
 
 @media(max-width: $media-mobile) {
     .product {
-        &.inSwiper {
-            .image {
-                min-height: 209px;
-            }
-
+        &.apativeSize {
             .title {
                 font-size: 14px;
             }

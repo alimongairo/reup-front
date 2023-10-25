@@ -5,5 +5,15 @@ import SchemePage from "./crm/SchemePage/index.tsx";
 import SchemeSelectionPage from "./crm/SchemeSelectionPage";
 import BrandRegistrationPage from "./crm/BrandRegistrationPage";
 import ProductPage from './ProductPage';
+import LKPage from "./LKPage/index.tsx";
 
-export {ErrorPage, MainPage, SchemePage, SchemeSelectionPage, BrandRegistrationPage, StockPage, ProductPage};
+export {
+    ErrorPage, 
+    MainPage, 
+    SchemePage, 
+    SchemeSelectionPage, 
+    BrandRegistrationPage, 
+    StockPage, 
+    ProductPage,
+    LKPage
+};

@@ -5,7 +5,7 @@ import { Image, Button, Fav } from "@/components/ui";
 
 interface IProps {
     className?: string;
-    size?: 'default' | 'inSwiper';
+    size?: 'default' | 'apativeSize';
 }
 
 export default function ProductItem({className, size = "default"}: IProps) {
