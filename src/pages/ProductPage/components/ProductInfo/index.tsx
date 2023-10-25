@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import cls from 'classnames';
-import { Typography, Button, Collapse, Image } from '@/components/ui'
+import { Typography, Button, Collapse, Image, Tooltip } from '@/components/ui'
 import { uid } from "react-uid";
 import { Link } from "react-router-dom";
 import { ERoutes } from "@/router/config";
@@ -63,8 +63,13 @@ export default function ProductInfo({ className }: IProps) {
               )
             }
           </div>
-          <Image className={cx.img} src={mockImages[activeImg]} />
+          <div className={cx.mainImgWrapper}>
+            <Image className={cx.img} src={mockImages[activeImg]} />
+            <Tooltip title="на модели с фото размер S " className={cx.tooltip}/>
+          </div>
         </div>
+
+       
       </div>
 
 

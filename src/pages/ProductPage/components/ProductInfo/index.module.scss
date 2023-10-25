@@ -154,9 +154,21 @@
             }
         }
 
-        .img {
+        .mainImgWrapper{
+            display: flex;
+            align-items: stretch;
             width: 71%;
-            aspect-ratio: 0.8;
+            position: relative;
+            .img {
+                width: 100%;
+                aspect-ratio: 0.8;
+            }
+
+            .tooltip{
+                padding-top: 16px;
+                padding-right: 16px;
+            }
         }
+        
     }
 }
