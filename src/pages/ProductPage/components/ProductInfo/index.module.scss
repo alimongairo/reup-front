@@ -148,6 +148,9 @@
                 width: 100%;
                 aspect-ratio: 0.7;
                 flex-shrink: 0;
+                &.active img{
+                    border: 1px solid $color-black;
+                }
             }
         }
 

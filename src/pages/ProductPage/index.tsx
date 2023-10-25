@@ -25,8 +25,6 @@ export default function ProductPage() {
 
                 <ProductInfo className={cx.productInfo}/>
 
-
-
                 <Typography variant="h1">вы недавно смотрели</Typography>
                 <ProductSlider />
             </div>

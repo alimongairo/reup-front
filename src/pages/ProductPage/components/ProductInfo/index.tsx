@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cls from 'classnames';
 import { Typography, Button, Collapse, Image } from '@/components/ui'
 import { uid } from "react-uid";
@@ -33,18 +33,37 @@ interface IProps {
   className?: string;
 };
 
+// mock
+const mockImages = [
+  "https://i.ibb.co/kqTTgLy/beautiful-cat-portrait-close-up-1.jpg",
+  "https://i.ibb.co/MP1dZ3x/beautiful-cat-portrait-close-up.jpg",
+  "https://i.ibb.co/1nxgCv6/isolated-closeup-shot-of-a-gray-cat-looking-into-the-camera.jpg",
+  "https://i.ibb.co/6BKsZmC/the-cat-on-white-background.jpg",
+]
+
 export default function ProductInfo({ className }: IProps) {
+  const [activeImg, setActiveImg] = useState(0);
+  const [acc, setAcc] = useState(0);
+
   return (
     <div className={cls(cx.wrapper, className)}>
-     
+
       <div className={cx.imgContainer}>
         <div className={cx.content}>
           <div className={cls(cx.slider, "scroll scroll-vertical as-desktop")}>
-            <Image className={cx.sliderImg} />
-            <Image className={cx.sliderImg} />
-            <Image className={cx.sliderImg} />
+            {
+              mockImages.map((src, idx) =>
+                <button 
+                  onClick={() => {setActiveImg(idx); setAcc(idx)}} key={uid(src)} 
+                  onMouseEnter={() => setActiveImg(idx)}
+                  onMouseLeave={() => setActiveImg(acc)}  
+                >
+                  <Image className={cls(cx.sliderImg, {[cx.active]: idx === acc})} src={src} />
+                </button>
+              )
+            }
           </div>
-          <Image className={cx.img} />
+          <Image className={cx.img} src={mockImages[activeImg]} />
         </div>
       </div>
 
