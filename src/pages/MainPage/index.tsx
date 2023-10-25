@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { MainLayout } from "@/layouts";
 import { Collections, ReupChoosen, Sale, Top } from "./components";
-import {ProductSlider} from '@/components';
 import { Bricks, EAlign, IBrick, MoreLink, Typography } from "@/components/ui";
 import { ReactComponent as  Upcycle1} from "S#/images/hardcode/main/upcycle/upcycle1.svg";
 import { ReactComponent as  Upcycle2} from "S#/images/hardcode/main/upcycle/upcycle2.svg";
@@ -12,6 +11,7 @@ import { ReactComponent as  Upcycle6} from "S#/images/hardcode/main/upcycle/upcy
 import { ERoutes } from "@/router/types";
 import Marquee from 'react-fast-marquee';
 import cx from './index.module.scss';
+import ProductSlider from "@/components/ProductSlider";
 
 const bricksListMock: IBrick[] = [
   {
