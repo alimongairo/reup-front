@@ -1,0 +1,14 @@
+@import '@/styles/vars.scss';
+
+.defaultLabel{
+    width: 20px;
+    height: 20px;
+    background: #E4E4E4;
+    border-radius: 50%;
+    color: $color-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}

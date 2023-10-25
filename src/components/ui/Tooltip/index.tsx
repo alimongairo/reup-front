@@ -3,6 +3,7 @@ import { Tooltip, } from "@mui/material";
 import cls from 'classnames';
 import cx from './index.module.scss';
 import './index.scss';
+import { intialLabel } from "./initialLabel";
 
 // tooltip который не выходит за границы обертки (помещать в relative блок)
 
@@ -13,9 +14,8 @@ interface IProps {
     placement?: "top" | "right" | "bottom" | "left" | "bottom-end" | "bottom-start" | "left-end" | "left-start" | "right-end" | "right-start" | "top-end" | "top-start" | undefined,
 }
 
-const intialLabel = <div className={cx.defaultLabel}>!</div>;
 
-function MyTooltip({ className, title = "content", children = intialLabel, placement = "bottom-end", ...props }: IProps) {
+function MyTooltip({ className, title = "content", children = intialLabel, placement = "bottom-end" }: IProps) {
     const boundingElement = useRef<HTMLDivElement>(null);
     const [, forceUpdate] = useReducer(x => x + 1, 0);
 
