@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import cls from 'classnames';
-import { Typography, Button, Collapse, Image, Tooltip } from '@/components/ui'
+import { Typography, Button, Collapse, Image, Tooltip, Fav } from '@/components/ui'
 import { uid } from "react-uid";
 import { Link } from "react-router-dom";
 import { ERoutes } from "@/router/config";
@@ -65,21 +65,21 @@ export default function ProductInfo({ className }: IProps) {
             mockImages.map((src, idx) =>
               idx >= 2
                 ? (<button
-                  onClick={() => {setActiveImg(idx); setAcc(idx)}} 
+                  onClick={() => { setActiveImg(idx); setAcc(idx) }}
                   key={uid(src, idx)}
                   onMouseEnter={() => setActiveImg(idx)}
                   onMouseLeave={() => setActiveImg(acc)}
                 >
-                  <Image src={src} className={cls(cx.subImg,{[cx.active]: idx === acc})} />
+                  <Image src={src} className={cls(cx.subImg, { [cx.active]: idx === acc })} />
                 </button>)
                 : idx === 1
                   ? (<div className={cx.mainImgWrapper}>
                     <Image src={mockImages[activeImg]} className={cx.mainImg} key={uid(src, idx)} />
-                    <Tooltip title="на модели с фото размер S " className={cx.tooltip}/>
+                    <Tooltip title="на модели с фото размер S " className={cx.tooltip} />
                   </div>)
                   : (<div className={cx.mainImgWrapper}>
                     <Image src={src} className={cx.mainImg} key={uid(src, idx)} />
-                    <Tooltip title="на модели с фото размер S " className={cx.tooltip}/>
+                    <Tooltip title="на модели с фото размер S " className={cx.tooltip} />
                   </div>)
             )
 
@@ -105,7 +105,11 @@ export default function ProductInfo({ className }: IProps) {
           }
         </div>
 
-        <Button className={cx.buyBtn}>купить сейчас</Button>
+        <div className={cx.actions}>
+          <Button className={cx.buyBtn}>купить сейчас</Button>
+          <Button className={cx.basketBtn}>в корзину</Button>
+          <Button className={cls(cx.favBtn, 'as-desktop')}><Fav isActive={false} /></Button>
+        </div>
 
         <div className={cx.detailsTitle}>
           <Link to={ERoutes.Default} style={{ textDecoration: 'underline' }}><Typography variant="h6">характеристики</Typography></Link>

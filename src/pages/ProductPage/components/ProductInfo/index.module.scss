@@ -43,6 +43,13 @@
     }
 }
 
+.actions {
+    display: grid;
+    gap: 12px;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+}
+
 @media(max-width: $media-mobile) {
     .wrapper {
         flex-direction: column;
@@ -66,11 +73,7 @@
         margin-bottom: calc($offset-s - var(--gap));
     }
 
-    button.buyBtn {
-        width: 100%;
-    }
-
-    button.buyBtn,
+    .actions,
     .detailsTitle,
     .infoTable {
         margin-bottom: $offset-s;
@@ -104,7 +107,9 @@
         padding-top: $margin-h6;
     }
 
-    button.buyBtn,
+    .actions {}
+
+    .actions,
     .detailsTitle,
     .infoTable {
         margin-bottom: $offset-default;
