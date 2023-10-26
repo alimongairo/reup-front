@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { ERoutes } from "@/router/config";
 import { EFontFamily } from "@/components/ui";
 import InfoTable from "../InfoTable";
-import '@/styles/scroll.scss';
 import cx from './index.module.scss';
 
 // mock
@@ -39,34 +38,43 @@ const mockImages = [
   "https://i.ibb.co/MP1dZ3x/beautiful-cat-portrait-close-up.jpg",
   "https://i.ibb.co/1nxgCv6/isolated-closeup-shot-of-a-gray-cat-looking-into-the-camera.jpg",
   "https://i.ibb.co/6BKsZmC/the-cat-on-white-background.jpg",
+  // "https://i.ibb.co/kqTTgLy/beautiful-cat-portrait-close-up-1.jpg",
+  // "https://i.ibb.co/MP1dZ3x/beautiful-cat-portrait-close-up.jpg",
+  // "https://i.ibb.co/1nxgCv6/isolated-closeup-shot-of-a-gray-cat-looking-into-the-camera.jpg",
+  // "https://i.ibb.co/6BKsZmC/the-cat-on-white-background.jpg",
 ]
 
 export default function ProductInfo({ className }: IProps) {
-  const [activeImg, setActiveImg] = useState(0);
-  const [acc, setAcc] = useState(0);
+  const [activeImg, setActiveImg] = useState(1);
+  const [acc, setAcc] = useState(1);
 
   return (
     <div className={cls(cx.wrapper, className)}>
 
       <div className={cx.imgContainer}>
         <div className={cx.content}>
-          <div className={cls(cx.slider, "scroll scroll-vertical as-desktop")}>
+          <div className={cls(cx.images, "as-desktop")}>
             {
               mockImages.map((src, idx) =>
-                <button 
-                  onClick={() => {setActiveImg(idx); setAcc(idx)}} key={uid(src)} 
+              idx >= 2 ?
+                (<button 
+                  onClick={() => {setActiveImg(idx); setAcc(idx)}} 
+                  key={uid(src, idx)} 
                   onMouseEnter={() => setActiveImg(idx)}
                   onMouseLeave={() => setActiveImg(acc)}  
                 >
-                  <Image className={cls(cx.sliderImg, {[cx.active]: idx === acc})} src={src} />
-                </button>
+                  <Image src={src} className={cx.subImg}/>
+                </button>)
+                :  idx === 1 ? <Image src={mockImages[activeImg]} className={cx.mainImg}  key={uid(src, idx)}  />
+                : <Image src={src} className={cx.mainImg} key={uid(src, idx)} />
               )
+
             }
           </div>
-          <div className={cx.mainImgWrapper}>
+          {/* <div className={cx.mainImgWrapper}>
             <Image className={cx.img} src={mockImages[activeImg]} />
             <Tooltip title="на модели с фото размер S " className={cx.tooltip}/>
-          </div>
+          </div> */}
         </div>
 
        
