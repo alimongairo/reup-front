@@ -44,7 +44,7 @@ function MyTooltip({ className, title = "content", children = intialLabel, place
                     }
                 }}
             >
-                {children}
+                <div className={cx.label}>{children}</div>
             </Tooltip>
         </div>
     )

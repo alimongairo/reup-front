@@ -6,4 +6,13 @@
     height: 100%;
     display: flex;
     justify-content: flex-end;
+    .label{
+        width: fit-content;
+    }
+}
+
+@media(hover:hover){
+    .label:hover{
+        cursor: pointer;
+    }
 }
