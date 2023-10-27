@@ -24,6 +24,10 @@ const InfoTable = () => {
         <Typography variant="h6" className={cx.title}>цвет</Typography>
         <p>белый</p>
       </div>
+      <div className={cx.row}>
+        <Typography variant="h6" className={cx.title}>артикул</Typography>
+        <p>12345</p>
+      </div>
     </div>
   );
 };

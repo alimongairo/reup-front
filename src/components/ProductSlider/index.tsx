@@ -7,9 +7,9 @@ import cls from 'classnames';
 import ProductItem from "@/components/ProductItem";
 import { uid } from "react-uid";
 import { useWindowWidth } from "@/hooks";
-import '@/styles/swipe.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import '@/styles/swipe.scss';
 import cx from './index.module.scss';
 
 interface IProductSLiderProps {

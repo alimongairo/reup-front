@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
-import {ReactComponent as MinusIcon} from 'S#/images/icons/minus.svg';
+import { ReactComponent as MinusIcon } from 'S#/images/icons/minus.svg';
 import cx from './index.module.scss';
 import cls from 'classnames';
 
@@ -44,17 +44,23 @@ const Collapse = ({
     }
   }, [isClose]);
 
+  console.log(typeof title)
   return (
-    <div className={cls(cx.wrapper, {[cx.active]: !isClose}, className)}>
+    <div className={cls(cx.wrapper, { [cx.active]: !isClose }, className)}>
       {!hideCollapseIcon && (
         <div className={cx.collapseIcon} onClick={toggleOpen}>
           <MinusIcon className={cx.minus} />
           <MinusIcon className={cls(cx.minus, { [cx.rotate]: isClose })} />
         </div>
       )}
-      <p className={cx.title} onClick={toggleOpen}>
-        {title}
-      </p>
+
+      {
+        typeof title === 'string'
+          ? (<p className={cx.title} onClick={toggleOpen}>
+            {title}
+          </p>)
+          : title
+      }
 
       <div className={cx.content} ref={contentRef}>
         {content}

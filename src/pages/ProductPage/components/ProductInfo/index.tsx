@@ -73,12 +73,12 @@ export default function ProductInfo({ className }: IProps) {
                   <Image src={src} className={cls(cx.subImg, { [cx.active]: idx === acc })} />
                 </button>)
                 : idx === 1
-                  ? (<div className={cx.mainImgWrapper}>
-                    <Image src={mockImages[activeImg]} className={cx.mainImg} key={uid(src, idx)} />
+                  ? (<div className={cx.mainImgWrapper} key={uid(src, idx)}>
+                    <Image src={mockImages[activeImg]} className={cx.mainImg} />
                     <Tooltip title="на модели с фото размер S " className={cx.tooltip} />
                   </div>)
-                  : (<div className={cx.mainImgWrapper}>
-                    <Image src={src} className={cx.mainImg} key={uid(src, idx)} />
+                  : (<div className={cx.mainImgWrapper} key={uid(src, idx)}>
+                    <Image src={src} className={cx.mainImg} />
                     <Tooltip title="на модели с фото размер S " className={cx.tooltip} />
                   </div>)
             )
@@ -89,8 +89,7 @@ export default function ProductInfo({ className }: IProps) {
 
       <div className={cx.info}>
         <Typography variant="h2">Блузка женская “Лэйди”</Typography>
-        <Typography variant="h5">Befree</Typography>
-        <p className={cx.note}>03289</p>
+        <Typography variant="h5" className={cx.brand}>Befree</Typography>
         <div className={cx.price}>
           <Typography variant="h3" fontFamily={EFontFamily.GILROY}>3990</Typography>
           <Typography variant="h2">1990</Typography>
@@ -105,24 +104,28 @@ export default function ProductInfo({ className }: IProps) {
           }
         </div>
 
+        <div className={cx.sizesLink}>
+          <Link to={ERoutes.Default} style={{ textDecoration: 'underline' }}><Typography variant="h6">таблица размеров</Typography></Link>
+        </div>
+
         <div className={cx.actions}>
           <Button className={cx.buyBtn}>купить сейчас</Button>
           <Button className={cx.basketBtn}>в корзину</Button>
-          <Button className={cls(cx.favBtn, 'as-desktop')}><Fav isActive={false} /></Button>
-        </div>
-
-        <div className={cx.detailsTitle}>
-          <Link to={ERoutes.Default} style={{ textDecoration: 'underline' }}><Typography variant="h6">характеристики</Typography></Link>
+          <Button className={cls(cx.favBtn, 'as-desktop')} ><Fav isActive={false} isInBtn={true}/></Button>
         </div>
 
         <div>
           <div className={cx.block}>
             <Collapse
               title={<Typography variant="h5" fontFamily={EFontFamily.GILROY}>описание</Typography>}
-              content={<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores sequi, odio tenetur dolorem sint debitis molestias eligendi veniam dignissimos! Distinctio praesentium fugit possimus doloremque saepe mollitia voluptatum eos aliquam quo?</p>}
-              moreText={<Link to={ERoutes.Default} style={{ textDecoration: 'underline', pointerEvents: 'none' }} className={cx.more}><Typography variant="h6">показать больше</Typography></Link>}
-              lessText={<Link to={ERoutes.Default} style={{ textDecoration: 'underline', pointerEvents: 'none' }} className={cx.more}><Typography variant="h6">свернуть</Typography></Link>}
-              hideCollapseIcon
+              content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
+                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. 
+                Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
+                Aenean leo ligula, porttitor eu, "
+              className={cx.infoTable}
             />
           </div>
 
@@ -132,13 +135,12 @@ export default function ProductInfo({ className }: IProps) {
               content={<InfoTable />}
               className={cx.infoTable}
             />
-
-            <div>
-              <Link to={ERoutes.Default} style={{ textDecoration: 'underline' }}><Typography variant="h6">таблица размеров</Typography></Link>
-            </div>
           </div>
+
+          <Button className={cx.characteristics}>характеристики</Button>
         </div>
 
+  
       </div>
     </div>
   )

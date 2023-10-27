@@ -4,10 +4,6 @@
     display: flex;
 }
 
-.note {
-    color: $color-gray-82;
-}
-
 .price {
     display: flex;
     align-items: flex-end;
@@ -50,6 +46,11 @@
     justify-content: flex-start;
 }
 
+.sizesLink {
+    display: flex;
+    justify-content: flex-end;
+}
+
 @media(max-width: $media-mobile) {
     .wrapper {
         flex-direction: column;
@@ -63,20 +64,24 @@
         align-items: center;
     }
 
-    .note,
     .price {
         margin-bottom: $offset-s;
     }
 
     .sizeList {
         --gap: 8px;
-        margin-bottom: calc($offset-s - var(--gap));
     }
 
-    .actions,
-    .detailsTitle,
-    .infoTable {
+    .actions {
         margin-bottom: $offset-s;
+        justify-content: normal;
+        button{
+            width: 100%;
+        }
+    }
+
+    .characteristics{
+        width: 100%;
     }
 
     .more>* {
@@ -84,7 +89,16 @@
     }
 
     .block {
-        padding: $offset-default 0;
+        padding: 17px 0;
+
+        &:nth-last-child(-n+2) {
+            margin-bottom: $offset-s;
+        }
+
+    }
+
+    .sizesLink {
+        margin-bottom: $offset-s;
     }
 }
 
@@ -93,30 +107,37 @@
         flex-grow: 1;
     }
 
-    .note,
     .price {
         margin-bottom: $offset-default;
     }
 
     .sizeList {
         --gap: 12px;
-        margin-bottom: calc($offset-default - var(--gap));
     }
 
     .more>* {
         padding-top: $margin-h6;
     }
 
-    .actions {}
+    .sizesLink {
+        margin-bottom: $offset-default;
+    }
 
-    .actions,
-    .detailsTitle,
-    .infoTable {
+    .actions {
         margin-bottom: $offset-default;
     }
 
     .block {
         padding: 24px 0;
+
+        &:nth-last-child(-n+2) {
+            margin-bottom: $offset-s;
+        }
+
+    }
+
+    h5.brand {
+        margin-bottom: $offset-default;
     }
 
     .content {
