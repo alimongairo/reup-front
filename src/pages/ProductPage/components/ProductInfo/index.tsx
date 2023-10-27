@@ -28,9 +28,8 @@ const sizesMock = [
   },
 ];
 
-interface IProps {
-  className?: string;
-};
+// mock
+const isInStock = false;
 
 // mock
 const mockImages = [
@@ -51,6 +50,10 @@ const mockImages = [
   "https://i.ibb.co/1nxgCv6/isolated-closeup-shot-of-a-gray-cat-looking-into-the-camera.jpg",
   "https://i.ibb.co/6BKsZmC/the-cat-on-white-background.jpg",
 ]
+
+interface IProps {
+  className?: string;
+};
 
 export default function ProductInfo({ className }: IProps) {
   const [activeImg, setActiveImg] = useState(1);
@@ -109,9 +112,14 @@ export default function ProductInfo({ className }: IProps) {
         </div>
 
         <div className={cx.actions}>
-          <Button className={cx.buyBtn}>купить сейчас</Button>
-          <Button className={cx.basketBtn}>в корзину</Button>
-          <Button className={cls(cx.favBtn, 'as-desktop')} ><Fav isActive={false} isInBtn={true}/></Button>
+          {
+            isInStock
+              ? (<><Button className={cx.buyBtn}>купить сейчас</Button>
+                <Button className={cx.basketBtn}>в корзину</Button>
+                <Button className={cls(cx.favBtn, 'as-desktop')} ><Fav isActive={false} isInBtn={true} /></Button></>)
+              : (<Button className={cx.buyBtn} disabled>раскупили</Button>)
+          }
+
         </div>
 
         <div>
@@ -140,7 +148,7 @@ export default function ProductInfo({ className }: IProps) {
           <Button className={cx.characteristics}>характеристики</Button>
         </div>
 
-  
+
       </div>
     </div>
   )
