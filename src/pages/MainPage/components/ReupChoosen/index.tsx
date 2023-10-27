@@ -5,8 +5,7 @@ import { useWindowWidth } from '@/hooks';
 
 import img from 'S#/images/hardcode/main/rc1.png';
 import cx from './index.module.scss';
-import { Typography } from "@mui/material";
-import { MoreLink, Image } from "@/components/ui";
+import { MoreLink, Image, Typography } from "@/components/ui";
 
 export interface IMainSlider {
   bgColor?: string;

@@ -104,10 +104,7 @@
   flex-direction: column;
   gap: 1rem;
   opacity: 0.5;
-
-  @media(min-width: $media-desktop) {
-    padding: 2rem 0;
-  }
+  padding: 2rem 0;
 
   @media(max-width: $media-mobile) {
     width: 100%;
