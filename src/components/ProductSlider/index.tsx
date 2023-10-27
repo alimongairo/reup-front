@@ -24,7 +24,6 @@ export default function ProductSlider({list = Array(27).fill(null)}: IProductSLi
     const swiperSettings = {
 
         breakpoints: {
-            // when window width is >= 759px (min-width)
             1700: {
                 slidesPerView: 6,
                 spaceBetween: 24,
@@ -33,6 +32,7 @@ export default function ProductSlider({list = Array(27).fill(null)}: IProductSLi
                 slidesPerView: 5,
                 spaceBetween: 24,
             },
+            // when window width is >= 759px (min-width)
             759: {
                 slidesPerView: 4,
                 spaceBetween: 24,
@@ -40,11 +40,9 @@ export default function ProductSlider({list = Array(27).fill(null)}: IProductSLi
         },
     };
 
-
     const [swiperInstance, setSwiperInstance] = useState<any>();
+
     const enableSwiper = () => {
-
-
         const mySwiper = new SwiperConstructor(swiperRef.current as any, swiperSettings);
         mySwiper.init();
         setSwiperInstance(mySwiper);
