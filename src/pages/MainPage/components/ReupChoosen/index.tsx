@@ -19,13 +19,7 @@ export default function ReupChoosen() {
     const swiperRef = useRef<SwiperRef>();
 
     const swiperSettings = {
-        slidesPerView: 1,
-        // breakpoints: {
-        //     // when window width is >= 759px (min-width)
-        //     759: {
-        //         slidesPerView: 1.1,
-        //     }
-        // },
+        centeredSlides: true,
     };
 
     const enableSwiper = () => {
@@ -40,17 +34,23 @@ export default function ReupChoosen() {
     return (
         <div className={cx.slider}>
             <SwiperComponent
+                slidesPerView='auto'
                 modules={[Pagination]}
-                pagination={{ clickable: true }}
+                pagination={{
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return `<span class="${className}"></span>`;
+                    },
+                }}
                 className={cx.slides}
                 onBeforeInit={({ el }: any) => {
                     swiperRef.current = el;
                 }}
-                onSlideChange={(swiper) => {
-                    // TODO: хз как отцентрировать
-                    setActiveIndex(swiper.activeIndex);
-                    console.log(swiper.el.style)
+                onSlideChange={({ activeIndex }) => {
+                    setActiveIndex(activeIndex);
                 }}
+
             >
                 {
                     list.map((_, index) =>
@@ -68,12 +68,14 @@ export default function ReupChoosen() {
                                 <MoreLink className={cx.moreBtn} />
                             </div>
                             <Image alt={'img'} className={cx.imgWrapper} />
-
-
                         </SwiperSlide>
                     )
                 }
+
+                <div className={cls("swiper-pagination", cx.pagination)}></div>
             </SwiperComponent>
+
+
         </div>
     )
 }
