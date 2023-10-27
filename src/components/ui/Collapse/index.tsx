@@ -44,23 +44,27 @@ const Collapse = ({
     }
   }, [isClose]);
 
-  console.log(typeof title)
   return (
-    <div className={cls(cx.wrapper, { [cx.active]: !isClose }, className)}>
-      {!hideCollapseIcon && (
-        <div className={cx.collapseIcon} onClick={toggleOpen}>
-          <MinusIcon className={cx.minus} />
-          <MinusIcon className={cls(cx.minus, { [cx.rotate]: isClose })} />
-        </div>
-      )}
+    <div className={cls(cx.wrapper, { [cx.active]: !isClose }, className)} >
 
-      {
-        typeof title === 'string'
-          ? (<p className={cx.title} onClick={toggleOpen}>
-            {title}
-          </p>)
-          : title
-      }
+      <div onClick={toggleOpen} className={cx.head}>
+        {!hideCollapseIcon && (
+          <div className={cx.collapseIcon} >
+            <MinusIcon className={cx.minus} />
+            <MinusIcon className={cls(cx.minus, { [cx.rotate]: isClose })} />
+          </div>
+        )}
+
+        {
+          typeof title === 'string'
+            ? (<p className={cx.title}>
+              {title}
+            </p>)
+            : title
+        }
+
+      </div>
+
 
       <div className={cx.content} ref={contentRef}>
         {content}

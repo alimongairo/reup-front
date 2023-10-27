@@ -75,12 +75,13 @@
     .actions {
         margin-bottom: $offset-s;
         justify-content: normal;
-        button{
+
+        button {
             width: 100%;
         }
     }
 
-    .characteristics{
+    .characteristics {
         width: 100%;
     }
 
@@ -99,6 +100,33 @@
 
     .sizesLink {
         margin-bottom: $offset-s;
+    }
+
+    .content {
+        display: contents;
+    }
+
+    .slider {
+        height: 458px;
+        display: flex;
+        margin-bottom: calc(8px + $offset-s);
+        position: relative;
+
+        .swiper {
+            flex-grow: 1;
+            display: flex;
+            .slide, .slideImg {
+                display: flex;
+                flex-grow: 1;
+            }
+        }
+
+        .pagination{
+           bottom: -8px;
+           width: calc(100% + 4px);
+           top: initial;
+           --bullet-bg: #000000;
+        }
     }
 }
 

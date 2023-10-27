@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import cls from 'classnames';
 import { Typography, Button, Collapse, Image, Tooltip, Fav } from '@/components/ui'
 import { uid } from "react-uid";
@@ -7,9 +7,32 @@ import { ERoutes } from "@/router/config";
 import { EFontFamily } from "@/components/ui";
 import InfoTable from "../InfoTable";
 import cx from './index.module.scss';
+import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
+import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper';
+import { Pagination } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import '@/styles/pagination.scss';
+import { useWindowWidth } from "@/hooks";
 
 // mock
 const sizesMock = [
+  {
+    label: "40-42",
+    isInStock: true,
+  },
+  {
+    label: "42-44",
+    isInStock: true,
+  },
+  {
+    label: "44-46",
+    isInStock: false,
+  },
+  {
+    label: "46-48",
+    isInStock: true,
+  },
   {
     label: "40-42",
     isInStock: true,
@@ -49,7 +72,7 @@ const mockImages = [
   "https://i.ibb.co/MP1dZ3x/beautiful-cat-portrait-close-up.jpg",
   "https://i.ibb.co/1nxgCv6/isolated-closeup-shot-of-a-gray-cat-looking-into-the-camera.jpg",
   "https://i.ibb.co/6BKsZmC/the-cat-on-white-background.jpg",
-]
+];
 
 interface IProps {
   className?: string;
@@ -58,6 +81,31 @@ interface IProps {
 export default function ProductInfo({ className }: IProps) {
   const [activeImg, setActiveImg] = useState(1);
   const [acc, setAcc] = useState(1);
+
+  const windowWidth = useWindowWidth();
+
+  const swiperRef = useRef<SwiperRef>();
+
+  const [swiperInstance, setSwiperInstance] = useState<any>();
+
+  const enableSwiper = () => {
+    const mySwiper = new SwiperConstructor(swiperRef.current as any, {});
+    mySwiper.init();
+    setSwiperInstance(mySwiper);
+  };
+
+  useEffect(() => {
+    enableSwiper();
+  }, []);
+
+  useEffect(() => {
+    if (!windowWidth) return;
+    if (windowWidth > 758) {
+      swiperInstance.destroy();
+    } else {
+      enableSwiper();
+    }
+  }, [windowWidth])
 
   return (
     <div className={cls(cx.wrapper, className)}>
@@ -88,6 +136,33 @@ export default function ProductInfo({ className }: IProps) {
 
           }
         </div>
+
+        <div className={cx.slider}>
+          <SwiperComponent
+            className={cls(cx.swiper, "swipe as-mobile")}
+            onBeforeInit={({ el }: any) => {
+              swiperRef.current = el;
+            }}
+            modules={[Pagination]}
+            pagination={{
+              el: '.swiper-pagination',
+              clickable: true,
+              renderBullet: function (index, className) {
+                return `<span class="${className}"></span>`;
+              },
+            }}
+          >
+            {
+              mockImages.map((src, index) =>
+                <SwiperSlide key={uid(index)} className={cx.slide}>
+                  <Image src={src} className={cx.slideImg}/>
+                </SwiperSlide>)
+            }
+
+           
+          </SwiperComponent>
+          <div className={cls("swiper-pagination", cx.pagination)}></div>
+        </div>
       </div>
 
       <div className={cx.info}>
@@ -99,10 +174,10 @@ export default function ProductInfo({ className }: IProps) {
         </div>
         <Typography variant="h6">выберите размер</Typography>
 
-        <div className={cx.sizeList}>
+        <div className={cls(cx.sizeList, 'swipe')}>
           {
-            sizesMock.map((size) => {
-              return (<Button key={uid(size.label)} className={cx.sizeBtn} disabled={!size.isInStock}>{size.label}</Button>)
+            sizesMock.map((size, idx) => {
+              return (<Button key={uid(size.label, idx)} className={cx.sizeBtn} disabled={!size.isInStock}>{size.label}</Button>)
             })
           }
         </div>

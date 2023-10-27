@@ -1,15 +1,14 @@
-import React, { useRef, useState, useCallback, useEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
 import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper'
 import { Pagination } from "swiper/modules";
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '@/styles/pagination.scss';
 import { uid } from "react-uid";
 import cx from './index.module.scss';
 import cls from 'classnames';
-import { Button, Image, MoreLink, Typography } from "@/components/ui";
+import { Image, MoreLink, Typography } from "@/components/ui";
 
 export default function ReupChoosen() {
     const [activeIndex, setActiveIndex] = useState(0);

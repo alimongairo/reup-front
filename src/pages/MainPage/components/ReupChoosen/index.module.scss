@@ -23,7 +23,6 @@
     margin-top: 5rem;
     display: flex;
     box-sizing: border-box;
-    max-width: 80%;
 
     &:not(.active) {
         .text,
@@ -65,6 +64,12 @@
 }
 
 @media(max-width: $media-mobile) {
+    .slide {
+        max-width: 80%;
+    }
+}
+
+@media(max-width: $media-mobile) {
     .slider {
         padding-bottom: $padding-lg-mobile;
     }
@@ -76,6 +81,7 @@
         padding: 2rem;
         padding-top: 0;
         gap: 0;
+        max-width: 100%;
     }
 
     .imgWrapper {

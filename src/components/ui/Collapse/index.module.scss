@@ -1,5 +1,10 @@
 @import '@/styles/vars.scss';
 
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
 .title,
 .content {
   margin: 7px 0;
@@ -42,15 +47,15 @@
 .wrapper {
   position: relative;
   transition: 0.3s;
-
-  // &.active {
-  //   +div {
-  //     display: none;
-  //   }
-  // }
 }
 
 .icon {
   width: 6px;
   height: auto;
+}
+
+@media(hover:hover) {
+  .head:hover {
+    cursor: pointer;
+  }
 }
