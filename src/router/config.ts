@@ -1,20 +1,5 @@
-export enum ERoutes {
-    Error = '*',
-    Default = '/',
-    CrmScheme = '/crm/scheme',
-    CrmSchemesMain = '/crm/schemes',
-    CrmBrandRegistration = 'crm/brandRegistration',
-    Stock = '/crm/stock',
-    ProductEdit = '/crm/product'
-}
+import { ERoles, ERoutes } from "./types";
 
-export enum ERoles {
-    brand = 'brand',  // владельца бренда в CRM
-    seller = 'seller',  // владельца бренда в маркетплейсе
-    customer = 'customer',  // покупателя
-}
-
- 
 //   TODO: add correct links
 const CRMLinks = [
     {

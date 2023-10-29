@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { ErrorPage, MainPage, SchemePage, SchemeSelectionPage, StockPage, BrandRegistrationPage, ProductEditPage } from "@/pages";
-import { ERoutes } from "./config";
+import { ERoutes } from "./types";
 import { AuthPopup } from "../app/auth/components";
 
 

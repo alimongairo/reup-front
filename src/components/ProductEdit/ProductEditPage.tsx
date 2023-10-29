@@ -156,7 +156,7 @@ const ProductEditLayout = () => {
                 <div className={cx.heading}>
                     <Typography variant='h2'>о товаре</Typography>
                 </div>
-                <Grid container spacing={2}>
+                <Grid container rowSpacing={2} columnSpacing={50/8}>
                     <Grid item xs={6}>
                         <SearchableSelect
                             label="материал"

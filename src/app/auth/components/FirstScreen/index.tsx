@@ -8,7 +8,7 @@ import { EType } from "../types";
 import cx from './index.module.scss';
 import { EPopupType } from "../AuthPopup";
 import InputMask from 'react-input-mask';
-import { ERoutes } from "@/router/config";
+import { ERoutes } from "@/router/types";
 import { Link } from "react-router-dom";
 
 interface IProps {

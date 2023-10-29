@@ -9,7 +9,8 @@ import { ReactComponent as MarketIcon } from "S#/images/icons/market.svg";
 import cx from './index.module.scss';
 import cls from 'classnames';
 import { uid } from 'react-uid';
-import { ERoles, ERoutes, confReturner } from "@/router/config";
+import { confReturner } from "@/router/config";
+import { ERoles, ERoutes } from "@/router/types";
 import { Link } from "react-router-dom";
 import { NavLinkIcon, NavLink } from "..";
 

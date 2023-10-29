@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Scheme1 from 'S#/images/crm/schemes/scheme1.png';
 import Scheme2 from 'S#/images/crm/schemes/scheme2.png';
 import Scheme3 from 'S#/images/crm/schemes/scheme3.png';
-import { ERoutes } from '@/router/config';
+import { ERoutes } from '@/router/types';
 
 const schemes = [
     { id: 0, title: "шаблон / 1", img: Scheme1 },
