@@ -1,0 +1,8 @@
+@import '@/styles/vars.scss';
+
+div.MuiTooltip-tooltip{
+    background-color: #E4E4E4;
+    color: $color-black;
+    font-size: 12px;
+    font-family: 'Gilroy', sans-serif;
+}

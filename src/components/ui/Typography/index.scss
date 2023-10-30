@@ -1,28 +1,25 @@
 @import '@/styles/vars.scss';
 
-
 h1.MuiTypography-root,
 h2.MuiTypography-root,
 h3.MuiTypography-root {
-    font-weight: bold;
     line-height: 110%;
     display: block;
-}
-
-h1.MuiTypography-root,
-h2.MuiTypography-root,
-h3.MuiTypography-root {
-    font-family: "Dela Gothic One", sans-serif;
-}
-
-h6.MuiTypography-root {
-    font-family: "Gilroy", sans-serif;
 }
 
 h3.MuiTypography-root {
     font-size: 24px;
     margin-bottom: $margin-h3;
     letter-spacing: 1.68px;
+}
+
+h6.MuiTypography-root {
+    font-size: $fontSize-default;
+    font-weight: bold;
+}
+
+h5.MuiTypography-root {
+    font-weight: 500;
 }
 
 @media(max-width: $media-mobile) {
@@ -36,6 +33,12 @@ h3.MuiTypography-root {
         font-size: 20px;
         margin-bottom: $margin-h2-mobile;
         letter-spacing: 0.8px;
+    }
+    
+    h5.MuiTypography-root {
+        font-size: $fontSize-default;
+        margin-bottom: $margin-h6-mobile;
+        letter-spacing: 0.98px;
     }
 
     h6.MuiTypography-root {
@@ -54,6 +57,12 @@ h3.MuiTypography-root {
         font-size: 32px;
         margin-bottom: $margin-h2;
         letter-spacing: 1.28px;
+    }
+
+    h5.MuiTypography-root {
+        font-size: 20px;
+        margin-bottom: $margin-h6;
+        letter-spacing: 1.4px;
     }
 
     h6.MuiTypography-root {

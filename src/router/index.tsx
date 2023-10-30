@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ErrorPage, LKPage, MainPage, SchemePage, SchemeSelectionPage, StockPage, BrandRegistrationPage } from "@/pages";
-import { ERoutes } from "./config";
+import { ERoutes } from "@/router/config";
+import { ErrorPage, LKPage, MainPage, ProductPage, SchemePage, SchemeSelectionPage, StockPage, BrandRegistrationPage } from "@/pages";
 import { AuthPopup } from "../app/auth/components";
 
 
@@ -26,12 +26,16 @@ export const router = createBrowserRouter([
         element: <AuthPopup><ErrorPage /></AuthPopup>
     },
     {
-        path: ERoutes.Stock,
+        path: ERoutes.CrmStock,
         element: <AuthPopup><StockPage /></AuthPopup>
     },
     {
+        path: `${ERoutes.CrmProduct}/:id`,
+        element: <AuthPopup><></></AuthPopup>
+    },
+    {
         path: `${ERoutes.Product}/:id`,
-        element: <></>
+        element: <AuthPopup><ProductPage /></AuthPopup>
     },
     {
         path: `${ERoutes.LK}/:tabName?`,

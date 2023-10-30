@@ -4,8 +4,6 @@
 .wrapper {
     position: relative;
     z-index: 1;
-
-   
 }
 
 @media(min-width: $media-desktop) {
@@ -44,7 +42,7 @@
 
 @media(max-width: $media-mobile) {
     .wrapper{
-        margin-bottom: 16px;
+        margin-bottom: $offset-s;
         @include outer;
     }
 

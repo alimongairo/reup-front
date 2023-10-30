@@ -4,6 +4,7 @@ import StockPage from "./StockPage";
 import SchemePage from "./crm/SchemePage/index.tsx";
 import SchemeSelectionPage from "./crm/SchemeSelectionPage";
 import BrandRegistrationPage from "./crm/BrandRegistrationPage";
+import ProductPage from './ProductPage';
 import LKPage from "./LKPage/index.tsx";
 
 export {
@@ -13,5 +14,6 @@ export {
     SchemeSelectionPage, 
     BrandRegistrationPage, 
     StockPage, 
+    ProductPage,
     LKPage
 };
