@@ -1,4 +1,4 @@
 # reup-front
 
-npm run lint - run eslint
-npm run format - run prettier
+npm run lint - запуск eslint
+npm run format - запуск prettier
