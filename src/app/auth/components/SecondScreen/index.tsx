@@ -33,6 +33,7 @@ export default function SecondScreen() {
       clearInterval(timerID);
 
     }
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, [time])
 
   const onSendClick = () => {

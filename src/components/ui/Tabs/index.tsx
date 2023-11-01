@@ -49,6 +49,9 @@ export const Tabs = ({
                     cx.tabTitle,
                   )}
                   onClick={() => onTitleClick(item.id)}
+                  onKeyDown={() => onTitleClick(item.id)}
+                  role="button"
+                  tabIndex={0}
                 >
                   <p>{item.title}</p>
                 </div>

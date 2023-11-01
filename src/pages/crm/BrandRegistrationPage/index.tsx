@@ -17,7 +17,8 @@ const BrandRegistrationPage = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const [formData, setFormData] = useState<
-    IFreelanceFormFields | ICorporateFormfields | {}
+    // If you want a type meaning "empty object", you probably want `Record<string, never>` instead.
+    IFreelanceFormFields | ICorporateFormfields | Record<string, never>
   >({});
 
   const onChangeForm = () => {

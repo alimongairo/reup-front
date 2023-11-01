@@ -8,7 +8,7 @@ interface IProps {
   brand: string;
 }
 
-const CollectionCard = ({ id, img = process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE, title, brand }: IProps) => {
+const CollectionCard = ({ img = process.env.VITE_PUBLIC_PLACEHOLDER_IMAGE, title, brand }: IProps) => {
   return (
     <div className={cx.wrapper} >
       <Image src={img} alt="img" className={cx.image}/>

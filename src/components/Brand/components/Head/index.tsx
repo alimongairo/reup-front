@@ -23,7 +23,7 @@ export default function Head({ isEditable, isEditing, setIsEditing, activeMenu }
     }
 
     const [isCancelOpen, setIsCancelOpen] = useState(false);
-    const [isSaveOpen, setIsSaveOpen] = useState(false);
+    const [isSaveOpen] = useState(false);
 
     const handleOpenCancelConfirm = () => {
         setIsCancelOpen(true);

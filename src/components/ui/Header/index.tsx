@@ -11,13 +11,12 @@ import cls from 'classnames';
 import { uid } from 'react-uid';
 import { ERoles, ERoutes, confReturner } from "@/router/config";
 import { Link } from "react-router-dom";
-import { NavLinkIcon, NavLink, Button, EBtnColor } from "..";
+import { NavLinkIcon, NavLink} from "..";
 import MobileToolbar from "./MobileToolbar";
 import { DropDown } from "./components";
 import { strokeColorReturner } from "../../../helpers";
 import { lkTabsList } from "../../../const";
 import { AuthContext } from "../../../app/auth";
-import { useWindowWidth } from "../../../hooks";
 
 interface IProps {
   type: ERoles,

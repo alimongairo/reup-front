@@ -3,6 +3,7 @@ import { Typography, Input, Button } from "../../../../components/ui";
 import InputMask from 'react-input-mask';
 import cx from './index.module.scss';
 import { FormControlLabel, Radio, RadioGroup } from "@mui/material";
+import { uid } from "react-uid";
 
 interface IFields {
   name: string,
@@ -57,7 +58,8 @@ const fields = [
 export default function LKMain() {
   const formRef = useRef<HTMLFormElement>(null);
 
-  const [formData, setFormData] = useState<IFields | {}>({});
+  // If you want a type meaning "empty object", you probably want `Record<string, never>` instead.
+  const [formData, setFormData] = useState<IFields |Record<string, never>>({});
 
   const onSendForm = () => {
     if (formRef.current) {
@@ -81,7 +83,7 @@ export default function LKMain() {
 
         <div className={cx.fields}>
           {fields.map((column) => (
-            <div className={cx.subFields}>
+            <div className={cx.subFields} key={uid(column)}>
               <Typography variant="h6">{column.title}</Typography>
               {column.list.map((item) => (
                 item.type === 'tel'

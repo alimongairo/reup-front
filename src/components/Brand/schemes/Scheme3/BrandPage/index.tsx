@@ -1,6 +1,5 @@
 import React from 'react'
 import SchemeLayout from "../SchemeLayout";
-import { TSchemeData } from "../../../components/Menu/models";
 import { IScheme3Brand } from "../../../../../types/brandTypes";
 
 interface IProps {

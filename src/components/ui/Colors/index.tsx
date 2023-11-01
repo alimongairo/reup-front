@@ -1,7 +1,5 @@
 import classNames from 'classnames';
-
 import cx from './index.module.scss';
-import MyTypography from "../Typography";
 
 export enum EColors {
   Pink = '#A175FF',
@@ -42,6 +40,11 @@ export const Colors = ({ colors, onChange, value }: IColorsProps) => {
           onClick={() => {
             onChange?.(color.value || '#000000');
           }}
+          onKeyDown={() => {
+            onChange?.(color.value || '#000000');
+          }}
+          role="button"
+          tabIndex={0}
           style={{ backgroundColor: color.value || "FFFFFF"}}
         ></div>
       ))}

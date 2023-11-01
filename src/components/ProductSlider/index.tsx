@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+/* eslint-disable-next-line import/no-unresolved*/
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
 import { Button } from "@/components/ui";
 import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper'
@@ -7,7 +8,9 @@ import cls from 'classnames';
 import ProductItem from "@/components/ProductItem";
 import { uid } from "react-uid";
 import { useWindowWidth } from "@/hooks";
+/* eslint-disable-next-line import/no-unresolved*/
 import 'swiper/css';
+/* eslint-disable-next-line import/no-unresolved*/
 import 'swiper/css/navigation';
 import '@/styles/swipe.scss';
 import cx from './index.module.scss';
@@ -51,6 +54,7 @@ export default function ProductSlider({list = Array(27).fill(null)}: IProductSLi
 
     useEffect(() => {
         enableSwiper();
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [])
 
     useEffect(() => {
@@ -60,6 +64,7 @@ export default function ProductSlider({list = Array(27).fill(null)}: IProductSLi
         } else {
             enableSwiper();
         }
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [windowWidth])
 
     const onPrevClick = useCallback(

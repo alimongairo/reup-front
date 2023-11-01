@@ -40,7 +40,6 @@ export interface IRadioGroupProps
   > {
   radioList: IRadioProps[];
   value?: string | number;
-  groupName?: string;
   direction?: 'horizontal' | 'vertical';
   onChangeGroup?: (newValue: IRadioProps['value']) => void;
 }
@@ -48,7 +47,6 @@ export interface IRadioGroupProps
 export const RadioGroup = ({
   radioList,
   direction = 'horizontal',
-  groupName,
   value,
   onChangeGroup,
 }: IRadioGroupProps) => {

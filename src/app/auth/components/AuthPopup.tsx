@@ -68,7 +68,7 @@ export default function AuthPopup({ children }: IProps) {
         if (activeLogin !== null) {
             onPopupOpen(activeLogin);
         }
-
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [activeLogin])
 
     useEffect(() => {
@@ -76,6 +76,7 @@ export default function AuthPopup({ children }: IProps) {
             setisPopup(initialisPopup);
             setActivePopupType(EPopupType.LOGIN);
         }
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [])
 
     const initialContextValue: AuthContextType = useMemo(() => {
@@ -87,11 +88,12 @@ export default function AuthPopup({ children }: IProps) {
             onNextPart,
             onPopupTypeChange,
         };
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [isAuth]);
 
     const getKeyValue = <U extends keyof T, T extends object>(key: U) => (obj: T) => obj[key];
 
-    
+
     const fullScreen = useMediaQuery('(max-width:758px)');
 
     return (

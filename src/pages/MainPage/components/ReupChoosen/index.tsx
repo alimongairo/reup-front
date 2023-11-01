@@ -1,8 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react';
+/* eslint-disable-next-line import/no-unresolved*/
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
 import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper'
+/* eslint-disable-next-line import/no-unresolved*/
 import { Pagination } from "swiper/modules";
+/* eslint-disable-next-line import/no-unresolved*/
 import 'swiper/css';
+/* eslint-disable-next-line import/no-unresolved*/
 import 'swiper/css/pagination';
 import '@/styles/pagination.scss';
 import { uid } from "react-uid";
@@ -28,6 +32,7 @@ export default function ReupChoosen() {
 
     useEffect(() => {
         enableSwiper();
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [])
 
     return (

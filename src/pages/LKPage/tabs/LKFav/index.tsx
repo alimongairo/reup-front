@@ -1,8 +1,6 @@
 import React from 'react';
 import cx from './index.module.scss';
-import { Button, Typography } from "../../../../components/ui";
-import { ProductSlider } from "../../../MainPage/components";
-import { Link } from "react-router-dom";
+import { Typography } from "../../../../components/ui";
 import ProductItem from "../../../../components/ProductItem";
 import { uid } from "react-uid";
 import { ERoutes } from "@/router/config";

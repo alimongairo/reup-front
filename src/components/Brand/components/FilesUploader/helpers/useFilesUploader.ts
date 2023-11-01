@@ -1,5 +1,4 @@
-import React, {ChangeEvent} from 'react';
-import { useContext } from "react";
+import React, {ChangeEvent, useContext} from 'react';
 import { FilesField } from "./types";
 
 export const UploaderContext = React.createContext<

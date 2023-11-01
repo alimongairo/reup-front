@@ -12,7 +12,7 @@ interface IProps {
 
 export default function Field({ isActive, title, onClick }: IProps) {
   return (
-    <div className={cx.wrapper} onClick={onClick}>
+    <div className={cx.wrapper} onClick={onClick} onKeyDown={onClick} role="button" tabIndex={0}>
       <div className={cls(cx.field, {
         [cx.active]: isActive
       })}>

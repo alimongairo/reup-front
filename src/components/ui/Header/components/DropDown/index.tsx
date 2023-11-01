@@ -4,7 +4,6 @@ import cx from './index.module.scss';
 import { ITabItem } from "../../../../../const";
 import { uid } from "react-uid";
 import { NavLink } from '../../../../ui';
-import { Link } from "react-router-dom";
 
 interface IProps {
   visible: boolean;
@@ -16,7 +15,7 @@ interface IProps {
 const DropDown = ({ visible = false, overlay, title, setVisible }: IProps) => {
   return (
     <>
-      <div onClick={setVisible} className={cx.wrapper}>
+      <div onClick={setVisible} className={cx.wrapper} onKeyDown={setVisible} role="button" tabIndex={0}>
         {title}
         <ul className={cls({ [cx.visible]: visible }, cx.menu)}>
           {overlay.map((item) => (
@@ -32,7 +31,7 @@ const DropDown = ({ visible = false, overlay, title, setVisible }: IProps) => {
           ))}
         </ul>
       </div>
-      {visible && <span onClick={setVisible} className={cx.mask}></span>}
+      {visible && <span onClick={setVisible} className={cx.mask} onKeyDown={setVisible} role="button" tabIndex={0}></span>}
     </>
   );
 };

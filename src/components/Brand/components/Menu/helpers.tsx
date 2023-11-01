@@ -1,4 +1,4 @@
-import { ChangeEvent, createContext, ReactNode } from 'react';
+import { createContext, ReactNode } from 'react';
 
 import DefaultMenu from './components/options/HomeMenu';
 

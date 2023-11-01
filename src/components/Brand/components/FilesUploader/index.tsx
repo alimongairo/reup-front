@@ -68,6 +68,7 @@ export const FilesUploader = (props: UploaderProps) => {
     };
 
     uploadMediaFiles();
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, [
     selectedFiles.value,
     selectedFiles.error,
@@ -104,7 +105,13 @@ export const FilesUploader = (props: UploaderProps) => {
   );
 };
 
-FilesUploader.Input = function Input({ label = '+ Загрузить', ...props }) {
+interface IFilesUploaderProps {
+  label?: string,
+  id: number,
+  [x: string]: any,
+};
+
+FilesUploader.Input = function Input({ label = '+ Загрузить', ...props }: IFilesUploaderProps) {
   const { fileInputRef, handleFilesChange } = useFilesUploader();
   const {id} = props;
   return (

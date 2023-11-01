@@ -32,7 +32,7 @@ export default function SchemePage() {
         }
     }
 
-    let { data, error, isLoading } = useGetBrandPageStyleDataQuery({ scheme_id: +schemeId, vendor_id: vendorIdReturner(+schemeId) });
+    const { data, error, isLoading } = useGetBrandPageStyleDataQuery({ scheme_id: +schemeId, vendor_id: vendorIdReturner(+schemeId) });
 
     const [dataObj, setDataObj] = useState<IScheme1Brand | IScheme2Brand | IScheme3Brand>();
 
@@ -40,7 +40,7 @@ export default function SchemePage() {
         const newDataObj = data && data[0];
         setDataObj(newDataObj);
         dispatch(setBaseData({data: newDataObj, schemeId: +schemeId}));
-        
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [data]);
     
     const schemes = [

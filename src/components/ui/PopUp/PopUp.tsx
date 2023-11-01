@@ -18,6 +18,7 @@ interface IProps {
   isCloseBtn?: boolean;
   isBordered?: boolean;
   isBackBtn?: boolean;
+  fullScreen?: boolean;
   // All other props
   [x: string]: any;
 }
@@ -54,6 +55,7 @@ const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons, isCl
     } else {
       return null;
     }
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);
 
   if (visible) {
@@ -80,7 +82,7 @@ const PopUp = ({ visible, children, onClose, onSubmit, type, customButtons, isCl
               {buttons}
             </div>
           </div>
-          <span className={cx.closeMask} onClick={onClose}></span>
+          <span className={cx.closeMask} onClick={onClose} onKeyDown={onClose} role="button" tabIndex={0}></span>
         </div>
       </Dialog>
     );

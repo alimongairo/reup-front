@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useContext, useState } from 'react';
+import { ChangeEvent, useContext, useState } from 'react';
 
 import Container from '../../Container';
 import { MenuContext } from "../../../helpers";
@@ -33,17 +33,17 @@ const Categories = () => {
     name: "string",
   }];
 
-  const [allCategoriesFiltered, setAllCategoriesFiltered] =
+  const [allCategoriesFiltered] =
     useState<TCategory[]>(allCategories);
 
   const onAddCategory = (category: TCategory) => {
     // dispatch(addCategory(category));
-    console.log("onAddCategory")
+    console.log("onAddCategory", category)
   };
 
   const onRemoveCategory = (category: TCategory) => {
     // dispatch(removeCategory(category));
-    console.log(onRemoveCategory)
+    console.log(onRemoveCategory, category)
   };
 
   const onSearch = (value: string) => {
@@ -55,7 +55,7 @@ const Categories = () => {
     // setAllCategoriesFiltered((state) =>
     //   state.filter((item) => item.title.includes(value)),
     // );
-    console.log("onSearch")
+    console.log("onSearch", value)
   };
 
   return (

@@ -24,7 +24,7 @@ interface Props {
 }
 
 const TableRow = ({ item }: Props) => {
-  const [showDetails, setShowDetails] = useState<Boolean>(false);
+  const [showDetails, setShowDetails] = useState(false);
   const [open, setOpen] = useState(false);
   const [visibility, setVisibility] = useState(item.visibility);
 
@@ -44,6 +44,9 @@ const TableRow = ({ item }: Props) => {
             <div
               className={cx.detailsIcon}
               onClick={() => setShowDetails(!showDetails)}
+              onKeyDown={() => setShowDetails(!showDetails)}
+              role="button"
+              tabIndex={0}
             >
               <img src={showDetails ? upArrow : downArrow} alt="details" />
             </div>
@@ -62,15 +65,22 @@ const TableRow = ({ item }: Props) => {
                 {visibility ? 'снять с витрины' : 'на витрину'}
               </Button>
             ) : (
-              <Button onClick={() => {}} disabled>
+              <Button onClick={() => { }} disabled>
                 {'раскупили'}
               </Button>
             )}
-            <img src={editIcon} alt="edit" onClick={() => {}} />
+            <img src={editIcon}
+              alt="edit"
+              onClick={() => { }}
+              onKeyDown={() => { }}
+              role="presentation"
+            />
             <img
               src={deleteIcon}
               alt="delete"
               onClick={() => setOpen(true)}
+              onKeyDown={() => setOpen(true)}
+              role="presentation"
             />
           </div>
         </td>
@@ -105,7 +115,7 @@ const TableRow = ({ item }: Props) => {
       <PopUp
         visible={open}
         onClose={() => setOpen(false)}
-        onSubmit={() => {}}
+        onSubmit={() => { }}
         type='confirm'
       >
         <div>Вы действительно хотите удалить товар?</div>

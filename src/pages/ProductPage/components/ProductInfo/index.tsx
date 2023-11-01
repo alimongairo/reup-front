@@ -1,16 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import cls from 'classnames';
-import { Typography, Button, Collapse, Image, Tooltip, Fav } from '@/components/ui'
+import { Typography, Button, Collapse, Image, Tooltip, Fav, EFontFamily } from '@/components/ui'
 import { uid } from "react-uid";
 import { Link } from "react-router-dom";
 import { ERoutes } from "@/router/config";
-import { EFontFamily } from "@/components/ui";
 import InfoTable from "../InfoTable";
 import cx from './index.module.scss';
+/* eslint-disable-next-line import/no-unresolved*/
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
 import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper';
+/* eslint-disable-next-line import/no-unresolved*/
 import { Pagination } from "swiper/modules";
+/* eslint-disable-next-line import/no-unresolved*/
 import 'swiper/css';
+/* eslint-disable-next-line import/no-unresolved*/
 import 'swiper/css/pagination';
 import '@/styles/pagination.scss';
 import { useWindowWidth } from "@/hooks";
@@ -105,7 +108,7 @@ export default function ProductInfo({ className }: IProps) {
     } else {
       enableSwiper();
     }
-  }, [windowWidth])
+  }, [windowWidth, swiperInstance])
 
   return (
     <div className={cls(cx.wrapper, className)}>

@@ -39,6 +39,7 @@ const StockLayout = () => {
 
   const handleClickAdd = useCallback(() => {
     navigate(`${ERoutes.CrmProduct}/new`);
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);
 
   const handleSearch = useCallback(

@@ -24,7 +24,7 @@ export default function SchemeSelectionPage() {
         (id: number) => {
             setActiveScheme(id)
         },
-        [activeScheme],
+        [],
     )
 
     return (

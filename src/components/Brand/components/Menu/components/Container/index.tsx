@@ -16,7 +16,7 @@ const Container = ({ onBack, title, children, className }: IProps) => {
   return (
     <div className={cx.wrapper}>
       <div className={cx.header}>
-        <div className={cx.back} onClick={() => onBack && onBack()}>
+        <div className={cx.back} onClick={() => onBack && onBack()} onKeyDown={() => onBack && onBack()} role="button" tabIndex={0}>
           {onBack && <ArrowIcon fill="#000000" stroke="#000000" />}
         </div>
         <p className={cx.title}>{title}</p>

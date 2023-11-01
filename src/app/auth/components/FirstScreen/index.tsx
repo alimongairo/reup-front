@@ -91,7 +91,8 @@ export default function FirstScreen({ type = EType.LOGIN }: IProps) {
   const [checkbox, setCheckbox] = useState(false);
 
   const [formData, setFormData] = useState<
-    ILoginFormFields | IRegFormfields | {}
+    //If you want a type meaning "empty object", you probably want `Record<string, never>` instead.
+    ILoginFormFields | IRegFormfields | Record<string, never>
   >({});
 
   const onCheckboxClick = () => {

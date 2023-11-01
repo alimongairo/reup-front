@@ -16,7 +16,7 @@ export const useWindowWidth = (delay = 700) => {
     debouncedHandleResize();
 
     return () => window.removeEventListener('resize', debouncedHandleResize);
-  }, []);
+  }, [delay]);
 
   return windowWidth;
 };

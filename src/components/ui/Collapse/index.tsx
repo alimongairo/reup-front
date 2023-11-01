@@ -42,12 +42,13 @@ const Collapse = ({
       }
       contentRef.current.style.height = `${heightContent}px`;
     }
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, [isClose]);
 
   return (
     <div className={cls(cx.wrapper, { [cx.active]: !isClose }, className)} >
 
-      <div onClick={toggleOpen} className={cx.head}>
+      <div onClick={toggleOpen} className={cx.head} onKeyDown={toggleOpen} role="button" tabIndex={0}>
         {!hideCollapseIcon && (
           <div className={cx.collapseIcon} >
             <MinusIcon className={cx.minus} />
@@ -74,6 +75,8 @@ const Collapse = ({
           <p
             className={cx.moreText}
             onClick={toggleOpen}
+            onKeyDown={toggleOpen}
+            role="presentation"
           >
             {isClose ? moreText : lessText || moreText}
           </p>

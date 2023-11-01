@@ -24,7 +24,7 @@ const fontFamilyReturner = (variant: string) => {
 
 const MyTypography = function ({ children, weight = ETypographyWeight.BOLD, fontFamily, ...props }: MyTypographyProps) {
 
-  const fontFamilyRes = useMemo(() => !!fontFamily ? fontFamily : fontFamilyReturner(props.variant as string), [props.variant]);
+  const fontFamilyRes = useMemo(() => fontFamily ? fontFamily : fontFamilyReturner(props.variant as string), [props.variant, fontFamily]);
 
   return (<Typography style={{ fontFamily: fontFamilyRes, fontWeight: weight }} {...props}>{children}{ }</Typography>)
 }
