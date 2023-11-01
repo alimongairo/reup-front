@@ -3,17 +3,21 @@
 
 .slider {
     @include outer;
-    background: linear-gradient(180deg,
-    rgba(54, 241, 229, 0) 26%,
-    rgba(190, 218, 98, 1) 26%);
+    background: linear-gradient(
+        180deg,
+        rgba(54, 241, 229, 0) 26%,
+        rgba(190, 218, 98, 1) 26%
+    );
 }
 
 .slides {
     overflow: hidden;
     display: flex;
-    background: linear-gradient(180deg,
-            rgba(54, 241, 229, 0) 20%,
-            rgb(190, 218, 98) 20%);
+    background: linear-gradient(
+        180deg,
+        rgba(54, 241, 229, 0) 20%,
+        rgb(190, 218, 98) 20%
+    );
 }
 
 .slide {
@@ -32,7 +36,7 @@
     }
 }
 
-.pagination{
+.pagination {
     padding-left: 2rem;
 }
 
@@ -47,7 +51,7 @@
     display: flex;
     flex-direction: column;
     padding: 2rem 0;
-    margin-right: $offset-default; 
+    margin-right: $offset-default;
 }
 
 .sub {
@@ -63,13 +67,13 @@
     padding-bottom: 2rem;
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .slide {
         max-width: 80%;
     }
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .slider {
         padding-bottom: $padding-lg-mobile;
     }

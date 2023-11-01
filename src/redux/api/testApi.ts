@@ -16,7 +16,7 @@ export const testApi = api.injectEndpoints({
                 body,
             }),
         }),
-        updateData: builder.mutation<void, { id: string; body: TestData; }>({
+        updateData: builder.mutation<void, { id: string; body: TestData }>({
             query: ({ id, body }) => ({
                 url: `/test/${id}`,
                 method: 'PATCH',
@@ -31,7 +31,7 @@ export const testApi = api.injectEndpoints({
         }),
     }),
 });
-  
+
 export const {
     useGetDataQuery,
     useCreateDataMutation,

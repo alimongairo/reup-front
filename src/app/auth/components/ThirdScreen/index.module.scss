@@ -1,19 +1,18 @@
 @import '@/styles/vars.scss';
 
-.note{
+.note {
     text-align: center;
     opacity: 0.5;
 }
 
-.link{
+.link {
     font-weight: bold;
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .wrapper {
         padding: calc($offset-default - $margin-h3) 0 0;
         width: 100%;
         box-sizing: border-box;
-
     }
 }

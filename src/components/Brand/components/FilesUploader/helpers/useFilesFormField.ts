@@ -1,62 +1,64 @@
-import { useCallback, useState } from "react";
-import validateValue, { ValidationResult, Validator } from "./validate";
-import { DefaultField } from "./types";
+import { useCallback, useState } from 'react';
+import validateValue, { ValidationResult, Validator } from './validate';
+import { DefaultField } from './types';
 
-type FilesField = Omit<DefaultField, "value" | "error"> & {
-  value: File[];
-  error: ValidationResult[];
-  handleChange: (files: File[]) => void;
-  clear: () => void;
+type FilesField = Omit<DefaultField, 'value' | 'error'> & {
+    value: File[];
+    error: ValidationResult[];
+    handleChange: (files: File[]) => void;
+    clear: () => void;
 };
 
 export function useFilesFormField(
-  id: string,
-  validators: Validator<File>[],
-  init: File[] = []
+    id: string,
+    validators: Validator<File>[],
+    init: File[] = []
 ): FilesField {
-  const [value, setValue] = useState<File[]>(init);
-  const [error, setError] = useState<ValidationResult[]>([]);
+    const [value, setValue] = useState<File[]>(init);
+    const [error, setError] = useState<ValidationResult[]>([]);
 
-  const handleChange = useCallback(
-    async (files: File[]) => {
-      const err = await Promise.all(
-        files.map((file) => validateValue<File>(file, validators))
-      );
+    const handleChange = useCallback(
+        async (files: File[]) => {
+            const err = await Promise.all(
+                files.map((file) => validateValue<File>(file, validators))
+            );
 
-      setValue(files);
-      setError(err);
-    },
-    [validators]
-  );
-
-  const hasError = useCallback(async () => {
-    const err = await Promise.all<ValidationResult>(
-      (value as File[]).map((file) => validateValue<File>(file, validators))
+            setValue(files);
+            setError(err);
+        },
+        [validators]
     );
 
-    setError(err);
+    const hasError = useCallback(async () => {
+        const err = await Promise.all<ValidationResult>(
+            (value as File[]).map((file) =>
+                validateValue<File>(file, validators)
+            )
+        );
 
-    return err.some((item) => !!item);
-  }, [value, validators]);
+        setError(err);
 
-  const clear = useCallback(() => {
-    setValue([]);
-    setError([]);
-  }, []);
+        return err.some((item) => !!item);
+    }, [value, validators]);
 
-  const reset = () => {
-    setValue(init);
-  };
+    const clear = useCallback(() => {
+        setValue([]);
+        setError([]);
+    }, []);
 
-  return {
-    id,
-    value,
-    error,
-    reset,
-    hasError,
-    handleChange,
-    clear,
-  };
+    const reset = () => {
+        setValue(init);
+    };
+
+    return {
+        id,
+        value,
+        error,
+        reset,
+        hasError,
+        handleChange,
+        clear,
+    };
 }
 
 export type { FilesField };

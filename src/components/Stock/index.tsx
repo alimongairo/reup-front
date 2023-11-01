@@ -1,2 +1,2 @@
-import StockPage from "./StockPage";
+import StockPage from './StockPage';
 export default StockPage;

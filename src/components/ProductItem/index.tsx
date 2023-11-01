@@ -1,25 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import cx from './index.module.scss';
 import cls from 'classnames';
-import { Image, Button, Fav } from "@/components/ui";
+import { Image, Button, Fav } from '@/components/ui';
 
 interface IProps {
     className?: string;
     size?: 'default' | 'apativeSize';
 }
 
-export default function ProductItem({className, size = "default"}: IProps) {
+export default function ProductItem({ className, size = 'default' }: IProps) {
     const [isFav, setIsFav] = useState(false);
 
     const onFavClick = () => {
-        setIsFav(prev => !prev);
-    }
+        setIsFav((prev) => !prev);
+    };
 
     return (
         <div className={cls(cx.product, cx[size], className)}>
             <div className={cx.image}>
                 <Fav isActive={isFav} onClick={onFavClick} className={cx.fav} />
-                <Image className={cx.img}/>
+                <Image className={cx.img} />
             </div>
             <div className={cx.info}>
                 <p className={cx.title}>Название</p>
@@ -30,5 +30,5 @@ export default function ProductItem({className, size = "default"}: IProps) {
                 </div>
             </div>
         </div>
-    )
+    );
 }

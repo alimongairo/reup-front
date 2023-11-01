@@ -1,9 +1,5 @@
-import LKFav from "./LKFav";
-import LKMain from "./LKMain";
-import LKOrders from "./LKOrders";
+import LKFav from './LKFav';
+import LKMain from './LKMain';
+import LKOrders from './LKOrders';
 
-export {
-    LKFav,
-    LKMain,
-    LKOrders,
-}
+export { LKFav, LKMain, LKOrders };

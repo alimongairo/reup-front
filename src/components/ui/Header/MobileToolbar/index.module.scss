@@ -1,26 +1,23 @@
 @import '@/styles/vars.scss';
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .wrapper {
         position: fixed;
         bottom: 0;
         width: 100%;
         padding: 12px $containerPadding-mobile;
         box-sizing: border-box;
-        ul{
+        ul {
             width: 100%;
             display: flex;
             justify-content: space-around;
             align-items: center;
         }
-
-       
     }
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .wrapper {
         display: none;
     }
-
 }

@@ -69,4 +69,4 @@ type UploaderProps = {
 //     }));
 
 export { STATUS };
-export type { MediaFilesResponse, UploadEntry, UploadResult, UploaderProps }
+export type { MediaFilesResponse, UploadEntry, UploadResult, UploaderProps };

@@ -6,7 +6,7 @@
     flex-direction: column;
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .container {
         @include container-width();
         padding: $containerPadding-desktop;
@@ -14,7 +14,7 @@
     }
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .container {
         width: 100%;
         padding: $containerPadding-mobile;

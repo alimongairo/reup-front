@@ -1,3 +1,3 @@
-import EmptyList from "./EmptyList";
+import EmptyList from './EmptyList';
 
-export {EmptyList}
+export { EmptyList };

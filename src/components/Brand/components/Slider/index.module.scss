@@ -1,76 +1,76 @@
 @import '@/styles/vars.scss';
 
 .wrapper {
-  position: relative;
-  overflow: hidden;
-  height: 65vh;
-  max-height: 633px;
-  .slide {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background: var(--reup-gray);
-    transition: 0.3s;
-    transform: translateX(100%);
-    .image{
-      height: 100%;
-      width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 65vh;
+    max-height: 633px;
+    .slide {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: var(--reup-gray);
+        transition: 0.3s;
+        transform: translateX(100%);
+        .image {
+            height: 100%;
+            width: 100%;
+        }
+        .brandName {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding-left: $containerPadding-desktop;
+            box-sizing: border-box;
+        }
+        .description {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .btnDownload {
+            top: 5%;
+            position: absolute;
+            left: 5%;
+        }
+        .btn {
+            svg {
+                width: 24px;
+                margin-left: 24px;
+                stroke-width: 3;
+            }
+        }
+        .backBtb {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            transform: rotateZ(180deg);
+        }
+        .nextBtb {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+        }
     }
-    .brandName {
-      position: absolute;
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      padding-left: $containerPadding-desktop;
-      box-sizing: border-box;
+    .active {
+        transform: translateX(0) !important;
     }
-    .description {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      font-weight: bold;
-      font-size: 24px;
-    }
-    .btnDownload {
-      top: 5%;
-      position: absolute;
-      left: 5%;
-    }
-    .btn{
-      svg{
-        width: 24px;
-        margin-left: 24px;
-        stroke-width: 3;
-      }
-    }
-    .backBtb {
-      position: absolute;
-      bottom: 5%;
-      left: 5%;
-      transform: rotateZ(180deg);
-    }
-    .nextBtb {
-      position: absolute;
-      bottom: 5%;
-      right: 5%;
-    }
-  }
-  .active {
-    transform: translateX(0) !important;
-  }
 }
 
-@media(max-width: $media-mobile) {
-  .wrapper{
-    .slide {
-      .brandName{
-        padding: $containerPadding-mobile;
-      }
+@media (max-width: $media-mobile) {
+    .wrapper {
+        .slide {
+            .brandName {
+                padding: $containerPadding-mobile;
+            }
+        }
     }
-  }
 }

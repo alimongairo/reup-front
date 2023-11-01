@@ -1,8 +1,8 @@
 import { Collapse, EColors, IColor, Colors } from '@/components/ui';
-import { useTypedDispatch, useTypedSelector } from "@/hooks";
-import { setBrandSettingsByField } from "../../../../../../../../redux/features/brandSetting/slice";
-import { brandSettingsBgColorsSelector } from "../../../../../../../../redux/features/brandSetting/selectors";
-import { uid } from "react-uid";
+import { useTypedDispatch, useTypedSelector } from '@/hooks';
+import { setBrandSettingsByField } from '../../../../../../../../redux/features/brandSetting/slice';
+import { brandSettingsBgColorsSelector } from '../../../../../../../../redux/features/brandSetting/selectors';
+import { uid } from 'react-uid';
 
 const BgColorOption = ({ title, value, name }: IColor & { title: string }) => {
     const dispatch = useTypedDispatch();
@@ -19,7 +19,9 @@ const BgColorOption = ({ title, value, name }: IColor & { title: string }) => {
             return item;
         });
 
-        dispatch(setBrandSettingsByField({ field: 'bgColor', newData: newData }));
+        dispatch(
+            setBrandSettingsByField({ field: 'bgColor', newData: newData })
+        );
     };
 
     return (

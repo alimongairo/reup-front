@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useMemo } from 'react'
-import { Typography, PopUp } from "@/components/ui";
-import { AuthContext, AuthContextType, TLogPart } from "..";
-import { uid } from "react-uid";
+import React, { useState, useEffect, useMemo } from 'react';
+import { Typography, PopUp } from '@/components/ui';
+import { AuthContext, AuthContextType, TLogPart } from '..';
+import { uid } from 'react-uid';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { loginPopupConf, regPopupConf } from "../config";
+import { loginPopupConf, regPopupConf } from '../config';
 
 interface IProps {
-    children: JSX.Element,
+    children: JSX.Element;
 }
 
 export enum EPopupType {
@@ -24,28 +24,34 @@ export default function AuthPopup({ children }: IProps) {
         third: false,
     };
 
-    const [activePopupType, setActivePopupType] = useState<EPopupType>(EPopupType.LOGIN);
+    const [activePopupType, setActivePopupType] = useState<EPopupType>(
+        EPopupType.LOGIN
+    );
 
     const [activeLogin, setActiveLogin] = useState<number | null>(null);
 
     const [isPopup, setisPopup] = useState(initialisPopup);
 
-    const popupConf = activePopupType === 'login' ? loginPopupConf : regPopupConf;
+    const popupConf =
+        activePopupType === 'login' ? loginPopupConf : regPopupConf;
 
     const onPopupOpen = (id: number) => {
         setisPopup({ ...initialisPopup, [Object.keys(isPopup)[id]]: true });
-    }
+    };
 
     const onPopupClose = () => {
         setisPopup(initialisPopup);
         return;
-    }
+    };
 
     const onNextPart = (id?: number) => {
         setActiveLogin((prev) => {
             if (id !== undefined && !isNaN(id)) {
                 return id;
-            } else if (prev !== null && prev < Object.keys(isPopup).length - 1) {
+            } else if (
+                prev !== null &&
+                prev < Object.keys(isPopup).length - 1
+            ) {
                 return ++prev;
             } else if (prev === null) {
                 return 1;
@@ -54,7 +60,7 @@ export default function AuthPopup({ children }: IProps) {
                 return null;
             }
         });
-    }
+    };
 
     const onBackClick = () => {
         onNextPart(0);
@@ -62,22 +68,22 @@ export default function AuthPopup({ children }: IProps) {
 
     const onPopupTypeChange = (type: EPopupType) => {
         setActivePopupType(type);
-    }
+    };
 
     useEffect(() => {
         if (activeLogin !== null) {
             onPopupOpen(activeLogin);
         }
         /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    }, [activeLogin])
+    }, [activeLogin]);
 
     useEffect(() => {
         return () => {
             setisPopup(initialisPopup);
             setActivePopupType(EPopupType.LOGIN);
-        }
+        };
         /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    }, [])
+    }, []);
 
     const initialContextValue: AuthContextType = useMemo(() => {
         return {
@@ -91,34 +97,38 @@ export default function AuthPopup({ children }: IProps) {
         /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [isAuth]);
 
-    const getKeyValue = <U extends keyof T, T extends object>(key: U) => (obj: T) => obj[key];
-
+    const getKeyValue =
+        <U extends keyof T, T extends object>(key: U) =>
+        (obj: T) =>
+            obj[key];
 
     const fullScreen = useMediaQuery('(max-width:758px)');
 
     return (
-        <AuthContext.Provider value={initialContextValue}>{children}
+        <AuthContext.Provider value={initialContextValue}>
+            {children}
 
-            {
-                popupConf.parts.map((part, idx) => {
-                    return (
-                        <PopUp
-                            key={uid(part.id)}
-                            visible={getKeyValue<keyof TLogPart, TLogPart>(Object.keys(isPopup)[idx] as keyof TLogPart)(isPopup)}
-                            type='custom'
-                            onBackClick={onBackClick}
-                            isBackBtn={part?.isBackBtn}
-                            isCloseBtn={part?.isCloseBtn}
-                            isBordered={false}
-                            fullScreen={fullScreen}
-                        >
-                            <Typography variant="h3" align="center" >{part.title}</Typography>
-                            {part.content}
-                        </PopUp>
-
-                    )
-                })
-            }
+            {popupConf.parts.map((part, idx) => {
+                return (
+                    <PopUp
+                        key={uid(part.id)}
+                        visible={getKeyValue<keyof TLogPart, TLogPart>(
+                            Object.keys(isPopup)[idx] as keyof TLogPart
+                        )(isPopup)}
+                        type="custom"
+                        onBackClick={onBackClick}
+                        isBackBtn={part?.isBackBtn}
+                        isCloseBtn={part?.isCloseBtn}
+                        isBordered={false}
+                        fullScreen={fullScreen}
+                    >
+                        <Typography variant="h3" align="center">
+                            {part.title}
+                        </Typography>
+                        {part.content}
+                    </PopUp>
+                );
+            })}
         </AuthContext.Provider>
-    )
+    );
 }

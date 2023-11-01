@@ -1,4 +1,4 @@
-import { ERoutes } from "@/router/config";
+import { ERoutes } from '@/router/config';
 
 enum EBrickAlign {
     Left = 'left',
@@ -7,11 +7,11 @@ enum EBrickAlign {
 }
 
 interface ITabItem {
-    label: string | JSX.Element,
-    link?: ERoutes | string,
-    align?: EBrickAlign,
-    className?: string,
-    id?: string,
+    label: string | JSX.Element;
+    link?: ERoutes | string;
+    align?: EBrickAlign;
+    className?: string;
+    id?: string;
 }
 
 const lkTabsList = [
@@ -39,4 +39,4 @@ const lkTabsList = [
 ];
 
 export { lkTabsList, EBrickAlign };
-export type {ITabItem};
+export type { ITabItem };

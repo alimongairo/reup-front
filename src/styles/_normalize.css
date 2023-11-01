@@ -3,58 +3,58 @@
     margin: 0;
     list-style: none;
     outline: none;
-    font-family: "Nunito", Roboto, system-ui, Tahoma, sans-serif;
+    font-family: 'Nunito', Roboto, system-ui, Tahoma, sans-serif;
     box-sizing: border-box;
-  }
-  
-  html {
+}
+
+html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     height: 100%;
-  }
-  
-  body {
+}
+
+body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: #000000;
     height: 100%;
-  }
+}
 
-  #root{
+#root {
     height: 100%;
-  }
-  
-  a{
+}
+
+a {
     line-height: 0;
-  }
-  
-  a,
-  span,
-  p,
-  b,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
+}
+
+a,
+span,
+p,
+b,
+h1,
+h2,
+h3,
+h4,
+h5 {
     color: #000000;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 48px;
-  }
-  
-  h2 {
+}
+
+h2 {
     font-weight: 600;
     font-size: 28px;
     line-height: 30px;
-  }
-  
-  a {
+}
+
+a {
     text-decoration: none;
-  }
-  
-  @mixin noselect {
+}
+
+@mixin noselect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -62,13 +62,13 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Opera and Firefox */
-  }
-  
-  button {
+}
+
+button {
     padding: 0;
     border: none;
     font: inherit;
     color: inherit;
     background-color: inherit;
     cursor: pointer;
-  }
+}

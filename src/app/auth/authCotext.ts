@@ -1,20 +1,20 @@
-import { createContext } from "react";
-import { EPopupType } from "./components/AuthPopup";
+import { createContext } from 'react';
+import { EPopupType } from './components/AuthPopup';
 
- type TLogPart = {
-  first: boolean,
-  second: boolean,
-  third: boolean,
+type TLogPart = {
+    first: boolean;
+    second: boolean;
+    third: boolean;
 };
 
- type AuthContextType = {
-    isAuth: boolean,
-    isPopup: TLogPart,
+type AuthContextType = {
+    isAuth: boolean;
+    isPopup: TLogPart;
     onPopupOpen: (idx: number) => void;
     onPopupClose: () => void;
     onNextPart: (idx?: number) => void;
     onPopupTypeChange: (type: EPopupType) => void;
-  }
+};
 
 export const AuthContext = createContext<AuthContextType | null>(null);
-export type {TLogPart, AuthContextType};
+export type { TLogPart, AuthContextType };

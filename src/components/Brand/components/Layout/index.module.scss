@@ -8,11 +8,10 @@
     padding: $containerPadding-desktop;
     @include outer;
 
-    .filters{
-        img{
+    .filters {
+        img {
             height: auto;
         }
-        
     }
     .list {
         display: grid;
@@ -20,16 +19,15 @@
         column-gap: 24px;
         row-gap: $offset-default;
 
-        >* {
+        > * {
             min-height: 467px;
             pointer-events: none;
         }
 
-        >*:nth-child(9n) {
+        > *:nth-child(9n) {
             grid-column: span 2;
             grid-row: span 2;
             min-height: 972px;
         }
-
     }
 }

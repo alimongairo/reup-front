@@ -6,11 +6,11 @@
     grid-auto-flow: row;
 }
 
-.send p{
+.send p {
     font-weight: bold;
 }
 
-.note{
+.note {
     text-align: center;
     opacity: 0.5;
 }
@@ -19,7 +19,7 @@
     text-align: center;
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .wrapper {
         padding: calc($offset-default - $margin-h3) 0 0;
         width: 100%;
@@ -31,4 +31,5 @@
     }
 }
 
-@media(max-width: $media-mobile) {}
+@media (max-width: $media-mobile) {
+}

@@ -1,4 +1,4 @@
-.tooltip{
+.tooltip {
     position: absolute;
     top: 0;
     right: 0;
@@ -6,14 +6,14 @@
     height: 100%;
     display: flex;
     justify-content: flex-end;
-    .label{
+    .label {
         width: fit-content;
         height: fit-content;
     }
 }
 
-@media(hover:hover){
-    .label:hover{
+@media (hover: hover) {
+    .label:hover {
         cursor: pointer;
     }
 }

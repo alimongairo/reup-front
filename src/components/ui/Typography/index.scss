@@ -22,7 +22,7 @@ h5.MuiTypography-root {
     font-weight: 500;
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     h1.MuiTypography-root {
         font-size: 32px;
         margin-bottom: $margin-h1-mobile;
@@ -34,7 +34,7 @@ h5.MuiTypography-root {
         margin-bottom: $margin-h2-mobile;
         letter-spacing: 0.8px;
     }
-    
+
     h5.MuiTypography-root {
         font-size: $fontSize-default;
         margin-bottom: $margin-h6-mobile;
@@ -46,7 +46,7 @@ h5.MuiTypography-root {
     }
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     h1.MuiTypography-root {
         font-size: 64px;
         margin-bottom: $margin-h1;

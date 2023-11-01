@@ -1,3 +1,3 @@
-import BrandRegistrationForm from "./BrandRegistrationForm";
+import BrandRegistrationForm from './BrandRegistrationForm';
 
-export {BrandRegistrationForm};
+export { BrandRegistrationForm };

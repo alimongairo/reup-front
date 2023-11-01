@@ -14,7 +14,7 @@ h1.title {
     border-bottom: 1px solid $color-black;
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .wrapper {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, 213px) max-content;
@@ -30,7 +30,7 @@ h1.title {
     }
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .wrapper {
         grid-template-columns: 1fr 2.1fr;
         grid-template-rows: 544px repeat(2, max-content);

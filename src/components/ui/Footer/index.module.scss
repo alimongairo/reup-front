@@ -1,4 +1,3 @@
-
 @import '@/styles/vars.scss';
 @import '@/styles/mixins.scss';
 
@@ -11,15 +10,15 @@
     align-items: center;
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .footer {
         padding: 54px $offset-s 110px;
         grid-template-columns: 1fr;
         gap: $offset-s;
     }
 
-    .logo{
-        svg{
+    .logo {
+        svg {
             height: auto;
             width: 89px;
         }
@@ -35,32 +34,31 @@
     .links {
         display: flex;
         flex-direction: column;
-      
 
         .link {
-            &:not(:last-child){
+            &:not(:last-child) {
                 margin-bottom: 6px;
             }
         }
     }
 
-    .flex{
+    .flex {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
     }
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .footer {
         padding: 50px;
-        grid-template-columns: auto 1fr auto; 
-        gap: 50px $offset-s ;
+        grid-template-columns: auto 1fr auto;
+        gap: 50px $offset-s;
         @include container-width();
     }
 
-    .logo{
-        svg{
+    .logo {
+        svg {
             height: auto;
             width: 118px;
         }
@@ -72,7 +70,7 @@
         grid-row: 2;
         grid-column: span 3;
         .socialIcon {
-            margin-left: $offset-default
+            margin-left: $offset-default;
         }
     }
 
@@ -88,7 +86,7 @@
         }
     }
 
-    .flex{
+    .flex {
         display: contents;
     }
 }
