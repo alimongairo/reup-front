@@ -1,4 +1,5 @@
-import { ERoutes } from "@/router/config";
+import { ERoutes } from "./router/types";
+
 
 enum EBrickAlign {
     Left = 'left',

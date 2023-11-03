@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 
 import cx from './index.module.scss';
-import MyTypography from "../Typography";
 
 export enum EColors {
   Pink = '#A175FF',

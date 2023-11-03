@@ -9,15 +9,15 @@ import { ReactComponent as MarketIcon } from "S#/images/icons/market.svg";
 import cx from './index.module.scss';
 import cls from 'classnames';
 import { uid } from 'react-uid';
-import { ERoles, ERoutes, confReturner } from "@/router/config";
+import { confReturner } from "@/router/config";
+import { ERoles, ERoutes } from "@/router/types";
 import { Link } from "react-router-dom";
-import { NavLinkIcon, NavLink, Button, EBtnColor } from "..";
+import { NavLinkIcon, NavLink } from "..";
 import MobileToolbar from "./MobileToolbar";
 import { DropDown } from "./components";
 import { strokeColorReturner } from "../../../helpers";
 import { lkTabsList } from "../../../const";
 import { AuthContext } from "../../../app/auth";
-import { useWindowWidth } from "../../../hooks";
 
 interface IProps {
   type: ERoles,

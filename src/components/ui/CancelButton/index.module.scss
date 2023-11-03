@@ -1,0 +1,41 @@
+@import '../../../styles/vars.scss';
+
+.button {
+    width: fit-content;
+    color: black;
+    font-family: "Gilroy", "sans-serif";
+    text-transform: lowercase;
+    font-size: 20px; 
+
+    .label {
+        display: flex;
+        justify-content: start;
+        padding-left: 4px;
+    }
+
+    svg {
+        line {
+            stroke: $color-black;
+        }
+    }
+
+    &:hover {
+        color: $color-primary;
+
+        svg {
+            line {
+            stroke: $color-primary;
+            }
+        }
+    }
+
+    .MuiButton-root {
+        background-color: transparent;
+    }
+}
+
+
+
+
+
+

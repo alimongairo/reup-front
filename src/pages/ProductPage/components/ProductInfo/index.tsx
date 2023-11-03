@@ -3,7 +3,6 @@ import cls from 'classnames';
 import { Typography, Button, Collapse, Image, Tooltip, Fav } from '@/components/ui'
 import { uid } from "react-uid";
 import { Link } from "react-router-dom";
-import { ERoutes } from "@/router/config";
 import { EFontFamily } from "@/components/ui";
 import InfoTable from "../InfoTable";
 import cx from './index.module.scss';
@@ -14,6 +13,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import '@/styles/pagination.scss';
 import { useWindowWidth } from "@/hooks";
+import { ERoutes } from '@/router/types';
 
 // mock
 const sizesMock = [

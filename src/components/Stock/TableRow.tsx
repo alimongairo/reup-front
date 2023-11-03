@@ -1,12 +1,13 @@
 import { useState } from 'react';
-//@ts-ignore
+
 import img from 'S#/images/tmp.png';
-import editIcon from 'S#/images/icons/edit.svg';
-import deleteIcon from 'S#/images/icons/delete.svg';
-import downArrow from 'S#/images/icons/downArrowSmall.svg';
-import upArrow from 'S#/images/icons/upArrowSmall.svg';
+import { ReactComponent as EditIcon } from 'S#/images/icons/edit.svg';
+import { ReactComponent as DeleteIcon } from 'S#/images/icons/delete.svg';
+import { ReactComponent as DownArrow } from 'S#/images/icons/downArrowSmall.svg';
+import { ReactComponent as UpArrow } from 'S#/images/icons/upArrowSmall.svg';
 import { Button, PopUp } from '@/components/ui';
 import cx from './index.module.scss';
+import { Image } from '../ui';
 
 export interface StockItem {
   img: string | null;
@@ -35,7 +36,7 @@ const TableRow = ({ item }: Props) => {
       <tr className={`${cx.itemRow} ${showDetails && cx.noBorder}`}>
         <td>
           <div style={{ height: '100px' }}>
-            <img src={img} alt="img" />
+            <Image src={img}/>
           </div>
         </td>
         <td>
@@ -45,7 +46,7 @@ const TableRow = ({ item }: Props) => {
               className={cx.detailsIcon}
               onClick={() => setShowDetails(!showDetails)}
             >
-              <img src={showDetails ? upArrow : downArrow} alt="details" />
+              {showDetails ? <UpArrow /> : <DownArrow />}
             </div>
           </div>
         </td>
@@ -66,12 +67,8 @@ const TableRow = ({ item }: Props) => {
                 {'раскупили'}
               </Button>
             )}
-            <img src={editIcon} alt="edit" onClick={() => {}} />
-            <img
-              src={deleteIcon}
-              alt="delete"
-              onClick={() => setOpen(true)}
-            />
+            <EditIcon onClick={() => {}} />
+            <DeleteIcon onClick={() => setOpen(true)} />
           </div>
         </td>
       </tr>

@@ -1,8 +1,7 @@
-import React from 'react';
 import cx from './index.module.scss';
 import { Typography } from "../../../../components/ui";
 import { EmptyList } from "../components";
-import { ERoutes } from "@/router/config";
+import { ERoutes } from '../../../../router/types';
 
 export default function LKOrders() {
   // mock
