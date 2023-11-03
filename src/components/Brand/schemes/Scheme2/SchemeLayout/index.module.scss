@@ -1,5 +1,5 @@
-@import "@/styles/vars.scss";
-@import "@/styles/mixins.scss";
+@import '@/styles/vars.scss';
+@import '@/styles/mixins.scss';
 
 .wrapper {
     @include outer;
@@ -17,7 +17,6 @@
         height: 94px;
         border-bottom: 1px solid $color-black;
         background: $color-snow;
-
 
         .image {
             span,
@@ -60,7 +59,7 @@
         background: $color-black;
         gap: 1px;
 
-        >* {
+        > * {
             background: $color-snow;
         }
 
@@ -83,7 +82,6 @@
                 width: 100%;
             }
         }
-
     }
 
     .third {

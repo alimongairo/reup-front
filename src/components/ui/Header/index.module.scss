@@ -4,7 +4,7 @@
 .header {
     position: fixed;
     top: 0;
-    transition: .3s;
+    transition: 0.3s;
     width: 100%;
     z-index: 100;
     background: rgba(256, 256, 256, 0.8);
@@ -21,7 +21,7 @@
     display: flex;
 }
 
-@media(max-width: $media-tablet) {
+@media (max-width: $media-tablet) {
     .main {
         width: 45%;
 
@@ -31,7 +31,7 @@
     }
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .container {
         width: 100%;
         padding: 8px $containerPadding-mobile;
@@ -49,9 +49,9 @@
     }
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .header {
-        border-bottom: 1px solid $color-black
+        border-bottom: 1px solid $color-black;
     }
 
     .container {
@@ -63,7 +63,6 @@
     }
 
     .logo {
-
         width: 10%;
         padding: 20px 0;
         box-sizing: content-box;
@@ -123,10 +122,9 @@
 
     .exit {
         p {
-           
             pointer-events: none;
-            
-            button{
+
+            button {
                 pointer-events: all;
                 display: flex;
                 align-items: center;
@@ -141,7 +139,6 @@
                     background-repeat: no-repeat;
                 }
             }
-          
         }
     }
 }

@@ -1,3 +1,3 @@
-import ProductInfo from "./ProductInfo";
+import ProductInfo from './ProductInfo';
 
-export {ProductInfo};
+export { ProductInfo };

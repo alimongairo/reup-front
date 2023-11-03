@@ -1,4 +1,4 @@
-import { AuthContext, AuthContextType, TLogPart } from "./authCotext";
+import { AuthContext, AuthContextType, TLogPart } from './authCotext';
 
-export {AuthContext};
-export type {AuthContextType, TLogPart};
+export { AuthContext };
+export type { AuthContextType, TLogPart };

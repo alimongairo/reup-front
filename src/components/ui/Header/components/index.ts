@@ -1,4 +1,4 @@
-import {DropDown, IDropDownItem} from "./DropDown";
+import { DropDown, IDropDownItem } from './DropDown';
 
-export {DropDown};
-export type {IDropDownItem};
+export { DropDown };
+export type { IDropDownItem };

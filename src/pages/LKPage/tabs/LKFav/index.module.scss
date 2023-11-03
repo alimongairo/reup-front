@@ -1,10 +1,10 @@
-@import "../../../../styles/vars.scss";
+@import '../../../../styles/vars.scss';
 
 .list {
     display: grid;
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .fav {
         margin-bottom: $mb-lg-mobile;
     }
@@ -15,7 +15,7 @@
     }
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .fav {
         margin-bottom: $mb-lg;
     }

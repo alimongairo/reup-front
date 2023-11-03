@@ -11,23 +11,20 @@ import { ERoutes } from '../../router/types';
 export default function ProductPage() {
     return (
         <MainLayout>
-
             <div className={cx.wrapper}>
-
-                <div className={cls(cx.breadcrumbs, "as-desktop")}>
-                    <Breadcrumbs aria-label="breadcrumb" >
+                <div className={cls(cx.breadcrumbs, 'as-desktop')}>
+                    <Breadcrumbs aria-label="breadcrumb">
                         <Link to={ERoutes.Default}>главная</Link>
                         <Link to={ERoutes.Default}>каталог</Link>
                         <p>блузка женская ‘лэйди’</p>
                     </Breadcrumbs>
                 </div>
 
-                <ProductInfo className={cx.productInfo}/>
+                <ProductInfo className={cx.productInfo} />
 
                 <Typography variant="h1">вы недавно смотрели</Typography>
                 <ProductSlider />
             </div>
-
         </MainLayout>
-    )
+    );
 }

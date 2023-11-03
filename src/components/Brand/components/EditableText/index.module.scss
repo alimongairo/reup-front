@@ -1,6 +1,6 @@
 @import '@/styles/vars.scss';
 
-.textarea{
+.textarea {
     background: inherit;
     border: none;
     outline: none;
@@ -10,7 +10,7 @@
 .h1,
 .h2,
 .h3 {
-    font-family: "Dela Gothic One", sans-serif;
+    font-family: 'Dela Gothic One', sans-serif;
     font-weight: bold;
     line-height: 110%;
     display: block;
@@ -22,7 +22,7 @@
     letter-spacing: 1.68px;
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .h1 {
         font-size: 32px;
         margin-bottom: $margin-h1-mobile;
@@ -36,7 +36,7 @@
     }
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .h1 {
         font-size: 64px;
         margin-bottom: $margin-h1;

@@ -1,4 +1,4 @@
-import MainLayout from "./MainLayout/MainLayout";
-import CRMLayout from "./CRMLayout/CRMLayout";
+import MainLayout from './MainLayout/MainLayout';
+import CRMLayout from './CRMLayout/CRMLayout';
 
-export {MainLayout, CRMLayout};
+export { MainLayout, CRMLayout };

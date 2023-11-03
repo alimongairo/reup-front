@@ -3,46 +3,46 @@ import { ERoles, ERoutes } from "./types";
 //   TODO: add correct links
 const CRMLinks = [
     {
-      name: "страница бренда",
-      link: ERoutes.Default,
+        name: 'страница бренда',
+        link: ERoutes.Default,
     },
     {
-      name: "склад",
-      link: ERoutes.CrmStock,
+        name: 'склад',
+        link: ERoutes.CrmStock,
     },
     {
-      name: "заказы",
-      link: ERoutes.Default,
+        name: 'заказы',
+        link: ERoutes.Default,
     },
     {
-      name: "финансы",
-      link: ERoutes.Default,
+        name: 'финансы',
+        link: ERoutes.Default,
     },
 ];
 
 const marketLinks = [
     {
-        name: "локальные бренды",
+        name: 'локальные бренды',
         link: ERoutes.Default,
     },
     {
-        name: "селективные винтажки",
+        name: 'селективные винтажки',
         link: ERoutes.Default,
     },
     {
-        name: "апсайкл",
+        name: 'апсайкл',
         link: ERoutes.Default,
     },
     {
-        name: "обувь",
+        name: 'обувь',
         link: ERoutes.Default,
     },
     {
-        name: "украшения",
+        name: 'украшения',
         link: ERoutes.Default,
     },
     {
-        name: "sale",
+        name: 'sale',
         link: ERoutes.Default,
     },
 ];
@@ -50,14 +50,14 @@ const marketLinks = [
 const brandConf = {
     list: CRMLinks,
     isSearch: false,
-    typeBtn: "CRM",
+    typeBtn: 'CRM',
     isActions: false,
 };
 
 const sellerConf = {
     list: marketLinks,
     isSearch: true,
-    typeBtn: "market",
+    typeBtn: 'market',
     isActions: true,
 };
 
@@ -72,7 +72,7 @@ function confReturner(type: ERoles | null) {
     switch (type) {
         case ERoles.brand:
             return brandConf;
-        case ERoles.seller: 
+        case ERoles.seller:
             return sellerConf;
         case ERoles.customer:
             return customerConf;
@@ -81,4 +81,4 @@ function confReturner(type: ERoles | null) {
     }
 }
 
-export {confReturner};
+export { confReturner };

@@ -10,26 +10,24 @@ import cx from './index.module.scss';
 import { Image } from '../ui';
 
 export interface StockItem {
-  img: string | null;
-  name: string;
-  article: string;
-  amount: number;
-  detailedAmount: number[] | null;
-  visibility: boolean;
+    img: string | null;
+    name: string;
+    article: string;
+    amount: number;
+    detailedAmount: number[] | null;
+    visibility: boolean;
 }
 
-const sizes = ['xl', 'l', 'm', 's', 'xs'];
-
 interface Props {
-  item: StockItem;
+    item: StockItem;
 }
 
 const TableRow = ({ item }: Props) => {
-  const [showDetails, setShowDetails] = useState<Boolean>(false);
-  const [open, setOpen] = useState(false);
-  const [visibility, setVisibility] = useState(item.visibility);
+    const [showDetails, setShowDetails] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [visibility, setVisibility] = useState(item.visibility);
 
-  const soldOut = item.amount === 0;
+    const soldOut = item.amount === 0;
 
   return (
     <>
@@ -73,47 +71,22 @@ const TableRow = ({ item }: Props) => {
         </td>
       </tr>
 
-      {showDetails && (
-        <tr className={cx.detailsRow}>
-          <td></td>
-          <td></td>
-          <td>
-            <div className={cx.sizes}>
-              {sizes.map((el, i) => (
-                <div className={cx.sizeItem} key={i}>
-                  {el}
+            <PopUp
+                visible={open}
+                onClose={() => setOpen(false)}
+                onSubmit={() => {}}
+                type="confirm"
+            >
+                <div>Вы действительно хотите удалить товар?</div>
+                <div>&nbsp;</div>
+                <div style={{ fontSize: '20px' }}>
+                    Это означает, что товар будет удален с нашего маркетплейса,
+                    но вы все еще будете обязаны выполнить доставку тем
+                    покупателям, которые уже купили этот товар, но еще не
+                    получили его.
                 </div>
-              ))}
-            </div>
-          </td>
-          <td>
-            <div className={cx.detailedAmount}>
-              {item.detailedAmount?.map((el, i) => (
-                <div className={cx.amountItem} key={i}>
-                  {el}
-                </div>
-              ))}
-            </div>
-          </td>
-          <td></td>
-        </tr>
-      )}
-
-      <PopUp
-        visible={open}
-        onClose={() => setOpen(false)}
-        onSubmit={() => {}}
-        type='confirm'
-      >
-        <div>Вы действительно хотите удалить товар?</div>
-        <div>&nbsp;</div>
-        <div style={{ fontSize: '20px' }}>
-          Это означает, что товар будет удален с нашего маркетплейса, но вы все
-          еще будете обязаны выполнить доставку тем покупателям, которые уже
-          купили этот товар, но еще не получили его.
-        </div>
-      </PopUp>
-    </>
-  );
+            </PopUp>
+        </>
+    );
 };
 export default TableRow;

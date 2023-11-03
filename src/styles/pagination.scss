@@ -2,7 +2,7 @@
 
 .swiper-pagination {
     display: flex;
-    --bullet-bg: #FFFFFF;
+    --bullet-bg: #ffffff;
     margin-left: -4px;
 }
 
@@ -16,7 +16,7 @@
 
     &-active {
         opacity: 1;
-        transition: .5s;
+        transition: 0.5s;
         width: 70%;
         background: $color-black;
         flex-shrink: 1;

@@ -9,7 +9,7 @@
     border-bottom: 1px solid $color-black;
     @include outer();
 
-    >* {
+    > * {
         background: $color-snow;
     }
 }
@@ -27,14 +27,13 @@
         align-items: center;
         height: 100%;
 
-        &.fill.mainLink{
+        &.fill.mainLink {
             color: $color-primary;
         }
-        
+
         &.active.fill {
             background: $color-primary;
             color: $color-snow;
-            
         }
     }
 
@@ -57,7 +56,7 @@
     }
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .bricks {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -65,10 +64,9 @@
     .item {
         height: 34px;
     }
-
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .bricks {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -76,5 +74,4 @@
     .item {
         height: 54px;
     }
-
 }

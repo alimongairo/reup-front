@@ -13,7 +13,7 @@ export enum ERoutes {
 }
 
 export enum ESocials {
-  Default = '/',
+    Default = '/',
 }
 
 export enum ERoles {

@@ -1,4 +1,4 @@
-@import "../../../../styles/vars.scss";
+@import '../../../../styles/vars.scss';
 
 .subFields {
     display: flex;
@@ -13,38 +13,37 @@
     }
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .fields {
         display: flex;
         flex-direction: column;
         margin-bottom: $margin-h2-mobile;
     }
 
-    .form{
+    .form {
         margin-bottom: 159px;
     }
 
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
     }
 
-    .saveBtn{
+    .saveBtn {
         width: fit-content;
         align-self: center;
     }
 }
 
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .fields {
         display: grid;
         grid-template-columns: repeat(2, minmax(calc(50% - 25px), 590px));
         column-gap: 50px;
         margin-bottom: 32px;
-
     }
 
-    .form{
+    .form {
         margin-bottom: 32px;
     }
 }

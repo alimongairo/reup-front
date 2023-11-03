@@ -1,71 +1,69 @@
 @import '../../../../../styles/vars.scss';
 
 .wrapper {
-  position: relative;
-  display: contents;
+    position: relative;
+    display: contents;
 }
 
-
 .menu {
-  display: none ;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  min-width: $headerActions-width;
-  box-sizing: border-box;
-  border: 1px solid black;
-  z-index: 2;
-  flex-direction: column;
-  gap: 20px;
-  padding: 24px;
-  .menuItem {
-    display: flex;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    min-width: $headerActions-width;
+    box-sizing: border-box;
+    border: 1px solid black;
+    z-index: 2;
     flex-direction: column;
-    transition: 0.3s;
-    cursor: pointer;
-    text-align: left;
-    font-weight: bold;
-    
-    &:after {
-      display: block;
-      content: '';
-      height: 1px;
-      width: 0;
-      background: $color-primary;
-      transition: .3s;
-      margin-top: 3px;
+    gap: 20px;
+    padding: 24px;
+    .menuItem {
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s;
+        cursor: pointer;
+        text-align: left;
+        font-weight: bold;
+
+        &:after {
+            display: block;
+            content: '';
+            height: 1px;
+            width: 0;
+            background: $color-primary;
+            transition: 0.3s;
+            margin-top: 3px;
+        }
+
+        &:last-child {
+            border-top: 1px solid #000;
+            padding-top: 1rem;
+        }
     }
-  
-    &:last-child{
-      border-top: 1px solid #000;
-      padding-top: 1rem;
-    }
-    
-  }
 }
 
 .mask {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  height: 100vh;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 1;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100vh;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .visible {
-  display: flex;
+    display: flex;
 }
 
-@media(hover:hover){
-  .menuItem:hover{
-    color: $color-primary;
-    font-weight: 500;
-    &:after{
-      width: 100%;
+@media (hover: hover) {
+    .menuItem:hover {
+        color: $color-primary;
+        font-weight: 500;
+        &:after {
+            width: 100%;
+        }
     }
-  }
 }

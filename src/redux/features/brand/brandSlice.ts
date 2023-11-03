@@ -1,8 +1,8 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { Brand, IBrandState } from "../../../types/brandTypes";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { Brand, IBrandState } from '../../../types/brandTypes';
 
 const initialState: IBrandState = {
-    id: "12",
+    id: '12',
     scheme_id: 0,
 };
 
@@ -16,7 +16,6 @@ export const brandSlice = createSlice({
             state.id = action.payload.id;
         },
     },
-    
 });
 
 export default brandSlice.reducer;

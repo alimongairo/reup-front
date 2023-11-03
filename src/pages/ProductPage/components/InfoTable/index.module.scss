@@ -1,17 +1,17 @@
 @import '@/styles/vars.scss';
 
 .row {
-  display: flex;
-  align-items: baseline;
-  .title {
-    width: 100px;
-  }
+    display: flex;
+    align-items: baseline;
+    .title {
+        width: 100px;
+    }
 
-  h6{
-    margin-bottom: 0;
-  }
+    h6 {
+        margin-bottom: 0;
+    }
 }
 
 .row:not(:last-child) {
-  margin-bottom: $margin-h6-mobile;
+    margin-bottom: $margin-h6-mobile;
 }

@@ -1,24 +1,38 @@
 import { useState, ReactNode, useMemo } from 'react';
 import { Head } from "..";
 import cx from './index.module.scss';
-import ProductItem from "../../../ProductItem";
-import { uid } from "react-uid";
+import ProductItem from '../../../ProductItem';
+import { uid } from 'react-uid';
 import FiltersImg from 'S#/images/crm/filters.png';
-import { Image } from "@/components/ui";
-import { IMenuContext, MenuContext } from "../../components/Menu/helpers";
-import { useParams } from "react-router-dom";
-import { ELabelsName, TSchemeData, TSchemeNum } from "../../components/Menu/models.ts";
-import { IScheme1Brand, IScheme2Brand, IScheme3Brand } from "../../../../types/brandTypes.ts";
+import { Image } from '@/components/ui';
+import { IMenuContext, MenuContext } from '../../components/Menu/helpers';
+import { useParams } from 'react-router-dom';
+import {
+    ELabelsName,
+    TSchemeData,
+    TSchemeNum,
+} from '../../components/Menu/models.ts';
+import {
+    IScheme1Brand,
+    IScheme2Brand,
+    IScheme3Brand,
+} from '../../../../types/brandTypes.ts';
 
 interface IProps {
-    isEditable: boolean,
-    component: ReactNode,
-    isEditing: boolean,
-    setIsEditing: (val: boolean) => void,
-    data: IScheme1Brand | IScheme2Brand | IScheme3Brand,
+    isEditable: boolean;
+    component: ReactNode;
+    isEditing: boolean;
+    setIsEditing: (val: boolean) => void;
+    data: IScheme1Brand | IScheme2Brand | IScheme3Brand;
 }
 
-export default function Layout({ isEditable, component, isEditing, setIsEditing, data }: IProps) {
+export default function Layout({
+    isEditable,
+    component,
+    isEditing,
+    setIsEditing,
+    data,
+}: IProps) {
     // mock
     const productsPlug = Array(27).fill(null);
     const [activeMenu, setActiveMenu] = useState(ELabelsName.DefaultList);
@@ -41,29 +55,30 @@ export default function Layout({ isEditable, component, isEditing, setIsEditing,
             schemeData: data,
             updateData,
         };
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [schemeId]);
-
 
     return (
         <MenuContext.Provider value={initialContextValue}>
-            {
-                isEditable && <Head isEditable={isEditable} isEditing={isEditing} setIsEditing={setIsEditing} activeMenu={activeMenu} />
-            }
-
+            {isEditable && (
+                <Head
+                    isEditable={isEditable}
+                    isEditing={isEditing}
+                    setIsEditing={setIsEditing}
+                    activeMenu={activeMenu}
+                />
+            )}
 
             {component}
 
             <div id="products" className={cx.products}>
                 <Image src={FiltersImg} className={cx.filters} />
                 <div className={cx.list}>
-
-                    {
-                        productsPlug.map((_, index) => <ProductItem key={uid(index)} />)
-                    }
-
+                    {productsPlug.map((_, index) => (
+                        <ProductItem key={uid(index)} />
+                    ))}
                 </div>
             </div>
-
         </MenuContext.Provider>
-    )
+    );
 }

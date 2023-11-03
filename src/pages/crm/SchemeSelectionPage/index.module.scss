@@ -8,15 +8,14 @@
     .variants {
         margin-bottom: $offset-default;
 
-        >*:not(:last-child) {
+        > *:not(:last-child) {
             margin-bottom: $offset-default;
         }
     }
 
     .image {
-        img{
+        img {
             height: auto;
         }
-
     }
 }

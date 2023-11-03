@@ -3,10 +3,10 @@
 .wrapper {
     margin-bottom: $margin-h1;
 
-    &:not(.isEditable) {}
+    &:not(.isEditable) {
+    }
 
     &.isEditable {
-
         h1 {
             margin-bottom: 0;
             margin-right: 30px;
@@ -30,21 +30,20 @@
     }
 }
 
-@media(max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
     .wrapper {
         &.isEditable {
             display: flex;
             flex-direction: column;
 
             h1 {
-                margin-bottom: $margin-h1
+                margin-bottom: $margin-h1;
             }
         }
     }
 }
 
-
-@media(min-width: $media-desktop) {
+@media (min-width: $media-desktop) {
     .wrapper {
         &.isEditable {
             display: flex;

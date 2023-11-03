@@ -3,8 +3,11 @@ import { api } from '../baseApi';
 export const brandPageStyle1Api = api.injectEndpoints({
     endpoints: (builder) => ({
         // TODO: fx any
-        getBrandPageStyleData: builder.query<any, {scheme_id: number, vendor_id: string}>({
-            query: ({scheme_id, vendor_id}) => ({
+        getBrandPageStyleData: builder.query<
+            any,
+            { scheme_id: number; vendor_id: string }
+        >({
+            query: ({ scheme_id, vendor_id }) => ({
                 url: `/BrandPageStyle${scheme_id + 1}/vendor_id=${vendor_id}`,
             }),
         }),
@@ -30,7 +33,7 @@ export const brandPageStyle1Api = api.injectEndpoints({
         // }),
     }),
 });
-  
+
 export const {
     useGetBrandPageStyleDataQuery,
     // useCreateDataMutation,
