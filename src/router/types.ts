@@ -5,7 +5,11 @@ export enum ERoutes {
   CrmSchemesMain = '/crm/schemes',
   CrmBrandRegistration = 'crm/brandRegistration',
   Stock = '/crm/stock',
-  ProductEdit = '/crm/product'
+  ProductEdit = '/crm/product',
+  CrmProduct = '/crm/product',
+  CrmStock = '/crm/stock',
+  Product = '/product',
+  LK = '/lk',
 }
 
 export enum ESocials {

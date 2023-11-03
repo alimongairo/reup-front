@@ -1,7 +1,7 @@
 import { Button as MuiButton, ButtonProps } from '@mui/material';
 import cls from 'classnames';
 import './index.scss';
-import React from 'react';
+import { ERoutes } from '@/router/types';
 
 enum EBtnColor {
   NOTE = "note black",
@@ -15,6 +15,7 @@ interface IProps extends ButtonProps {
   colorM?: EBtnColor,
   iconName?: string,
   isActive?: boolean,
+  to?: ERoutes,
 }
 
 const Button = ({ children, viewType = "default", colorM = EBtnColor.BLACK, iconName, isActive = false, ...props }: IProps) => {

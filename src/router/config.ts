@@ -8,7 +8,7 @@ const CRMLinks = [
     },
     {
       name: "склад",
-      link: ERoutes.Stock,
+      link: ERoutes.CrmStock,
     },
     {
       name: "заказы",

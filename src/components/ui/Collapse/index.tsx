@@ -1,15 +1,16 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
-import {ReactComponent as MinusIcon} from 'S#/images/icons/minus.svg';
+import { ReactComponent as MinusIcon } from 'S#/images/icons/minus.svg';
 import cx from './index.module.scss';
 import cls from 'classnames';
 
 interface IProps {
-  title: string;
+  title: string | JSX.Element;
   content: ReactNode;
   hideCollapseIcon?: boolean;
-  moreText?: string;
-  lessText?: string;
+  moreText?: string | JSX.Element;
+  lessText?: string | JSX.Element;
+  className?: string;
 }
 
 const Collapse = ({
@@ -18,6 +19,7 @@ const Collapse = ({
   moreText,
   lessText,
   hideCollapseIcon,
+  className,
 }: IProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [isClose, setIsClose] = useState(true);
@@ -43,16 +45,26 @@ const Collapse = ({
   }, [isClose]);
 
   return (
-    <div className={cls(cx.wrapper, {[cx.active]: !isClose})}>
-      {!hideCollapseIcon && (
-        <div className={cx.collapseIcon} onClick={toggleOpen}>
-          <MinusIcon className={cx.minus} />
-          <MinusIcon className={cls(cx.minus, { [cx.rotate]: isClose })} />
-        </div>
-      )}
-      <p className={cx.title} onClick={toggleOpen}>
-        {title}
-      </p>
+    <div className={cls(cx.wrapper, { [cx.active]: !isClose }, className)} >
+
+      <div onClick={toggleOpen} className={cx.head}>
+        {!hideCollapseIcon && (
+          <div className={cx.collapseIcon} >
+            <MinusIcon className={cx.minus} />
+            <MinusIcon className={cls(cx.minus, { [cx.rotate]: isClose })} />
+          </div>
+        )}
+
+        {
+          typeof title === 'string'
+            ? (<p className={cx.title}>
+              {title}
+            </p>)
+            : title
+        }
+
+      </div>
+
 
       <div className={cx.content} ref={contentRef}>
         {content}

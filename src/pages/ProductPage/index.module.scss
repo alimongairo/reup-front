@@ -1,0 +1,23 @@
+@import '@/styles/vars.scss';
+
+
+@media(max-width: $media-mobile) {
+    .productInfo{
+        margin-bottom: $mb-lg-mobile;
+    }
+}
+
+@media(min-width: $media-desktop) {
+    .wrapper {
+        padding-top: 23px;
+    }
+
+    .breadcrumbs{
+        margin-bottom: $offset-default;
+    }
+
+    .productInfo{
+        margin-bottom: $mb-lg;
+    }
+
+}

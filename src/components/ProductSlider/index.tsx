@@ -1,28 +1,29 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import cx from './index.module.scss';
 import { Button } from "@/components/ui";
 import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper'
 import { ReactComponent as ArrowIcon } from 'S#/images/icons/arrows/default.svg';
 import cls from 'classnames';
-import ProductItem from "../../../../components/ProductItem";
+import ProductItem from "@/components/ProductItem";
 import { uid } from "react-uid";
-import '@/styles/swipe.scss';
 import { useWindowWidth } from "@/hooks";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import '@/styles/swipe.scss';
+import cx from './index.module.scss';
 
-export default function ProductSlider() {
+interface IProductSLiderProps {
+    list?: any[];
+}
+
+export default function ProductSlider({list = Array(27).fill(null)}: IProductSLiderProps) {
     const windowWidth = useWindowWidth();
-
-    const productsPlug = Array(27).fill(null);
 
     const swiperRef = useRef<SwiperRef>();
 
     const swiperSettings = {
 
         breakpoints: {
-            // when window width is >= 759px (min-width)
             1700: {
                 slidesPerView: 6,
                 spaceBetween: 24,
@@ -31,6 +32,7 @@ export default function ProductSlider() {
                 slidesPerView: 5,
                 spaceBetween: 24,
             },
+            // when window width is >= 759px (min-width)
             759: {
                 slidesPerView: 4,
                 spaceBetween: 24,
@@ -38,11 +40,9 @@ export default function ProductSlider() {
         },
     };
 
-
     const [swiperInstance, setSwiperInstance] = useState<any>();
+
     const enableSwiper = () => {
-
-
         const mySwiper = new SwiperConstructor(swiperRef.current as any, swiperSettings);
         mySwiper.init();
         setSwiperInstance(mySwiper);
@@ -86,7 +86,7 @@ export default function ProductSlider() {
                     }}
                 >
                     {
-                        productsPlug.map((_, index) => <SwiperSlide key={uid(index)} className={cx.slide}><ProductItem size="inSwiper" /></SwiperSlide>)
+                        list.map((_, index) => <SwiperSlide key={uid(index)} className={cx.slide}><ProductItem size="apativeSize" /></SwiperSlide>)
                     }
                 </SwiperComponent>
 

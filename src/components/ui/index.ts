@@ -1,6 +1,6 @@
 import { Header, MobileToolbar } from "./Header";
 import Footer from "./Footer";
-import Typography from "./Typography";
+import {Typography, EFontFamily, ETypographyWeight} from "./Typography";
 import {Button, EBtnColor} from "./Button";
 import MoreLink from "./MoreLink";
 import Image from "./Image";
@@ -14,18 +14,21 @@ import {IRadioProps, RadioGroup} from "./Radio";
 import ImageUpload from './ImageUpload';
 import SearchableSelect from './SearchableSelect';
 import {Tabs, ETabsView} from "./Tabs";
-import {Bricks, EAlign, IBrick} from "./Bricks";
+import {Bricks, IBrick, EColorType} from "./Bricks";
+import { EBrickAlign } from "../../const";
 import NavLinkIcon from "./NavLinkIcon";
 import NavLink from "./NavLink";
 import PopUp from "./PopUp";
 import Checkbox from './Checkbox';
+import Radio from './Radio';
+import {Tooltip} from './Tooltip';
 
 export {
     Header,
     MobileToolbar,
     Footer,
-    Typography,
-    Button, EBtnColor, EAlign,
+    Typography, ETypographyWeight, EFontFamily,
+    Button, EBtnColor, EBrickAlign,
     MoreLink,
     Image,
     Fav,
@@ -38,11 +41,13 @@ export {
     ImageUpload,
     SearchableSelect,
     Tabs, ETabsView, 
-    Bricks,
+    Bricks, EColorType,
     NavLink,
     NavLinkIcon,
     PopUp,
-    Checkbox
+    Checkbox,
+    Radio,
+    Tooltip
 };
 
 export type {

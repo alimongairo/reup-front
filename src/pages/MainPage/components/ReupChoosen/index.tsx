@@ -1,110 +1,80 @@
-import { useState } from 'react';
-import classNames from 'classnames';
-
-import { useWindowWidth } from '@/hooks';
-
-import img from 'S#/images/hardcode/main/rc1.png';
+import React, { useRef, useState, useEffect } from 'react'
+import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
+import SwiperConstructor, { type Swiper as SwiperRef } from 'swiper'
+import { Pagination } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import '@/styles/pagination.scss';
+import { uid } from "react-uid";
 import cx from './index.module.scss';
-import { Typography } from "@mui/material";
-import { MoreLink, Image } from "@/components/ui";
+import cls from 'classnames';
+import { Image, MoreLink, Typography } from "@/components/ui";
 
-export interface IMainSlider {
-  bgColor?: string;
+export default function ReupChoosen() {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const list = Array(3).fill(null);
+
+    const swiperRef = useRef<SwiperRef>();
+
+    const swiperSettings = {
+        centeredSlides: true,
+    };
+
+    const enableSwiper = () => {
+        const mySwiper = new SwiperConstructor(swiperRef.current as any, swiperSettings);
+        mySwiper.init();
+    };
+
+    useEffect(() => {
+        enableSwiper();
+    }, [])
+
+    return (
+        <div className={cx.slider}>
+            <SwiperComponent
+                slidesPerView='auto'
+                modules={[Pagination]}
+                pagination={{
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return `<span class="${className}"></span>`;
+                    },
+                }}
+                className={cx.slides}
+                onBeforeInit={({ el }: any) => {
+                    swiperRef.current = el;
+                }}
+                onSlideChange={({ activeIndex }) => {
+                    setActiveIndex(activeIndex);
+                }}
+
+            >
+                {
+                    list.map((_, index) =>
+                        <SwiperSlide key={uid(index)} className={cls(cx.slide, {
+                            [cx.active]: index === activeIndex,
+                        })}>
+
+                            <div className={cx.text}>
+                                <Typography variant="h2">BEFREE</Typography>
+                                <p className={cx.sub}>
+                                    Наше дело не так однозначно, как может показаться: существующая
+                                    теория напрямую зависит от стандартных подходов. Идейные
+                                    соображения высшего порядка, а также разбавленное изрядной долей{' '}
+                                </p>
+                                <MoreLink className={cx.moreBtn} />
+                            </div>
+                            <Image alt={'img'} className={cx.imgWrapper} />
+                        </SwiperSlide>
+                    )
+                }
+
+                <div className={cls("swiper-pagination", cx.pagination)}></div>
+            </SwiperComponent>
+
+
+        </div>
+    )
 }
-
-const ReupChoosen = () => {
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const windowWidth = useWindowWidth();
-  const curWidth = windowWidth ? windowWidth - 200 : 'auto';
-
-  return (
-    <div className={cx.slider}>
-      <div className={cx.slides}>
-        <div
-          className={classNames(cx.slide, {
-            [cx.active]: 0 === activeSlideIndex,
-          })}
-          style={{
-            transform: `translateX(-${100 * activeSlideIndex}%)`,
-            width: curWidth,
-          }}
-          onClick={() => setActiveSlideIndex(0)}
-        >
-          <div className={cx.text}>
-            <Typography variant="h2">BEFREE</Typography>
-            <p className={cx.sub}>
-              Наше дело не так однозначно, как может показаться: существующая
-              теория напрямую зависит от стандартных подходов. Идейные
-              соображения высшего порядка, а также разбавленное изрядной долей{' '}
-            </p>
-            <MoreLink className={cx.moreBtn} />
-          </div>
-          <Image src={img} alt={'img'} className={cx.imgWrapper} />
-
-        </div>
-        <div
-          className={classNames(cx.slide, {
-            [cx.active]: 1 === activeSlideIndex,
-          })}
-          style={{
-            transform: `translateX(-${100 * activeSlideIndex}%)`,
-            width: curWidth,
-          }}
-          onClick={() => setActiveSlideIndex(1)}
-        >
-          <div className={cx.text}>
-            <Typography variant="h2">BEFREE</Typography>
-            <p className={cx.sub}>
-              Наше дело не так однозначно, как может показаться: существующая
-              теория напрямую зависит от стандартных подходов. Идейные
-              соображения высшего порядка, а также разбавленное изрядной долей{' '}
-            </p>
-            <MoreLink className={cx.moreBtn} />
-          </div>
-
-          <Image src={img} alt={'img'} className={cx.imgWrapper} />
-
-        </div>
-        <div
-          className={classNames(cx.slide, {
-            [cx.active]: 2 === activeSlideIndex,
-          })}
-          style={{
-            transform: `translateX(-${100 * activeSlideIndex}%)`,
-            width: curWidth,
-          }}
-          onClick={() => setActiveSlideIndex(2)}
-        >
-          <div className={cx.text}>
-            <Typography variant="h2">BEFREE</Typography>
-            <p className={cx.sub}>
-              Наше дело не так однозначно, как может показаться: существующая
-              теория напрямую зависит от стандартных подходов. Идейные
-              соображения высшего порядка, а также разбавленное изрядной долей{' '}
-            </p>
-            <MoreLink className={cx.moreBtn} />
-          </div>
-          <Image src={img} alt={'img'} className={cx.imgWrapper} />
-        </div>
-      </div>
-      <div className={cx.footer}>
-        <p className={cx.countTitle}>{activeSlideIndex + 1} из 3</p>
-        <div className={cx.slideCount}>
-          {[1, 2, 3].map((i, index) => {
-            return (
-              <div
-                key={index}
-                onClick={() => setActiveSlideIndex(index)}
-                className={classNames(cx.count, {
-                  [cx.activeCount]: index === activeSlideIndex,
-                })}
-              ></div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default ReupChoosen;

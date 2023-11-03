@@ -38,7 +38,7 @@ const StockLayout = () => {
   const [search, setSearch] = useState('');
 
   const handleClickAdd = useCallback(() => {
-    navigate(`${ERoutes.ProductEdit}/new`);
+    navigate(`${ERoutes.CrmProduct}/new`);
   }, []);
 
   const handleSearch = useCallback(

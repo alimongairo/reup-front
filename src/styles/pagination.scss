@@ -1,0 +1,24 @@
+@import '@/styles/vars.scss';
+
+.swiper-pagination {
+    display: flex;
+    --bullet-bg: #FFFFFF;
+    margin-left: -4px;
+}
+
+.swiper-pagination-bullet {
+    border-radius: 0;
+    opacity: 0.5;
+    background: var(--bullet-bg);
+    height: 8px;
+    width: 8px;
+    flex-shrink: 0;
+
+    &-active {
+        opacity: 1;
+        transition: .5s;
+        width: 70%;
+        background: $color-black;
+        flex-shrink: 1;
+    }
+}
