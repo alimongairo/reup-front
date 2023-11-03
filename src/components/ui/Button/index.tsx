@@ -1,7 +1,7 @@
 import { Button as MuiButton, ButtonProps } from '@mui/material';
 import cls from 'classnames';
 import './index.scss';
-import { ERoutes } from '@/router/config';
+import { ERoutes } from '@/router/types';
 
 enum EBtnColor {
     NOTE = 'note black',

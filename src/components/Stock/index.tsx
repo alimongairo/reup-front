@@ -1,2 +1,2 @@
-import StockPage from './StockPage';
-export default StockPage;
+import StockLayout from "./Stock";
+export default StockLayout;

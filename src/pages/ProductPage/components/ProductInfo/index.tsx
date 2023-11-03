@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import  { useState, useRef, useEffect } from 'react';
 import cls from 'classnames';
 import {
     Typography,
@@ -11,7 +11,6 @@ import {
 } from '@/components/ui';
 import { uid } from 'react-uid';
 import { Link } from 'react-router-dom';
-import { ERoutes } from '@/router/config';
 import InfoTable from '../InfoTable';
 import cx from './index.module.scss';
 /* eslint-disable-next-line import/no-unresolved*/
@@ -24,7 +23,8 @@ import 'swiper/css';
 /* eslint-disable-next-line import/no-unresolved*/
 import 'swiper/css/pagination';
 import '@/styles/pagination.scss';
-import { useWindowWidth } from '@/hooks';
+import { useWindowWidth } from "@/hooks";
+import { ERoutes } from '@/router/types';
 
 // mock
 const sizesMock = [

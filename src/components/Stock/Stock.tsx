@@ -4,7 +4,7 @@ import cx from './index.module.scss';
 import TableRow, { StockItem } from './TableRow';
 import { Button, Input, Typography } from '@/components/ui';
 import { useNavigate } from 'react-router-dom';
-import { ERoutes } from '@/router/config';
+import { ERoutes } from '@/router/types';
 
 const data: StockItem[] = [
     {

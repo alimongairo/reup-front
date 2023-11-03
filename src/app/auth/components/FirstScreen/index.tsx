@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { Input, Button, EBtnColor, Checkbox } from '@/components/ui';
 import { uid } from 'react-uid';
 import { ReactComponent as GoogleSvg } from 'S#/images/icons/google.svg';
@@ -8,8 +8,8 @@ import { EType } from '../types';
 import cx from './index.module.scss';
 import { EPopupType } from '../AuthPopup';
 import InputMask from 'react-input-mask';
-import { ERoutes } from '@/router/config';
-import { Link } from 'react-router-dom';
+import { ERoutes } from "@/router/types";
+import { Link } from "react-router-dom";
 
 interface IProps {
     type?: EType;

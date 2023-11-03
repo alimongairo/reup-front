@@ -16,6 +16,9 @@ import { EBrickAlign } from '../../const';
 import NavLinkIcon from './NavLinkIcon';
 import NavLink from './NavLink';
 import PopUp from './PopUp';
+import Select from './Select';
+import ImageUpload from './ImageUpload';
+import SearchableSelect from './SearchableSelect';
 import Checkbox from './Checkbox';
 import { Tooltip } from './Tooltip';
 
@@ -38,10 +41,11 @@ export {
     Colors,
     EColors,
     RadioGroup,
-    Tabs,
-    ETabsView,
-    Bricks,
-    EColorType,
+    Select,
+    ImageUpload,
+    SearchableSelect,
+    Tabs, ETabsView, 
+    Bricks, EColorType,
     NavLink,
     NavLinkIcon,
     PopUp,

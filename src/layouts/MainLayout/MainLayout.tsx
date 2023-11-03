@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Footer, Header, MobileToolbar } from '@/components/ui';
 import cx from './index.module.scss';
-import { ERoles } from '@/router/config';
+import { ERoles } from '@/router/types';
 
 interface IProps {
     children: ReactNode;

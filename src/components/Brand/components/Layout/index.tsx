@@ -1,5 +1,5 @@
-import React, { useState, ReactNode, useMemo } from 'react';
-import { Head } from '..';
+import { useState, ReactNode, useMemo } from 'react';
+import { Head } from "..";
 import cx from './index.module.scss';
 import ProductItem from '../../../ProductItem';
 import { uid } from 'react-uid';

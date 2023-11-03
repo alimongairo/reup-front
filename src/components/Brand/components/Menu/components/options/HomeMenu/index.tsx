@@ -7,7 +7,7 @@ import { ELabelsName } from '../../../models';
 import { uid } from 'react-uid';
 import { MenuContext } from '../../../helpers';
 import { useNavigate } from 'react-router-dom';
-import { ERoutes } from '@/router/config';
+import { ERoutes } from '@/router/types';
 
 const HomeMenu = () => {
     const contextValue = useContext(MenuContext);

@@ -1,13 +1,12 @@
-import React from 'react';
 import cls from 'classnames';
-import { MainLayout } from '@/layouts';
-import { Breadcrumbs } from '@mui/material';
-import { ERoutes } from '@/router/config';
-import { Link } from 'react-router-dom';
-import { ProductInfo } from './components';
-import { Typography } from '@/components/ui';
-import ProductSlider from '@/components/ProductSlider';
+import { MainLayout } from "@/layouts";
+import { Breadcrumbs } from "@mui/material";
+import { Link } from "react-router-dom";
+import { ProductInfo } from "./components";
+import { Typography } from "@/components/ui";
+import ProductSlider from "@/components/ProductSlider";
 import cx from './index.module.scss';
+import { ERoutes } from '../../router/types';
 
 export default function ProductPage() {
     return (
