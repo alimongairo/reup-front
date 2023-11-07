@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { ReactComponent as LogoIcon } from 'S#/images/icons/logo.svg';
 import { ReactComponent as SearchIcon } from 'S#/images/icons/loype.svg';
 import { ReactComponent as HeartIcon } from 'S#/images/icons/heart.svg';
@@ -20,6 +20,7 @@ import { DropDown } from "./components";
 import { strokeColorReturner } from "../../../helpers";
 import { lkTabsList } from "../../../const";
 import { AuthContext } from "../../../app/auth";
+import { useBodyStyle } from "@/hooks";
 
 interface IProps {
     type: ERoles;
@@ -32,9 +33,21 @@ function Header({ type }: IProps) {
 
     const [dropdownVisible, setDropdownVisible] = useState(false);
 
+    const bodyStyle = useBodyStyle();
+
     const onDropdownClick = () => {
         setDropdownVisible((state) => !state);
     };
+
+    useEffect(() => {
+       if(dropdownVisible) {
+        bodyStyle({overflow:"hidden"});
+        return;
+       }
+       bodyStyle({overflow:"auto"});
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+    }, [dropdownVisible])
+    
 
     // TODO: очищаем данные о юзере в сторе
     const onExitCLick = () => {

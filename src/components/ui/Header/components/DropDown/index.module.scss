@@ -1,9 +1,26 @@
-@import '../../../../../styles/vars.scss';
+@import '@/styles/vars.scss';
 
 .wrapper {
     position: relative;
     display: contents;
 }
+
+@media (max-width: $media-mobile) {
+    // todo: локировать body когда открыто 
+    .menu{
+        left: 0;
+        height: 100vh;
+    }
+}
+
+@media (min-width: $media-desktop) {
+    .menu {
+        min-width: $headerActions-width;
+        border: 1px solid black;
+    }
+
+}
+
 
 .menu {
     display: none;
@@ -11,9 +28,7 @@
     top: 100%;
     right: 0;
     background: white;
-    min-width: $headerActions-width;
     box-sizing: border-box;
-    border: 1px solid black;
     z-index: 2;
     flex-direction: column;
     gap: 20px;
