@@ -20,7 +20,7 @@ import { DropDown } from "./components";
 import { strokeColorReturner } from "../../../helpers";
 import { lkTabsList } from "../../../const";
 import { AuthContext } from "../../../app/auth";
-import { useBodyStyle } from "@/hooks";
+import { useBodyStyle, useWindowWidth } from "@/hooks";
 
 interface IProps {
     type: ERoles;
@@ -28,10 +28,12 @@ interface IProps {
 
 function Header({ type }: IProps) {
     const authContextValue = useContext(AuthContext);
+    const windowWidth = useWindowWidth();
 
     const config = confReturner(type || null);
 
     const [dropdownVisible, setDropdownVisible] = useState(false);
+    const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
     const bodyStyle = useBodyStyle();
 
@@ -39,15 +41,33 @@ function Header({ type }: IProps) {
         setDropdownVisible((state) => !state);
     };
 
+    const onBurgerClick = () => {
+        setIsBurgerOpen((state) => !state);
+    };
+
     useEffect(() => {
-       if(dropdownVisible) {
-        bodyStyle({overflow:"hidden"});
-        return;
-       }
-       bodyStyle({overflow:"auto"});
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+        if (!windowWidth) return;
+        setDropdownVisible(false);
+        setIsBurgerOpen(false);
+    }, [windowWidth]);
+
+    useEffect(() => {
+        if (isBurgerOpen) {
+            setDropdownVisible(false)
+            bodyStyle({ overflow: "hidden" });
+            return;
+        }
+        bodyStyle({ overflow: "auto" });
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
+    }, [isBurgerOpen])
+
+    useEffect(() => {
+        if (dropdownVisible) {
+            setIsBurgerOpen(false)
+        }
     }, [dropdownVisible])
-    
+
+
 
     // TODO: очищаем данные о юзере в сторе
     const onExitCLick = () => {
@@ -86,12 +106,13 @@ function Header({ type }: IProps) {
                         <SearchIcon className={cls(cx.icon, cx.search)} />
                     )}
                     {
-                        dropdownVisible ? <CloseIcon className={cls('as-mobile', cx.icon)}
+                        // TODO: открываем другой лаер (список того, что в шапке), а тот, что по человечку еще поверх
+                        isBurgerOpen ? <CloseIcon className={cls('as-mobile', cx.icon)}
                             stroke={strokeColorReturner(false)}
-                            onClick={onDropdownClick}
+                            onClick={onBurgerClick}
                         /> : <BurgerIcon className={cls('as-mobile', cx.icon)}
                             stroke={strokeColorReturner(false)}
-                            onClick={onDropdownClick}
+                            onClick={onBurgerClick}
                         />
 
                     }
@@ -136,7 +157,9 @@ function Header({ type }: IProps) {
                     </NavLinkIcon>
                 ) : null}
 
-                <DropDown visible={dropdownVisible} overlay={dropDownList} />
+                <DropDown visible={dropdownVisible} overlay={dropDownList} type="lk" />
+
+                <DropDown visible={isBurgerOpen} overlay={config?.list || []} type="default" />
             </div>
         </div>
     );

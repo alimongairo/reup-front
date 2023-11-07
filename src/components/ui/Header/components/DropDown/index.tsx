@@ -4,15 +4,17 @@ import cx from './index.module.scss';
 import { ITabItem } from '../../../../../const';
 import { uid } from 'react-uid';
 import { NavLink } from '../../../../ui';
+import { IHeaderLink } from "@/router/config";
 
 interface IProps {
     visible: boolean;
     setVisible?: () => void;
-    overlay: ITabItem[];
+    overlay: ITabItem[] | IHeaderLink[];
     title?: ReactNode;
+    type: "lk" | "default";
 }
 
-const DropDown = ({ visible = false, overlay, title, setVisible }: IProps) => {
+const DropDown = ({ visible = false, overlay, title, setVisible, type }: IProps) => {
     return (
         <>
             <div
@@ -24,22 +26,38 @@ const DropDown = ({ visible = false, overlay, title, setVisible }: IProps) => {
             >
                 {title}
                 <ul className={cls({ [cx.visible]: visible }, cx.menu)}>
-                    {overlay.map((item) => (
-                        <li
-                            key={uid(item.label)}
-                            className={cls(cx.menuItem, item.className || '')}
-                        >
-                            <p>
-                                {item.id === 'exit' ? (
-                                    item.label
-                                ) : (
-                                    <NavLink to={item.link as string}>
-                                        {item.label}
-                                    </NavLink>
-                                )}
-                            </p>
-                        </li>
-                    ))}
+                    {
+                        type === "lk" ?
+                            (overlay as ITabItem[]).map((item) => (
+                                <li
+                                    key={uid(item.label)}
+                                    className={cls(cx.menuItem, item.className || '')}
+                                >
+                                    <p>
+                                        {item.id === 'exit' ? (
+                                            item.label
+                                        ) : (
+                                            <NavLink to={item.link as string}>
+                                                {item.label}
+                                            </NavLink>
+                                        )}
+                                    </p>
+                                </li>
+                            )) :
+                            (overlay as IHeaderLink[]).map((item) => (
+                                <li
+                                    key={uid(item.name)}
+                                    className={cls(cx.menuItem || '')}
+                                >
+                                    <p>
+                                        <NavLink to={item.link as string}>
+                                            {item.name}
+                                        </NavLink>
+                                    </p>
+                                </li>
+                            ))
+                    }
+
                 </ul>
             </div>
             {visible && (

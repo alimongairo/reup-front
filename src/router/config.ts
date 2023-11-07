@@ -1,5 +1,10 @@
 import { ERoles, ERoutes } from "./types";
 
+interface IHeaderLink {
+    name: string,
+    link: ERoutes,
+}
+
 //   TODO: add correct links
 const CRMLinks = [
     {
@@ -82,3 +87,4 @@ function confReturner(type: ERoles | null) {
 }
 
 export { confReturner };
+export type {IHeaderLink};
