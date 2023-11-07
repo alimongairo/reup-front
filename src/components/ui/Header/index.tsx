@@ -6,6 +6,8 @@ import { ReactComponent as UserIcon } from 'S#/images/icons/user.svg';
 import { ReactComponent as BasketIcon } from 'S#/images/icons/basket.svg';
 import { ReactComponent as CRMIcon } from 'S#/images/icons/crm.svg';
 import { ReactComponent as MarketIcon } from 'S#/images/icons/market.svg';
+import { ReactComponent as BurgerIcon } from 'S#/images/icons/burger.svg';
+import { ReactComponent as CloseIcon } from 'S#/images/icons/close.svg';
 import cx from './index.module.scss';
 import cls from 'classnames';
 import { uid } from 'react-uid';
@@ -70,6 +72,16 @@ function Header({ type }: IProps) {
                     {config?.isSearch && (
                         <SearchIcon className={cls(cx.icon, cx.search)} />
                     )}
+                    {
+                        dropdownVisible ? <CloseIcon className={cls('as-mobile', cx.icon)}
+                            stroke={strokeColorReturner(false)}
+                            onClick={onDropdownClick}
+                        /> : <BurgerIcon className={cls('as-mobile', cx.icon)}
+                            stroke={strokeColorReturner(false)}
+                            onClick={onDropdownClick}
+                        />
+
+                    }
                 </div>
                 {config?.isActions && (
                     <ul className={cls('as-desktop', cx.actions)}>

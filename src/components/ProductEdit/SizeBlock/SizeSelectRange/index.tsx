@@ -1,9 +1,9 @@
 import { useCallback} from 'react';
 import cx from './index.module.scss';
 import classNames from 'classnames';
-import { Select } from '../../../ui';
-import { ReactComponent as AddIcon } from '../../../../../static/images/icons/plus.svg';
-import { ReactComponent as DeleteIcon } from '../../../../../static/images/icons/close.svg';
+import { Select } from '@/components/ui';
+import { ReactComponent as AddIcon } from 'S#/images/icons/plus.svg';
+import { ReactComponent as DeleteIcon } from 'S#/images/icons/close.svg';
 
 interface Props {
   value: string[][];
@@ -72,7 +72,7 @@ const SizeSelect = ({ sizes, value, onChange }: Props) => {
         );
       })}
       <div>
-        <div className={cx.button} onClick={handleAdd}>
+        <div className={cx.button} onClick={handleAdd} onKeyDown={handleAdd} role="button" tabIndex={0}>
           <AddIcon width={22} height={22} stroke='#fff'/>
         </div>
       </div>

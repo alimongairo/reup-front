@@ -21,6 +21,14 @@
     display: flex;
 }
 
+.icon {
+    height: 20px;
+    width: auto;
+    max-width: 20px;
+    align-self: center;
+    flex-shrink: 0;
+}
+
 @media (max-width: $media-tablet) {
     .main {
         width: 45%;
@@ -44,8 +52,13 @@
         }
     }
 
+    .search{
+        margin-right: 28px;
+    }
+
     .main {
         justify-content: flex-end;
+        align-items: center;
     }
 }
 
@@ -95,13 +108,6 @@
     .main {
         width: 83%;
         padding: 0 2%;
-    }
-
-    .icon {
-        height: 20px;
-        width: auto;
-        align-self: center;
-        flex-shrink: 0;
     }
 
     .actions,
