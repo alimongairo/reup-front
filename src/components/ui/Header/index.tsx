@@ -11,16 +11,16 @@ import { ReactComponent as CloseIcon } from 'S#/images/icons/close.svg';
 import cx from './index.module.scss';
 import cls from 'classnames';
 import { uid } from 'react-uid';
-import { confReturner } from "@/router/config";
-import { ERoles, ERoutes } from "@/router/types";
-import { Link } from "react-router-dom";
-import { NavLinkIcon, NavLink } from "..";
-import MobileToolbar from "./MobileToolbar";
-import { DropDown } from "./components";
-import { strokeColorReturner } from "../../../helpers";
-import { lkTabsList } from "../../../const";
-import { AuthContext } from "../../../app/auth";
-import { useBodyStyle, useWindowWidth } from "@/hooks";
+import { confReturner } from '@/router/config';
+import { ERoles, ERoutes } from '@/router/types';
+import { Link } from 'react-router-dom';
+import { NavLinkIcon, NavLink } from '..';
+import MobileToolbar from './MobileToolbar';
+import { DropDown } from './components';
+import { strokeColorReturner } from '../../../helpers';
+import { lkTabsList } from '../../../const';
+import { AuthContext } from '../../../app/auth';
+import { useBodyStyle, useWindowWidth } from '@/hooks';
 
 interface IProps {
     type: ERoles;
@@ -53,21 +53,19 @@ function Header({ type }: IProps) {
 
     useEffect(() => {
         if (isBurgerOpen) {
-            setDropdownVisible(false)
-            bodyStyle({ overflow: "hidden" });
+            setDropdownVisible(false);
+            bodyStyle({ overflow: 'hidden' });
             return;
         }
-        bodyStyle({ overflow: "auto" });
+        bodyStyle({ overflow: 'auto' });
         /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    }, [isBurgerOpen])
+    }, [isBurgerOpen]);
 
     useEffect(() => {
         if (dropdownVisible) {
-            setIsBurgerOpen(false)
+            setIsBurgerOpen(false);
         }
-    }, [dropdownVisible])
-
-
+    }, [dropdownVisible]);
 
     // TODO: очищаем данные о юзере в сторе
     const onExitCLick = () => {
@@ -90,7 +88,7 @@ function Header({ type }: IProps) {
     ];
     return (
         <div className={cx.header}>
-            <div className={cx.container}>
+            <div className={cls(cx.container, { [cx.active]: isBurgerOpen })}>
                 <Link to={ERoutes.Default} className={cx.logo}>
                     <LogoIcon />
                 </Link>
@@ -105,61 +103,76 @@ function Header({ type }: IProps) {
                     {config?.isSearch && (
                         <SearchIcon className={cls(cx.icon, cx.search)} />
                     )}
-                    {
-                        // TODO: открываем другой лаер (список того, что в шапке), а тот, что по человечку еще поверх
-                        isBurgerOpen ? <CloseIcon className={cls('as-mobile', cx.icon)}
-                            stroke={strokeColorReturner(false)}
-                            onClick={onBurgerClick}
-                        /> : <BurgerIcon className={cls('as-mobile', cx.icon)}
+                    {isBurgerOpen || dropdownVisible ? (
+                        <CloseIcon
+                            className={cls('as-mobile', cx.icon)}
                             stroke={strokeColorReturner(false)}
                             onClick={onBurgerClick}
                         />
-
-                    }
+                    ) : (
+                        <BurgerIcon
+                            className={cls('as-mobile', cx.icon)}
+                            stroke={strokeColorReturner(false)}
+                            onClick={onBurgerClick}
+                        />
+                    )}
                 </div>
-                {config?.isActions && (
-                    <ul className={cls('as-desktop', cx.actions)}>
-                        <li>
-                            <NavLinkIcon to="/" isFill={false}>
-                                <HeartIcon className={cx.icon} />
+                {(windowWidth > 758 || (!dropdownVisible && isBurgerOpen)) && (
+                    <div className={cx.iconsWrapper}>
+                        <ul className={cls(' ', cx.actions)}>
+                            {config?.isActions && (
+                                <>
+                                    <li>
+                                        <NavLinkIcon to="/" isFill={false}>
+                                            <HeartIcon className={cx.icon} />
+                                        </NavLinkIcon>
+                                    </li>
+                                    <li>
+                                        <button onClick={onDropdownClick}>
+                                            <UserIcon
+                                                className={cx.icon}
+                                                stroke={strokeColorReturner(
+                                                    dropdownVisible
+                                                )}
+                                            />
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <NavLinkIcon to="/" isFill={false}>
+                                            <BasketIcon className={cx.icon} />
+                                        </NavLinkIcon>
+                                    </li>
+                                </>
+                            )}
+                        </ul>
+                        {config?.typeBtn && config?.typeBtn === 'CRM' ? (
+                            <NavLinkIcon
+                                to="/crm"
+                                className={cls(' ', cx.typeBtn)}
+                            >
+                                <CRMIcon className={cx.icon} />
                             </NavLinkIcon>
-                        </li>
-                        <li>
-                            <button onClick={onDropdownClick}>
-                                <UserIcon
-                                    className={cx.icon}
-                                    stroke={strokeColorReturner(
-                                        dropdownVisible
-                                    )}
-                                />
-                            </button>
-                        </li>
-                        <li>
-                            <NavLinkIcon to="/" isFill={false}>
-                                <BasketIcon className={cx.icon} />
+                        ) : config?.typeBtn === 'market' ? (
+                            <NavLinkIcon
+                                to="/"
+                                className={cls(' ', cx.typeBtn)}
+                            >
+                                <MarketIcon className={cx.icon} />
                             </NavLinkIcon>
-                        </li>
-                    </ul>
+                        ) : null}
+                    </div>
                 )}
-                {config?.typeBtn && config?.typeBtn === 'CRM' ? (
-                    <NavLinkIcon
-                        to="/crm"
-                        className={cls('as-desktop', cx.typeBtn)}
-                    >
-                        <CRMIcon className={cx.icon} />
-                    </NavLinkIcon>
-                ) : config?.typeBtn === 'market' ? (
-                    <NavLinkIcon
-                        to="/"
-                        className={cls('as-desktop', cx.typeBtn)}
-                    >
-                        <MarketIcon className={cx.icon} />
-                    </NavLinkIcon>
-                ) : null}
+                <DropDown
+                    visible={dropdownVisible}
+                    overlay={dropDownList}
+                    type="lk"
+                />
 
-                <DropDown visible={dropdownVisible} overlay={dropDownList} type="lk" />
-
-                <DropDown visible={isBurgerOpen} overlay={config?.list || []} type="default" />
+                <DropDown
+                    visible={isBurgerOpen}
+                    overlay={config?.list || []}
+                    type="default"
+                />
             </div>
         </div>
     );

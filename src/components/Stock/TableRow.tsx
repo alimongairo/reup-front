@@ -29,47 +29,47 @@ const TableRow = ({ item }: Props) => {
 
     const soldOut = item.amount === 0;
 
-  return (
-    <>
-      <tr className={`${cx.itemRow} ${showDetails && cx.noBorder}`}>
-        <td>
-          <div style={{ height: '100px' }}>
-            <Image src={img}/>
-          </div>
-        </td>
-        <td>
-          <div className={cx.name}>
-            {item.name}
-            <div
-              className={cx.detailsIcon}
-              onClick={() => setShowDetails(!showDetails)}
-            >
-              {showDetails ? <UpArrow /> : <DownArrow />}
-            </div>
-          </div>
-        </td>
-        <td>
-          <div>{item.article}</div>
-        </td>
-        <td>
-          <div className={cx.amountBox}>{item.amount}</div>
-        </td>
-        <td>
-          <div className={cx.actions}>
-            {!soldOut ? (
-              <Button onClick={() => setVisibility(!visibility)}>
-                {visibility ? 'снять с витрины' : 'на витрину'}
-              </Button>
-            ) : (
-              <Button onClick={() => {}} disabled>
-                {'раскупили'}
-              </Button>
-            )}
-            <EditIcon onClick={() => {}} />
-            <DeleteIcon onClick={() => setOpen(true)} />
-          </div>
-        </td>
-      </tr>
+    return (
+        <>
+            <tr className={`${cx.itemRow} ${showDetails && cx.noBorder}`}>
+                <td>
+                    <div style={{ height: '100px' }}>
+                        <Image src={img} />
+                    </div>
+                </td>
+                <td>
+                    <div className={cx.name}>
+                        {item.name}
+                        <div
+                            className={cx.detailsIcon}
+                            onClick={() => setShowDetails(!showDetails)}
+                        >
+                            {showDetails ? <UpArrow /> : <DownArrow />}
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div>{item.article}</div>
+                </td>
+                <td>
+                    <div className={cx.amountBox}>{item.amount}</div>
+                </td>
+                <td>
+                    <div className={cx.actions}>
+                        {!soldOut ? (
+                            <Button onClick={() => setVisibility(!visibility)}>
+                                {visibility ? 'снять с витрины' : 'на витрину'}
+                            </Button>
+                        ) : (
+                            <Button onClick={() => {}} disabled>
+                                {'раскупили'}
+                            </Button>
+                        )}
+                        <EditIcon onClick={() => {}} />
+                        <DeleteIcon onClick={() => setOpen(true)} />
+                    </div>
+                </td>
+            </tr>
 
             <PopUp
                 visible={open}

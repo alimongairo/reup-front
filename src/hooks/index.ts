@@ -11,5 +11,5 @@ export {
     useWindowWidth,
     useTypedDispatch,
     useTypedSelector,
-    useBodyStyle
+    useBodyStyle,
 };

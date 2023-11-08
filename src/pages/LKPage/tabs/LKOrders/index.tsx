@@ -1,6 +1,6 @@
 import cx from './index.module.scss';
-import { Typography } from "../../../../components/ui";
-import { EmptyList } from "../components";
+import { Typography } from '../../../../components/ui';
+import { EmptyList } from '../components';
 import { ERoutes } from '../../../../router/types';
 
 export default function LKOrders() {

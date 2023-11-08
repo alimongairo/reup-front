@@ -1,8 +1,8 @@
-import { ERoles, ERoutes } from "./types";
+import { ERoles, ERoutes } from './types';
 
 interface IHeaderLink {
-    name: string,
-    link: ERoutes,
+    name: string;
+    link: ERoutes;
 }
 
 //   TODO: add correct links
@@ -87,4 +87,4 @@ function confReturner(type: ERoles | null) {
 }
 
 export { confReturner };
-export type {IHeaderLink};
+export type { IHeaderLink };

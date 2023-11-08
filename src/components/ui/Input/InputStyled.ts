@@ -14,39 +14,39 @@ export const StyledTextField = styled(TextField)`
         width: 100%;
     }
 
-  input {
-    height: 100%;
-    padding: 16px 14px;
-  }
+    input {
+        height: 100%;
+        padding: 16px 14px;
+    }
 
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-      -webkit-appearance: none; // Yeah, yeah everybody write about it
-  }
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-inner-spin-button {
+        -webkit-appearance: none; // Yeah, yeah everybody write about it
+    }
 
-  input::placeholder {
-    font-family: 'Gilroy', sans-serif;
-    font-size: 16px;
-  }
+    input::placeholder {
+        font-family: 'Gilroy', sans-serif;
+        font-size: 16px;
+    }
 
-  & .MuiInputBase-root {
-    height: 100%;
-  }
+    & .MuiInputBase-root {
+        height: 100%;
+    }
 
-  & .MuiFormControl-root {
-    height: '100%';
-  }
+    & .MuiFormControl-root {
+        height: '100%';
+    }
 
-  & .MuiOutlinedInput-root {
-    max-height: 240px;
-  }
+    & .MuiOutlinedInput-root {
+        max-height: 240px;
+    }
 
-  & .MuiFormLabel-root {
-    font-family: 'Gilroy', sans-serif;
-    font-size: 16px;
-    position: absolute;
-    top: -2px;
-  }
+    & .MuiFormLabel-root {
+        font-family: 'Gilroy', sans-serif;
+        font-size: 16px;
+        position: absolute;
+        top: -2px;
+    }
 `;
 
 export const StyledSearchInput = styled(TextField)`
@@ -75,13 +75,13 @@ export const StyledSearchIcon = styled(SearchIcon)`
 `;
 
 export const LimitBlock = styled('div')`
-  display: flex;
-  justify-content: right;
-  margin-top: 6px;
-  color: #828282;
-  font-size: 14px;
+    display: flex;
+    justify-content: right;
+    margin-top: 6px;
+    color: #828282;
+    font-size: 14px;
 
-  &.warning {
-    color: #e30613;
-  }
+    &.warning {
+        color: #e30613;
+    }
 `;

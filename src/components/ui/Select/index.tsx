@@ -1,8 +1,8 @@
-import { InputAdornment, MenuItem } from "@mui/material";
+import { InputAdornment, MenuItem } from '@mui/material';
 
-import { Props, SelectValue } from "./interface";
-import { useCallback, useMemo } from "react";
-import { Input } from "..";
+import { Props, SelectValue } from './interface';
+import { useCallback, useMemo } from 'react';
+import { Input } from '..';
 import { Close as CloseIcon } from '@mui/icons-material';
 
 const Select = <Multiple extends boolean | undefined = false>({
@@ -13,54 +13,59 @@ const Select = <Multiple extends boolean | undefined = false>({
     value = (multiple ? [] : '') as SelectValue<Multiple>,
     isDisabledClearable = false,
     ...restProps
-  }: Props<Multiple>) => {
+}: Props<Multiple>) => {
     const handleClear = useCallback(() => {
-      //@ts-ignore
-      if (onChange) onChange(multiple ? [''] : '');
+        //@ts-ignore
+        if (onChange) onChange(multiple ? [''] : '');
     }, [onChange, multiple]);
-  
+
     const isVisibleIconClear = useMemo(
-      () => !isDisabledClearable && value && (!Array.isArray(value) || Boolean(value.length)),
-      [isDisabledClearable, value],
+        () =>
+            !isDisabledClearable &&
+            value &&
+            (!Array.isArray(value) || Boolean(value.length)),
+        [isDisabledClearable, value]
     );
-  
+
     return (
-      <Input
-        {...restProps}
-        fullWidth
-        select
-        SelectProps={{ 
-            multiple,
-            disabled,
-            MenuProps: { 
-              sx: { 
-                maxHeight: '400px',
-                '& .MuiPaper-root': {
-                  border: '1px solid black',
-                  borderRadius: '0px',
-                  marginTop: '-1px',
-                  transition: 'none !important',
+        <Input
+            {...restProps}
+            fullWidth
+            select
+            SelectProps={{
+                multiple,
+                disabled,
+                MenuProps: {
+                    sx: {
+                        maxHeight: '400px',
+                        '& .MuiPaper-root': {
+                            border: '1px solid black',
+                            borderRadius: '0px',
+                            marginTop: '-1px',
+                            transition: 'none !important',
+                        },
+                    },
                 },
-              }
-            } 
-        }}
-        InputProps={{
-          style: {height: '50px'},
-          endAdornment: (
-            <InputAdornment position='end' onClick={handleClear}>
-              {isVisibleIconClear && !disabled && <CloseIcon />}
-            </InputAdornment>
-          ),
-        }}
-        value={value}
-        onChange={(event) => onChange(event.target.value as SelectValue<Multiple>)}
-      >
-        {options.map((option) => (
-          <MenuItem key={option.value} value={option.value}>
-            {option.label}
-          </MenuItem>
-        ))}
-      </Input>
+            }}
+            InputProps={{
+                style: { height: '50px' },
+                endAdornment: (
+                    <InputAdornment position="end" onClick={handleClear}>
+                        {isVisibleIconClear && !disabled && <CloseIcon />}
+                    </InputAdornment>
+                ),
+            }}
+            value={value}
+            onChange={(event) =>
+                onChange(event.target.value as SelectValue<Multiple>)
+            }
+        >
+            {options.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                </MenuItem>
+            ))}
+        </Input>
     );
-  };
-  export default Select;
+};
+export default Select;

@@ -1,8 +1,8 @@
 import cx from './index.module.scss';
-import {  Typography } from "../../../../components/ui";
-import ProductItem from "../../../../components/ProductItem";
-import { uid } from "react-uid";
-import { EmptyList } from "../components";
+import { Typography } from '../../../../components/ui';
+import ProductItem from '../../../../components/ProductItem';
+import { uid } from 'react-uid';
+import { EmptyList } from '../components';
 import { ERoutes } from '@/router/types';
 
 export default function LKFav() {
