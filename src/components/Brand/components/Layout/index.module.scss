@@ -1,0 +1,33 @@
+@import '@/styles/vars.scss';
+@import '@/styles/mixins.scss';
+
+.products {
+    display: grid;
+    grid-template-columns: 259px 1fr;
+    gap: 25px;
+    padding: $containerPadding-desktop;
+    @include outer;
+
+    .filters {
+        img {
+            height: auto;
+        }
+    }
+    .list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 24px;
+        row-gap: $offset-default;
+
+        > * {
+            min-height: 467px;
+            pointer-events: none;
+        }
+
+        > *:nth-child(9n) {
+            grid-column: span 2;
+            grid-row: span 2;
+            min-height: 972px;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@import '@/styles/vars.scss';
+@import '@/styles/mixins.scss';
+
+.bricks {
+    display: grid;
+    background: $color-black;
+    gap: 1px;
+    border-top: 1px solid $color-black;
+    border-bottom: 1px solid $color-black;
+    @include outer();
+
+    > * {
+        background: $color-snow;
+    }
+}
+
+.item {
+    display: flex;
+    align-items: flex-end;
+
+    a {
+        padding: 0 $containerPadding-mobile;
+        line-height: 1;
+        width: 100%;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        &.fill.mainLink {
+            color: $color-primary;
+        }
+
+        &.active.fill {
+            background: $color-primary;
+            color: $color-snow;
+        }
+    }
+
+    &.left {
+        a {
+            justify-content: flex-start;
+        }
+    }
+
+    &.center {
+        a {
+            justify-content: space-around;
+        }
+    }
+
+    &.right {
+        a {
+            justify-content: flex-end;
+        }
+    }
+}
+
+@media (max-width: $media-mobile) {
+    .bricks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item {
+        height: 34px;
+    }
+}
+
+@media (min-width: $media-desktop) {
+    .bricks {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .item {
+        height: 54px;
+    }
+}

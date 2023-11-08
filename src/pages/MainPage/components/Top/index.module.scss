@@ -1,0 +1,66 @@
+@import '@/styles/vars.scss';
+@import '@/styles/mixins.scss';
+
+.wrapper {
+    @include outer();
+}
+
+.wrapper,
+.sub {
+    display: grid;
+}
+
+h1.title {
+    border-bottom: 1px solid $color-black;
+}
+
+@media (max-width: $media-mobile) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 213px) max-content;
+    }
+
+    h1.title {
+        padding: 20px 0;
+    }
+
+    .info {
+        gap: $containerPadding-mobile;
+        padding: $containerPadding-mobile;
+    }
+}
+
+@media (min-width: $media-desktop) {
+    .wrapper {
+        grid-template-columns: 1fr 2.1fr;
+        grid-template-rows: 544px repeat(2, max-content);
+    }
+
+    .mainImg {
+        grid-row: span 3;
+        grid-column: 1;
+    }
+
+    .topImg {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .info {
+        padding: 40px;
+    }
+
+    .sub {
+        grid-template-columns: 2fr 1fr;
+        gap: 40px;
+
+        a {
+            align-items: flex-end;
+        }
+    }
+
+    h1.title {
+        padding-bottom: $offset-default;
+        margin-bottom: $offset-default;
+    }
+}

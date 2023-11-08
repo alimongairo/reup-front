@@ -1,0 +1,54 @@
+@import '@/styles/vars.scss';
+
+.wrapper {
+    margin-bottom: $margin-h1;
+
+    &:not(.isEditable) {
+    }
+
+    &.isEditable {
+        h1 {
+            margin-bottom: 0;
+            margin-right: 30px;
+        }
+
+        .btnsList {
+            display: flex;
+            flex-wrap: nowrap;
+            position: relative;
+
+            button {
+                &:first-child {
+                    margin-right: 20px;
+                }
+
+                &:nth-child(2) {
+                    margin-right: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $media-mobile) {
+    .wrapper {
+        &.isEditable {
+            display: flex;
+            flex-direction: column;
+
+            h1 {
+                margin-bottom: $margin-h1;
+            }
+        }
+    }
+}
+
+@media (min-width: $media-desktop) {
+    .wrapper {
+        &.isEditable {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+    }
+}

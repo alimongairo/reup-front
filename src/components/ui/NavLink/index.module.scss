@@ -1,0 +1,15 @@
+@import '@/styles/vars.scss';
+
+.active {
+    color: $color-primary;
+    > * {
+        color: $color-primary;
+    }
+
+    svg {
+        stroke: $color-primary;
+        &.isFill {
+            fill: $color-primary;
+        }
+    }
+}

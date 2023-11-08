@@ -1,0 +1,19 @@
+.tooltip {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .label {
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+@media (hover: hover) {
+    .label:hover {
+        cursor: pointer;
+    }
+}

@@ -6,37 +6,41 @@
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
-    "eslint-config-prettier"
+    "eslint-config-prettier",
+    "plugin:import/typescript",
   ],
   "settings": {
     "react": {
       "version": "detect"
     },
     "import/resolver": {
-      "node": {
-        "paths": [
-          "src"
-        ],
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
+      "eslint-import-resolver-custom-alias": {
+        "alias": {
+          "@": "./src",
+          "components": "./src/components",
+          "helpers": "./src/helpers",
+          "hooks": "./src/hooks",
+          "layouts": "./src/layouts",
+          "pages": "./src/pages",
+          "redux": "./src/redux",
+          "router": "./src/router",
+          "styles": "./src/styles",
+          "types": "./src/types",
+          "S#": "./static"
+        },
+        "extensions": [".ts", ".tsx"],
+        "packages": [
+          "packages/*"
         ]
       }
     }
   },
   "rules": {
-    "no-unused-vars": [
-      "error",
-      {
-        "vars": "all",
-        "args": "after-used",
-        "ignoreRestSiblings": true,
-        "argsIgnorePattern": "^_"
-      }
-    ],
-    "react/react-in-jsx-scope": "off"
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "off", // "on" and fix all any
+    "@typescript-eslint/ban-ts-comment": "off"
   },
   "plugins": [
     "react-refresh"

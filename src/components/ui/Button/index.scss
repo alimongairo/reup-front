@@ -1,0 +1,213 @@
+@import '@/styles/vars.scss';
+
+.button.MuiButton-root {
+    font-family: 'Gilroy', 'sans-serif';
+    border-radius: 0;
+    text-transform: lowercase;
+    border: 1px solid $color-black;
+    line-height: 1;
+    min-width: fit-content;
+
+    > * {
+        margin-bottom: 0;
+        line-height: 1;
+    }
+
+    &.Mui-disabled {
+        background: $color-gray-6;
+    }
+
+    &.MuiButton-sizeMedium {
+        max-height: 50px;
+        box-sizing: border-box;
+        padding: $offset-s 24px;
+        font-size: $fontSize-default;
+
+        &.icon {
+            padding: 14px;
+        }
+
+        svg {
+            height: 20px;
+            width: auto;
+        }
+    }
+
+    &.MuiButton-sizeSmall {
+        padding: 8px 24px;
+        font-size: $fontSize-default;
+
+        &.icon {
+            padding: 4px;
+        }
+
+        svg {
+            height: 15px;
+            width: auto;
+        }
+    }
+
+    &.MuiButton-contained {
+        padding: 8px;
+        border: 0;
+        box-shadow: none;
+        background: none;
+        height: fit-content;
+
+        svg {
+            height: 18px;
+        }
+    }
+
+    // ----------- color -----------
+    &.black :not(.icon-fav) {
+        svg {
+            fill: $color-black;
+        }
+    }
+
+    &.black {
+        color: $color-black;
+
+        svg {
+            stroke: $color-black;
+        }
+
+        &:hover,
+        &:active,
+        &.active {
+            border: 1px solid $color-black;
+            color: $color-snow;
+            text-shadow:
+                0 0 0.65px $color-snow,
+                0 0 0.65px $color-snow;
+
+            svg {
+                fill: $color-snow;
+                stroke: $color-snow;
+            }
+        }
+
+        &:hover {
+            background: $color-primary-light;
+            border: 1px solid $color-primary-light;
+        }
+
+        &:active,
+        &.active {
+            background: $color-primary;
+        }
+
+        &.MuiButton-contained {
+            &:hover {
+                border: none;
+                background: none;
+                color: $color-primary-light;
+
+                > * {
+                    color: $color-primary-light;
+                }
+
+                svg {
+                    fill: $color-primary-light;
+                    stroke: $color-primary-light;
+                }
+            }
+
+            &:active {
+                background: none;
+                color: $color-primary;
+
+                > * {
+                    color: $color-primary;
+                }
+
+                svg {
+                    fill: $color-primary;
+                    stroke: $color-primary;
+                }
+            }
+        }
+    }
+
+    &.white {
+        color: $color-snow;
+
+        svg {
+            fill: $color-snow;
+            stroke: $color-snow;
+        }
+
+        &:hover,
+        &:active {
+            border: 1px solid $color-snow;
+            color: $color-snow;
+            text-shadow:
+                0 0 0.65px $color-snow,
+                0 0 0.65px $color-snow;
+
+            svg {
+                fill: $color-snow;
+                stroke: $color-snow;
+            }
+        }
+
+        &:hover {
+            background: $color-primary-light;
+            border: 1px solid $color-primary-light;
+        }
+
+        &:active {
+            background: $color-primary;
+            border: 1px solid $color-primary;
+        }
+
+        &.MuiButton-contained {
+            &:hover {
+                border: none;
+                background: none;
+                color: $color-primary-light;
+
+                > * {
+                    color: $color-primary-light;
+                }
+
+                svg {
+                    fill: $color-primary-light;
+                    stroke: $color-primary-light;
+                }
+            }
+
+            &:active {
+                background: none;
+                color: $color-primary;
+
+                > * {
+                    color: $color-primary;
+                }
+
+                svg {
+                    fill: $color-primary;
+                    stroke: $color-primary;
+                }
+            }
+        }
+    }
+
+    &.note {
+        opacity: 0.5;
+    }
+
+    // ----------- icon -----------
+    &.icon-cross {
+        svg {
+            height: 12px;
+        }
+    }
+
+    &.icon-fav {
+        svg {
+            height: 24px;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    .label {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 13px 16px;
+        border: 1px solid #828282;
+        position: relative;
+        cursor: pointer;
+
+        &.disabled {
+            background-color: #f2f2f2;
+            color: #e0e0e0;
+            border-color: #e0e0e0;
+            pointer-events: none;
+
+            input {
+                background-color: #f2f2f2;
+            }
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .placeholder {
+                color: #828282;
+            }
+
+            & input {
+                font-size: 16px;
+                box-sizing: border-box;
+                width: 100%;
+                min-width: 100px;
+                flex-grow: 1;
+                border: 0;
+                margin: 0;
+                outline: 0;
+            }
+        }
+
+        .dropdown {
+            position: absolute;
+            border: 1px solid #828282;
+            width: calc(100% + 2px);
+            left: -1px;
+            top: calc(100%);
+            transition: 0.3s;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 10;
+
+            &.visible {
+                transition: 0.3s;
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .option {
+                transition: 0.3s;
+                padding: 8px 24px;
+                background: white;
+                &:hover {
+                    background: #e3e3e3;
+                }
+                &.selected {
+                    background: #e3e3e3;
+                }
+            }
+        }
+    }
+
+    .selectedOptions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

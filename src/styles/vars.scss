@@ -1,12 +1,45 @@
 $containerWidth-min: 1024px;
-$containerWidth-max: 1456px;
+$containerWidth-max: 1920px;
+$containerPadding-desktop: 50px;
+$containerPadding-mobile: 16px;
 
+$headerHeight-desktop: 97px;
+$headerHeight-mobile: 39px;
+$headerActions-width: 220px;
 
-$color-snow: #FFFFFF;
+$margin-h1: 50px;
+$margin-h1-mobile: 25px;
+$margin-h2: 20px;
+$margin-h2-mobile: 16px;
+$margin-h3: 20px;
+$margin-h3-mobile: 16px;
+$margin-h6: 12px;
+$margin-h6-mobile: 8px;
+
+$mb-lg: 120px;
+$mb-lg-mobile: 48px;
+
+$padding-lg: 72px;
+$padding-lg-mobile: 48px;
+
+$offset-default: 32px;
+$offset-s: 16px;
+
+$color-snow: #ffffff;
 $color-black: #000000;
-$color-primary: #7991F5;
-
+$color-primary: #7991f5;
+$color-primary-light: #9baefd;
+$color-primary-extraLight: #9cb6e9;
+$color-gray-0: #d6d6d6;
+$color-gray-2: #e2e2e0;
+$color-gray-4: #f4f4f4;
+$color-gray-6: #f2f2f2;
+$color-gray-8: #e8e8e8;
+$color-gray-82: #828282;
+$color-green: #beda62;
 
 $media-mobile: 758px; //max
 $media-desktop: 759px; //min
-$media-tablet: 1035px; // extra 
+$media-tablet: 1035px; // extra
+
+$fontSize-default: 16px;

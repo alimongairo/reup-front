@@ -1,0 +1,49 @@
+@import '../../../../styles/vars.scss';
+
+.subFields {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+    .field:not(:last-child) {
+        margin-bottom: $margin-h2-mobile;
+    }
+}
+
+@media (max-width: $media-mobile) {
+    .fields {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $margin-h2-mobile;
+    }
+
+    .form {
+        margin-bottom: 159px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .saveBtn {
+        width: fit-content;
+        align-self: center;
+    }
+}
+
+@media (min-width: $media-desktop) {
+    .fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(calc(50% - 25px), 590px));
+        column-gap: 50px;
+        margin-bottom: 32px;
+    }
+
+    .form {
+        margin-bottom: 32px;
+    }
+}

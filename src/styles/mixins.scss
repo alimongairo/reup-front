@@ -1,8 +1,32 @@
 @import './vars.scss';
 
-@mixin container-width{
+@mixin container-width {
     min-width: $containerWidth-min;
     max-width: $containerWidth-max;
     width: 100%;
     margin: 0 auto;
+}
+
+@mixin outer {
+    @media (max-width: $media-mobile) {
+        margin-left: calc(-1 * $containerPadding-mobile);
+        margin-right: calc(-1 * $containerPadding-mobile);
+    }
+
+    @media (min-width: $media-desktop) {
+        margin-left: calc(-1 * $containerPadding-desktop);
+        margin-right: calc(-1 * $containerPadding-desktop);
+    }
+}
+
+@mixin inner {
+    @media (max-width: $media-mobile) {
+        padding-left: $containerPadding-mobile;
+        padding-right: $containerPadding-mobile;
+    }
+
+    @media (min-width: $media-desktop) {
+        padding-left: $containerPadding-desktop;
+        padding-right: $containerPadding-desktop;
+    }
 }

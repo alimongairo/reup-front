@@ -1,0 +1,61 @@
+@import '@/styles/vars.scss';
+
+.head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title,
+.content {
+    margin: 7px 0;
+}
+
+.content {
+    overflow: hidden;
+    transition: 0.3s;
+    margin: 0;
+}
+
+.moreText,
+.title {
+    cursor: pointer;
+}
+
+.moreText {
+    text-decoration: underline;
+}
+
+.minus {
+    position: absolute;
+    transition: 0.3s;
+}
+
+.collapseIcon {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+}
+
+.rotate {
+    transform: rotateZ(90deg);
+
+    &__180 {
+        transform: rotateZ(180deg);
+    }
+}
+
+.wrapper {
+    position: relative;
+    transition: 0.3s;
+}
+
+.icon {
+    width: 6px;
+    height: auto;
+}
+
+@media (hover: hover) {
+    .head:hover {
+        cursor: pointer;
+    }
+}
