@@ -1,3 +1,5 @@
+// doesnt use
+
 import React, { useState } from 'react';
 import { ReactComponent as LogoIcon } from 'S#/images/icons/logoShort.svg';
 import { ReactComponent as BurgerIcon } from 'S#/images/icons/burger.svg';

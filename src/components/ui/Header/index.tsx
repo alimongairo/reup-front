@@ -119,44 +119,45 @@ function Header({ type }: IProps) {
                 </div>
                 {(windowWidth > 758 || (!dropdownVisible && isBurgerOpen)) && (
                     <div className={cx.iconsWrapper}>
-                        <ul className={cls(' ', cx.actions)}>
-                            {config?.isActions && (
-                                <>
-                                    <li>
-                                        <NavLinkIcon to="/" isFill={false}>
-                                            <HeartIcon className={cx.icon} />
-                                        </NavLinkIcon>
-                                    </li>
-                                    <li>
-                                        <button onClick={onDropdownClick}>
-                                            <UserIcon
-                                                className={cx.icon}
-                                                stroke={strokeColorReturner(
-                                                    dropdownVisible
-                                                )}
-                                            />
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <NavLinkIcon to="/" isFill={false}>
-                                            <BasketIcon className={cx.icon} />
-                                        </NavLinkIcon>
-                                    </li>
-                                </>
-                            )}
-                        </ul>
+                        {type !== ERoles.brand && (
+                            <ul className={cx.actions}>
+                                {config?.isActions && (
+                                    <>
+                                        <li>
+                                            <NavLinkIcon to="/" isFill={false}>
+                                                <HeartIcon
+                                                    className={cx.icon}
+                                                />
+                                            </NavLinkIcon>
+                                        </li>
+                                        <li>
+                                            <button onClick={onDropdownClick}>
+                                                <UserIcon
+                                                    className={cx.icon}
+                                                    stroke={strokeColorReturner(
+                                                        dropdownVisible
+                                                    )}
+                                                />
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <NavLinkIcon to="/" isFill={false}>
+                                                <BasketIcon
+                                                    className={cx.icon}
+                                                />
+                                            </NavLinkIcon>
+                                        </li>
+                                    </>
+                                )}
+                            </ul>
+                        )}
+
                         {config?.typeBtn && config?.typeBtn === 'CRM' ? (
-                            <NavLinkIcon
-                                to="/crm"
-                                className={cls(' ', cx.typeBtn)}
-                            >
+                            <NavLinkIcon to="/crm" className={cx.typeBtn}>
                                 <CRMIcon className={cx.icon} />
                             </NavLinkIcon>
                         ) : config?.typeBtn === 'market' ? (
-                            <NavLinkIcon
-                                to="/"
-                                className={cls(' ', cx.typeBtn)}
-                            >
+                            <NavLinkIcon to="/" className={cx.typeBtn}>
                                 <MarketIcon className={cx.icon} />
                             </NavLinkIcon>
                         ) : null}
