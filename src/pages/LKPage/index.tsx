@@ -5,6 +5,7 @@ import { MainLayout } from '../../layouts';
 import { Bricks, EColorType } from '../../components/ui';
 import cx from './index.module.scss';
 import { lkTabsList } from '../../const';
+import { useQuery } from "@/hooks";
 
 type TTabParams = {
     tabName: string;
@@ -17,15 +18,14 @@ type TTabName = {
 };
 
 export default function LKPage() {
-    // разводящая это попап из шапки
-    // из MobileToolbar открываем попап
-
     const { tabName = 'main' } = useParams<keyof TTabParams>() as TTabParams;
+
+    const query = useQuery();
 
     const tabs = {
         fav: <LKFav key="fav" />,
         main: <LKMain key="main" />,
-        orders: <LKOrders key="orders" />,
+        orders: <LKOrders key="orders" content={query.get('id') ? 'details' : 'main'}/>,
     };
 
     const currentTab = tabs[tabName as keyof TTabName];
