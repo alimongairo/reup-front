@@ -14,7 +14,7 @@ export default function MyNavLink(props: IProps) {
             to={to}
             style={style}
             className={({ isActive }) =>
-                cls({ [cx.active]: isActive }, className as string, {
+                cls(cx.link, { [cx.active]: isActive }, className as string, {
                     [cx.isFill]: isFill,
                 })
             }
