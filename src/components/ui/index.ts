@@ -11,6 +11,7 @@ import Divider from './Divider';
 import { Colors, EColors, IColor } from './Colors';
 import Radio, { IRadioProps, RadioGroup } from './Radio';
 import { Tabs, ETabsView } from './Tabs';
+import TabsWithBricks from "./Tabs/TabsWithBricks";
 import { Bricks, IBrick, EColorType } from './Bricks';
 import { EBrickAlign } from '../../const';
 import NavLinkIcon from './NavLinkIcon';
@@ -45,6 +46,7 @@ export {
     ImageUpload,
     SearchableSelect,
     Tabs, ETabsView, 
+    TabsWithBricks,
     Bricks, EColorType,
     NavLink,
     NavLinkIcon,

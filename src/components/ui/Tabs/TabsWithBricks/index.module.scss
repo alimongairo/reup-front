@@ -1,0 +1,28 @@
+@import '@/styles/vars.scss';
+@import '@/styles/mixins.scss';
+
+.wrapper {
+    button {
+        &.active {
+            border-bottom: none;
+        }
+
+        &.done {}
+    }
+
+    .content {
+        border-top: 1px solid $color-black;
+        @include outer;
+
+
+
+    }
+}
+
+@media (min-width: $media-desktop) {
+    .content {}
+}
+
+@media (max-width: $media-mobile) {
+    .content {}
+}

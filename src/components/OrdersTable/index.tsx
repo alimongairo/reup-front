@@ -1,6 +1,8 @@
 
 // import cx from './index.module.scss';
 
+import { TabsWithBricks } from "../ui";
+
 export default function OrdersTable() {
 
   return (
@@ -8,7 +10,7 @@ export default function OrdersTable() {
         
         здесь табличка с табами чтобы смотреть все в списках
         При клике на подробнее меняется контент на подробности о заказе (при этом менять урл, чтобы можно было перейти в подробночти зказа по id)
-
+<TabsWithBricks />
     </div>
   )
 }
