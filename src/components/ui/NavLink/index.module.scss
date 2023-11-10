@@ -13,3 +13,9 @@
         }
     }
 }
+
+@media (hover: hover) {
+    .link:hover {
+        color: $color-primary;
+    }
+}

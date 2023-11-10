@@ -1,36 +1,36 @@
 .option {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  width: fit-content;
-  height: fit-content;
-  padding: 12px 24px;
-  border: 1px solid black;
-  background-color: #7991f5;
-  border-color: black;
-  color: white;
-  font-weight: 500;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 12px 24px;
+    border: 1px solid black;
+    background-color: #7991f5;
+    border-color: black;
+    color: white;
+    font-weight: 500;
 
-  .icon {
-    cursor: pointer;
-  }
-
-  .percentageInput{
-    width: 75px;
-    height: 21px;
-    background-color: white;
-
-    input {
-      padding: 4px;
-      border: 0;
-    }
-    
-    & .MuiOutlinedInput-root {
-      padding-right: 4px;
+    .icon {
+        cursor: pointer;
     }
 
-    & .MuiInputAdornment-root {
-      margin: 0px;
+    .percentageInput {
+        width: 75px;
+        height: 21px;
+        background-color: white;
+
+        input {
+            padding: 4px;
+            border: 0;
+        }
+
+        & .MuiOutlinedInput-root {
+            padding-right: 4px;
+        }
+
+        & .MuiInputAdornment-root {
+            margin: 0px;
+        }
     }
-  }
 }

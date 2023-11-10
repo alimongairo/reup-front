@@ -6,7 +6,7 @@ const ProductEditPage = () => {
         <CRMLayout>
             <ProductEditLayout />
         </CRMLayout>
-    )
-}
+    );
+};
 
 export default ProductEditPage;

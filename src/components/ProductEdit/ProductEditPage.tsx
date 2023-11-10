@@ -1,15 +1,23 @@
-import { useCallback, useState, useMemo, ChangeEvent } from "react";
+import { useCallback, useState, useMemo, ChangeEvent } from 'react';
 // import { useNavigate } from "react-router-dom";
 // import { ERoutes } from "../../app/router/config";
-import { initState } from "../../types/productEditTypes";
+import { initState } from '../../types/productEditTypes';
 
 // import CancelButton from "../ui/CancelButton";
-import { Divider, Input, Typography, Select, ImageUpload, SearchableSelect, Button } from "../ui";
-import { Grid, Stack } from "@mui/material";
+import {
+    Divider,
+    Input,
+    Typography,
+    Select,
+    ImageUpload,
+    SearchableSelect,
+    Button,
+} from '../ui';
+import { Grid, Stack } from '@mui/material';
 
 import cx from './index.module.scss';
-import ListSelect from "../ui/ListSelect";
-import SizeBlock from "./SizeBlock";
+import ListSelect from '../ui/ListSelect';
+import SizeBlock from './SizeBlock';
 
 const options = [
     { label: 'option 1', value: '1' },
@@ -17,7 +25,7 @@ const options = [
     { label: 'option 3', value: '3' },
     { label: 'option 4', value: '4' },
     { label: 'option 5', value: '5' },
-  ];
+];
 
 const delivery = '0';
 
@@ -26,48 +34,74 @@ const ProductEditLayout = () => {
     const [state, setState] = useState(initState);
 
     const withDiscount = useMemo(() => {
-        return (Number(state.price) * (1 - Number(state.discount) / 100));
+        return Number(state.price) * (1 - Number(state.discount) / 100);
     }, [state.discount, state.price]);
 
     const comission = useMemo(() => {
-        return (Number(state.price) * 0.15);
+        return Number(state.price) * 0.15;
     }, [state.price]);
 
     const total = useMemo(() => {
-        return (Number(withDiscount) - Number(delivery) - Number(comission));
+        return Number(withDiscount) - Number(delivery) - Number(comission);
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [comission, delivery, withDiscount]);
-    
-    const handleSelect = useCallback((name: string) => (value: string) => {
-        setState((prevState) => ({ ...prevState, [name]: value}));
-    }, []);
 
-    const handleInput = useCallback((name: string) => (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setState((prevState) => ({ ...prevState, [name]: e.target.value}));
-    }, []);
+    const handleSelect = useCallback(
+        (name: string) => (value: string) => {
+            setState((prevState) => ({ ...prevState, [name]: value }));
+        },
+        []
+    );
 
-    const handleChangeMainMedia = useCallback(() => (value: any) => {
-        setState((prevState) => ({ ...prevState, media: { ...prevState.media, main: value } }));
-    }, []); 
+    const handleInput = useCallback(
+        (name: string) =>
+            (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+                setState((prevState) => ({
+                    ...prevState,
+                    [name]: e.target.value,
+                }));
+            },
+        []
+    );
+
+    const handleChangeMainMedia = useCallback(
+        () => (value: any) => {
+            setState((prevState) => ({
+                ...prevState,
+                media: { ...prevState.media, main: value },
+            }));
+        },
+        []
+    );
 
     const handleChangeMedia = useCallback(
-    (i: number) => (value: string) => {
-        const newState = { ...state };
-        newState.media.other[i] = value;
-        setState(newState);
-    }, []);
+        (i: number) => (value: string) => {
+            const newState = { ...state };
+            newState.media.other[i] = value;
+            setState(newState);
+        },
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
+        []
+    );
 
-    const handleChangeCharacterictic = useCallback((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setState((prevState) => ({
-            ...prevState,
-            characterictics: { ...prevState.characterictics, text: e.target.value },
-        }));
-    }, []);
+    const handleChangeCharacterictic = useCallback(
+        (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+            setState((prevState) => ({
+                ...prevState,
+                characterictics: {
+                    ...prevState.characterictics,
+                    text: e.target.value,
+                },
+            }));
+        },
+        []
+    );
 
     const mainBlock = useMemo(() => {
         return (
             <div className={cx.block}>
                 <div className={cx.heading}>
-                    <Typography variant='h2'>главная</Typography>
+                    <Typography variant="h2">главная</Typography>
                 </div>
                 <Grid container spacing={4}>
                     <Grid item xs={4}>
@@ -84,22 +118,22 @@ const ProductEditLayout = () => {
                                 value={state.category}
                                 onChange={handleSelect('category')}
                             />
-                            {state.category &&
+                            {state.category && (
                                 <Select
                                     options={options}
                                     label="подкатегория"
                                     value={state.subcategory}
                                     onChange={handleSelect('subcategory')}
                                 />
-                            }
-                            {state.subcategory &&
+                            )}
+                            {state.subcategory && (
                                 <Select
                                     options={options}
                                     label="под-подкатегория"
                                     value={state.subsubcategory}
                                     onChange={handleSelect('subsubcategory')}
                                 />
-                            }
+                            )}
                         </Stack>
                     </Grid>
                     <Grid item xs={8}>
@@ -126,37 +160,47 @@ const ProductEditLayout = () => {
                 </Grid>
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
-    const mediaBlock = useMemo(() => { // fix grid
+    const mediaBlock = useMemo(() => {
+        // fix grid
         return (
             <div className={cx.block}>
                 <div className={cx.heading}>
-                    <Typography variant='h2'>мультимедиа</Typography>
+                    <Typography variant="h2">мультимедиа</Typography>
                 </div>
-                <Grid container direction='row' spacing={3}>
-                    <Grid container item xs={4} >
-                        <ImageUpload main value={state.media.main} onChange={handleChangeMainMedia}/>
+                <Grid container direction="row" spacing={3}>
+                    <Grid container item xs={4}>
+                        <ImageUpload
+                            main
+                            value={state.media.main}
+                            onChange={handleChangeMainMedia}
+                        />
                     </Grid>
-                    <Grid item container direction='row' xs={8} spacing={3}>
+                    <Grid item container direction="row" xs={8} spacing={3}>
                         {state.media.other.map((el, i) => (
-                            <Grid container item xs={12/5} key={i}>
-                                <ImageUpload value={el} onChange={handleChangeMedia(i)}/>
+                            <Grid container item xs={12 / 5} key={i}>
+                                <ImageUpload
+                                    value={el}
+                                    onChange={handleChangeMedia(i)}
+                                />
                             </Grid>
                         ))}
                     </Grid>
                 </Grid>
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     const detailsBlock = useMemo(() => {
         return (
             <div className={cx.block}>
                 <div className={cx.heading}>
-                    <Typography variant='h2'>о товаре</Typography>
+                    <Typography variant="h2">о товаре</Typography>
                 </div>
-                <Grid container rowSpacing={2} columnSpacing={50/8}>
+                <Grid container rowSpacing={2} columnSpacing={50 / 8}>
                     <Grid item xs={6}>
                         <SearchableSelect
                             label="материал"
@@ -212,15 +256,16 @@ const ProductEditLayout = () => {
                         />
                     </Grid>
                 </Grid>
-          </div>
+            </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     const characteristicsBlock = useMemo(() => {
         return (
             <div className={cx.block}>
                 <div className={cx.heading}>
-                    <Typography variant='h2'>характеристики</Typography>
+                    <Typography variant="h2">характеристики</Typography>
                 </div>
                 <Input
                     fullWidth
@@ -232,15 +277,16 @@ const ProductEditLayout = () => {
                 />
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     const sizeBlock = useMemo(() => {
         return (
             <div className={cx.block}>
                 <div className={cx.heading}>
-                    <Typography variant='h2'>размеры</Typography>
+                    <Typography variant="h2">размеры</Typography>
                 </div>
-                <SizeBlock state={state} setState={setState}/>
+                <SizeBlock state={state} setState={setState} />
             </div>
         );
     }, [state]);
@@ -249,9 +295,9 @@ const ProductEditLayout = () => {
         return (
             <div className={cx.block}>
                 <div className={cx.heading}>
-                    <Typography variant='h2'>выбор пвз</Typography>
+                    <Typography variant="h2">выбор пвз</Typography>
                 </div>
-                <Grid container direction='row' spacing={3}>
+                <Grid container direction="row" spacing={3}>
                     <Grid item xs={5}>
                         <Select
                             label="пункт выдачи"
@@ -271,19 +317,20 @@ const ProductEditLayout = () => {
                 </Grid>
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     const priceBlock = useMemo(() => {
         return (
             <div className={cx.block}>
                 <div className={cx.heading}>
-                    <Typography variant='h2'>стоимость</Typography>
+                    <Typography variant="h2">стоимость</Typography>
                 </div>
                 <div className={cx.priceBlock}>
                     <div className={cx.inputBlock}>
                         <div className={cx.price}>
                             <Input
-                                type='number'
+                                type="number"
                                 fullWidth
                                 label="стоимость"
                                 value={state.price}
@@ -292,7 +339,7 @@ const ProductEditLayout = () => {
                         </div>
                         <div className={cx.sale}>
                             <Input
-                                type='number'
+                                type="number"
                                 fullWidth
                                 label="скидка"
                                 value={state.discount}
@@ -302,24 +349,26 @@ const ProductEditLayout = () => {
                         </div>
                         <div className={cx.sum}>
                             <span className={cx.sumLabel}>
-                            стоимость&nbsp;со&nbsp;скидкой:&nbsp;
+                                стоимость&nbsp;со&nbsp;скидкой:&nbsp;
                             </span>
                             <span className={cx.sumValue}>
-                            {Math.floor(Number(withDiscount) * 100) / 100}
+                                {Math.floor(Number(withDiscount) * 100) / 100}
                             </span>
                         </div>
-                        </div>
-                        <div className={cx.infoBlock}>
+                    </div>
+                    <div className={cx.infoBlock}>
                         <div className={cx.infoItem}>
                             <div>стоимость доставки: </div>
                             <div>{delivery} ₽</div>
                         </div>
                         <div className={cx.infoItem}>
                             <div>комиссия REUP (15%):</div>
-                            <div>{Math.floor(Number(comission) * 100) / 100} ₽</div>
+                            <div>
+                                {Math.floor(Number(comission) * 100) / 100} ₽
+                            </div>
                         </div>
-                        </div>
-                        <div className={cx.total}>
+                    </div>
+                    <div className={cx.total}>
                         <div className={cx.totalLabel}>
                             итоговая сумма, которую вы получите:
                         </div>
@@ -328,12 +377,15 @@ const ProductEditLayout = () => {
                 </div>
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     return (
         <div className={cx.wrapper}>
             {/* <CancelButton onClick={() => navigate(ERoutes.Stock)}/> */}
-            <Typography variant="h1" className={cx.headerLabel}>добавить товар</Typography>
+            <Typography variant="h1" className={cx.headerLabel}>
+                добавить товар
+            </Typography>
             <div className={cx.formWrapper}>
                 <Divider direction="horizontal" />
                 {mainBlock}

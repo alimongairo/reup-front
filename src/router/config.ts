@@ -1,4 +1,4 @@
-import { ERoles, ERoutes } from "./types";
+import { ERoles, ERoutes } from './types';
 
 //   TODO: add correct links
 const CRMLinks = [

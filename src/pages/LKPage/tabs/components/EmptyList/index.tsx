@@ -1,5 +1,5 @@
-import { Button, Typography } from "../../../../../components/ui";
-import { Link } from "react-router-dom";
+import { Button, Typography } from '../../../../../components/ui';
+import { Link } from 'react-router-dom';
 import cx from './index.module.scss';
 import { ERoutes } from '@/router/types';
 
