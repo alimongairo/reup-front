@@ -36,6 +36,15 @@ const ListSelect = ({ label, options, onChange, value }: Props) => {
                                     ? () => {}
                                     : () => onSelect(el)
                             }
+                            onKeyDown={
+                                isActive
+                                    ? () => onDelete()
+                                    : isDisabled
+                                    ? () => {}
+                                    : () => onSelect(el)
+                            }
+                            role="button"
+                            tabIndex={0}
                         >
                             <SelectedOption
                                 option={el}

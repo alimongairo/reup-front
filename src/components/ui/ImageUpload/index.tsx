@@ -1,10 +1,8 @@
 import { useCallback } from 'react';
 import cx from './index.module.scss';
-
 import image from '../../../../static/images/tmp.png';
 import icon from '../../../../static/images/icons/close.svg';
 import { Stack } from '@mui/material';
-import React from 'react';
 
 interface Props {
     value: any;
@@ -37,12 +35,20 @@ const ImageUpload = ({ main, value, onChange }: Props) => {
                         alt="delete"
                         className={cx.icon}
                         onClick={handleDelete}
+                        onKeyDown={handleDelete}
+                        role="presentation"
                     />
                 </div>
             </div>
         ) : (
             <div className={cx.main}>
-                <div className={cx.button} onClick={handleClick}>
+                <div
+                    className={cx.button}
+                    onClick={handleClick}
+                    onKeyDown={handleClick}
+                    role="button"
+                    tabIndex={0}
+                >
                     <Stack>
                         <div className={cx.titleBox}>
                             <div>+</div>
@@ -71,12 +77,20 @@ const ImageUpload = ({ main, value, onChange }: Props) => {
                     alt="delete"
                     className={cx.icon}
                     onClick={handleDelete}
+                    onKeyDown={handleDelete}
+                    role="presentation"
                 />
             </div>
         </div>
     ) : (
         <div className={cx.common}>
-            <div className={cx.button} onClick={handleClick}>
+            <div
+                className={cx.button}
+                onClick={handleClick}
+                onKeyDown={handleClick}
+                role="button"
+                tabIndex={0}
+            >
                 <div className={cx.titleBox}>
                     <div>+</div>
                     <div className={cx.title}>

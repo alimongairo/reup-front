@@ -17,19 +17,21 @@ export default function OrderItem() {
     return (
         <div className={cx.wrapper}>
             {/* <div className={cx.info}> */}
-            <div className={cx.base}>
-                <span>№200493</span>
-                <span>в пути</span>
+            <div className={cx.borderBlock}>
+                <span className={cx.base}>
+                    <span>№200493</span>
+                    <span>в пути</span>
+                </span>
+                <span className={cx.status}>оплачено</span>
             </div>
-            <div className={cx.status}>оплачено</div>
-            <div className={cx.date}>
+            <span className={cx.date}>
                 <span>ожидаемая дата доставки</span>
-                <span>12 января</span>
-            </div>
-            <div className={cx.sum}>
-                <span>6 товаров</span>
+                <span className={cx.thin}>12 января</span>
+            </span>
+            <span className={cx.sum}>
+                <span className={cx.thin}>6 товаров</span>
                 <span>12000 ₽</span>
-            </div>
+            </span>
             {/* </div> */}
             {/* 
             <div className={cx.list}> */}

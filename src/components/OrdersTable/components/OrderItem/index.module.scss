@@ -2,21 +2,27 @@
 
 .wrapper {
     display: grid;
+    font-weight: bold;
+    margin-bottom: $offset-default;
+
+    span {
+        font-weight: bold;
+
+        &.thin {
+            font-weight: 500;
+        }
+    }
 }
 
 @media (max-width: $media-mobile) {
     .wrapper {
         grid-template-columns: 1fr 20px;
 
-        & > *:not(.more):not(.base) {
+        & > *:not(.more):not(.borderBlock) {
             grid-column: span 2;
         }
     }
 
-    .base {
-        grid-row: 1;
-        grid-column: 1;
-    }
     .sum {
         grid-row: 5;
     }
@@ -24,12 +30,52 @@
     .more {
         grid-column: 2;
         grid-row: 1;
+        display: flex;
+        align-items: center;
+
         button {
             display: none;
         }
+
         &::before {
             content: '>';
         }
+    }
+
+    .borderBlock {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        &:before {
+            content: '';
+            background: red;
+            width: 7px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    .base {
+        span:first-child::after {
+            content: ' / ';
+        }
+    }
+
+    .date {
+        span:first-child {
+            font-weight: 500;
+            &::after {
+                content: ': ';
+            }
+        }
+    }
+
+    .sum {
+        display: flex;
+        justify-content: space-between;
     }
 }
 
@@ -39,7 +85,7 @@
         padding: $offset-m;
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, max-content) 1fr;
-        column-gap: $offset-m;
+        column-gap: 10em;
 
         .more {
             grid-column: 4;
@@ -53,6 +99,36 @@
 
         .itemsList {
             grid-column: span 3;
+        }
+
+        .base,
+        .date,
+        .sum {
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+        }
+
+        .sum {
+            align-items: flex-end;
+        }
+
+        .borderBlock {
+            display: contents;
+        }
+
+        .base {
+            position: relative;
+
+            &:before {
+                content: '';
+                background: red;
+                width: 7px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+            }
         }
     }
 }

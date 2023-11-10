@@ -74,7 +74,13 @@ const SizeSelect = ({ sizes, value, onChange }: Props) => {
                 );
             })}
             <div>
-                <div className={cx.button} onClick={handleAdd}>
+                <div
+                    className={cx.button}
+                    onClick={handleAdd}
+                    onKeyDown={handleAdd}
+                    role="button"
+                    tabIndex={0}
+                >
                     <AddIcon width={22} height={22} stroke="#fff" />
                 </div>
             </div>

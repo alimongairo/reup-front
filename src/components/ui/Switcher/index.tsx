@@ -37,6 +37,9 @@ const Switcher = ({
                     value === leftOption.value ? cx.active : ''
                 )}
                 onClick={() => handleClick(leftOption.value)}
+                onKeyDown={() => handleClick(leftOption.value)}
+                role="button"
+                tabIndex={0}
             >
                 {leftOption.label}
             </div>
@@ -47,6 +50,9 @@ const Switcher = ({
                     value === rightOption.value ? cx.active : ''
                 )}
                 onClick={() => handleClick(rightOption.value)}
+                onKeyDown={() => handleClick(rightOption.value)}
+                role="button"
+                tabIndex={0}
             >
                 {rightOption.label}
             </div>

@@ -43,6 +43,7 @@ const ProductEditLayout = () => {
 
     const total = useMemo(() => {
         return Number(withDiscount) - Number(delivery) - Number(comission);
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [comission, delivery, withDiscount]);
 
     const handleSelect = useCallback(
@@ -79,6 +80,7 @@ const ProductEditLayout = () => {
             newState.media.other[i] = value;
             setState(newState);
         },
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
         []
     );
 
@@ -158,6 +160,7 @@ const ProductEditLayout = () => {
                 </Grid>
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     const mediaBlock = useMemo(() => {
@@ -188,6 +191,7 @@ const ProductEditLayout = () => {
                 </Grid>
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     const detailsBlock = useMemo(() => {
@@ -254,6 +258,7 @@ const ProductEditLayout = () => {
                 </Grid>
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     const characteristicsBlock = useMemo(() => {
@@ -272,6 +277,7 @@ const ProductEditLayout = () => {
                 />
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     const sizeBlock = useMemo(() => {
@@ -311,6 +317,7 @@ const ProductEditLayout = () => {
                 </Grid>
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     const priceBlock = useMemo(() => {
@@ -370,6 +377,7 @@ const ProductEditLayout = () => {
                 </div>
             </div>
         );
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [state]);
 
     return (

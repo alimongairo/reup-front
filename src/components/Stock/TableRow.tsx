@@ -5,9 +5,8 @@ import { ReactComponent as EditIcon } from 'S#/images/icons/edit.svg';
 import { ReactComponent as DeleteIcon } from 'S#/images/icons/delete.svg';
 import { ReactComponent as DownArrow } from 'S#/images/icons/downArrowSmall.svg';
 import { ReactComponent as UpArrow } from 'S#/images/icons/upArrowSmall.svg';
-import { Button, PopUp } from '@/components/ui';
+import { Button, PopUp, Image } from '@/components/ui';
 import cx from './index.module.scss';
-import { Image } from '../ui';
 
 export interface StockItem {
     img: string | null;
@@ -43,6 +42,9 @@ const TableRow = ({ item }: Props) => {
                         <div
                             className={cx.detailsIcon}
                             onClick={() => setShowDetails(!showDetails)}
+                            onKeyDown={() => setShowDetails(!showDetails)}
+                            role="button"
+                            tabIndex={0}
                         >
                             {showDetails ? <UpArrow /> : <DownArrow />}
                         </div>

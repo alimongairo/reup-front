@@ -47,6 +47,9 @@ const SearchableSelect = ({
                     !multiple && value.length > 0 ? cx.disabled : ''
                 )}
                 onClick={() => setOpen(!open)}
+                onKeyDown={() => setOpen(!open)}
+                role="button"
+                tabIndex={0}
             >
                 <div className={cx.content}>
                     <input
@@ -70,6 +73,13 @@ const SearchableSelect = ({
                                             ? onMultipleSelect(option)
                                             : onSelect(option)
                                     }
+                                    onKeyDown={() =>
+                                        multiple
+                                            ? onMultipleSelect(option)
+                                            : onSelect(option)
+                                    }
+                                    role="button"
+                                    tabIndex={0}
                                 >
                                     {option.label}
                                 </div>
