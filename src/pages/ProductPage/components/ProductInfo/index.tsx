@@ -1,4 +1,4 @@
-import  { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import cls from 'classnames';
 import {
     Typography,
@@ -23,7 +23,7 @@ import 'swiper/css';
 /* eslint-disable-next-line import/no-unresolved*/
 import 'swiper/css/pagination';
 import '@/styles/pagination.scss';
-import { useWindowWidth } from "@/hooks";
+import { useWindowWidth } from '@/hooks';
 import { ERoutes } from '@/router/types';
 
 // mock

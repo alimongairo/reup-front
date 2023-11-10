@@ -1,0 +1,58 @@
+@import '@/styles/vars.scss';
+
+.wrapper {
+    display: grid;
+}
+
+@media (max-width: $media-mobile) {
+    .wrapper {
+        grid-template-columns: 1fr 20px;
+
+        & > *:not(.more):not(.base) {
+            grid-column: span 2;
+        }
+    }
+
+    .base {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .sum {
+        grid-row: 5;
+    }
+
+    .more {
+        grid-column: 2;
+        grid-row: 1;
+        button {
+            display: none;
+        }
+        &::before {
+            content: '>';
+        }
+    }
+}
+
+@media (min-width: $media-desktop) {
+    .wrapper {
+        border: 1px solid $color-black;
+        padding: $offset-m;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, max-content) 1fr;
+        column-gap: $offset-m;
+
+        .more {
+            grid-column: 4;
+        }
+
+        .more,
+        .sum {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .itemsList {
+            grid-column: span 3;
+        }
+    }
+}

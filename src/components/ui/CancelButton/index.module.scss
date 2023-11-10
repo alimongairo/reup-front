@@ -3,9 +3,9 @@
 .button {
     width: fit-content;
     color: black;
-    font-family: "Gilroy", "sans-serif";
+    font-family: 'Gilroy', 'sans-serif';
     text-transform: lowercase;
-    font-size: 20px; 
+    font-size: 20px;
 
     .label {
         display: flex;
@@ -24,7 +24,7 @@
 
         svg {
             line {
-            stroke: $color-primary;
+                stroke: $color-primary;
             }
         }
     }
@@ -33,9 +33,3 @@
         background-color: transparent;
     }
 }
-
-
-
-
-
-

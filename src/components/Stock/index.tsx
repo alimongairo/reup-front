@@ -1,2 +1,2 @@
-import StockLayout from "./Stock";
+import StockLayout from './Stock';
 export default StockLayout;

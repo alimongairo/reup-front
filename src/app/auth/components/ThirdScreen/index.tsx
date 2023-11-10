@@ -3,8 +3,8 @@ import { EType } from '../types';
 import { Button } from '@/components/ui';
 import { AuthContext } from '../..';
 import cx from './index.module.scss';
-import { Link } from "react-router-dom";
-import { ERoutes } from "@/router/types";
+import { Link } from 'react-router-dom';
+import { ERoutes } from '@/router/types';
 
 interface IProps {
     type?: EType;

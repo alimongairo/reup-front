@@ -1,13 +1,13 @@
 import cx from './index.module.scss';
-import { Typography } from "@/components/ui";
+import { Typography } from '@/components/ui';
 import { ERoutes } from '@/router/types';
-import { EmptyList } from "../components";
-import { DetailsContent, MainContent } from "./components";
+import { EmptyList } from '../components';
+import { DetailsContent, MainContent } from './components';
 
-interface IProps{
-    content: 'main' | 'details'
+interface IProps {
+    content: 'main' | 'details';
 }
-export default function LKOrders({content} : IProps) {
+export default function LKOrders({ content }: IProps) {
     // mock
     const mockData = Array(10).fill(null);
 
@@ -15,9 +15,11 @@ export default function LKOrders({content} : IProps) {
         <div className={cx.container}>
             <Typography variant="h1">мои заказы</Typography>
             {mockData.length > 0 ? (
-                    content === 'main'
-                    ? <MainContent />
-                    : <DetailsContent />
+                content === 'main' ? (
+                    <MainContent />
+                ) : (
+                    <DetailsContent />
+                )
             ) : (
                 <EmptyList
                     text={

@@ -1,2 +1,2 @@
-import ProductEditPage from "./ProductEditPage";
+import ProductEditPage from './ProductEditPage';
 export default ProductEditPage;

@@ -1,4 +1,4 @@
-import DetailsContent from "./DetailsContent";
-import MainContent from "./MainContent";
+import DetailsContent from './DetailsContent';
+import MainContent from './MainContent';
 
-export {DetailsContent, MainContent};
+export { DetailsContent, MainContent };

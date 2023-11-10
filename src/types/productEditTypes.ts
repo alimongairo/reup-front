@@ -42,8 +42,8 @@ export const initState: Product = {
     name: '',
     description: '',
     media: {
-      main: null,
-      other: [null, null, null, null, null, null, null, null],
+        main: null,
+        other: [null, null, null, null, null, null, null, null],
     },
     fabric: [],
     color: [],
@@ -52,7 +52,7 @@ export const initState: Product = {
     season: '',
     gender: '',
     characterictics: {
-      text: '',
+        text: '',
     },
     sizeCountry: '',
     sizeType: SizeType.none,

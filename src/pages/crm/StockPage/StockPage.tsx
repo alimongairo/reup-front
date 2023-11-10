@@ -6,7 +6,7 @@ const StockPage = () => {
         <CRMLayout>
             <StockLayout />
         </CRMLayout>
-    )
-}
+    );
+};
 
 export default StockPage;
