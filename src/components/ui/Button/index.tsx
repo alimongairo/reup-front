@@ -8,6 +8,7 @@ enum EBtnColor {
     WHITE = 'white',
     BLACK = 'black',
     DEFAULT = '',
+    TAB = 'black tab',
 }
 
 interface IProps extends ButtonProps {

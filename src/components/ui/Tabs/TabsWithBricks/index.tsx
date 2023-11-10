@@ -1,16 +1,47 @@
-import { Button } from "@/components/ui";
+import { useState } from 'react';
+import { Button, EBtnColor } from "@/components/ui";
+import cls from 'classnames';
 import cx from './index.module.scss';
+import { uid } from "react-uid";
 
-export default function TabsWithBricks() {
-  return (
-    <div className={cx.wrapper}>
-        
+const list = [
+    {
+        name: "активные"
+    },
+    {
+        name: "завершенные"
+    }
+]
 
-        <Button className={cx.active}>активные</Button>
-        <Button className={cx.done}>завершенные</Button>
-        <div className={cx.content}>
+interface IProps {
+    content: JSX.Element;
+}
 
+export default function TabsWithBricks({content} : IProps) {
+    const [active, setActive] = useState(0);
+
+    const changeActive = (id: number) => {
+        setActive(id)
+    }
+    return (
+        <div className={cx.wrapper}>
+
+            <div className={cx.tabs}>
+                {
+                    list.map((item, idx) =>
+                        <Button className={cls({ [cx.active]: active === idx })}
+                            key={uid(item.name)} onClick={() => changeActive(idx)}
+                            isActive={active === idx}
+                            colorM={EBtnColor.TAB}
+                        >
+                            {item.name}
+                        </Button>
+                    )
+                }
+            </div>
+            <div className={cx.content}>
+                <div className={cx.contentInner}>{content}</div>
+            </div>
         </div>
-    </div>
-  )
+    )
 }

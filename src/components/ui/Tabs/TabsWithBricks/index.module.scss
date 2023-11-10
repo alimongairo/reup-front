@@ -2,27 +2,45 @@
 @import '@/styles/mixins.scss';
 
 .wrapper {
-    button {
-        &.active {
-            border-bottom: none;
-        }
+    .tabs {
+        margin-bottom: -1px;
 
-        &.done {}
+        button {
+            &:not(:first-child){
+              margin-left: -1px;
+            }
+            &.active {
+                border-bottom: none;
+                color: $color-primary;
+                font-weight: bold;
+            }
+        }
     }
+
+   
 
     .content {
         border-top: 1px solid $color-black;
         @include outer;
+    }
 
-
-
+    .contentInner{
+        @include inner;
     }
 }
 
 @media (min-width: $media-desktop) {
-    .content {}
+
+
+    .contentInner{
+        padding-top: $offset-default;
+        padding-bottom: $offset-default;
+    }
 }
 
 @media (max-width: $media-mobile) {
-    .content {}
+    .contentInner{
+        padding-top: $offset-s;
+        padding-bottom: $offset-s;
+    }
 }

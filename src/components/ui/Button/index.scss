@@ -8,7 +8,7 @@
     line-height: 1;
     min-width: fit-content;
 
-    > * {
+    >* {
         margin-bottom: 0;
         line-height: 1;
     }
@@ -98,13 +98,22 @@
             background: $color-primary;
         }
 
+        &.tab {
+            &.active {
+                border-bottom: none;
+                color: $color-primary;
+                background: $color-snow;
+                padding-bottom: calc($offset-s + 1px) ;
+            }
+        }
+
         &.MuiButton-contained {
             &:hover {
                 border: none;
                 background: none;
                 color: $color-primary-light;
 
-                > * {
+                >* {
                     color: $color-primary-light;
                 }
 
@@ -118,7 +127,7 @@
                 background: none;
                 color: $color-primary;
 
-                > * {
+                >* {
                     color: $color-primary;
                 }
 
@@ -168,7 +177,7 @@
                 background: none;
                 color: $color-primary-light;
 
-                > * {
+                >* {
                     color: $color-primary-light;
                 }
 
@@ -182,7 +191,7 @@
                 background: none;
                 color: $color-primary;
 
-                > * {
+                >* {
                     color: $color-primary;
                 }
 
